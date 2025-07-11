@@ -10,7 +10,7 @@ importers:
     dependencies:
       astro:
         specifier: ^5.11.0
-        version: 5.11.0(@types/node@24.0.12)(rollup@4.44.2)(typescript@5.8.3)
+        version: 5.11.0(@types/node@24.0.13)(rollup@4.44.2)(typescript@5.8.3)
     devDependencies:
       '@changesets/cli':
         specifier: ^2.29.5
@@ -559,8 +559,8 @@ packages:
   '@types/node@12.20.55':
     resolution: {integrity: sha512-J8xLz7q2OFulZ2cyGTLE1TbbZcjpno7FaN6zdJNrgAdrJ+DZzh/uFR6YrTb4C+nXakvud8Q4+rbhoIWlYQbUFQ==}
 
-  '@types/node@24.0.12':
-    resolution: {integrity: sha512-LtOrbvDf5ndC9Xi+4QZjVL0woFymF/xSTKZKPgrrl7H7XoeDvnD+E2IclKVDyaK9UM756W/3BXqSU+JEHopA9g==}
+  '@types/node@24.0.13':
+    resolution: {integrity: sha512-Qm9OYVOFHFYg3wJoTSrz80hoec5Lia/dPp84do3X7dZvLikQvM1YpmvTBEdIr/e+U8HTkFjLHLnl78K/qjf+jQ==}
 
   '@types/unist@3.0.3':
     resolution: {integrity: sha512-ko/gIFJRv177XgZsZcBwnqJN5x/Gien8qNOn0D5bQU/zAzVf9Zt3BlcUiLqhV9y4ARk0GbT3tnUiPNgnTXzc/Q==}
@@ -2322,7 +2322,7 @@ snapshots:
 
   '@types/fontkit@2.0.8':
     dependencies:
-      '@types/node': 24.0.12
+      '@types/node': 24.0.13
 
   '@types/hast@3.0.4':
     dependencies:
@@ -2340,7 +2340,7 @@ snapshots:
 
   '@types/node@12.20.55': {}
 
-  '@types/node@24.0.12':
+  '@types/node@24.0.13':
     dependencies:
       undici-types: 7.8.0
 
@@ -2379,7 +2379,7 @@ snapshots:
 
   array-union@2.1.0: {}
 
-  astro@5.11.0(@types/node@24.0.12)(rollup@4.44.2)(typescript@5.8.3):
+  astro@5.11.0(@types/node@24.0.13)(rollup@4.44.2)(typescript@5.8.3):
     dependencies:
       '@astrojs/compiler': 2.12.2
       '@astrojs/internal-helpers': 0.6.1
@@ -2434,8 +2434,8 @@ snapshots:
       unist-util-visit: 5.0.0
       unstorage: 1.16.0
       vfile: 6.0.3
-      vite: 6.3.5(@types/node@24.0.12)
-      vitefu: 1.1.1(vite@6.3.5(@types/node@24.0.12))
+      vite: 6.3.5(@types/node@24.0.13)
+      vitefu: 1.1.1(vite@6.3.5(@types/node@24.0.13))
       xxhash-wasm: 1.1.0
       yargs-parser: 21.1.1
       yocto-spinner: 0.2.3
@@ -3800,7 +3800,7 @@ snapshots:
       '@types/unist': 3.0.3
       vfile-message: 4.0.2
 
-  vite@6.3.5(@types/node@24.0.12):
+  vite@6.3.5(@types/node@24.0.13):
     dependencies:
       esbuild: 0.25.6
       fdir: 6.4.6(picomatch@4.0.2)
@@ -3809,12 +3809,12 @@ snapshots:
       rollup: 4.44.2
       tinyglobby: 0.2.14
     optionalDependencies:
-      '@types/node': 24.0.12
+      '@types/node': 24.0.13
       fsevents: 2.3.3
 
-  vitefu@1.1.1(vite@6.3.5(@types/node@24.0.12)):
+  vitefu@1.1.1(vite@6.3.5(@types/node@24.0.13)):
     optionalDependencies:
-      vite: 6.3.5(@types/node@24.0.12)
+      vite: 6.3.5(@types/node@24.0.13)
 
   web-namespaces@2.0.1: {}
 
