@@ -1,0 +1,18 @@
+---
+import Head from "./groups/Head.astro";
+import Meta from "./groups/Meta.astro";
+
+---
+
+<html>
+  <Head>
+    <slot name="meta" slot="meta">
+      <Meta />
+    </slot>
+  </Head>
+  <body>
+    <main data-pagefind-body transition:animate="fade">
+      <slot />
+    </main>
+  </body>
+</html>
