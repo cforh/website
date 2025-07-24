@@ -21,7 +21,9 @@
     "astro-nanostores-i18n": "^0.1.2"
   },
   "devDependencies": {
-    "@changesets/cli": "^2.29.5"
+    "@changesets/cli": "^2.29.5",
+    "@openscript/unplugin-favicons": "^1.1.7",
+    "favicons": "^7.2.0"
   },
   "packageManager": "pnpm@10.13.1"
 }

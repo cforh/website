@@ -8,6 +8,12 @@ export const C = {
     de: {},
     en: {},
   },
+    // Various settings
+  SETTINGS: {
+    BROWSER: {
+      THEME_COLOR: "#663399",
+    },
+  },
 };
 
 // Configuration helpers
