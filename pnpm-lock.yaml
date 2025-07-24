@@ -15,11 +15,11 @@ importers:
         specifier: ^5.12.3
         version: 5.12.3(@types/node@24.1.0)(rollup@4.45.1)(typescript@5.8.3)
       astro-loader-i18n:
-        specifier: ^0.7.5
-        version: 0.7.5(astro@5.12.3(@types/node@24.1.0)(rollup@4.45.1)(typescript@5.8.3))
+        specifier: ^0.7.6
+        version: 0.7.6(astro@5.12.3(@types/node@24.1.0)(rollup@4.45.1)(typescript@5.8.3))
       astro-nanostores-i18n:
-        specifier: ^0.1.0
-        version: 0.1.0(@nanostores/i18n@1.2.0(nanostores@1.0.1))(astro@5.12.3(@types/node@24.1.0)(rollup@4.45.1)(typescript@5.8.3))
+        specifier: ^0.1.2
+        version: 0.1.2(@nanostores/i18n@1.2.0(nanostores@1.0.1))(astro@5.12.3(@types/node@24.1.0)(rollup@4.45.1)(typescript@5.8.3))
     devDependencies:
       '@changesets/cli':
         specifier: ^2.29.5
@@ -57,12 +57,12 @@ packages:
     engines: {node: '>=6.0.0'}
     hasBin: true
 
-  '@babel/runtime@7.27.6':
-    resolution: {integrity: sha512-vbavdySgbTTrmFE+EsiqUTzlOr5bzlnJtUv9PynGCAKvfQqjIXbvFdumPM/GxMDfyuGMJaJAU6TO4zc1Jf1i8Q==}
+  '@babel/runtime@7.28.2':
+    resolution: {integrity: sha512-KHp2IflsnGywDjBWDkR9iEqiWSpc8GIi0lgTT3mOElT0PP1tG26P4tmFI2YvAdzgq9RGyoHZQEIEdZy6Ec5xCA==}
     engines: {node: '>=6.9.0'}
 
-  '@babel/types@7.28.1':
-    resolution: {integrity: sha512-x0LvFTekgSX+83TI28Y9wYPUfzrnl2aT5+5QLnO6v7mSJYtEEevuDRN0F0uSHRk1G1IWZC43o00Y0xDDrpBGPQ==}
+  '@babel/types@7.28.2':
+    resolution: {integrity: sha512-ruv7Ae4J5dUYULmeXw1gmb7rYRz57OWCPM57pHojnLq/3Z1CK2lNSLTCVjxVk1F/TZHwOZZrOWi0ur95BbLxNQ==}
     engines: {node: '>=6.9.0'}
 
   '@capsizecss/unpack@2.4.0':
@@ -637,13 +637,13 @@ packages:
     peerDependencies:
       astro: ^4.12.0 || ^5.0.0
 
-  astro-loader-i18n@0.7.5:
-    resolution: {integrity: sha512-vEo2iySYlUA1TuyJ9GjxWu1qeqTTL534e5XnJb6q8De/v0shxVIqxbwIr55NoUgYFPry17PlFQjUxuFuLMl41w==}
+  astro-loader-i18n@0.7.6:
+    resolution: {integrity: sha512-9qWS4q11B1QuCb3jyuIo4r6D9lkNNwhZoOI+qWFNtXG2Vlhv6vqvIKZ8exlBTesdZk+LtHt1gMxS7bfpJh8Ohg==}
     peerDependencies:
       astro: ^5.5.0
 
-  astro-nanostores-i18n@0.1.0:
-    resolution: {integrity: sha512-unBCY3X+A51T2mh99hXvyQ47dqUY/h003UVlOhemRDX714Kmhs8VoYbBtGWwJ0sXUAJBgOhSsjopOdcHomQe2w==}
+  astro-nanostores-i18n@0.1.2:
+    resolution: {integrity: sha512-qFvMJFKulMgMC3KCwQsAhvdk11xLvFDkEWuqEo3tA8qlH8l8A3cc2UjX9fRp2VSnYZ9BroKiF/zSFKX09V5zNg==}
     hasBin: true
     peerDependencies:
       '@nanostores/i18n': ^1.2.0
@@ -1914,11 +1914,11 @@ snapshots:
 
   '@babel/parser@7.28.0':
     dependencies:
-      '@babel/types': 7.28.1
+      '@babel/types': 7.28.2
 
-  '@babel/runtime@7.27.6': {}
+  '@babel/runtime@7.28.2': {}
 
-  '@babel/types@7.28.1':
+  '@babel/types@7.28.2':
     dependencies:
       '@babel/helper-string-parser': 7.27.1
       '@babel/helper-validator-identifier': 7.27.1
@@ -2235,14 +2235,14 @@ snapshots:
 
   '@manypkg/find-root@1.1.0':
     dependencies:
-      '@babel/runtime': 7.27.6
+      '@babel/runtime': 7.28.2
       '@types/node': 12.20.55
       find-up: 4.1.0
       fs-extra: 8.1.0
 
   '@manypkg/get-packages@1.1.3':
     dependencies:
-      '@babel/runtime': 7.27.6
+      '@babel/runtime': 7.28.2
       '@changesets/types': 4.1.0
       '@manypkg/find-root': 1.1.0
       fs-extra: 8.1.0
@@ -2447,11 +2447,11 @@ snapshots:
       pathe: 1.1.2
       recast: 0.23.11
 
-  astro-loader-i18n@0.7.5(astro@5.12.3(@types/node@24.1.0)(rollup@4.45.1)(typescript@5.8.3)):
+  astro-loader-i18n@0.7.6(astro@5.12.3(@types/node@24.1.0)(rollup@4.45.1)(typescript@5.8.3)):
     dependencies:
       astro: 5.12.3(@types/node@24.1.0)(rollup@4.45.1)(typescript@5.8.3)
 
-  astro-nanostores-i18n@0.1.0(@nanostores/i18n@1.2.0(nanostores@1.0.1))(astro@5.12.3(@types/node@24.1.0)(rollup@4.45.1)(typescript@5.8.3)):
+  astro-nanostores-i18n@0.1.2(@nanostores/i18n@1.2.0(nanostores@1.0.1))(astro@5.12.3(@types/node@24.1.0)(rollup@4.45.1)(typescript@5.8.3)):
     dependencies:
       '@astrojs/compiler': 2.12.2
       '@nanostores/i18n': 1.2.0(nanostores@1.0.1)
@@ -3043,7 +3043,7 @@ snapshots:
   magicast@0.3.5:
     dependencies:
       '@babel/parser': 7.28.0
-      '@babel/types': 7.28.1
+      '@babel/types': 7.28.2
       source-map-js: 1.2.1
 
   markdown-table@3.0.4: {}
