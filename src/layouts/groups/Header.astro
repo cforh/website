@@ -1,14 +1,21 @@
 ---
+import Brand from "../../components/Brand.astro";
 import LanguageSwitcher from "../../components/LanguageSwitcher.astro";
 import { currentLocale } from "astro-nanostores-i18n:runtime";
+import { resolvePath } from "../../utils/paths";
+import { C } from "../../site.config";
 
 type Props = {
   translations?: Record<string, string>;
 };
 
 const { translations } = Astro.props;
+const locale = currentLocale.get();
 
 ---
 <header>
-  <LanguageSwitcher currentLocale={currentLocale.get()} translations={translations}/>
+  <a href={resolvePath(`${locale === C.DEFAULT_LOCALE ? '' : locale}`)}>
+    <Brand />
+  </a>
+  <LanguageSwitcher currentLocale={locale} translations={translations}/>
 </header>
