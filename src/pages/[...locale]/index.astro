@@ -4,8 +4,9 @@ import { generateGetStaticIndexPaths } from "../../utils/paths";
 
 export const getStaticPaths = generateGetStaticIndexPaths("[...locale]");
 
+const { translations } = Astro.props;
 ---
 
-<Shell>
+<Shell translations={translations}>
   <h1>code-for-humans.com</h1>
 </Shell>

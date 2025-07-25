@@ -20,6 +20,9 @@ importers:
       astro-nanostores-i18n:
         specifier: ^0.1.2
         version: 0.1.2(@nanostores/i18n@1.2.0(nanostores@1.0.1))(astro@5.12.3(@types/node@24.1.0)(rollup@4.45.1)(typescript@5.8.3))
+      nanostores:
+        specifier: ^1.0.1
+        version: 1.0.1
     devDependencies:
       '@changesets/cli':
         specifier: ^2.29.5

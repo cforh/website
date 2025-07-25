@@ -1,0 +1,14 @@
+---
+import LanguageSwitcher from "../../components/LanguageSwitcher.astro";
+import { currentLocale } from "astro-nanostores-i18n:runtime";
+
+type Props = {
+  translations?: Record<string, string>;
+};
+
+const { translations } = Astro.props;
+
+---
+<header>
+  <LanguageSwitcher currentLocale={currentLocale.get()} translations={translations}/>
+</header>

@@ -1,6 +1,14 @@
 ---
 import Head from "./groups/Head.astro";
+import Header from "./groups/Header.astro";
+import Footer from "./groups/Footer.astro";
 import Meta from "./groups/Meta.astro";
+
+type Props = {
+  translations?: Record<string, string>;
+};
+
+const { translations } = Astro.props;
 
 ---
 
@@ -11,8 +19,10 @@ import Meta from "./groups/Meta.astro";
     </slot>
   </Head>
   <body>
+    <Header translations={translations} />
     <main data-pagefind-body transition:animate="fade">
       <slot />
     </main>
+    <Footer />
   </body>
 </html>

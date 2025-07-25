@@ -18,7 +18,8 @@
     "@nanostores/i18n": "^1.2.0",
     "astro": "^5.12.3",
     "astro-loader-i18n": "^0.7.6",
-    "astro-nanostores-i18n": "^0.1.2"
+    "astro-nanostores-i18n": "^0.1.2",
+    "nanostores": "^1.0.1"
   },
   "devDependencies": {
     "@changesets/cli": "^2.29.5",

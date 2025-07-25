@@ -1,5 +1,5 @@
 import { defineConfig } from 'astro/config';
-import { C } from './src/site.config';
+import { C, localeSlugs } from './src/site.config';
 import nanostoresI18n from 'astro-nanostores-i18n';
 import unpluginFavicons from "@openscript/unplugin-favicons/vite";
 import de from "./src/translations/de.json";
@@ -7,7 +7,7 @@ import de from "./src/translations/de.json";
 export default defineConfig({
   i18n: {
     defaultLocale: C.DEFAULT_LOCALE,
-    locales: Object.keys(C.LOCALES),
+    locales: localeSlugs,
   },
   integrations: [
     nanostoresI18n({
