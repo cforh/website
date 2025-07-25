@@ -1,0 +1,13 @@
+:root {
+  --color-primary: #058e84;
+  --color-primary: #fe7e40;
+  --color-white: #f2f2f2;
+  --color-black: #333333;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
