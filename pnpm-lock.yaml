@@ -8,6 +8,12 @@ importers:
 
   .:
     dependencies:
+      '@fontsource-variable/montserrat':
+        specifier: ^5.2.6
+        version: 5.2.6
+      '@fontsource-variable/nunito':
+        specifier: ^5.2.6
+        version: 5.2.6
       '@nanostores/i18n':
         specifier: ^1.2.1
         version: 1.2.1(nanostores@1.0.1)
@@ -290,6 +296,12 @@ packages:
     engines: {node: '>=18'}
     cpu: [x64]
     os: [win32]
+
+  '@fontsource-variable/montserrat@5.2.6':
+    resolution: {integrity: sha512-1eHefcz9ZXSMjZPckKCWSYd8rLjUpmzQIsNO8DuyU0IdPvsqletPvSIJmztr0sCU6sX4EFKsSHxJWawjmROp2A==}
+
+  '@fontsource-variable/nunito@5.2.6':
+    resolution: {integrity: sha512-dGYTQ0Hl94jjfMraYefrURHGH8fk/vL/1zYAZGofiPJVs6C0OkM8T87Te5Gwrbe6HG/XEMm5lib8AqasTN3ucw==}
 
   '@img/sharp-darwin-arm64@0.33.5':
     resolution: {integrity: sha512-UT4p+iz/2H4twwAoLCqfA9UH5pI6DggwKEGuaPy7nCVQ8ZsiY5PIcrRvD1DzuY3qYL07NtIQcWnBSY/heikIFQ==}
@@ -2500,6 +2512,10 @@ snapshots:
 
   '@esbuild/win32-x64@0.25.8':
     optional: true
+
+  '@fontsource-variable/montserrat@5.2.6': {}
+
+  '@fontsource-variable/nunito@5.2.6': {}
 
   '@img/sharp-darwin-arm64@0.33.5':
     optionalDependencies:
