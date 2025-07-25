@@ -12,10 +12,10 @@ type Props = {
 const props = Astro.props;
 const messages = useI18n("layouts/groups/Meta.astro", {
   title: "Code for Humans",
-  description: "This is a catchy slogan for code-for-humans.com",
+  description: "Connect and empower: Our applications aim for empowering humans by enhancing education technology.",
 });
 
-const title = props.title ? `${props.title} - code-for-humans.com` : messages.title;
+const title = props.title ? `${props.title} - ${messages.title}` : messages.title;
 const author = props.author || packageAuthor;
 const description = props.description || messages.description;
 const keywords = props.keywords;
