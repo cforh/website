@@ -1,5 +1,18 @@
 # website
 
+## 0.0.5
+
+### Patch Changes
+
+- a5e1b36: Add fonts
+- 8ba484c: Add favicon
+- da6e7ff: Add language switcher
+- c727a58: Scaffold products
+- b9d423b: Add eslint and prettier
+- 4bfd5d8: Add not found page
+- fd0e64b: Add navigation
+- 2f23b40: Set up i18n
+
 ## 0.0.4
 
 ### Patch Changes
