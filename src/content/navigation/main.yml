@@ -1,0 +1,11 @@
+items:
+  de:
+    - path: /de/produkte
+      title: Produkte
+    - path: pages://de/about-us
+      title: Über uns
+  en:
+    - path: /products
+      title: Products
+    - path: pages://en/about-us
+      title: Über uns

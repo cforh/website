@@ -1,0 +1,36 @@
+---
+import Meta from "../../layouts/groups/Meta.astro";
+import { getCollection, render } from "astro:content";
+import { i18nPropsAndParams } from "astro-loader-i18n";
+import { defaultPropsAndParamsOptions } from "../../utils/paths";
+import Shell from "../../layouts/Shell.astro";
+import Article from "../../layouts/templates/Article.astro";
+
+export const getStaticPaths = async () => {
+  const routePattern = "[...locale]/[...pages]";
+  const collection = await getCollection("pages");
+
+  return i18nPropsAndParams(collection, {
+    ...defaultPropsAndParamsOptions,
+    routePattern,
+    generateSegments: (entry) => ({ pages: entry.data.path }),
+  });
+};
+
+const {
+  translations,
+  data: { title, template },
+} = Astro.props;
+const { Content } = await render(Astro.props);
+---
+
+<Shell translations={translations}>
+  <Meta slot="meta" title={title} />
+  {
+    template === "article" && (
+      <Article title={title}>
+        <Content />
+      </Article>
+    )
+  }
+</Shell>
