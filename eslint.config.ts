@@ -55,6 +55,12 @@ export default [
     },
   },
   {
+    files: ["**/*.astro/*.ts"],
+    rules: {
+      "prettier/prettier": "off",
+    },
+  },
+  {
     ignores: ["dist", "node_modules", ".github", "types.generated.d.ts", ".astro"],
   },
 ];
