@@ -15,6 +15,7 @@
     "i18n:extract": "extract-messages"
   },
   "dependencies": {
+    "@astrojs/mdx": "^4.3.1",
     "@fontsource-variable/montserrat": "^5.2.6",
     "@fontsource-variable/nunito": "^5.2.6",
     "@nanostores/i18n": "^1.2.1",
