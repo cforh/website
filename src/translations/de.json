@@ -2,5 +2,8 @@
   "layouts/groups/Meta.astro": {
     "title": "Code for Humans",
     "description": "Connect and empower: Unsere Anwendungen zielen darauf ab, Menschen durch verbesserte Bildungstechnologie zu fördern."
+  },
+  "pages/[...locale]/[products]/index.astro": {
+    "title": "Produkte"
   }
 }

@@ -8,4 +8,4 @@ items:
     - path: /products
       title: Products
     - path: pages://en/about-us
-      title: Über uns
+      title: About us

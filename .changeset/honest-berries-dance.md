@@ -1,0 +1,5 @@
+---
+"website": patch
+---
+
+Scaffold products

@@ -5,8 +5,12 @@ export const C = {
   DEFAULT_LOCALE: "en" as const,
   // Segment translations
   SEGMENT_TRANSLATIONS: {
-    de: {},
-    en: {},
+    de: {
+      products: "produkte",
+    },
+    en: {
+      products: "products",
+    },
   },
   // Various settings
   SETTINGS: {

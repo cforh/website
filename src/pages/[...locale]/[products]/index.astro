@@ -1,0 +1,32 @@
+---
+import { i18nProps } from "astro-loader-i18n";
+import Shell from "../../../layouts/Shell.astro";
+import { defaultPropsAndParamsOptions, generateGetStaticIndexPaths } from "../../../utils/paths";
+import slug from "limax";
+import { getCollection } from "astro:content";
+import Meta from "../../../layouts/groups/Meta.astro";
+import Article from "../../../layouts/templates/Article.astro";
+import { useI18n } from "astro-nanostores-i18n:runtime";
+
+export const getStaticPaths = generateGetStaticIndexPaths("[...locale]/[products]");
+
+const { translations } = Astro.props;
+const messages = useI18n("pages/[...locale]/[products]/index.astro", {
+  title: "Products",
+});
+
+const collection = await getCollection("products");
+const products = i18nProps(collection, {
+  ...defaultPropsAndParamsOptions,
+  routePattern: `${Astro.routePattern}/[...product]`,
+  generateSegments: (entry) => ({ product: `${entry.data.contentPath}/${slug(entry.data.title)}` }),
+});
+---
+
+<Shell translations={translations}>
+  <Meta slot="meta" title={messages.title} />
+  <Article>
+    <h1 slot="title">{messages.title}</h1>
+    {products}
+  </Article>
+</Shell>
