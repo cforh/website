@@ -8,7 +8,7 @@ const pagesCollection = defineCollection({
       path: z.string(),
       title: z.string(),
       template: z.enum(["article", "article-with-aside"]).optional().default("article"),
-    })
+    }),
   ),
 });
 

@@ -11,11 +11,11 @@ type Props = {
 
 const { translations } = Astro.props;
 const locale = currentLocale.get();
-
 ---
+
 <header>
-  <a href={resolvePath(`${locale === C.DEFAULT_LOCALE ? '' : locale}`)}>
+  <a href={resolvePath(`${locale === C.DEFAULT_LOCALE ? "" : locale}`)}>
     <Brand />
   </a>
-  <LanguageSwitcher currentLocale={locale} translations={translations}/>
+  <LanguageSwitcher currentLocale={locale} translations={translations} />
 </header>

@@ -1,6 +1,6 @@
-import { defineConfig } from 'astro/config';
-import { C, localeSlugs } from './src/site.config';
-import nanostoresI18n from 'astro-nanostores-i18n';
+import { defineConfig } from "astro/config";
+import { C, localeSlugs } from "./src/site.config";
+import nanostoresI18n from "astro-nanostores-i18n";
 import unpluginFavicons from "@openscript/unplugin-favicons/vite";
 import de from "./src/translations/de.json";
 import mdx from "@astrojs/mdx";
@@ -10,12 +10,15 @@ export default defineConfig({
     defaultLocale: C.DEFAULT_LOCALE,
     locales: localeSlugs,
   },
-  integrations: [nanostoresI18n({
-    addMiddleware: true,
-    translations: {
-      de
-    }
-  }), mdx()],
+  integrations: [
+    nanostoresI18n({
+      addMiddleware: true,
+      translations: {
+        de,
+      },
+    }),
+    mdx(),
+  ],
   vite: {
     plugins: [
       unpluginFavicons({

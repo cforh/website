@@ -6,9 +6,7 @@ export function getNameFromLocale(locale: string) {
 }
 
 export function parseLocale(locale?: string) {
-  return locale && locale in C.LOCALES
-    ? (locale as keyof typeof C.LOCALES)
-    : C.DEFAULT_LOCALE;
+  return locale && locale in C.LOCALES ? (locale as keyof typeof C.LOCALES) : C.DEFAULT_LOCALE;
 }
 
 export function getFullLocale(locale?: string) {
