@@ -1,8 +1,24 @@
 :root {
   --color-primary: #058e84;
   --color-primary: #fe7e40;
-  --color-white: #f2f2f2;
+  --color-white: #f9f9f9;
   --color-black: #333333;
+
+  --size-font: 16px;
+  --size-header-height: 5rem;
+  --size-page-padding: 20%;
+}
+
+@media (max-width: 1280px) {
+  :root {
+    --size-page-padding: 10%;
+  }
+}
+
+@media (max-width: 800px) {
+  :root {
+    --size-page-padding: 1rem;
+  }
 }
 
 html, body {
@@ -11,9 +27,30 @@ html, body {
   display: flex;
   flex-direction: column;
   font-family: 'Nunito Variable', sans-serif;
+  font-size: var(--size-font);
   color: var(--color-black);
+  background-color: var(--color-white);
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Montserrat Variable', sans-serif;
+}
+
+body > :is(header, main, footer) {
+  padding: 0 var(--size-page-padding);
+}
+
+header {
+  display: flex;
+  height: var(--size-header-height);
+}
+
+main {
+  flex-grow: 1;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
