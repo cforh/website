@@ -14,6 +14,10 @@ export const C = {
   },
   // Various settings
   SETTINGS: {
+    CONTACT: {
+      EMAIL: "hi@code-for-humans.com",
+      PHONE: "+41 44 520 02 22",
+    },
     BROWSER: {
       THEME_COLOR: "#663399",
     },

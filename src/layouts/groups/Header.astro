@@ -1,10 +1,10 @@
 ---
 import Brand from "../../components/Brand.astro";
-import LanguageSwitcher from "../../components/LanguageSwitcher.astro";
 import { currentLocale } from "astro-nanostores-i18n:runtime";
 import { prepareNavigation, resolvePath } from "../../utils/paths";
 import { C } from "../../site.config";
 import Navigation from "../../components/Navigation.astro";
+import TopBar from "./TopBar.astro";
 
 type Props = {
   translations?: Record<string, string>;
@@ -16,9 +16,11 @@ const navigation = await prepareNavigation(`main/${locale}`);
 ---
 
 <header>
-  <a href={resolvePath(`${locale === C.DEFAULT_LOCALE ? "" : locale}`)}>
-    <Brand />
-  </a>
-  <Navigation items={navigation} />
-  <LanguageSwitcher currentLocale={locale} translations={translations} />
+  <TopBar translations={translations} />
+  <section>
+    <a href={resolvePath(`${locale === C.DEFAULT_LOCALE ? "" : locale}`)}>
+      <Brand />
+    </a>
+    <Navigation items={navigation} />
+  </section>
 </header>
