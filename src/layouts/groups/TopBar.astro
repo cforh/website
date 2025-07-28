@@ -1,18 +1,32 @@
 ---
-import { C } from "../../site.config";
+import { currentLocale } from "astro-nanostores-i18n:runtime";
+import LanguageSwitcher from "../../components/LanguageSwitcher.astro";
+import { C, localeSlugs } from "../../site.config";
+
+type Props = {
+  translations?: Record<string, string>;
+};
+
+const { translations } = Astro.props;
+const locale = currentLocale.get();
 ---
 
 <div id="top-bar">
-  <ul>
-    <li>
-      <a href={`tel:${C.SETTINGS.CONTACT.PHONE.replaceAll(" ", "")}`}>
-        {C.SETTINGS.CONTACT.PHONE}
-      </a>
-    </li>
-    <li>
-      <a href={`mailto:${C.SETTINGS.CONTACT.EMAIL}`}>
-        {C.SETTINGS.CONTACT.EMAIL}
-      </a>
-    </li>
-  </ul>
+  <nav>
+    <ul>
+      <li>
+        <a href={`tel:${C.SETTINGS.CONTACT.PHONE.replaceAll(" ", "")}`}>
+          {C.SETTINGS.CONTACT.PHONE}
+        </a>
+      </li>
+      <li>
+        <a href={`mailto:${C.SETTINGS.CONTACT.EMAIL}`}>
+          {C.SETTINGS.CONTACT.EMAIL}
+        </a>
+      </li>
+      <li>
+        <LanguageSwitcher locales={localeSlugs} currentLocale={locale} translations={translations} />
+      </li>
+    </ul>
+  </nav>
 </div>

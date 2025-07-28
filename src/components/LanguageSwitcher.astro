@@ -2,21 +2,46 @@
 import { getNameFromLocale } from "../utils/i18n";
 
 type Props = {
+  locales: string[];
   currentLocale: string;
   translations?: Record<string, string>;
 };
 
-const { translations, currentLocale } = Astro.props;
+const { translations, currentLocale, locales } = Astro.props;
+
+const collection = locales.map((locale) => {
+  return {
+    value: translations?.[locale] ?? `/`,
+    label: getNameFromLocale(locale) ?? locale,
+    selected: locale === currentLocale,
+  };
+});
 ---
 
-<ul>
+<select autocomplete="off" class="language-switcher">
   {
-    Object.entries(translations || {}).map(([locale, path]) => (
-      <li class:list={[{ active: locale === currentLocale }]}>
-        <a href={path} lang={locale} hreflang={locale}>
-          {getNameFromLocale(locale)}
-        </a>
-      </li>
+    collection.map(({ value, label, selected }) => (
+      <option value={value} {...(selected ? { selected: "true" } : {})}>
+        {label}
+      </option>
     ))
   }
-</ul>
+</select>
+
+<script>
+  import { navigate } from "astro:transitions/client";
+  function registerLanguageSwitcher() {
+    const languageSwitchers = document.querySelectorAll(".language-switcher");
+    languageSwitchers.forEach((select) => {
+      select.addEventListener("change", (event) => {
+        const selectedOption = event.currentTarget as HTMLSelectElement;
+        if (selectedOption) {
+          navigate(selectedOption.value);
+        }
+      });
+    });
+  }
+
+  registerLanguageSwitcher();
+  document.addEventListener("astro:after-swap", registerLanguageSwitcher);
+</script>
