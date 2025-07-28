@@ -12,16 +12,19 @@ const locale = currentLocale.get();
 ---
 
 <div id="top-bar">
+  <div>
+    {C.SETTINGS.META.TITLE}
+  </div>
   <nav>
     <ul>
       <li>
-        <a href={`tel:${C.SETTINGS.CONTACT.PHONE.replaceAll(" ", "")}`}>
-          {C.SETTINGS.CONTACT.PHONE}
+        <a href={`tel:${C.SETTINGS.META.PHONE.replaceAll(" ", "")}`}>
+          {C.SETTINGS.META.PHONE}
         </a>
       </li>
       <li>
-        <a href={`mailto:${C.SETTINGS.CONTACT.EMAIL}`}>
-          {C.SETTINGS.CONTACT.EMAIL}
+        <a href={`mailto:${C.SETTINGS.META.EMAIL}`}>
+          {C.SETTINGS.META.EMAIL}
         </a>
       </li>
       <li>

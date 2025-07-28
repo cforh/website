@@ -14,7 +14,8 @@ export const C = {
   },
   // Various settings
   SETTINGS: {
-    CONTACT: {
+    META: {
+      TITLE: "Code for Humans",
       EMAIL: "hi@code-for-humans.com",
       PHONE: "+41 44 520 02 22",
     },
