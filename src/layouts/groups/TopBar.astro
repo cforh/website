@@ -1,0 +1,18 @@
+---
+import { C } from "../../site.config";
+---
+
+<div id="top-bar">
+  <ul>
+    <li>
+      <a href={`tel:${C.SETTINGS.CONTACT.PHONE.replaceAll(" ", "")}`}>
+        {C.SETTINGS.CONTACT.PHONE}
+      </a>
+    </li>
+    <li>
+      <a href={`mailto:${C.SETTINGS.CONTACT.EMAIL}`}>
+        {C.SETTINGS.CONTACT.EMAIL}
+      </a>
+    </li>
+  </ul>
+</div>
