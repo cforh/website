@@ -1,12 +1,29 @@
 ---
+import { useI18n } from "astro-nanostores-i18n:runtime";
+import Spotlight from "../../layouts/sections/Spotlight.astro";
 import Shell from "../../layouts/Shell.astro";
 import { generateGetStaticIndexPaths } from "../../utils/paths";
 
 export const getStaticPaths = generateGetStaticIndexPaths("[...locale]");
 
+const messages = useI18n("src/pages/[...locale]/index.astro", {
+  spotlightTitle: "Connect and Empower",
+  spotlightContent: "Join us in our mission to connect and empower individuals in the EdTech space.",
+  spotlightActionConnect: "Connect with us",
+  spotlightActionEmpower: "Empower yourself",
+});
+
 const { translations } = Astro.props;
 ---
 
 <Shell translations={translations}>
-  <h1>code-for-humans.com</h1>
+  <Spotlight>
+    <h1 slot="title">{messages.spotlightTitle}</h1>
+    <p slot="content">{messages.spotlightContent}</p>
+    <div slot="actions">
+      <a href="/about" class="button">{messages.spotlightActionConnect}</a>
+      <a href="/contact" class="button">{messages.spotlightActionEmpower}</a>
+    </div>
+    <div slot="stage">Stage</div>
+  </Spotlight>
 </Shell>

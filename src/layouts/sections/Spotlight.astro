@@ -1,0 +1,44 @@
+---
+
+---
+
+<section>
+  <div class="title">
+    <slot name="title" />
+  </div>
+  <div class="content">
+    <slot name="content" />
+  </div>
+  <div class="actions">
+    <slot name="actions" />
+  </div>
+  <div class="stage">
+    <slot name="stage" />
+  </div>
+</section>
+
+<style>
+  section {
+    display: grid;
+    grid-template-areas:
+      "title title"
+      "content stage"
+      "actions actions";
+  }
+
+  .title {
+    grid-area: title;
+  }
+
+  .content {
+    grid-area: content;
+  }
+
+  .actions {
+    grid-area: actions;
+  }
+
+  .stage {
+    grid-area: stage;
+  }
+</style>

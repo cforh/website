@@ -1,6 +1,12 @@
 {
   "layouts/groups/Meta.astro": {
-    "description": "Connect and empower: Unsere Anwendungen zielen darauf ab, Menschen durch verbesserte Bildungstechnologie zu fördern."
+    "description": "Verbinden und Fördern: Unsere Anwendungen zielen darauf ab, Menschen durch verbesserte Bildungstechnologie weiterzubringen."
+  },
+  "src/pages/[...locale]/index.astro": {
+    "spotlightTitle": "Verbinden und Fördern",
+    "spotlightContent": "Unsere Anwendungen zielen darauf ab, Menschen durch verbesserte Bildungstechnologie weiterzubringen.",
+    "spotlightActionConnect": "Kontakt aufnehmen",
+    "spotlightActionEmpower": "Bildung fördern"
   },
   "pages/[...locale]/[products]/index.astro": {
     "title": "Produkte"
