@@ -67,5 +67,7 @@
       document.body.classList.toggle("burger-active");
     });
   }
-  document.addEventListener("DOMContentLoaded", register);
+
+  register();
+  document.addEventListener("astro:after-swap", register);
 </script>

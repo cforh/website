@@ -30,7 +30,7 @@ const collection = locales.map((locale) => {
 
 <script>
   import { navigate } from "astro:transitions/client";
-  function registerLanguageSwitcher() {
+  function register() {
     const languageSwitchers = document.querySelectorAll(".language-switcher");
     languageSwitchers.forEach((select) => {
       select.addEventListener("change", (event) => {
@@ -42,6 +42,6 @@ const collection = locales.map((locale) => {
     });
   }
 
-  registerLanguageSwitcher();
-  document.addEventListener("astro:after-swap", registerLanguageSwitcher);
+  register();
+  document.addEventListener("astro:after-swap", register);
 </script>
