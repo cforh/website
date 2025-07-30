@@ -4,23 +4,14 @@ import { currentLocale } from "astro-nanostores-i18n:runtime";
 import { prepareNavigation, resolvePath } from "../../utils/paths";
 import { C } from "../../site.config";
 import Navigation from "../../components/Navigation.astro";
-import TopBar from "./TopBar.astro";
 
-type Props = {
-  translations?: Record<string, string>;
-};
-
-const { translations } = Astro.props;
 const locale = currentLocale.get();
 const navigation = await prepareNavigation(`main/${locale}`);
 ---
 
 <header>
-  <TopBar translations={translations} />
-  <section>
-    <a href={resolvePath(`${locale === C.DEFAULT_LOCALE ? "" : locale}`)}>
-      <Brand />
-    </a>
-    <Navigation items={navigation} />
-  </section>
+  <a href={resolvePath(`${locale === C.DEFAULT_LOCALE ? "" : locale}`)}>
+    <Brand />
+  </a>
+  <Navigation items={navigation} />
 </header>

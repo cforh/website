@@ -1,4 +1,8 @@
 {
+  "layouts/groups/Footer.astro": {
+    "copyright": "© 2025 Code for Humans. Alle Rechte vorbehalten.",
+    "version": "Version {version}"
+  },
   "layouts/groups/Meta.astro": {
     "description": "Verbinden und Fördern: Unsere Anwendungen zielen darauf ab, Menschen durch verbesserte Bildungstechnologie weiterzubringen."
   },

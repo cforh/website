@@ -21,10 +21,10 @@ const { translations } = Astro.props;
     </slot>
   </Head>
   <body>
-    <Header translations={translations} />
+    <Header />
     <main data-pagefind-body transition:animate="fade">
       <slot />
     </main>
-    <Footer />
+    <Footer translations={translations} />
   </body>
 </html>

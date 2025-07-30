@@ -1,12 +1,23 @@
 ---
+import { useI18n } from "astro-nanostores-i18n:runtime";
 import { version } from "../../../package.json";
+import OtherNav from "./OtherNav.astro";
+import { params } from "@nanostores/i18n";
+
+type Props = {
+  translations?: Record<string, string>;
+};
+const { translations } = Astro.props;
+const messages = useI18n("layouts/groups/Footer.astro", {
+  copyright: "© 2025 Code for Humans. All rights reserved.",
+  version: params("Version {version}"),
+});
 ---
 
 <footer>
-  <div>
-    <section>
-      <p>&copy; 2025 Code for Humans. All rights reserved.</p>
-      <p>Version {version}</p>
-    </section>
-  </div>
+  <OtherNav translations={translations} />
+  <section>
+    <p>{messages.copyright}</p>
+    <p>{messages.version({ version })}</p>
+  </section>
 </footer>
