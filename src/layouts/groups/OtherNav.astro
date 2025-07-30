@@ -11,25 +11,20 @@ const { translations } = Astro.props;
 const locale = currentLocale.get();
 ---
 
-<div id="other-nav">
-  <div>
-    {C.SETTINGS.META.TITLE}
-  </div>
-  <nav>
-    <ul>
-      <li>
-        <a href={`tel:${C.SETTINGS.META.PHONE.replaceAll(" ", "")}`}>
-          {C.SETTINGS.META.PHONE}
-        </a>
-      </li>
-      <li>
-        <a href={`mailto:${C.SETTINGS.META.EMAIL}`}>
-          {C.SETTINGS.META.EMAIL}
-        </a>
-      </li>
-      <li>
-        <LanguageSwitcher locales={localeSlugs} currentLocale={locale} translations={translations} />
-      </li>
-    </ul>
-  </nav>
-</div>
+<nav id="other-nav">
+  <ul>
+    <li>
+      <a href={`tel:${C.SETTINGS.META.PHONE.replaceAll(" ", "")}`}>
+        {C.SETTINGS.META.PHONE}
+      </a>
+    </li>
+    <li>
+      <a href={`mailto:${C.SETTINGS.META.EMAIL}`}>
+        {C.SETTINGS.META.EMAIL}
+      </a>
+    </li>
+    <li>
+      <LanguageSwitcher locales={localeSlugs} currentLocale={locale} translations={translations} />
+    </li>
+  </ul>
+</nav>

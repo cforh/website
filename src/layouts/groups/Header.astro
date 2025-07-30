@@ -4,6 +4,7 @@ import { currentLocale } from "astro-nanostores-i18n:runtime";
 import { prepareNavigation, resolvePath } from "../../utils/paths";
 import { C } from "../../site.config";
 import Navigation from "../../components/Navigation.astro";
+import Burger from "../../components/Burger.astro";
 
 const locale = currentLocale.get();
 const navigation = await prepareNavigation(`main/${locale}`);
@@ -13,5 +14,6 @@ const navigation = await prepareNavigation(`main/${locale}`);
   <a href={resolvePath(`${locale === C.DEFAULT_LOCALE ? "" : locale}`)}>
     <Brand />
   </a>
+  <Burger />
   <Navigation items={navigation} />
 </header>
