@@ -1,6 +1,6 @@
 :root {
   --color-primary: #058e84;
-  --color-primary: #fe7e40;
+  --color-secondary: #fe7e40;
   --color-white: #f9f9f9;
   --color-black: #333333;
 
@@ -9,6 +9,7 @@
   --size-font-small: 0.875rem;
   --size-header-width: 20rem;
   --size-page-padding: 20%;
+  --size-gap-tiny: 0.25rem;
   --size-gap: 1rem;
   --size-burger: 2rem;
 }
@@ -91,13 +92,33 @@ body > footer {
   gap: var(--size-gap);
   padding: var(--size-gap);
 
-  > .other-nav {
+  > .legal-nav {
+    font-size: var(--size-font-tiny);
 
+    ul li {
+      display: inline;
+
+      &:not(:last-child)::after {
+        content: "·";
+        padding: 0 var(--size-gap-tiny);
+      }
+    }
   }
 
   > .copyright {
     font-size: var(--size-font-tiny);
     list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  select::selection {
+    background: var(--color-primary);
+  }
+  select {
+    width: 100%;
+    background: transparent;
+    border: none;
     margin: 0;
     padding: 0;
   }
@@ -109,8 +130,9 @@ nav ul {
   padding: 0;
 }
 
-.burger {
-  display: none;
+a {
+  text-decoration: none;
+  color: var(--color-primary);
 }
 
 @media (max-width: 1280px) {

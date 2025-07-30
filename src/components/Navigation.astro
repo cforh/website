@@ -4,6 +4,7 @@ import Link from "./Link.astro";
 import type { ImageMetadata } from "astro";
 
 type Props = {
+  class?: string;
   items: Array<{
     path: string;
     title: string;
@@ -11,10 +12,10 @@ type Props = {
   }>;
 };
 
-const { items } = Astro.props;
+const { items, class: className } = Astro.props;
 ---
 
-<nav>
+<nav class={className}>
   <ul>
     {
       items.map((item) => (

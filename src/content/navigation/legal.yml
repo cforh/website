@@ -11,5 +11,5 @@ items:
       title: Imprint
     - path: pages://en/privacy
       title: Privacy Policy
-    - path: pages://de/terms
+    - path: pages://en/terms
       title: Terms and Conditions

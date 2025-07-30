@@ -22,7 +22,7 @@ const navigation = await prepareNavigation(`legal/${locale}`);
 <footer>
   <Contact />
   <Settings translations={translations} />
-  <Navigation items={navigation} />
+  <Navigation items={navigation} class="legal-nav" />
   <ul class="copyright">
     <li>{messages.copyright}</li>
     <li>{messages.version({ version })}</li>
