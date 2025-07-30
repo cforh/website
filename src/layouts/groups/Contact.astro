@@ -1,0 +1,18 @@
+---
+import { C } from "../../site.config";
+---
+
+<nav class="contact">
+  <ul>
+    <li>
+      <a href={`tel:${C.SETTINGS.META.PHONE.replaceAll(" ", "")}`}>
+        {C.SETTINGS.META.PHONE}
+      </a>
+    </li>
+    <li>
+      <a href={`mailto:${C.SETTINGS.META.EMAIL}`}>
+        {C.SETTINGS.META.EMAIL}
+      </a>
+    </li>
+  </ul>
+</nav>

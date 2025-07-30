@@ -11,7 +11,7 @@ const navigation = await prepareNavigation(`main/${locale}`);
 ---
 
 <header>
-  <a href={resolvePath(`${locale === C.DEFAULT_LOCALE ? "" : locale}`)}>
+  <a class="brand" href={resolvePath(`${locale === C.DEFAULT_LOCALE ? "" : locale}`)}>
     <Brand />
   </a>
   <Burger />

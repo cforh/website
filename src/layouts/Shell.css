@@ -5,6 +5,8 @@
   --color-black: #333333;
 
   --size-font: 16px;
+  --size-font-tiny: 0.75rem;
+  --size-font-small: 0.875rem;
   --size-header-width: 20rem;
   --size-page-padding: 20%;
   --size-gap: 1rem;
@@ -57,6 +59,8 @@ body > header {
   grid-template-areas:
     "brand burger"
     "nav nav";
+  gap: var(--size-gap);
+  padding: var(--size-gap);
 
   > .burger {
     display: none;
@@ -69,6 +73,11 @@ body > header {
 
   > .brand {
     grid-area: brand;
+
+    svg {
+      width: 100%;
+      height: auto;
+    }
   }
 }
 
@@ -79,6 +88,19 @@ body > main {
 
 body > footer {
   grid-area: footer;
+  gap: var(--size-gap);
+  padding: var(--size-gap);
+
+  > .other-nav {
+
+  }
+
+  > .copyright {
+    font-size: var(--size-font-tiny);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
 }
 
 nav ul {
