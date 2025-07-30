@@ -1,5 +1,17 @@
 ---
 import { ClientRouter } from "astro:transitions";
+import { getFullLocale } from "../../utils/i18n";
+import { currentLocale } from "astro-nanostores-i18n:runtime";
+import { resolvePath } from "../../utils/paths";
+
+type Props = {
+  translations?: Record<string, string>;
+};
+
+const { translations } = Astro.props;
+const locale = currentLocale.get();
+let base = `${import.meta.env.SITE || ""}${import.meta.env.BASE_URL || ""}`;
+base = base.endsWith("/") ? base : `${base}/`;
 ---
 
 <head>
@@ -7,5 +19,13 @@ import { ClientRouter } from "astro:transitions";
   <slot name="meta" />
   <meta name="viewport" content="width=device-width" />
   <meta name="referrer" content="no-referrer-when-downgrade" />
+  <link rel="alternate" hreflang="x-default" href={base} />
+  <link rel="alternate" hreflang={getFullLocale(locale)} href={Astro.url.href} />
+  <meta property="og:locale" content={getFullLocale(locale).replace(`-`, `_`)} />
+  {Object.entries(translations || {}).filter(([l]) => l !== locale).map(([locale, path]) => (
+    <link rel="alternate" hreflang={getFullLocale(locale)} href={new URL(path, Astro.url).href} />
+    <meta property="og:locale:alternate" content={getFullLocale(locale).replace(`-`, `_`)} />
+  ))}
+  <link rel="sitemap" href={resolvePath("sitemap-index.xml")} />
   <ClientRouter />
 </head>

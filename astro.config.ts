@@ -5,6 +5,8 @@ import unpluginFavicons from "@openscript/unplugin-favicons/vite";
 import de from "./src/translations/de.json";
 import mdx from "@astrojs/mdx";
 
+import sitemap from "@astrojs/sitemap";
+
 export default defineConfig({
   i18n: {
     defaultLocale: C.DEFAULT_LOCALE,
@@ -18,6 +20,7 @@ export default defineConfig({
       },
     }),
     mdx(),
+    sitemap({ i18n: { defaultLocale: C.DEFAULT_LOCALE, locales: C.LOCALES } }),
   ],
   vite: {
     plugins: [

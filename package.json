@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "@astrojs/mdx": "^4.3.1",
+    "@astrojs/sitemap": "^3.4.2",
     "@fontsource-variable/montserrat": "^5.2.6",
     "@fontsource-variable/nunito": "^5.2.6",
     "@nanostores/i18n": "^1.2.2",
