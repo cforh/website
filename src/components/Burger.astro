@@ -19,6 +19,7 @@
     border: none;
     height: var(--size-burger);
     width: var(--size-burger);
+    cursor: pointer;
   }
 
   .icon,
@@ -28,7 +29,7 @@
     position: absolute;
     content: "";
     background-color: var(--color-black);
-    height: calc(var(--size-burger) / 7.5);
+    height: round(nearest, calc(var(--size-burger) / 7.5), 1px);
     width: var(--size-burger);
     left: 0;
   }
