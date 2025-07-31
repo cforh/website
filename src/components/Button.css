@@ -1,0 +1,10 @@
+.button {
+  background: var(--color-white);
+  padding: var(--size-gap-small);
+  border-radius: 5px;
+  font-weight: bold;
+
+  &:first-of-type {
+    margin-inline-start: calc(var(--size-gap-small) * -1);
+  }
+}

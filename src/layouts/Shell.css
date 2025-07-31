@@ -1,7 +1,6 @@
 :root {
   --color-primary: #058e84;
   --color-secondary: #fe7e40;
-  --color-white-60: hsl(from var(--color-white) h s calc(l * 0.6));
   --color-white-97: hsl(from var(--color-white) h s calc(l * 0.97));
   --color-white: #f9f9f9;
   --color-black: #333333;
@@ -12,8 +11,13 @@
   --size-header-width: 20rem;
   --size-page-padding: 20%;
   --size-gap-tiny: 0.25rem;
+  --size-gap-small: 0.5rem;
   --size-gap: 1rem;
+  --size-gap-large: 2rem;
   --size-burger: 2rem;
+  --size-border-radius-large: 2rem;
+
+  --border-massive: 20px solid rgb(from var(--color-white) r g b / 0.8);
 }
 
 html {
@@ -51,7 +55,7 @@ h6 {
   font-family: "Montserrat Variable", sans-serif;
 }
 
-body > main {
+body > main > * {
   padding: 0 var(--size-page-padding);
 }
 
@@ -59,6 +63,7 @@ body > :is(header, footer) {
   gap: var(--size-gap);
   padding: var(--size-gap);
   background-color: var(--color-white-97);
+  border-inline-end: var(--border-massive);
 }
 
 body > header {
