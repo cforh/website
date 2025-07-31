@@ -5,10 +5,12 @@
   --color-white: #f9f9f9;
   --color-black: #333333;
 
+  --size-font-huge: 1.25rem;
+  --size-font-large: 1.125rem;
   --size-font: 16px;
-  --size-font-tiny: 0.75rem;
   --size-font-small: 0.875rem;
-  --size-header-width: 20rem;
+  --size-font-tiny: 0.75rem;
+  --size-header-width: 25rem;
   --size-page-padding: 20%;
   --size-gap-tiny: 0.25rem;
   --size-gap-small: 0.5rem;
@@ -81,6 +83,32 @@ body > header {
 
   > nav {
     grid-area: nav;
+
+    a {
+      display: inline-block;
+      width: 100%;
+      padding: var(--size-gap) 0;
+      font-size: var(--size-font-large);
+      font-weight: bold;
+      text-align: center;
+      border-block-start: var(--color-white) 2px solid;
+
+      &:hover {
+        background-color: var(--color-white);
+      }
+
+      &.active {
+        &::before, &::after {
+          color: var(--color-secondary);
+        }
+        &::before {
+          content: "{ "
+        }
+        &::after {
+          content: " }"
+        }
+      }
+    }
   }
 
   > .brand {
