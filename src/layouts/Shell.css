@@ -179,10 +179,6 @@ a {
 }
 
 @media (max-width: 1280px) {
-  :root {
-    --size-page-padding: 10%;
-  }
-
   body {
     height: 100%;
     grid-template-columns: 1fr;
@@ -197,20 +193,28 @@ a {
     overflow: visible;
   }
 
+  body > :is(header, footer) {
+    border-inline-end: none;
+  }
+
   body > header {
     flex-direction: row;
-    justify-content: space-between;
     align-items: center;
+    grid-template-columns: 1fr auto;
     grid-template-areas:
       "brand burger";
-  }
 
-  body > header nav {
-    display: none;
-  }
+    .brand {
+      justify-self: center;
+    }
 
-  body > header > .burger {
-    display: block;
+    .burger {
+      display: block;
+    }
+
+    nav {
+      display: none;
+    }
   }
 
   body.burger-active {
@@ -229,12 +233,19 @@ a {
     grid-template-areas:
       "brand burger"
       "nav nav";
-  }
 
-  body.burger-active > header nav {
-    display: block;
+    nav {
+      display: block;
+    }
   }
 }
+
+@media (max-width: 1600px) {
+  :root {
+    --size-page-padding: 10%;
+  }
+}
+
 
 @media (max-width: 800px) {
   :root {
