@@ -84,6 +84,12 @@ body > header {
   > nav {
     grid-area: nav;
 
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: var(--size-gap-small);
+    }
+
     a {
       display: inline-block;
       width: 100%;
@@ -91,13 +97,16 @@ body > header {
       font-size: var(--size-font-large);
       font-weight: bold;
       text-align: center;
-      border-block-start: var(--color-white) 2px solid;
 
       &:hover {
         background-color: var(--color-white);
+        border-radius: var(--size-border-radius-large);
       }
 
       &.active {
+        background-color: var(--color-white);
+        border-radius: var(--size-border-radius-large);
+
         &::before, &::after {
           color: var(--color-secondary);
         }
@@ -133,6 +142,16 @@ body > footer {
   display: flex;
   flex-direction: column;
 
+  > .contact {
+    text-align: center;
+    font-size: var(--size-font-large);
+  }
+
+  > .settings {
+    display: flex;
+    justify-content: center;;
+  }
+
   > .legal-nav {
     font-size: var(--size-font-tiny);
     text-align: center;
@@ -155,11 +174,7 @@ body > footer {
     text-align: center;
   }
 
-  select::selection {
-    background: var(--color-primary);
-  }
   select {
-    width: 100%;
     background: transparent;
     border: none;
     margin: 0;
