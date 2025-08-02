@@ -10,7 +10,8 @@
   --size-font: 16px;
   --size-font-small: 0.875rem;
   --size-font-tiny: 0.75rem;
-  --size-header-width: 25rem;
+  --size-aside-width: 25rem;
+  --size-header-height: 5rem;
   --size-page-padding: 20%;
   --size-gap-tiny: 0.25rem;
   --size-gap-small: 0.5rem;
@@ -41,7 +42,7 @@ body {
   height: 100vh;
   min-height: 100vh;
   display: grid;
-  grid-template-columns: var(--size-header-width) 1fr;
+  grid-template-columns: var(--size-aside-width) 1fr;
   grid-template-rows: 1fr auto;
   grid-template-areas:
     "header main"
@@ -107,23 +108,25 @@ body > header {
         background-color: var(--color-white);
         border-radius: var(--size-border-radius-large);
 
-        &::before, &::after {
+        &::before,
+        &::after {
           color: var(--color-secondary);
         }
         &::before {
-          content: "{ "
+          content: "{ ";
         }
         &::after {
-          content: " }"
+          content: " }";
         }
       }
     }
   }
 
   > .brand {
-    align-self: center;
-    justify-self: center;
+    display: flex;
     grid-area: brand;
+    height: var(--size-header-height);
+    max-height: 3rem;
 
     svg {
       width: 100%;
@@ -135,6 +138,15 @@ body > header {
 body > main {
   grid-area: main;
   overflow: auto;
+
+  article {
+    padding-block: var(--size-gap);
+    header {
+      display: flex;
+      align-items: center;
+      height: var(--size-header-height);
+    }
+  }
 }
 
 body > footer {
@@ -149,7 +161,7 @@ body > footer {
 
   > .settings {
     display: flex;
-    justify-content: center;;
+    justify-content: center;
   }
 
   > .legal-nav {
@@ -216,11 +228,11 @@ a {
     flex-direction: row;
     align-items: center;
     grid-template-columns: 1fr auto;
-    grid-template-areas:
-      "brand burger";
+    grid-template-areas: "brand burger";
 
     .brand {
       justify-self: center;
+      margin-left: var(--size-burger);
     }
 
     .burger {
@@ -260,7 +272,6 @@ a {
     --size-page-padding: 10%;
   }
 }
-
 
 @media (max-width: 800px) {
   :root {
