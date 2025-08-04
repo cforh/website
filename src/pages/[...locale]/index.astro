@@ -7,10 +7,12 @@ import { generateGetStaticIndexPaths } from "../../utils/paths";
 export const getStaticPaths = generateGetStaticIndexPaths("[...locale]");
 
 const messages = useI18n("src/pages/[...locale]/index.astro", {
-  spotlightTitle: "Connect and Empower",
-  spotlightContent: "Join us in our mission to connect and empower individuals in the EdTech space.",
-  spotlightActionConnect: "Connect with us",
-  spotlightActionEmpower: "Empower yourself",
+  spotlightTitle: "Connects and Empowers",
+  spotlightContent: "Join us in our mission to connect and empower the EdTech space with our products.",
+  spotlightActionConnect: "Connect",
+  spotlightActionConnectLink: "/about",
+  spotlightActionEmpower: "Empower",
+  spotlightActionEmpowerLink: "/products",
 });
 
 const { translations } = Astro.props;
@@ -20,10 +22,10 @@ const { translations } = Astro.props;
   <Spotlight>
     <h1 slot="title">{messages.spotlightTitle}</h1>
     <p slot="content">{messages.spotlightContent}</p>
-    <div slot="actions">
-      <a href="/about" class="button">{messages.spotlightActionConnect}</a>
-      <a href="/contact" class="button">{messages.spotlightActionEmpower}</a>
-    </div>
+    <Fragment slot="actions">
+      <a href={messages.spotlightActionEmpowerLink} class="button primary">{messages.spotlightActionEmpower}</a>
+      <a href={messages.spotlightActionConnectLink} class="button">{messages.spotlightActionConnect}</a>
+    </Fragment>
     <div slot="stage">Stage</div>
   </Spotlight>
   <p>

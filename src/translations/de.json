@@ -4,13 +4,15 @@
     "version": "Version {version}"
   },
   "layouts/groups/Meta.astro": {
-    "description": "Verbinden und Fördern: Unsere Anwendungen zielen darauf ab, Menschen durch verbesserte Bildungstechnologie weiterzubringen."
+    "description": "Vernetzen und Stärken: Begleiten Sie uns auf unserer Mission, die EdTech-Welt zu vernetzen und mit unseren Produkten zu stärken."
   },
   "src/pages/[...locale]/index.astro": {
-    "spotlightTitle": "Verbinden und Fördern",
-    "spotlightContent": "Unsere Anwendungen zielen darauf ab, Menschen durch verbesserte Bildungstechnologie weiterzubringen.",
-    "spotlightActionConnect": "Kontakt aufnehmen",
-    "spotlightActionEmpower": "Bildung fördern"
+    "spotlightTitle": "Vernetzen und Stärken",
+    "spotlightContent": "Begleiten Sie uns auf unserer Mission, die EdTech-Welt zu vernetzen und mit unseren Produkten zu stärken.",
+    "spotlightActionConnect": "Vernetzen",
+    "spotlightActionConnectLink": "/de/ueber-uns",
+    "spotlightActionEmpower": "Stärken",
+    "spotlightActionEmpowerLink": "/de/produkte"
   },
   "pages/[...locale]/[products]/index.astro": {
     "title": "Produkte"

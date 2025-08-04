@@ -1,10 +1,25 @@
 .button {
   background: var(--color-white);
-  padding: var(--size-gap-small);
-  border-radius: 5px;
+  padding: var(--size-gap-small) var(--size-gap);
+  border-radius: var(--size-border-radius-large);
   font-weight: bold;
 
   &:first-of-type {
-    margin-inline-start: calc(var(--size-gap-small) * -1);
+    margin-inline-start: calc(var(--size-gap) * -1);
+  }
+
+  &:hover {
+    background: var(--color-secondary);
+    color: var(--color-white);
+  }
+
+  &.primary {
+    background: var(--color-primary);
+    color: var(--color-white);
+
+    &:hover {
+      background: var(--color-white);
+      color: var(--color-primary);
+    }
   }
 }

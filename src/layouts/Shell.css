@@ -126,7 +126,7 @@ body > header {
     display: flex;
     grid-area: brand;
     height: var(--size-header-height);
-    max-height: 3rem;
+    max-height: 5rem;
 
     svg {
       width: 100%;
@@ -267,14 +267,22 @@ a {
   }
 }
 
+@media (min-width: 1601px) {
+  :root {
+    --size-font: 18px;
+  }
+}
+
 @media (max-width: 1600px) {
   :root {
+    --size-font: 18px;
     --size-page-padding: 10%;
   }
 }
 
 @media (max-width: 800px) {
   :root {
+    --size-font: 16px;
     --size-page-padding: 1rem;
   }
 }
