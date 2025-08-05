@@ -108,6 +108,32 @@ const { host, orbits } = Astro.props;
       hide var(--speed) linear infinite;
     animation-delay: calc(var(--speed) * -1 * (var(--sibling-index) - 1) / var(--sibling-count));
   }
+
+  @container (width > 40rem) {
+    .orbiter {
+      justify-content: center;
+    }
+
+    .orbit {
+      left: 0;
+    }
+
+    .orbit > * {
+      --speed: 30s;
+      --speed: 30s;
+      offset-path: ellipse(calc(120px * var(--orbit)) calc(300px * var(--orbit)) at 0% 50%);
+      offset-distance: 0%;
+      offset-rotate: auto 90deg;
+      animation: revolve var(--speed) linear infinite;
+      animation-delay: calc(var(--speed) * -1 * (var(--sibling-index) - 1) / var(--sibling-count));
+    }
+  }
+
+  @container (width < 22rem) {
+    .orbit:nth-child(n + 2) {
+      display: none;
+    }
+  }
 </style>
 
 <script>

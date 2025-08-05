@@ -42,7 +42,7 @@
     width: 100%;
     display: grid;
     grid-template-rows: auto 1fr auto;
-    grid-template-columns: 1fr 20rem;
+    grid-template-columns: repeat(2, minmax(15rem, 1fr));
     grid-template-areas:
       "title stage"
       "content stage"
@@ -85,5 +85,6 @@
     margin-inline-start: -2rem;
     height: 100%;
     width: 100%;
+    container-type: inline-size;
   }
 </style>
