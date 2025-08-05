@@ -3,6 +3,8 @@ import { useI18n } from "astro-nanostores-i18n:runtime";
 import Spotlight from "../../layouts/sections/Spotlight.astro";
 import Shell from "../../layouts/Shell.astro";
 import { generateGetStaticIndexPaths } from "../../utils/paths";
+import Orbiter from "../../components/Orbiter.astro";
+import LogoSquare from "../../../assets/square.svg";
 
 export const getStaticPaths = generateGetStaticIndexPaths("[...locale]");
 
@@ -26,7 +28,34 @@ const { translations } = Astro.props;
       <a href={messages.spotlightActionEmpowerLink} class="button primary">{messages.spotlightActionEmpower}</a>
       <a href={messages.spotlightActionConnectLink} class="button">{messages.spotlightActionConnect}</a>
     </Fragment>
-    <div slot="stage">Stage</div>
+    <Orbiter
+      slot="stage"
+      host={{ alt: "Host Image", image: LogoSquare }}
+      orbits={[
+        [
+          { alt: "Host Image", image: LogoSquare },
+          { alt: "Host Image", image: LogoSquare },
+          { alt: "Host Image", image: LogoSquare },
+          { alt: "Host Image", image: LogoSquare },
+          { alt: "Host Image", image: LogoSquare },
+          { alt: "Host Image", image: LogoSquare },
+        ],
+        [
+          { alt: "Host Image", image: LogoSquare },
+          { alt: "Host Image", image: LogoSquare },
+          { alt: "Host Image", image: LogoSquare },
+          { alt: "Host Image", image: LogoSquare },
+          { alt: "Host Image", image: LogoSquare },
+          { alt: "Host Image", image: LogoSquare },
+          { alt: "Host Image", image: LogoSquare },
+          { alt: "Host Image", image: LogoSquare },
+          { alt: "Host Image", image: LogoSquare },
+          { alt: "Host Image", image: LogoSquare },
+          { alt: "Host Image", image: LogoSquare },
+          { alt: "Host Image", image: LogoSquare },
+        ],
+      ]}
+    />
   </Spotlight>
   <p>
     Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci facere iste numquam ex, velit eaque voluptate

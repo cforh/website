@@ -4,10 +4,6 @@
   border-radius: var(--size-border-radius-large);
   font-weight: bold;
 
-  &:first-of-type {
-    margin-inline-start: calc(var(--size-gap) * -1);
-  }
-
   &:hover {
     background: var(--color-secondary);
     color: var(--color-white);

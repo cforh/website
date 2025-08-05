@@ -37,19 +37,22 @@
   .wrapper {
     background-color: rgb(from var(--color-white) r g b / 0.5);
     border: var(--border-massive);
-    padding: var(--size-gap-large);
     border-radius: var(--size-border-radius-large);
     gap: var(--size-gap);
     width: 100%;
     display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: 1fr 20rem;
     grid-template-areas:
-      "title title"
+      "title stage"
       "content stage"
-      "actions actions";
+      "actions stage";
   }
 
   .title {
     grid-area: title;
+    padding-block-start: var(--size-gap-large);
+    padding-inline-start: var(--size-gap-large);
     align-self: end;
 
     h1,
@@ -64,17 +67,23 @@
 
   .content {
     grid-area: content;
+    padding-inline-start: var(--size-gap-large);
     font-size: var(--size-font-large);
   }
 
   .actions {
+    grid-area: actions;
+    padding-inline-start: var(--size-gap-large);
+    padding-block-end: var(--size-gap-large);
+    padding-top: 0;
     display: flex;
     gap: var(--size-gap-small);
-    grid-area: actions;
   }
 
   .stage {
     grid-area: stage;
-    align-self: center;
+    margin-inline-start: -2rem;
+    height: 100%;
+    width: 100%;
   }
 </style>
