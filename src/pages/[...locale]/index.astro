@@ -5,6 +5,16 @@ import Shell from "../../layouts/Shell.astro";
 import { generateGetStaticIndexPaths } from "../../utils/paths";
 import Orbiter from "../../components/Orbiter.astro";
 import LogoSquare from "../../../assets/square.svg";
+import MoodleLogo from "../../../assets/logos/moodle.svg";
+import GitLogo from "../../../assets/logos/git.svg";
+import TypescriptLogo from "../../../assets/logos/typescript.svg";
+import Css3Logo from "../../../assets/logos/css3.svg";
+import Html5Logo from "../../../assets/logos/html5.svg";
+import PostgresqlLogo from "../../../assets/logos/postgresql.svg";
+import ReactLogo from "../../../assets/logos/react.svg";
+import JavascriptLogo from "../../../assets/logos/javascript.svg";
+import AstroLogo from "../../../assets/logos/astro.svg";
+import { Image } from "astro:assets";
 
 export const getStaticPaths = generateGetStaticIndexPaths("[...locale]");
 
@@ -28,34 +38,33 @@ const { translations } = Astro.props;
       <a href={messages.spotlightActionEmpowerLink} class="button primary">{messages.spotlightActionEmpower}</a>
       <a href={messages.spotlightActionConnectLink} class="button">{messages.spotlightActionConnect}</a>
     </Fragment>
-    <Orbiter
-      slot="stage"
-      host={{ alt: "Host Image", image: LogoSquare }}
-      orbits={[
-        [
-          { alt: "Host Image", image: LogoSquare },
-          { alt: "Host Image", image: LogoSquare },
-          { alt: "Host Image", image: LogoSquare },
-          { alt: "Host Image", image: LogoSquare },
-          { alt: "Host Image", image: LogoSquare },
-          { alt: "Host Image", image: LogoSquare },
-        ],
-        [
-          { alt: "Host Image", image: LogoSquare },
-          { alt: "Host Image", image: LogoSquare },
-          { alt: "Host Image", image: LogoSquare },
-          { alt: "Host Image", image: LogoSquare },
-          { alt: "Host Image", image: LogoSquare },
-          { alt: "Host Image", image: LogoSquare },
-          { alt: "Host Image", image: LogoSquare },
-          { alt: "Host Image", image: LogoSquare },
-          { alt: "Host Image", image: LogoSquare },
-          { alt: "Host Image", image: LogoSquare },
-          { alt: "Host Image", image: LogoSquare },
-          { alt: "Host Image", image: LogoSquare },
-        ],
-      ]}
-    />
+    <Orbiter slot="stage">
+      <Image slot="host" alt="Our logo as the orbiters host" src={LogoSquare} />
+      <Fragment slot="orbits">
+        <div class="orbit">
+          <div>🎓</div>
+          <div>📚</div>
+          <div>💻</div>
+          <div>☁️</div>
+          <div>🧠</div>
+          <div>💬</div>
+          <div>🚀</div>
+          <div>💡</div>
+          <div>🧑‍🏫</div>
+        </div>
+        <div class="orbit">
+          <Image alt="Logo of Moodle" src={MoodleLogo} />
+          <Image alt="Logo of Git" src={GitLogo} />
+          <Image alt="Logo of Typescript" src={TypescriptLogo} />
+          <Image alt="Logo of CSS" src={Css3Logo} />
+          <Image alt="Logo of HTML" src={Html5Logo} />
+          <Image alt="Logo of PostgreSQL" src={PostgresqlLogo} />
+          <Image alt="Logo of React" src={ReactLogo} />
+          <Image alt="Logo of Javascript" src={JavascriptLogo} />
+          <Image alt="Logo of Astro" src={AstroLogo} />
+        </div>
+      </Fragment>
+    </Orbiter>
   </Spotlight>
   <p>
     Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci facere iste numquam ex, velit eaque voluptate
