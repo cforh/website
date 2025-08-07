@@ -34,7 +34,7 @@ const products = i18nProps(collection, {
   <Article>
     <h1 slot="title">{messages.title}</h1>
     <p>{messages.description}</p>
-    <section class="products-list">
+    <section class="products-list padding-breakout">
       {
         products.map((product) => (
           <Card title={product.data.title}>
@@ -54,7 +54,7 @@ const products = i18nProps(collection, {
 <style>
   .products-list {
     display: flex;
-    gap: var(--size-gap-large);
+    gap: var(--size-gap-huge);
     flex-direction: column;
   }
 </style>
