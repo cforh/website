@@ -4,17 +4,18 @@ import DerivedCover from "../components/DerivedCover.astro";
 
 type Props = {
   title: string;
+  titleLevel?: "h2" | "h3" | "h4" | "h5" | "h6";
   cover?: { alt: string; image: ImageMetadata };
   icon?: { alt: string; image: ImageMetadata };
 };
 
-const { title, cover, icon } = Astro.props;
+const { title, titleLevel: TitleTag = "h2", cover, icon } = Astro.props;
 ---
 
 <div class="card">
-  <slot name="title">
-    <h2>{title}</h2>
-  </slot>
+  <TitleTag class="card-title">
+    {title}
+  </TitleTag>
   <div class="card-description">
     <slot name="description">
       <p>Set description slot!</p>
@@ -33,3 +34,48 @@ const { title, cover, icon } = Astro.props;
     {icon && <img src={icon.image.src} alt={icon.alt} width={icon.image.width} height={icon.image.height} />}
   </div>
 </div>
+
+<style>
+  .card {
+    display: grid;
+    grid-template-columns: minmax(0, 60%) auto;
+    grid-template-areas:
+      "title spotlight"
+      "description spotlight"
+      "actions spotlight";
+    gap: var(--size-gap);
+    padding: var(--size-gap);
+    border: var(--border-massive);
+  }
+
+  .card-title {
+    grid-area: title;
+  }
+
+  .card-description {
+    grid-area: description;
+  }
+
+  .card-actions {
+    grid-area: actions;
+  }
+
+  .card-spotlight {
+    grid-area: spotlight;
+    height: 100%;
+    position: relative;
+
+    .card-spotlight-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+
+      svg {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+</style>

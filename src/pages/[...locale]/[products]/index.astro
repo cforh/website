@@ -19,6 +19,7 @@ const {
 const messages = useI18n("pages/[...locale]/[products]/index.astro", {
   title: "Products",
   action: params("Learn more about {product}"),
+  description: "Explore our products designed to connect and empower the EdTech space.",
 });
 const collection = (await getCollection("products")).filter((entry) => entry.data.locale === locale);
 const products = i18nProps(collection, {
@@ -32,17 +33,28 @@ const products = i18nProps(collection, {
   <Meta slot="meta" title={messages.title} />
   <Article>
     <h1 slot="title">{messages.title}</h1>
-    {
-      products.map((product) => (
-        <Card title={product.data.title}>
-          <p slot="description">{product.data.summary}</p>
-          <Fragment slot="actions">
-            <a href={product.translatedPath} class="button primary">
-              {messages.action({ product: product.data.title })}
-            </a>
-          </Fragment>
-        </Card>
-      ))
-    }
+    <p>{messages.description}</p>
+    <section class="products-list">
+      {
+        products.map((product) => (
+          <Card title={product.data.title}>
+            <p slot="description">{product.data.summary}</p>
+            <Fragment slot="actions">
+              <a href={product.translatedPath} class="button primary">
+                {messages.action({ product: product.data.title })}
+              </a>
+            </Fragment>
+          </Card>
+        ))
+      }
+    </section>
   </Article>
 </Shell>
+
+<style>
+  .products-list {
+    display: flex;
+    gap: var(--size-gap-large);
+    flex-direction: column;
+  }
+</style>

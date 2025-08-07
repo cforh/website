@@ -27,7 +27,6 @@ const { Content } = await render(page);
   <Meta slot="meta" title={page.data.title} />
   <Article>
     <h1 slot="title">{page.data.title}</h1>
-    <p>{page.data.summary}</p>
     <Content />
   </Article>
 </Shell>
