@@ -8,6 +8,7 @@ import Meta from "../../../layouts/groups/Meta.astro";
 import Article from "../../../layouts/templates/Article.astro";
 import { useI18n } from "astro-nanostores-i18n:runtime";
 import Card from "../../../components/Card.astro";
+import { params } from "@nanostores/i18n";
 
 export const getStaticPaths = generateGetStaticIndexPaths("[...locale]/[products]");
 
@@ -17,6 +18,7 @@ const {
 } = Astro.props;
 const messages = useI18n("pages/[...locale]/[products]/index.astro", {
   title: "Products",
+  action: params("Learn more about {product}"),
 });
 const collection = (await getCollection("products")).filter((entry) => entry.data.locale === locale);
 const products = i18nProps(collection, {
@@ -36,7 +38,7 @@ const products = i18nProps(collection, {
           <p slot="description">{product.data.summary}</p>
           <Fragment slot="actions">
             <a href={product.translatedPath} class="button primary">
-              Learn more
+              {messages.action({ product: product.data.title })}
             </a>
           </Fragment>
         </Card>

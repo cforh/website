@@ -15,6 +15,7 @@
     "spotlightActionEmpowerLink": "/de/produkte"
   },
   "pages/[...locale]/[products]/index.astro": {
-    "title": "Produkte"
+    "title": "Produkte",
+    "action": "Mehr über {product}"
   }
 }
