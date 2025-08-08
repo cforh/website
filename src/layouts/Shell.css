@@ -5,6 +5,7 @@
   --color-white: #f9f9f9;
   --color-black: #333333;
 
+  --size-font-quot: 3rem;
   --size-font-huge: 1.25rem;
   --size-font-large: 1.125rem;
   --size-font: 16px;
@@ -19,6 +20,7 @@
   --size-gap-large: 2rem;
   --size-burger: 2rem;
   --size-border-radius-large: 2rem;
+  --size-line-height-quot: 1.6;
 
   --border-massive: 20px solid rgb(from var(--color-white) r g b / 0.8);
 }
