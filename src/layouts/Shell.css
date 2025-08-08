@@ -22,6 +22,7 @@
   --size-gap-small: 0.5rem;
   --size-burger: 2rem;
   --size-border-radius-large: 2rem;
+  --size-border-radius: 1rem;
 
   --border-massive: 20px solid rgb(from var(--color-white) r g b / 0.8);
 }
