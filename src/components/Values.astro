@@ -1,0 +1,18 @@
+---
+import Value from "./Value.astro";
+
+const { items = [] } = Astro.props;
+---
+
+<div class="values-container">
+  {items.map((item) => <Value title={item.title} description={item.description} />)}
+</div>
+
+<style>
+  .values-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--size-gap);
+    justify-content: space-between;
+  }
+</style>

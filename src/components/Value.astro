@@ -1,0 +1,25 @@
+---
+const { title, description } = Astro.props;
+---
+
+<div class="value">
+  <h3>{title}</h3>
+  <p>{description}</p>
+</div>
+
+<style>
+  .value {
+    padding: var(--size-gap);
+    margin: 0 0;
+    border-radius: var(--size-gap-small);
+    background-color: var(--color-black);
+    max-width: 25%;
+  }
+  h3 {
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+  }
+  p {
+    color: var(--color-secondary);
+  }
+</style>

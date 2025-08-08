@@ -2,13 +2,19 @@
 path: about-us
 title: About us
 ---
+import Values from '/workspaces/website/src/components/Values.astro';
+
 ### Our Story
 We are a small team from Zurich, Switzerland, dedicated to providing high-quality services and products for the Educational Technology industry.
 
 ### Values
-- Evolutionary: We are committed to continuous incremental improvements.
-- Empathetic: We prioritize understanding and addressing the needs of our users.
-- Aspirational: We start with small projects and aim to grow into larger solutions.
+<Values
+  items={[
+    { title: 'Evolutionary', description: 'We are committed to continuous incremental improvements.' },
+    { title: 'Empathetic', description: 'We prioritize understanding and addressing the needs of our users.' },
+    { title: 'Aspirational', description: 'We start with small projects and aim to grow into larger solutions.' }
+  ]}
+/>
 
 ### Inspirations
 While navigating the busy landscape of modern education, we noticed something troubling: LMS platforms were abundant and feature-rich, yet often frustrating to use. Simple tasks like preparing a lesson or grading assignments in Moodle could feel like a struggle. We believe educators deserve better tools that work with them, not against them. That's why we started building EdTech products designed to simplify, support, and empower teaching.
