@@ -6,8 +6,8 @@
   --color-white: #f9f9f9;
   --color-black: #333333;
 
-  --size-font-huge: 1.25rem;
-  --size-font-large: 1.125rem;
+  --size-font-huge: 1.5rem;
+  --size-font-large: 1.25rem;
   --size-font: 16px;
   --size-font-small: 0.875rem;
   --size-font-tiny: 0.75rem;
@@ -251,10 +251,12 @@ td, th {
     align-items: center;
     grid-template-columns: 1fr auto;
     grid-template-areas: "brand burger";
+    gap: var(--size-gap-large);
 
     .brand {
       justify-self: center;
       margin-left: var(--size-burger);
+      max-height: 3rem;
     }
 
     .burger {

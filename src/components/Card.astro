@@ -44,10 +44,15 @@ const { title, titleLevel: TitleTag = "h2", cover, icon } = Astro.props;
       "description spotlight"
       "actions spotlight";
     gap: var(--size-gap);
+    font-size: var(--size-font-large);
+    background: var(--color-white-97);
+    padding: var(--size-gap-large);
+    border-radius: var(--size-border-radius-large);
   }
 
   .card-title {
     grid-area: title;
+    margin: 0;
   }
 
   .card-description {
@@ -71,6 +76,7 @@ const { title, titleLevel: TitleTag = "h2", cover, icon } = Astro.props;
       height: 100%;
 
       svg {
+        border-radius: var(--size-border-radius-large);
         width: 100%;
         height: 100%;
       }
