@@ -1,9 +1,15 @@
 ---
+import type { HTMLAttributes } from "astro/types";
 
+type Props = HTMLAttributes<"section">;
+
+const { ...attributes } = Astro.props;
 ---
 
-<section id="connect">
-  <h2>Contact us!</h2>
+<section {...attributes}>
+  <div class="title">
+    <slot name="title" />
+  </div>
 </section>
 
 <style>

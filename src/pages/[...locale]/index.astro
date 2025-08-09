@@ -18,8 +18,8 @@ import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 import { i18nProps } from "astro-loader-i18n";
 import slug from "limax";
-import Empower from "../../layouts/sections/Empower.astro";
-import Connect from "../../layouts/sections/Connect.astro";
+import Slices from "../../layouts/sections/Slices.astro";
+import Squares from "../../layouts/sections/Squares.astro";
 
 export const getStaticPaths = generateGetStaticIndexPaths("[...locale]");
 
@@ -27,9 +27,11 @@ const messages = useI18n("src/pages/[...locale]/index.astro", {
   spotlightTitle: "Empowers and Connects",
   spotlightContent: "Join us in our mission to empower and connect the EdTech space with our products.",
   spotlightActionConnect: "Connect",
-  spotlightActionConnectLink: "/about-us",
+  spotlightActionConnectLink: "connect",
   spotlightActionEmpower: "Empower",
   spotlightActionEmpowerLink: "/products",
+  slicesTitle: "Products that empower",
+  squaresTitle: "Connect with us",
 });
 
 const {
@@ -40,18 +42,18 @@ const {
 const collection = (await getCollection("products")).filter((entry) => entry.data.locale === locale);
 const products = i18nProps(collection, {
   ...defaultPropsAndParamsOptions,
-  routePattern: `${Astro.routePattern}/[product]`,
+  routePattern: `${Astro.routePattern}/[products]/[product]`,
   generateSegments: (entry) => ({ product: slug(entry.data.title) }),
 });
 ---
 
 <Shell translations={translations} bodyClasses="scroll-snapping-block">
-  <Spotlight>
+  <Spotlight id="spotlight">
     <h1 slot="title">{messages.spotlightTitle}</h1>
     <p slot="content">{messages.spotlightContent}</p>
     <Fragment slot="actions">
       <a href={messages.spotlightActionEmpowerLink} class="button primary">{messages.spotlightActionEmpower}</a>
-      <a href={messages.spotlightActionConnectLink} class="button">{messages.spotlightActionConnect}</a>
+      <a href={`#${messages.spotlightActionConnectLink}`} class="button">{messages.spotlightActionConnect}</a>
     </Fragment>
     <Orbiter slot="stage">
       <Image slot="host" alt="Our logo as the orbiters host" src={LogoSquare} />
@@ -81,14 +83,47 @@ const products = i18nProps(collection, {
       </Fragment>
     </Orbiter>
   </Spotlight>
-  <Empower />
-  <Connect />
+  <Slices id="empower">
+    <h2 slot="title">{messages.slicesTitle}</h2>
+    <Fragment slot="content">
+      {
+        products.map((product) => (
+          <article>
+            <h3>{product.data.title}</h3>
+            <p>{product.data.summary}</p>
+            <a href={product.translatedPath} class="button primary">
+              {messages.spotlightActionEmpower}
+            </a>
+          </article>
+        ))
+      }
+    </Fragment>
+  </Slices>
+  <Squares id={messages.spotlightActionConnectLink}>
+    <h2 slot="title">{messages.squaresTitle}</h2>
+  </Squares>
 </Shell>
 
 <style>
+  h1,
+  h2,
+  h3 {
+    margin: 0;
+  }
+
   :global(main) {
     display: flex;
     flex-direction: column;
     gap: 1rem;
+  }
+
+  #empower article {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+
+    .button {
+      width: fit-content;
+      justify-self: center;
+    }
   }
 </style>

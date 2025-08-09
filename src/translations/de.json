@@ -10,9 +10,11 @@
     "spotlightTitle": "Stärken und Vernetzen",
     "spotlightContent": "Begleiten Sie uns auf unserer Mission, die EdTech-Welt zu stärken und mit unseren Produkten zu vernetzen.",
     "spotlightActionConnect": "Vernetzen",
-    "spotlightActionConnectLink": "/de/ueber-uns",
+    "spotlightActionConnectLink": "vernetzen",
     "spotlightActionEmpower": "Stärken",
-    "spotlightActionEmpowerLink": "/de/produkte"
+    "spotlightActionEmpowerLink": "/de/produkte",
+    "slicesTitle": "Gestärkt durch unsere Produkte",
+    "squaresTitle": "Vernetzen Sie sich mit uns"
   },
   "pages/[...locale]/[products]/index.astro": {
     "title": "Produkte",

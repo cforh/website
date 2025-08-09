@@ -1,8 +1,12 @@
 ---
+import type { HTMLAttributes } from "astro/types";
 
+type Props = HTMLAttributes<"section">;
+
+const { ...attributes } = Astro.props;
 ---
 
-<section id="spotlight">
+<section {...attributes}>
   <div class="wrapper">
     <div class="title">
       <slot name="title" />
@@ -54,15 +58,6 @@
     padding-block-start: var(--size-gap-large);
     padding-inline-start: var(--size-gap-large);
     align-self: end;
-
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      margin: 0;
-    }
   }
 
   .content {
