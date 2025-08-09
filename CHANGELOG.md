@@ -1,5 +1,11 @@
 # website
 
+## 0.0.6
+
+### Patch Changes
+
+- d6a0988: Add sharp as dependency
+
 ## 0.0.5
 
 ### Patch Changes
