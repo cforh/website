@@ -1,5 +1,23 @@
 # website
 
+## 0.0.5
+
+### Patch Changes
+
+- 21b7bb2: Add legal navigation
+- a5e1b36: Add fonts
+- 8ba484c: Add favicon
+- da6e7ff: Add language switcher
+- c727a58: Scaffold products
+- be98baf: Add responsive menu
+- b9d423b: Add eslint and prettier
+- 4bfd5d8: Add not found page
+- 48d9261: Add sitemap xml
+- 0d3fbf1: Add spotlight
+- fd0e64b: Add navigation
+- 19cba77: Add about us page
+- 2f23b40: Set up i18n
+
 ## 0.0.4
 
 ### Patch Changes
