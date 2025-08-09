@@ -5,6 +5,7 @@ title: About us
 import Values from '/workspaces/website/src/components/Values.astro';
 import QuoteBox from '/workspaces/website/src/components/QuoteBox.astro';
 import Section from '/workspaces/website/src/components/Section.astro';
+import Team from '/workspaces/website/src/components/Team.astro';
 
 <Section title="Our Story">
 We are a small team from Zurich, Switzerland, dedicated to providing high-quality services and products for the Educational Technology industry.
@@ -22,16 +23,25 @@ We are a small team from Zurich, Switzerland, dedicated to providing high-qualit
 
 <Section title="Inspirations">
   <QuoteBox>
-  While navigating the busy landscape of modern education, we noticed something troubling: LMS platforms were abundant and feature-rich, yet often frustrating to use. Simple tasks like preparing a lesson or grading assignments in Moodle could feel like a struggle. We believe educators deserve better tools that work with them, not against them. That's why we started building EdTech products designed to simplify, support, and empower teaching.
+  While navigating the busy landscape of modern education, we noticed something troubling: LMS platforms were abundant and feature-rich, yet often frustrating to use. We believe educators deserve better tools that work with them, not against them. That's why we started building EdTech products designed to simplify, support, and empower teaching.
   </QuoteBox>
 </Section>
 
 <Section title="Team">
-- Robin: \
-From a young 👦 age I was enthusiastic about technology. Especially computers 💻 and software development 👨‍💻 caught my interest. I like to develop web applications and apps for mobile devices. Also in the future, I intend to focus on this topics and elaborate my knowledge about them.
-It's easy and fun for me to interact with colleagues to bring a project further and reach given targets. I can take responsibility for a small team and lead it with clear instructions and an agile project management on wards.
-- Yixuan: \
-With a background in Natural Language Processing and a passion for thoughtful design, I transitioned into web and software development to build tools and experiences that are both functional and visually engaging. I enjoy turning ideas into working products—especially when I can shape both how they look and how they work.
+  <Team
+    members={[
+      {
+        name: 'Robin',
+        image: '/images/robin.jpg',
+        description: 'It is easy and fun for me to interact with colleagues to bring a project further and reach given targets. I can take responsibility for a small team and lead it with clear instructions and an agile project management on wards.'
+      },
+      {
+        name: 'Yixuan',
+        image: '/images/yixuan.jpg',
+        description: 'With a background in Natural Language Processing and a passion for thoughtful design, I transitioned into web and software development to build tools and experiences that are both functional and visually engaging. I enjoy turning ideas into working products, especially when I can shape both how they look and how they work.'
+      }
+    ]}
+  />
 </Section>
 
 <Section title="Future Goals">
