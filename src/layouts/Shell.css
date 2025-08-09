@@ -6,6 +6,7 @@
   --color-white: #f9f9f9;
   --color-black: #333333;
 
+  --size-font-quot: 3rem;
   --size-font-huge: 1.5rem;
   --size-font-large: 1.25rem;
   --size-font: 16px;
@@ -22,6 +23,9 @@
   --size-gap-small: 0.5rem;
   --size-burger: 2rem;
   --size-border-radius-large: 2rem;
+  --size-line-height-quot: 1.6;
+  --size-team-width: 160px;
+  --size-team-height: 160px;
   --size-border-radius: 1rem;
 
   --transition-slow: 0.7s ease-in-out;

@@ -1,0 +1,43 @@
+---
+
+---
+
+<blockquote class="quote-box">
+  <span class="quote-mark left">“</span>
+  <div class="quote-content">
+    <slot />
+  </div>
+  <span class="quote-mark right">”</span>
+</blockquote>
+
+<style>
+  .quote-box {
+    position: relative;
+    padding: var(--size-gap-large);
+    border-radius: var(--size-gap-small);
+    font-size: var(--size-font);
+    line-height: var(--size-line-height-quot);
+    margin-bottom: 0;
+  }
+
+  .quote-content {
+    position: relative;
+  }
+
+  .quote-mark {
+    position: absolute;
+    font-size: var(--size-font-quot);
+    color: var(--color-primary);
+    font-weight: bold;
+  }
+
+  .quote-mark.left {
+    top: 0;
+    left: var(--size-gap);
+  }
+
+  .quote-mark.right {
+    bottom: 0;
+    right: var(--size-gap);
+  }
+</style>

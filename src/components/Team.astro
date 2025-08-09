@@ -1,0 +1,92 @@
+---
+// Team.astro
+const { members = [] } = Astro.props;
+---
+
+<div class="team-grid">
+  {
+    members.map((member) => (
+      <div class="member-card" title={member.name}>
+        <div class="member-inner">
+          <div class="member-front">
+            <img src={member.image} alt={member.name} class="avatar" />
+            <p class="name">{member.name}</p>
+          </div>
+          <div class="member-back">
+            <p class="description">{member.description}</p>
+          </div>
+        </div>
+      </div>
+    ))
+  }
+</div>
+
+<style>
+  .team-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--size-gap-large);
+    justify-content: flex-start;
+  }
+
+  .member-card {
+    width: var(--size-team-width);
+    height: var(--size-team-height);
+    margin: var(--size-gap-large);
+  }
+
+  .member-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+  }
+
+  .member-card:hover .member-inner {
+    transform: rotateY(180deg);
+  }
+
+  .member-front,
+  .member-back {
+    overflow-y: auto;
+    scrollbar-width: thin;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: var(--size-gap);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--size-gap);
+    background: var(--color-white-97);
+  }
+
+  .member-back {
+    transform: rotateY(180deg);
+    background: var(--color-primary);
+    color: var(--color-white);
+  }
+
+  .avatar {
+    width: 60%;
+    height: 60%;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: var(--size-gap-small);
+    border: 1px solid var(--color-primary);
+  }
+
+  .name {
+    font-weight: bold;
+    color: var(--color-primary);
+  }
+
+  .description {
+    font-size: var(--size-font-small);
+    line-height: var(--size-line-height-quot);
+    color: var(--color-white);
+  }
+</style>
