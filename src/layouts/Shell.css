@@ -24,7 +24,7 @@
   --size-border-radius-large: 2rem;
   --size-border-radius: 1rem;
 
-  --border-massive: 20px solid rgb(from var(--color-white) r g b / 0.8);
+  --border-massive: 1rem solid rgb(from var(--color-white) r g b / 0.8);
 }
 
 html {
@@ -226,6 +226,14 @@ td, th {
 
 .padding-breakout {
   margin: 0 var(--size-page-padding-breakout);
+}
+
+.scroll-snapping-block {
+  scroll-snap-type: block mandatory;
+
+  & > * {
+    scroll-snap-align: start;
+  }
 }
 
 @media (max-width: 1280px) {

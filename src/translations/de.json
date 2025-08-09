@@ -4,11 +4,11 @@
     "version": "Version {version}"
   },
   "layouts/groups/Meta.astro": {
-    "description": "Vernetzen und Stärken: Begleiten Sie uns auf unserer Mission, die EdTech-Welt zu vernetzen und mit unseren Produkten zu stärken."
+    "description": "Stärken und vernetzen: Begleiten Sie uns auf unserer Mission, die EdTech-Welt zu stärken und mit unseren Produkten zu vernetzen."
   },
   "src/pages/[...locale]/index.astro": {
-    "spotlightTitle": "Vernetzen und Stärken",
-    "spotlightContent": "Begleiten Sie uns auf unserer Mission, die EdTech-Welt zu vernetzen und mit unseren Produkten zu stärken.",
+    "spotlightTitle": "Stärken und Vernetzen",
+    "spotlightContent": "Begleiten Sie uns auf unserer Mission, die EdTech-Welt zu stärken und mit unseren Produkten zu vernetzen.",
     "spotlightActionConnect": "Vernetzen",
     "spotlightActionConnectLink": "/de/ueber-uns",
     "spotlightActionEmpower": "Stärken",

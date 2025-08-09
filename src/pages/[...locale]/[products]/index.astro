@@ -19,7 +19,7 @@ const {
 const messages = useI18n("pages/[...locale]/[products]/index.astro", {
   title: "Products",
   action: params("Learn more about {product}"),
-  description: "Explore our products designed to connect and empower the EdTech space.",
+  description: "Explore our products designed to empower and connect the EdTech space.",
 });
 const collection = (await getCollection("products")).filter((entry) => entry.data.locale === locale);
 const products = i18nProps(collection, {

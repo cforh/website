@@ -10,9 +10,11 @@ import Meta from "./groups/Meta.astro";
 
 type Props = {
   translations?: Record<string, string>;
+  bodyClasses?: string | string[];
+  mainClasses?: string | string[];
 };
 
-const { translations } = Astro.props;
+const { translations, bodyClasses, mainClasses } = Astro.props;
 ---
 
 <html>
@@ -21,9 +23,9 @@ const { translations } = Astro.props;
       <Meta />
     </slot>
   </Head>
-  <body>
+  <body class:list={[bodyClasses]}>
     <Header />
-    <main data-pagefind-body transition:animate="fade">
+    <main data-pagefind-body transition:animate="fade" class:list={[mainClasses]}>
       <slot />
     </main>
     <Footer translations={translations} />
