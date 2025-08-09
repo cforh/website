@@ -28,9 +28,9 @@
 }
 
 html {
-  height: 100%;
   display: flex;
   flex-direction: column;
+  scroll-snap-type: y proximity;
 }
 
 html,
@@ -43,9 +43,8 @@ body {
 }
 
 body {
-  height: 100vh;
-  min-height: 100vh;
   display: grid;
+  min-height: 100vh;
   grid-template-columns: var(--size-aside-width) 1fr;
   grid-template-rows: 1fr auto;
   grid-template-areas:
@@ -67,6 +66,9 @@ body > main > * {
 }
 
 body > :is(header, footer) {
+  position: sticky;
+  top: 0;
+  bottom: 0;
   gap: var(--size-gap);
   padding: var(--size-gap);
   background-color: var(--color-white-97);
@@ -75,6 +77,7 @@ body > :is(header, footer) {
 
 body > header {
   grid-area: header;
+  height: 95vh;
   display: grid;
   grid-template-rows: min-content;
   grid-template-areas:
@@ -141,7 +144,6 @@ body > header {
 
 body > main {
   grid-area: main;
-  overflow: auto;
 }
 
 body > footer {
@@ -228,15 +230,15 @@ td, th {
   margin: 0 var(--size-page-padding-breakout);
 }
 
-.scroll-snapping-block {
-  scroll-snap-type: block mandatory;
-
-  & > * {
-    scroll-snap-align: start;
-  }
+.scroll-snapping-block :is(main > section, header, footer) {
+  scroll-snap-align: start;
 }
 
 @media (max-width: 1280px) {
+  html {
+    scroll-snap-type: none;
+  }
+
   body {
     height: 100%;
     grid-template-columns: 1fr;
@@ -252,10 +254,12 @@ td, th {
   }
 
   body > :is(header, footer) {
+    position: relative;
     border-inline-end: none;
   }
 
   body > header {
+    height: auto;
     flex-direction: row;
     align-items: center;
     grid-template-columns: 1fr auto;
