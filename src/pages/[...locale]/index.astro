@@ -18,8 +18,8 @@ import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 import { i18nProps } from "astro-loader-i18n";
 import slug from "limax";
-import Slices from "../../layouts/sections/Slices.astro";
-import Squares from "../../layouts/sections/Squares.astro";
+import Grid from "../../layouts/sections/Grid.astro";
+import Contact from "../../layouts/groups/Contact.astro";
 
 export const getStaticPaths = generateGetStaticIndexPaths("[...locale]");
 
@@ -27,11 +27,14 @@ const messages = useI18n("src/pages/[...locale]/index.astro", {
   spotlightTitle: "Empowers and Connects",
   spotlightContent: "Join us in our mission to empower and connect the EdTech space with our products.",
   spotlightActionConnect: "Connect",
-  spotlightActionConnectLink: "connect",
   spotlightActionEmpower: "Empower",
   spotlightActionEmpowerLink: "/products",
-  slicesTitle: "Products that empower",
-  squaresTitle: "Connect with us",
+  empowerTitle: "Products that empower",
+  connectTitle: "Connect with us",
+  connectOldTitle: "Like in the old times",
+  connectOldContent: "Don't hesitate to email or call us!",
+  connectModernTitle: "How we do it today",
+  connectModernContent: "Have a look at our social media:",
 });
 
 const {
@@ -53,7 +56,7 @@ const products = i18nProps(collection, {
     <p slot="content">{messages.spotlightContent}</p>
     <Fragment slot="actions">
       <a href={messages.spotlightActionEmpowerLink} class="button primary">{messages.spotlightActionEmpower}</a>
-      <a href={`#${messages.spotlightActionConnectLink}`} class="button">{messages.spotlightActionConnect}</a>
+      <a href="#connect" class="button">{messages.spotlightActionConnect}</a>
     </Fragment>
     <Orbiter slot="stage">
       <Image slot="host" alt="Our logo as the orbiters host" src={LogoSquare} />
@@ -83,8 +86,8 @@ const products = i18nProps(collection, {
       </Fragment>
     </Orbiter>
   </Spotlight>
-  <Slices id="empower">
-    <h2 slot="title">{messages.slicesTitle}</h2>
+  <Grid id="empower">
+    <h2 slot="title">{messages.empowerTitle}</h2>
     <Fragment slot="content">
       {
         products.map((product) => (
@@ -98,10 +101,27 @@ const products = i18nProps(collection, {
         ))
       }
     </Fragment>
-  </Slices>
-  <Squares id={messages.spotlightActionConnectLink}>
-    <h2 slot="title">{messages.squaresTitle}</h2>
-  </Squares>
+  </Grid>
+  <Grid id="connect">
+    <h2 slot="title">{messages.connectTitle}</h2>
+    <Fragment slot="content">
+      <article>
+        <h3>{messages.connectOldTitle}</h3>
+        <p>{messages.connectOldContent}</p>
+        <Contact />
+      </article>
+      <article>
+        <h3>{messages.connectModernTitle}</h3>
+        <p>{messages.connectModernContent}</p>
+        <nav>
+          <ul>
+            <li><a href="https://linkedin.com/company/code-4-humans">LinkedIn</a></li>
+            <li><a href="https://github.com/cforh">Github</a></li>
+          </ul>
+        </nav>
+      </article>
+    </Fragment>
+  </Grid>
 </Shell>
 
 <style>
@@ -117,13 +137,43 @@ const products = i18nProps(collection, {
     gap: 1rem;
   }
 
+  #spotlight,
+  #empower,
+  #connect {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-size: 100% 100%;
+    background-position:
+      0px 0px,
+      0px 0px;
+  }
+
+  #spotlight {
+    background-image:
+      radial-gradient(60% 100% at 75% 25%, rgb(from var(--color-primary) r g b / 0.3) 0%, transparent 100%),
+      radial-gradient(60% 100% at 25% 75%, rgb(from var(--color-secondary) r g b / 0.3) 0%, transparent 100%);
+  }
+
+  #empower {
+    background-image:
+      radial-gradient(60% 100% at 25% 75%, rgb(from var(--color-primary) r g b / 0.3) 0%, transparent 100%),
+      radial-gradient(60% 100% at 75% 25%, rgb(from var(--color-secondary) r g b / 0.3) 0%, transparent 100%);
+  }
+
+  #connect {
+    background-image:
+      radial-gradient(60% 100% at 75% 75%, rgb(from var(--color-primary) r g b / 0.3) 0%, transparent 100%),
+      radial-gradient(60% 100% at 25% 25%, rgb(from var(--color-secondary) r g b / 0.3) 0%, transparent 100%);
+  }
+
   #empower article {
     display: grid;
     grid-template-rows: auto 1fr auto;
 
     .button {
       width: fit-content;
-      justify-self: center;
     }
   }
 </style>

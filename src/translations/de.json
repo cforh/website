@@ -10,11 +10,14 @@
     "spotlightTitle": "Stärken und Vernetzen",
     "spotlightContent": "Begleiten Sie uns auf unserer Mission, die EdTech-Welt zu stärken und mit unseren Produkten zu vernetzen.",
     "spotlightActionConnect": "Vernetzen",
-    "spotlightActionConnectLink": "vernetzen",
     "spotlightActionEmpower": "Stärken",
     "spotlightActionEmpowerLink": "/de/produkte",
-    "slicesTitle": "Gestärkt durch unsere Produkte",
-    "squaresTitle": "Vernetzen Sie sich mit uns"
+    "empowerTitle": "Gestärkt durch unsere Produkte",
+    "connectTitle": "Vernetzen Sie sich mit uns",
+    "connectOldTitle": "Wie in alten Zeiten",
+    "connectOldContent": "Zögern Sie nicht, uns eine E-Mail zu schreiben oder anzurufen!",
+    "connectModernTitle": "So wie wir es heute machen",
+    "connectModernContent": "Schauen Sie doch auf unseren Social-Media-Kanälen vorbei:"
   },
   "pages/[...locale]/[products]/index.astro": {
     "title": "Produkte",
