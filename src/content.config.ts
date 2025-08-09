@@ -27,7 +27,7 @@ const pagesCollection = defineCollection({
     z.object({
       path: z.string(),
       title: z.string(),
-      template: z.enum(["article", "article-with-aside"]).optional().default("article"),
+      template: z.enum(["article"]).optional().default("article"),
     }),
   ),
 });
@@ -36,6 +36,7 @@ const productsCollection = defineCollection({
   schema: extendI18nLoaderSchema(
     z.object({
       title: z.string(),
+      summary: z.string(),
     }),
   ),
 });

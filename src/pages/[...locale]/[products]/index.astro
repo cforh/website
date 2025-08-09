@@ -7,19 +7,25 @@ import { getCollection } from "astro:content";
 import Meta from "../../../layouts/groups/Meta.astro";
 import Article from "../../../layouts/templates/Article.astro";
 import { useI18n } from "astro-nanostores-i18n:runtime";
+import Card from "../../../components/Card.astro";
+import { params } from "@nanostores/i18n";
 
 export const getStaticPaths = generateGetStaticIndexPaths("[...locale]/[products]");
 
-const { translations } = Astro.props;
+const {
+  translations,
+  data: { locale },
+} = Astro.props;
 const messages = useI18n("pages/[...locale]/[products]/index.astro", {
   title: "Products",
+  action: params("Learn more about {product}"),
+  description: "Explore our products designed to empower and connect the EdTech space.",
 });
-
-const collection = await getCollection("products");
+const collection = (await getCollection("products")).filter((entry) => entry.data.locale === locale);
 const products = i18nProps(collection, {
   ...defaultPropsAndParamsOptions,
-  routePattern: `${Astro.routePattern}/[...product]`,
-  generateSegments: (entry) => ({ product: `${entry.data.contentPath}/${slug(entry.data.title)}` }),
+  routePattern: `${Astro.routePattern}/[product]`,
+  generateSegments: (entry) => ({ product: slug(entry.data.title) }),
 });
 ---
 
@@ -27,6 +33,29 @@ const products = i18nProps(collection, {
   <Meta slot="meta" title={messages.title} />
   <Article>
     <h1 slot="title">{messages.title}</h1>
-    {products}
+    <p>{messages.description}</p>
+    <section class="products-list padding-breakout">
+      {
+        products.map((product) => (
+          <Card title={product.data.title}>
+            <p slot="description">{product.data.summary}</p>
+            <Fragment slot="actions">
+              <a href={product.translatedPath} class="button primary">
+                {messages.action({ product: product.data.title })}
+              </a>
+            </Fragment>
+          </Card>
+        ))
+      }
+    </section>
   </Article>
 </Shell>
+
+<style>
+  .products-list {
+    display: flex;
+    margin-top: var(--size-gap-huge);
+    gap: var(--size-gap-huge);
+    flex-direction: column;
+  }
+</style>

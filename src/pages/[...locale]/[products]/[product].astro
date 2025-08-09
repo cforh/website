@@ -1,0 +1,32 @@
+---
+import { i18nPropsAndParams } from "astro-loader-i18n";
+import { defaultPropsAndParamsOptions } from "../../../utils/paths";
+import Meta from "../../../layouts/groups/Meta.astro";
+import { render } from "astro:content";
+import { getCollection } from "astro:content";
+import Shell from "../../../layouts/Shell.astro";
+import Article from "../../../layouts/templates/Article.astro";
+import slug from "limax";
+
+export const getStaticPaths = async () => {
+  const routePattern = "[...locale]/[products]/[product]";
+  const collection = await getCollection("products");
+
+  return i18nPropsAndParams(collection, {
+    ...defaultPropsAndParamsOptions,
+    routePattern,
+    generateSegments: (entry) => ({ product: slug(entry.data.title) }),
+  });
+};
+
+const page = Astro.props;
+const { Content } = await render(page);
+---
+
+<Shell translations={page.translations}>
+  <Meta slot="meta" title={page.data.title} />
+  <Article>
+    <h1 slot="title">{page.data.title}</h1>
+    <Content />
+  </Article>
+</Shell>

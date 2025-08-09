@@ -1,0 +1,52 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+type Props = HTMLAttributes<"section">;
+
+const { ...attributes } = Astro.props;
+---
+
+<section {...attributes}>
+  <div class="wrapper">
+    <div class="title">
+      <slot name="title" />
+    </div>
+    <div class="content">
+      <slot name="content" />
+    </div>
+  </div>
+</section>
+
+<style>
+  section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 100vh;
+    background-size: 100% 100%;
+    background-position:
+      0px 0px,
+      0px 0px;
+    background-image:
+      radial-gradient(60% 100% at 25% 75%, rgb(from var(--color-primary) r g b / 0.3) 0%, transparent 100%),
+      radial-gradient(60% 100% at 75% 25%, rgb(from var(--color-secondary) r g b / 0.3) 0%, transparent 100%);
+  }
+
+  .wrapper {
+    display: grid;
+    gap: var(--size-gap-large);
+    box-sizing: border-box;
+    width: 100%;
+    background-color: rgb(from var(--color-white) r g b / 0.5);
+    border: var(--border-massive);
+    border-radius: var(--size-border-radius-large);
+    padding: var(--size-gap-large);
+  }
+
+  .content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    gap: var(--size-gap-large);
+  }
+</style>
