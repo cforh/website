@@ -1,5 +1,14 @@
 ---
-// Team.astro
+interface Member {
+  name: string;
+  image: string;
+  description: string;
+}
+
+interface Props {
+  members: Member[];
+}
+
 const { members = [] } = Astro.props;
 ---
 
