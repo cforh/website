@@ -1,13 +1,11 @@
 ---
-interface Member {
-  name: string;
-  image: string;
-  description: string;
-}
-
-interface Props {
-  members: Member[];
-}
+type Props = {
+  members?: {
+    name: string;
+    image: string;
+    description: string;
+  }[];
+};
 
 const { members = [] } = Astro.props;
 ---
