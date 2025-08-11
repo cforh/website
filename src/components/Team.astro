@@ -1,5 +1,4 @@
 ---
-// Team.astro
 const { members = [] } = Astro.props;
 ---
 
@@ -9,11 +8,15 @@ const { members = [] } = Astro.props;
       <div class="member-card" title={member.name}>
         <div class="member-inner">
           <div class="member-front">
-            <img src={member.image} alt={member.name} class="avatar" />
-            <p class="name">{member.name}</p>
+            <div class="member-content">
+              <img src={member.image} alt={member.name} class="avatar" />
+              <p class="name">{member.name}</p>
+            </div>
           </div>
           <div class="member-back">
-            <p class="description">{member.description}</p>
+            <div class="member-content">
+              <p class="description">{member.description}</p>
+            </div>
           </div>
         </div>
       </div>
@@ -32,7 +35,8 @@ const { members = [] } = Astro.props;
   .member-card {
     width: var(--size-team-width);
     height: var(--size-team-height);
-    margin: var(--size-gap-large);
+    perspective: 1000px;
+    perspective-origin: center center;
   }
 
   .member-inner {
@@ -60,7 +64,6 @@ const { members = [] } = Astro.props;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: var(--size-gap);
     background: var(--color-white-97);
   }
 
@@ -68,6 +71,16 @@ const { members = [] } = Astro.props;
     transform: rotateY(180deg);
     background: var(--color-primary);
     color: var(--color-white);
+  }
+
+  .member-content {
+    width: 100%;
+    height: 100%;
+    padding: var(--size-gap);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .avatar {
