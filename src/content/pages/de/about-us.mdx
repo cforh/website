@@ -2,11 +2,48 @@
 path: ueber-uns
 title: Über uns
 ---
+import Values from '../../../components/Values.astro';
+import QuoteBox from '../../../components/QuoteBox.astro';
+import Section from '../../../components/Section.astro';
+import Team from '../../../components/Team.astro';
 
+<Section title="Unsere Geschichte">
 Wir sind ein kleines Team aus Zürich, Schweiz, das sich der Bereitstellung hochwertiger Dienstleistungen und Produkte im Bereich der Bildung verschrieben hat.
+</Section>
 
-## Werte
+<Section title="Werte">
+  <Values
+    items={[
+      { title: 'Evolutiv', description: 'Wir verpflichten uns zu kontinuierlichen, schrittweisen Verbesserungen.' },
+      { title: 'Einfühlsam', description: 'Wir legen Wert darauf, die Bedürfnisse unserer Nutzer zu verstehen und zu erfüllen.' },
+      { title: 'Aspirativ', description: 'Wir beginnen mit kleinen Projekten und streben an, zu größeren Lösungen zu wachsen.' }
+    ]}
+  />
+</Section>
 
-## Team
+<Section title="Inspirationen">
+  <QuoteBox>
+  Während wir uns im geschäftigen Umfeld der modernen Bildung bewegten, fiel uns etwas Beunruhigendes auf: LMS-Plattformen waren zahlreich und funktionsreich, aber oft frustrierend in der Anwendung. Wir sind überzeugt, dass Lehrkräfte bessere Werkzeuge verdienen - solche, die mit ihnen arbeiten und nicht gegen sie. Deshalb haben wir begonnen, EdTech-Produkte zu entwickeln, die das Lehren vereinfachen, unterstützen und stärken.
+  </QuoteBox>
+</Section>
 
-## Kontakt
+<Section title="Team">
+  <Team
+    members={[
+      {
+        name: 'Robin',
+        image: '/images/robin.jpg',
+        description: 'Es fällt mir leicht und macht mir Spaß, mit Kolleginnen und Kollegen zusammenzuarbeiten, um ein Projekt voranzubringen und gesetzte Ziele zu erreichen. Ich kann die Verantwortung für ein kleines Team übernehmen und es mit klaren Anweisungen sowie agilem Projektmanagement voranführen.'
+      },
+      {
+        name: 'Yixuan',
+        image: '/images/yixuan.jpg',
+        description: 'Mit einem Hintergrund in Natural Language Processing und einer Leidenschaft für durchdachtes Design bin ich in die Web- und Softwareentwicklung gewechselt, um Werkzeuge und Erlebnisse zu schaffen, die sowohl funktional als auch optisch ansprechend sind. Es bereitet mir Freude, Ideen in funktionierende Produkte umzusetzen - besonders dann, wenn ich sowohl ihr Erscheinungsbild als auch ihre Funktionsweise gestalten kann.'
+      }
+    ]}
+  />
+</Section>
+
+<Section title="Zukünftige Ziele">
+Wir stellen uns eine Zukunft vor, in der die Verwaltung von Kursinhalten nahtlos, kollaborativ und vollständig versionskontrolliert ist. Unser Ziel ist es, eine vertrauenswürdige Lösung für Bildungseinrichtungen zu werden und ihnen zu ermöglichen, hochwertige Lernerlebnisse einfach zu erstellen, zu organisieren und bereitzustellen. Beginnend mit Moodle-Integrationen arbeiten wir an einem flexiblen Content-Management-System, das Arbeitsabläufe vereinfacht und sich an die realen Bedürfnisse der Bildung anpasst.
+</Section>
