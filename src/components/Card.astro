@@ -83,4 +83,35 @@ const { title, titleLevel: TitleTag = "h2", cover, icon } = Astro.props;
       }
     }
   }
+
+  @media (max-width: 768px) {
+    .card {
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        "title"
+        "description"
+        "spotlight"
+        "actions";
+    }
+
+    .card-spotlight {
+      height: auto;
+      position: relative;
+    }
+
+    .card-spotlight .card-spotlight-background {
+      position: relative;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: auto;
+    }
+
+    .card-spotlight .card-spotlight-background img,
+    .card-spotlight .card-spotlight-background svg {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+  }
 </style>
