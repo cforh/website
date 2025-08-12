@@ -84,7 +84,7 @@ const { title, titleLevel: TitleTag = "h2", cover, icon } = Astro.props;
     }
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 800px) {
     .card {
       grid-template-columns: 1fr;
       grid-template-areas:
@@ -96,22 +96,11 @@ const { title, titleLevel: TitleTag = "h2", cover, icon } = Astro.props;
 
     .card-spotlight {
       height: auto;
-      position: relative;
     }
 
     .card-spotlight .card-spotlight-background {
       position: relative;
-      top: 0;
-      left: 0;
-      width: 100%;
       height: auto;
-    }
-
-    .card-spotlight .card-spotlight-background img,
-    .card-spotlight .card-spotlight-background svg {
-      width: 100%;
-      height: auto;
-      display: block;
     }
   }
 </style>
