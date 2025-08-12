@@ -84,23 +84,18 @@ const { title, titleLevel: TitleTag = "h2", cover, icon } = Astro.props;
     }
   }
 
-  @media (max-width: 800px) {
+  @media (max-width: 1280px) {
     .card {
       grid-template-columns: 1fr;
       grid-template-areas:
         "title"
-        "description"
         "spotlight"
+        "description"
         "actions";
     }
 
     .card-spotlight {
-      height: auto;
-    }
-
-    .card-spotlight .card-spotlight-background {
-      position: static;
-      height: auto;
+      height: 10rem;
     }
   }
 </style>
