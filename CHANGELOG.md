@@ -1,5 +1,12 @@
 # website
 
+## 0.1.0
+
+### Minor Changes
+
+- 572f295: Update team member card style
+- b8c5a7c: add German version about-us page
+
 ## 0.0.6
 
 ### Patch Changes
