@@ -16,23 +16,23 @@
     "i18n:extract": "extract-messages"
   },
   "dependencies": {
-    "@astrojs/mdx": "^4.3.3",
-    "@astrojs/sitemap": "^3.4.2",
+    "@astrojs/mdx": "^4.3.4",
+    "@astrojs/sitemap": "^3.5.0",
     "@fontsource-variable/montserrat": "^5.2.6",
     "@fontsource-variable/nunito": "^5.2.6",
     "@nanostores/i18n": "^1.2.2",
-    "astro": "^5.12.9",
-    "astro-loader-i18n": "^0.7.7",
-    "astro-nanostores-i18n": "^0.1.4",
+    "astro": "^5.13.2",
+    "astro-loader-i18n": "^0.7.8",
+    "astro-nanostores-i18n": "^0.1.5",
     "limax": "^4.1.0",
     "nanostores": "^1.0.1",
     "sharp": "^0.34.3"
   },
   "devDependencies": {
-    "@changesets/cli": "^2.29.5",
+    "@changesets/cli": "^2.29.6",
     "@eslint/js": "^9.33.0",
     "@openscript/unplugin-favicons": "^1.1.7",
-    "@typescript-eslint/parser": "8.39.0",
+    "@typescript-eslint/parser": "8.40.0",
     "astro-eslint-parser": "^1.2.2",
     "eslint": "9.33.0",
     "eslint-config-prettier": "^10.1.8",
@@ -44,7 +44,7 @@
     "jiti": "^2.5.1",
     "prettier": "3.6.2",
     "prettier-plugin-astro": "0.14.1",
-    "typescript-eslint": "^8.39.0"
+    "typescript-eslint": "^8.40.0"
   },
-  "packageManager": "pnpm@10.14.0"
+  "packageManager": "pnpm@10.15.0"
 }
