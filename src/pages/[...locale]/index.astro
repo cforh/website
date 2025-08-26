@@ -24,10 +24,11 @@ import Contact from "../../layouts/groups/Contact.astro";
 export const getStaticPaths = generateGetStaticIndexPaths("[...locale]");
 
 const messages = useI18n("src/pages/[...locale]/index.astro", {
-  spotlightTitle: "Empowers and Connects",
-  spotlightContent: "Join us in our mission to empower and connect the EdTech space with our products.",
-  spotlightActionConnect: "Connect",
-  spotlightActionEmpower: "Empower",
+  spotlightTitle: "Intelligent plugins in the field of education",
+  spotlightContent:
+    "We are committed to developing innovative tools that empower educators, students, and developers in the field of educational technology.",
+  spotlightActionConnect: "Connect With Us",
+  spotlightActionEmpower: "Explore Products",
   spotlightActionEmpowerLink: "/products",
   empowerTitle: "Products that empower",
   connectTitle: "Connect with us",
@@ -62,15 +63,15 @@ const products = i18nProps(collection, {
       <Image slot="host" alt="Our logo as the orbiters host" src={LogoSquare} />
       <Fragment slot="orbits">
         <div class="orbit">
-          <div>🎓</div>
-          <div>📚</div>
-          <div>💻</div>
-          <div>☁️</div>
-          <div>🧠</div>
-          <div>💬</div>
-          <div>🚀</div>
-          <div>💡</div>
-          <div>🧑‍🏫</div>
+          <div data-label="Education">🎓</div>
+          <div data-label="Books">📚</div>
+          <div data-label="Coding">💻</div>
+          <div data-label="Cloud">☁️</div>
+          <div data-label="Intelligence">🧠</div>
+          <div data-label="Message">💬</div>
+          <div data-label="Speed Up">🚀</div>
+          <div data-label="Solutions">💡</div>
+          <div data-label="Teaching">🧑‍🏫</div>
         </div>
         <div class="orbit">
           <Image alt="Logo of Moodle" src={MoodleLogo} />
