@@ -37,6 +37,7 @@ const productsCollection = defineCollection({
     z.object({
       title: z.string(),
       summary: z.string(),
+      buttonText: z.string(),
     }),
   ),
 });

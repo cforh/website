@@ -96,7 +96,7 @@ const products = i18nProps(collection, {
             <h3>{product.data.title}</h3>
             <p>{product.data.summary}</p>
             <a href={product.translatedPath} class="button primary">
-              {messages.spotlightActionEmpower}
+              {product.data.buttonText}
             </a>
           </article>
         ))
