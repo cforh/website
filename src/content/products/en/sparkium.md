@@ -1,5 +1,5 @@
 ---
-title: Sparkium
+title: "Sparkium 🧩"
 summary: Sparkium is a modern data schema for storing eLearning content.
 buttonText: View Schema
 ---

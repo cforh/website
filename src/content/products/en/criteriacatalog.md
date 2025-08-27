@@ -1,5 +1,5 @@
 ---
-title: Criteria Catalog
+title: "Criteria Catalog 🗂️"
 summary: The Criteria Catalog is a flexible and customizable system for managing criteria across a variety of use cases.
 buttonText: Learn More
 ---

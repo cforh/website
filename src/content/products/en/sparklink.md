@@ -1,5 +1,5 @@
 ---
-title: SparkLink
+title: "SparkLink 🔁"
 summary: SparkLink synchronizes eLearning content between sources like Git and LMS such as Moodle.
 buttonText: Try Demo
 ---
