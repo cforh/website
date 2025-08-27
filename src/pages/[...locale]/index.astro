@@ -55,6 +55,9 @@ const products = i18nProps(collection, {
   <Spotlight id="spotlight">
     <h1 slot="title">{messages.spotlightTitle}</h1>
     <p slot="content">{messages.spotlightContent}</p>
+    <p slot="content" id="transition">
+      Our products make education smarter, simpler, and more connected. Scroll down to see how ↓
+    </p>
     <Fragment slot="actions">
       <a href={messages.spotlightActionEmpowerLink} class="button primary">{messages.spotlightActionEmpower}</a>
       <a href="#connect" class="button">{messages.spotlightActionConnect}</a>
@@ -152,6 +155,11 @@ const products = i18nProps(collection, {
     background-position:
       0px 0px,
       0px 0px;
+  }
+
+  #transition {
+    font-size: var(--size-font-small);
+    color: var(--color-transition);
   }
 
   #spotlight {

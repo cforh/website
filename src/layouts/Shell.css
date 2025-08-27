@@ -5,6 +5,7 @@
   --color-white-97: hsl(from var(--color-white) h s calc(l * 0.97));
   --color-white: #f9f9f9;
   --color-black: #333333;
+  --color-transition: #555;
 
   --size-font-quot: 3rem;
   --size-font-huge: 1.5rem;
