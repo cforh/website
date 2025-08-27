@@ -185,7 +185,6 @@ const products = i18nProps(collection, {
     position: fixed;
     bottom: var(--size-gap);
     right: var(--size-gap-small);
-    color: var(--color-secondary);
     cursor: pointer;
     display: flex;
     border: none;
@@ -195,13 +194,12 @@ const products = i18nProps(collection, {
   }
 
   #scroll-button img {
-    height: 2rem;
-    stroke: var(--color-primary);
+    height: 4rem;
     transition: transform 0.3s ease;
   }
 
   #scroll-button:hover img {
-    transform: scale(1.2);
+    transform: scale(1.5);
   }
 
   @keyframes bounce {
