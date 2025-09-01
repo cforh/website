@@ -120,6 +120,26 @@
       revolve var(--speed) linear infinite,
       hide var(--speed) linear infinite;
     animation-delay: calc(var(--speed) * -1 * (var(--sibling-index) - 1) / var(--sibling-count));
+    position: relative;
+  }
+
+  :global(.orbit):hover > :global(*) {
+    animation-play-state: paused;
+  }
+
+  :global(.orbit) > :global(*):hover::after {
+    content: attr(data-label);
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.9rem;
+    color: white;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.5rem;
+    white-space: nowrap;
+    pointer-events: none;
   }
 
   @container (width > 40rem) {

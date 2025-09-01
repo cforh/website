@@ -41,7 +41,7 @@ const products = i18nProps(collection, {
             <p slot="description">{product.data.summary}</p>
             <Fragment slot="actions">
               <a href={product.translatedPath} class="button primary">
-                {messages.action({ product: product.data.title })}
+                {messages.action({ product: product.data.title.replace(/(\p{Extended_Pictographic}\uFE0F?)$/gu, "") })}
               </a>
             </Fragment>
           </Card>

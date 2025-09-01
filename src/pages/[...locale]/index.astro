@@ -24,10 +24,11 @@ import Contact from "../../layouts/groups/Contact.astro";
 export const getStaticPaths = generateGetStaticIndexPaths("[...locale]");
 
 const messages = useI18n("src/pages/[...locale]/index.astro", {
-  spotlightTitle: "Empowers and Connects",
-  spotlightContent: "Join us in our mission to empower and connect the EdTech space with our products.",
-  spotlightActionConnect: "Connect",
-  spotlightActionEmpower: "Empower",
+  spotlightTitle: "Intelligent plugins in the field of education",
+  spotlightContent:
+    "We are committed to developing innovative tools that empower educators, students, and developers in the field of educational technology.",
+  spotlightActionConnect: "Connect With Us",
+  spotlightActionEmpower: "Explore Products",
   spotlightActionEmpowerLink: "/products",
   empowerTitle: "Products that empower",
   connectTitle: "Connect with us",
@@ -54,6 +55,9 @@ const products = i18nProps(collection, {
   <Spotlight id="spotlight">
     <h1 slot="title">{messages.spotlightTitle}</h1>
     <p slot="content">{messages.spotlightContent}</p>
+    <p slot="content" id="transition">
+      Our products make education smarter, simpler, and more connected. Scroll down to see how ↓
+    </p>
     <Fragment slot="actions">
       <a href={messages.spotlightActionEmpowerLink} class="button primary">{messages.spotlightActionEmpower}</a>
       <a href="#connect" class="button">{messages.spotlightActionConnect}</a>
@@ -62,15 +66,15 @@ const products = i18nProps(collection, {
       <Image slot="host" alt="Our logo as the orbiters host" src={LogoSquare} />
       <Fragment slot="orbits">
         <div class="orbit">
-          <div>🎓</div>
-          <div>📚</div>
-          <div>💻</div>
-          <div>☁️</div>
-          <div>🧠</div>
-          <div>💬</div>
-          <div>🚀</div>
-          <div>💡</div>
-          <div>🧑‍🏫</div>
+          <div data-label="Education">🎓</div>
+          <div data-label="Books">📚</div>
+          <div data-label="Coding">💻</div>
+          <div data-label="Cloud">☁️</div>
+          <div data-label="Intelligence">🧠</div>
+          <div data-label="Message">💬</div>
+          <div data-label="Speed Up">🚀</div>
+          <div data-label="Solutions">💡</div>
+          <div data-label="Teaching">🧑‍🏫</div>
         </div>
         <div class="orbit">
           <Image alt="Logo of Moodle" src={MoodleLogo} />
@@ -95,7 +99,7 @@ const products = i18nProps(collection, {
             <h3>{product.data.title}</h3>
             <p>{product.data.summary}</p>
             <a href={product.translatedPath} class="button primary">
-              {messages.spotlightActionEmpower}
+              {product.data.buttonText}
             </a>
           </article>
         ))
@@ -122,6 +126,9 @@ const products = i18nProps(collection, {
       </article>
     </Fragment>
   </Grid>
+  <button id="scroll-button">
+    <img src="../assets/arrows/down_arrow.svg" />
+  </button>
 </Shell>
 
 <style>
@@ -135,6 +142,9 @@ const products = i18nProps(collection, {
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    background-image:
+      radial-gradient(60% 100% at 75% 25%, rgb(from var(--color-primary) r g b / 0.3) 0%, transparent 100%),
+      radial-gradient(60% 100% at 25% 75%, rgb(from var(--color-secondary) r g b / 0.3) 0%, transparent 100%);
   }
 
   #spotlight,
@@ -145,27 +155,17 @@ const products = i18nProps(collection, {
     justify-content: center;
     min-height: 100vh;
     background-size: 100% 100%;
-    background-position:
-      0px 0px,
-      0px 0px;
+    background-image: rgba(255, 255, 255, 0.8);
+    border-radius: 16px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
   }
 
-  #spotlight {
-    background-image:
-      radial-gradient(60% 100% at 75% 25%, rgb(from var(--color-primary) r g b / 0.3) 0%, transparent 100%),
-      radial-gradient(60% 100% at 25% 75%, rgb(from var(--color-secondary) r g b / 0.3) 0%, transparent 100%);
-  }
-
-  #empower {
-    background-image:
-      radial-gradient(60% 100% at 25% 75%, rgb(from var(--color-primary) r g b / 0.3) 0%, transparent 100%),
-      radial-gradient(60% 100% at 75% 25%, rgb(from var(--color-secondary) r g b / 0.3) 0%, transparent 100%);
-  }
-
-  #connect {
-    background-image:
-      radial-gradient(60% 100% at 75% 75%, rgb(from var(--color-primary) r g b / 0.3) 0%, transparent 100%),
-      radial-gradient(60% 100% at 25% 25%, rgb(from var(--color-secondary) r g b / 0.3) 0%, transparent 100%);
+  #transition {
+    font-size: var(--size-font-small);
+    color: var(--color-transition);
   }
 
   #empower article {
@@ -176,4 +176,52 @@ const products = i18nProps(collection, {
       width: fit-content;
     }
   }
+
+  #scroll-button {
+    position: fixed;
+    bottom: var(--size-gap);
+    right: var(--size-gap-small);
+    cursor: pointer;
+    display: flex;
+    border: none;
+    animation: bounce 2s infinite;
+    background-color: transparent;
+    padding: var(--size-gap-large);
+  }
+
+  #scroll-button img {
+    height: 4rem;
+    transition: transform 0.3s ease;
+  }
+
+  #scroll-button:hover img {
+    transform: scale(1.5);
+  }
+
+  @keyframes bounce {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(var(--size-gap-small));
+    }
+  }
 </style>
+
+<script>
+  const scrollButton = document.getElementById("scroll-button")!;
+
+  const grids = Array.from(document.querySelectorAll<HTMLElement>("#empower, #connect"));
+  scrollButton.addEventListener("click", () => {
+    const scrollY = window.scrollY;
+    const nextGrid = grids.find((grid) => grid.offsetTop > scrollY);
+
+    if (nextGrid) {
+      nextGrid.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+      });
+    }
+  });
+</script>
