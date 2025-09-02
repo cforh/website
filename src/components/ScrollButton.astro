@@ -1,0 +1,57 @@
+---
+
+---
+
+<button id="scroll-button">
+  <img src="/assets/arrows/down_arrow.svg" alt="Scroll down arrow" />
+</button>
+
+<style>
+  #scroll-button {
+    position: fixed;
+    bottom: var(--size-gap);
+    right: var(--size-gap-small);
+    cursor: pointer;
+    display: flex;
+    border: none;
+    animation: bounce 2s infinite;
+    background-color: transparent;
+    padding: var(--size-gap-large);
+  }
+
+  #scroll-button img {
+    height: 4rem;
+    transition: transform 0.3s ease;
+  }
+
+  #scroll-button:hover img {
+    transform: scale(1.5);
+  }
+
+  @keyframes bounce {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(var(--size-gap-small));
+    }
+  }
+</style>
+
+<script>
+  const scrollButton = document.getElementById("scroll-button");
+  const grids = Array.from(document.querySelectorAll<HTMLElement>("#empower, #connect"));
+
+  scrollButton?.addEventListener("click", () => {
+    const scrollY = window.scrollY;
+    const nextGrid = grids.find((grid) => grid.offsetTop > scrollY);
+
+    if (nextGrid) {
+      nextGrid.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+      });
+    }
+  });
+</script>
