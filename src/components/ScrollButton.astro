@@ -2,12 +2,12 @@
 import ArrowDown from "~icons/carbon/arrow-down";
 ---
 
-<button id="scroll-button">
+<button id="button">
   <ArrowDown class="arrow-icon" />
 </button>
 
 <style>
-  #scroll-button {
+  #button {
     position: fixed;
     bottom: var(--size-gap);
     right: var(--size-gap-small);
@@ -42,7 +42,7 @@ import ArrowDown from "~icons/carbon/arrow-down";
 </style>
 
 <script>
-  const scrollButton = document.getElementById("scroll-button");
+  const scrollButton = document.getElementById("button");
   const grids = Array.from(document.querySelectorAll("#empower, #connect"));
 
   scrollButton?.addEventListener("click", () => {
