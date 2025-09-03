@@ -1,5 +1,16 @@
 # website
 
+## 0.2.0
+
+### Minor Changes
+
+- 3b0db49: Add team member photos
+- 90a3976: Make cards in product page responsive
+
+### Patch Changes
+
+- 0b57f9e: Added scroll down button to landing page
+
 ## 0.1.0
 
 ### Minor Changes
