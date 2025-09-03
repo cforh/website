@@ -136,11 +136,7 @@ const products = i18nProps(collection, {
   :global(main) {
     display: flex;
     flex-direction: column;
-    gap: 0;
-    height: 100vh;
-    overflow-y: scroll;
-    scroll-snap-type: y mandatory;
-    scroll-behavior: smooth;
+    gap: 1rem;
   }
 
   #spotlight,
@@ -150,7 +146,6 @@ const products = i18nProps(collection, {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    scroll-snap-align: center;
     background-size: 100% 100%;
     background-position:
       0px 0px,
