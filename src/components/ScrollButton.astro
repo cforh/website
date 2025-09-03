@@ -43,11 +43,13 @@ import ArrowDown from "~icons/carbon/arrow-down";
 
 <script>
   const scrollButton = document.getElementById("scroll-button");
-  const grids = Array.from(document.querySelectorAll<HTMLElement>("#empower, #connect"));
+  const grids = Array.from(document.querySelectorAll("#empower, #connect"));
 
   scrollButton?.addEventListener("click", () => {
-    const scrollY = window.scrollY;
-    const nextGrid = grids.find((grid) => grid.offsetTop > scrollY);
+    const nextGrid = grids
+      .map((el) => ({ el, top: el.getBoundingClientRect().top }))
+      .filter((x) => x.top > 10)
+      .sort((a, b) => a.top - b.top)[0]?.el;
 
     if (nextGrid) {
       nextGrid.scrollIntoView({
