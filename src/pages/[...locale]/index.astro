@@ -4,6 +4,7 @@ import Spotlight from "../../layouts/sections/Spotlight.astro";
 import Shell from "../../layouts/Shell.astro";
 import { defaultPropsAndParamsOptions, generateGetStaticIndexPaths } from "../../utils/paths";
 import Orbiter from "../../components/Orbiter.astro";
+import ScrollButton from "../../components/ScrollButton.astro";
 import LogoSquare from "../../../assets/square.svg";
 import MoodleLogo from "../../../assets/logos/moodle.svg";
 import GitLogo from "../../../assets/logos/git.svg";
@@ -122,6 +123,7 @@ const products = i18nProps(collection, {
       </article>
     </Fragment>
   </Grid>
+  <ScrollButton />
 </Shell>
 
 <style>
