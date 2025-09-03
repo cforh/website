@@ -4,6 +4,7 @@ import nanostoresI18n from "astro-nanostores-i18n";
 import unpluginFavicons from "@openscript/unplugin-favicons/vite";
 import de from "./src/translations/de.json";
 import mdx from "@astrojs/mdx";
+import Icons from "unplugin-icons/vite";
 
 import sitemap from "@astrojs/sitemap";
 
@@ -38,6 +39,10 @@ export default defineConfig({
             appleStartup: false,
           },
         },
+      }),
+
+      Icons({
+        compiler: "astro",
       }),
     ],
   },

@@ -1,9 +1,9 @@
 ---
-
+import ArrowDown from "~icons/carbon/arrow-down";
 ---
 
 <button id="scroll-button">
-  <img src="/assets/arrows/down_arrow.svg" alt="Scroll down arrow" />
+  <ArrowDown class="arrow-icon" />
 </button>
 
 <style>
@@ -19,12 +19,14 @@
     padding: var(--size-gap-large);
   }
 
-  #scroll-button img {
+  .arrow-icon {
+    width: 4rem;
     height: 4rem;
     transition: transform 0.3s ease;
+    color: var(--color-primary);
   }
 
-  #scroll-button:hover img {
+  .arrow-icon:hover {
     transform: scale(1.5);
   }
 

@@ -7,4 +7,9 @@
   "exclude": [
     "dist"
   ],
+  "compilerOptions": {
+    "types": [
+      "unplugin-icons/types/astro",
+    ],
+  }
 }
