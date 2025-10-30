@@ -17,7 +17,18 @@
     "connectOldTitle": "Wie in alten Zeiten",
     "connectOldContent": "Zögern Sie nicht, uns eine E-Mail zu schreiben oder anzurufen!",
     "connectModernTitle": "So wie wir es heute machen",
-    "connectModernContent": "Schauen Sie doch auf unseren Social-Media-Kanälen vorbei:"
+    "connectModernContent": "Schauen Sie doch auf unseren Social-Media-Kanälen vorbei:",
+    "orbiterEducation": "Bildung",
+    "orbiterLearningMaterials": "Lernmaterialien",
+    "orbiterELearning": "E-Learning",
+    "orbiterLMS": "LMS",
+    "orbiterAssistedLearning": "Unterstütztes Lernen",
+    "orbiterCollaboration": "Zusammenarbeit",
+    "orbiterCreateContentQuickly": "Schnell Lerninhalte erstellen",
+    "orbiterEnlightening": "Erleuchtend",
+    "orbiterTeaching": "Unterrichten",
+    "orbiterIterativeEnhancement": "Iterative Verbesserung",
+    "orbiterGamification": "Gamifizierung"
   },
   "pages/[...locale]/[products]/index.astro": {
     "title": "Produkte",
