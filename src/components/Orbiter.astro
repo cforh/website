@@ -39,23 +39,22 @@
 
   @keyframes hide {
     0% {
-      z-index: -1;
+      opacity: 0;
     }
-
     24.9% {
-      z-index: -1;
+      opacity: 0;
     }
     25% {
-      z-index: 0;
+      opacity: 1;
     }
     75% {
-      z-index: 0;
+      opacity: 1;
     }
     75.1% {
-      z-index: -1;
+      opacity: 0;
     }
     100% {
-      z-index: -1;
+      opacity: 0;
     }
   }
 
@@ -127,7 +126,7 @@
     animation-play-state: paused;
   }
 
-  :global(.orbit) > :global(*):hover::after {
+  :global(.orbit) > :global(*)::after {
     content: attr(data-label);
     position: absolute;
     top: 100%;
@@ -140,6 +139,12 @@
     border-radius: 0.5rem;
     white-space: nowrap;
     pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+  }
+
+  :global(.orbit) > :global(*):hover::after {
+    opacity: 1;
   }
 
   @container (width > 40rem) {

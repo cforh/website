@@ -35,6 +35,17 @@ const messages = useI18n("src/pages/[...locale]/index.astro", {
   connectOldContent: "Don't hesitate to email or call us!",
   connectModernTitle: "How we do it today",
   connectModernContent: "Have a look at our social media:",
+  orbiterEducation: "Education",
+  orbiterLearningMaterials: "Learning Materials",
+  orbiterELearning: "eLearning",
+  orbiterLMS: "Learning Management System",
+  orbiterAssistedLearning: "Assisted Learning",
+  orbiterCollaboration: "Collaboration",
+  orbiterCreateContentQuickly: "Quickly create learning content",
+  orbiterEnlightening: "Enlightening",
+  orbiterTeaching: "Teaching",
+  orbiterIterativeEnhancement: "Iterative enhancement",
+  orbiterGamification: "Gamification",
 });
 
 const {
@@ -62,15 +73,17 @@ const products = i18nProps(collection, {
       <Image slot="host" alt="Our logo as the orbiters host" src={LogoSquare} />
       <Fragment slot="orbits">
         <div class="orbit">
-          <div data-label="Education">🎓</div>
-          <div data-label="Books">📚</div>
-          <div data-label="Coding">💻</div>
-          <div data-label="Cloud">☁️</div>
-          <div data-label="Intelligence">🧠</div>
-          <div data-label="Message">💬</div>
-          <div data-label="Speed Up">🚀</div>
-          <div data-label="Solutions">💡</div>
-          <div data-label="Teaching">🧑‍🏫</div>
+          <div data-label={messages.orbiterEducation}>🎓</div>
+          <div data-label={messages.orbiterLearningMaterials}>📚</div>
+          <div data-label={messages.orbiterELearning}>💻</div>
+          <div data-label={messages.orbiterLMS}>☁️</div>
+          <div data-label={messages.orbiterAssistedLearning}>🧠</div>
+          <div data-label={messages.orbiterCollaboration}>💬</div>
+          <div data-label={messages.orbiterCreateContentQuickly}>🚀</div>
+          <div data-label={messages.orbiterEnlightening}>💡</div>
+          <div data-label={messages.orbiterTeaching}>🧑‍🏫</div>
+          <div data-label={messages.orbiterIterativeEnhancement}>🔁</div>
+          <div data-label={messages.orbiterGamification}>🎮</div>
         </div>
         <div class="orbit">
           <Image alt="Logo of Moodle" src={MoodleLogo} />
