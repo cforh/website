@@ -12,17 +12,9 @@ Update all project dependencies and verify that the application still builds and
 
 The following command was used to upgrade all dependencies recursively and interactively:
 
-```bash
-pnpm upgrade -riL
-```
+`pnpm upgrade -riL`
 
-Follow the guide until all packages get updated. Final Result:
-
-```
-All of your dependencies are already up to date
-```
-
-No more packages required upgrading.
+Follow the guide until all packages get updated.
 
 ---
 
@@ -30,15 +22,11 @@ No more packages required upgrading.
 
 After upgrading, the project was verified using:
 
-```bash
-pnpm check
-```
+`pnpm check`
 
 This runs:
 
-```bash
-eslint . --max-warnings 0
-```
+`eslint . --max-warnings 0`
 
 Result:
 
@@ -51,9 +39,7 @@ Result:
 
 To ensure everything still compiles correctly:
 
-```bash
-pnpm build
-```
+`pnpm build`
 
 Result:
 
