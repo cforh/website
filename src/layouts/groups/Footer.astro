@@ -12,7 +12,7 @@ type Props = {
 };
 const { translations } = Astro.props;
 const messages = useI18n("layouts/groups/Footer.astro", {
-  copyright: "© 2025 Code for Humans. All rights reserved.",
+  copyright: params("© {year} Code for Humans. All rights reserved."),
   version: params("Version {version}"),
 });
 const locale = currentLocale.get();
@@ -24,7 +24,7 @@ const navigation = await prepareNavigation(`legal/${locale}`);
   <Settings translations={translations} />
   <Navigation items={navigation} class="legal-nav" />
   <ul class="copyright">
-    <li>{messages.copyright}</li>
+    <li>{messages.copyright({ year: new Date().getFullYear() })}</li>
     <li>{messages.version({ version })}</li>
   </ul>
 </footer>
