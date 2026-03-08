@@ -2,23 +2,26 @@
 path: about-us
 title: About us
 ---
-import Values from '../../../components/Values.astro';
 import QuoteBox from '../../../components/QuoteBox.astro';
+import Card from '../../../components/Card.astro';
+import CardList from '../../../components/CardList.astro';
 import Team from '../../../components/Team.astro';
 
-## Our Story
-
-We are a small team from Zurich, Switzerland, dedicated to providing high-quality services and products for the Educational Technology industry.
+We are a small team from Zurich, Switzerland, dedicated to providing high-quality services and products in the field of education and beyond.
 
 ## Values
 
-<Values
-  items={[
-    { title: 'Evolutionary', description: 'We are committed to continuous incremental improvements.' },
-    { title: 'Empathetic', description: 'We prioritize understanding and addressing the needs of our users.' },
-    { title: 'Aspirational', description: 'We start with small projects and aim to grow into larger solutions.' }
-  ]}
-/>
+<CardList class="padding-breakout">
+  <Card title="Always Refining" titleLevel='h3'>
+    <p slot="description">We improve continuously, learning from each step and making every cycle better.</p>
+  </Card>
+  <Card title="Human-Centered" titleLevel='h3'>
+    <p slot="description">We listen closely and design around the real needs and reduce repetitive work.</p>
+  </Card>
+  <Card title="Well-Rooted" titleLevel='h3'>
+    <p slot="description">We build solutions that grow with you, starting small and scaling sustainably.</p>
+  </Card>
+</CardList>
 
 ## Inspirations
 
@@ -44,4 +47,5 @@ We are a small team from Zurich, Switzerland, dedicated to providing high-qualit
 />
 
 ## Future Goals
+
 We envision a future where managing course content is seamless, collaborative, and fully version-controlled. Our goal is to become a trusted solution for educational institutions, empowering them to create, organize, and deliver high-quality learning experiences with ease. Starting with Moodle integrations, we're building toward a flexible content management system that simplifies workflows and scales with real educational needs.

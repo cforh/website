@@ -1,0 +1,21 @@
+---
+type Props = {
+  class?: string;
+};
+
+const { class: className } = Astro.props;
+---
+
+<div class:list={["card-list", className]}>
+  <slot>
+    <p>Set cards as children!</p>
+  </slot>
+</div>
+
+<style>
+  .card-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--size-gap);
+  }
+</style>
