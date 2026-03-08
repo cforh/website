@@ -2,7 +2,7 @@
 path: about-us
 title: About us
 ---
-import QuoteBox from '../../../components/QuoteBox.astro';
+import Quote from '../../../components/Quote.astro';
 import Card from '../../../components/Card.astro';
 import CardList from '../../../components/CardList.astro';
 import Team from '../../../components/Team.astro';
@@ -25,9 +25,11 @@ We are a small team from Zurich, Switzerland, dedicated to providing high-qualit
 
 ## Inspirations
 
-<QuoteBox>
-  While navigating the busy landscape of modern education, we noticed something troubling: LMS platforms were abundant and feature-rich, yet often frustrating to use. We believe educators deserve better tools that work with them, not against them. That's why we started building EdTech products designed to simplify, support, and empower teaching.
-</QuoteBox>
+{
+  <Quote>
+    While navigating the busy landscape of modern education, we noticed something troubling: LMS platforms were abundant and feature-rich, yet often frustrating to use. We believe educators deserve better tools that work with them, not against them. That's why we started building EdTech products designed to simplify, support, and empower teaching.
+  </Quote>
+}
 
 ## Team
 
