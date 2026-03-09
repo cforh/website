@@ -1,5 +1,11 @@
 # website
 
+## 0.2.2
+
+### Patch Changes
+
+- 036e688: Fix team photo import
+
 ## 0.2.1
 
 ### Patch Changes
