@@ -1,0 +1,27 @@
+---
+type Props = {
+  class?: string;
+};
+
+const { class: className } = Astro.props;
+---
+
+<div class:list={["card-list", className]}>
+  <slot>
+    <p>Set cards as children!</p>
+  </slot>
+</div>
+
+<style>
+  .card-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--size-gap);
+  }
+
+  .card-list > :global(*) {
+    flex: 1 1 15rem;
+    max-width: 20rem;
+  }
+</style>

@@ -32,6 +32,7 @@
   },
   "pages/[...locale]/[products]/index.astro": {
     "title": "Produkte",
-    "action": "Mehr über {product}"
+    "action": "Mehr über {product}",
+    "description": "Entdecke Sie unsere Produkte die Ihnen helfen repetitive Arbeit im Bildungsbereich zu reduzieren."
   }
 }

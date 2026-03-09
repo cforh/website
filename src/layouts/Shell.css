@@ -23,10 +23,9 @@
   --size-gap-small: 0.5rem;
   --size-burger: 2rem;
   --size-border-radius-large: 2rem;
-  --size-line-height-quot: 1.6;
-  --size-team-width: 12.5rem;
-  --size-team-height: 12.5rem;
   --size-border-radius: 1rem;
+  --size-border-radius-small: 0.5rem;
+  --size-line-height-quot: 1.6;
 
   --transition-slow: 0.7s ease-in-out;
 
@@ -262,6 +261,7 @@ th {
   }
 
   body > main {
+    margin-block: var(--size-gap-large);
     overflow: visible;
   }
 

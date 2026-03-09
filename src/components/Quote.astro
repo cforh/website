@@ -1,0 +1,54 @@
+---
+
+---
+
+<blockquote>
+  <slot />
+</blockquote>
+
+<style>
+  blockquote {
+    position: relative;
+    text-align: justify;
+    margin: 0;
+    --quote-size: 5rem;
+
+    &::before,
+    &::after {
+      position: absolute;
+      font-size: var(--quote-size);
+      line-height: 0;
+      color: var(--color-primary);
+    }
+
+    &::before {
+      content: "“";
+      inset-block-end: calc(100% - 0.4em);
+      inset-inline-end: calc(100% + 0.1em);
+    }
+
+    &::after {
+      content: "”";
+      inset-block-start: calc(100% + 0.16em);
+      inset-inline-start: calc(100% + 0.1em);
+    }
+  }
+
+  @media (max-width: 800px) {
+    blockquote {
+      --quote-size: 4rem;
+
+      &::before {
+        content: "“";
+        inset-block-end: calc(100%);
+        inset-inline-end: calc(100% - 0.25em);
+      }
+
+      &::after {
+        content: "”";
+        inset-block-start: calc(100% + 0.5em);
+        inset-inline-start: calc(100% - 0.25em);
+      }
+    }
+  }
+</style>

@@ -37,7 +37,7 @@ const products = i18nProps(collection, {
     <section class="products-list padding-breakout">
       {
         products.map((product) => (
-          <Card title={product.data.title}>
+          <Card title={product.data.title} hasSpotlight>
             <p slot="description">{product.data.summary}</p>
             <Fragment slot="actions">
               <a href={product.translatedPath} class="button primary">
@@ -54,7 +54,7 @@ const products = i18nProps(collection, {
 <style>
   .products-list {
     display: flex;
-    margin-top: var(--size-gap-huge);
+    margin-block-start: var(--size-gap-huge);
     gap: var(--size-gap-huge);
     flex-direction: column;
   }
