@@ -14,8 +14,14 @@ const { class: className } = Astro.props;
 
 <style>
   .card-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: var(--size-gap);
+  }
+
+  .card-list > :global(*) {
+    flex: 1 1 15rem;
+    max-width: 20rem;
   }
 </style>

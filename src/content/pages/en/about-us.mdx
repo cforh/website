@@ -2,52 +2,50 @@
 path: about-us
 title: About us
 ---
-import Quote from '../../../components/Quote.astro';
-import Card from '../../../components/Card.astro';
-import CardList from '../../../components/CardList.astro';
-import Team from '../../../components/Team.astro';
 
-We are a small team from Zurich, Switzerland, dedicated to providing high-quality services and products in the field of education and beyond.
+import Quote from "../../../components/Quote.astro";
+import Card from "../../../components/Card.astro";
+import CardList from "../../../components/CardList.astro";
+import FlipCard from "../../../components/FlipCard.astro";
+
+We are a small team from Zurich, Switzerland. Find out more about our motivation, values, goals, and our team here.
+
+## Motivation
+
+{<Quote>
+
+In our work in the educational environment, we repeatedly experienced how we lost valuable time through repetitive tasks and inefficient processes. We want to change this by developing tools that support educators in focusing on what matters most: teaching and interacting with learners. We want to relieve teachers of burdens so that more time remains for creative and pedagogical tasks.
+
+</Quote>}
 
 ## Values
 
 <CardList class="padding-breakout">
-  <Card title="Always Refining" titleLevel='h3'>
-    <p slot="description">We improve continuously, learning from each step and making every cycle better.</p>
+  <Card title="Always improving" titleLevel="h3">
+    <p slot="description">We continuously improve, learn from every step, and make each cycle better.</p>
   </Card>
-  <Card title="Human-Centered" titleLevel='h3'>
-    <p slot="description">We listen closely and design around the real needs and reduce repetitive work.</p>
+  <Card title="Human-centered" titleLevel="h3">
+    <p slot="description">We listen carefully, develop along real needs, and reduce repetitive work.</p>
   </Card>
-  <Card title="Well-Rooted" titleLevel='h3'>
-    <p slot="description">We build solutions that grow with you, starting small and scaling sustainably.</p>
+  <Card title="Well-grounded" titleLevel="h3">
+    <p slot="description">We develop solutions that grow with you, starting small and scaling sustainably.</p>
   </Card>
 </CardList>
 
-## Inspirations
+## Goals
 
-{
-  <Quote>
-    While navigating the busy landscape of modern education, we noticed something troubling: LMS platforms were abundant and feature-rich, yet often frustrating to use. We believe educators deserve better tools that work with them, not against them. That's why we started building EdTech products designed to simplify, support, and empower teaching.
-  </Quote>
-}
+We envision a future in which the management of course content is seamless, collaborative, and fully version-controlled. Our goal is to become a trusted solution for educational institutions, enabling them to easily create, organize, and deliver high-quality learning experiences. To do this, we improve existing solutions by extending them and creating suitable integrations with our products. **True to the motto: "From small to large".**
 
 ## Team
 
-<Team
-  members={[
-    {
-      name: 'Robin',
-      image: '../assets/teams/robin.png',
-      description: 'It is easy and fun for me to interact with colleagues to bring a project further and reach given targets. I can take responsibility for a small team and lead it with clear instructions and an agile project management on wards.'
-    },
-    {
-      name: 'Yixuan',
-      image: '../assets/teams/yixuan.png',
-      description: 'With a background in Natural Language Processing and a passion for thoughtful design, I transitioned into web and software development to build tools and experiences that are both functional and visually engaging. I enjoy turning ideas into working products, especially when I can shape both how they look and how they work.'
-    }
-  ]}
-/>
-
-## Future Goals
-
-We envision a future where managing course content is seamless, collaborative, and fully version-controlled. Our goal is to become a trusted solution for educational institutions, empowering them to create, organize, and deliver high-quality learning experiences with ease. Starting with Moodle integrations, we're building toward a flexible content management system that simplifies workflows and scales with real educational needs.
+<CardList class="centered">
+  <FlipCard title="Robin" spotlight={{ alt: "Robin", image: { src: "../assets/teams/robin.png" } }}>
+    I find it easy and enjoyable to collaborate with colleagues to drive a project forward and achieve set goals. I can
+    take responsibility for a small team and lead it with clear direction and agile project management.
+  </FlipCard>
+  <FlipCard title="Yixuan" spotlight={{ alt: "Yixuan", image: { src: "../assets/teams/yixuan.png" } }}>
+    With a background in Natural Language Processing and a passion for thoughtful design, I transitioned into web and
+    software development to create tools and experiences that are both functional and visually appealing. I find joy in
+    turning ideas into working products — especially when I can shape both how they look and how they work.
+  </FlipCard>
+</CardList>
