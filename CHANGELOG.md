@@ -1,5 +1,19 @@
 # website
 
+## 0.2.0
+
+### Minor Changes
+
+- 3b0db49: Add team member photos
+- 90a3976: Make cards in product page responsive
+
+### Patch Changes
+
+- d1b39c4: Enhance about us page
+- 0b57f9e: Added scroll down button to landing page
+- 276d27c: Add labels to orbiter
+- 033472a: Set current year in footer
+
 ## 0.1.0
 
 ### Minor Changes
