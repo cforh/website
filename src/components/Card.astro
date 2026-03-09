@@ -11,7 +11,7 @@ type Props = {
 };
 
 const { title, titleLevel: TitleTag = "h2", cover, icon, hasSpotlight = false } = Astro.props;
-const hasActions = Boolean(Astro.slots.actions);
+const hasActions = Astro.slots.has("actions");
 ---
 
 <div class:list={["card", hasSpotlight && "has-spotlight", hasActions && "has-actions"]}>
@@ -24,7 +24,7 @@ const hasActions = Boolean(Astro.slots.actions);
     </slot>
   </div>
   {
-    Astro.slots.actions && (
+    hasActions && (
       <div class="card-actions">
         <slot name="actions" />
       </div>

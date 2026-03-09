@@ -9,7 +9,7 @@ type Props = {
 const { title, spotlight } = Astro.props;
 ---
 
-<div class="flip-card">
+<div class="flip-card" tabindex="0" role="button" aria-pressed="false">
   <div class="front">
     <img src={spotlight.image.src} alt={spotlight.alt} />
     <h3>{title}</h3>
