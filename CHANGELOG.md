@@ -1,5 +1,11 @@
 # website
 
+## 0.2.1
+
+### Patch Changes
+
+- dc48b78: Enhance publication workflow
+
 ## 0.2.0
 
 ### Minor Changes
