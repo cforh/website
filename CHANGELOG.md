@@ -1,5 +1,11 @@
 # website
 
+## 0.2.3
+
+### Patch Changes
+
+- 46f9ee8: Fix team photos
+
 ## 0.2.2
 
 ### Patch Changes
