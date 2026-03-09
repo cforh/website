@@ -15,4 +15,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "cSpell.language": "en,de-ch",
+  "json.schemaDownload.trustedDomains": {
+    "https://docs.renovatebot.com": true
+  },
 }
