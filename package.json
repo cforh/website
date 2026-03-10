@@ -16,12 +16,12 @@
     "i18n:extract": "extract-messages"
   },
   "dependencies": {
-    "@astrojs/mdx": "^4.3.13",
+    "@astrojs/mdx": "^5.0.0",
     "@astrojs/sitemap": "^3.7.0",
     "@fontsource-variable/montserrat": "^5.2.8",
     "@fontsource-variable/nunito": "^5.2.7",
     "@nanostores/i18n": "^1.2.2",
-    "astro": "^5.18.0",
+    "astro": "^6.0.0",
     "astro-loader-i18n": "^0.10.12",
     "astro-nanostores-i18n": "^0.4.3",
     "limax": "^4.2.2",
