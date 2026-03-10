@@ -42,18 +42,23 @@ import ArrowDown from "~icons/carbon/arrow-down";
 </style>
 
 <script>
-  const scrollButton = document.querySelector(".scroll-button");
-  const grids = Array.from(document.querySelectorAll<HTMLElement>("#empower, #connect"));
+  function initialize() {
+    const scrollButton = document.querySelector(".scroll-button");
+    const grids = Array.from(document.querySelectorAll<HTMLElement>("#empower, #connect"));
 
-  scrollButton?.addEventListener("click", () => {
-    const scrollY = window.scrollY;
-    const nextGrid = grids.find((grid) => grid.offsetTop > scrollY);
+    scrollButton?.addEventListener("click", () => {
+      const scrollY = window.scrollY;
+      const nextGrid = grids.find((grid) => grid.offsetTop > scrollY);
 
-    if (nextGrid) {
-      nextGrid.scrollIntoView({
-        behavior: "smooth",
-        block: "center",
-      });
-    }
-  });
+      if (nextGrid) {
+        nextGrid.scrollIntoView({
+          behavior: "smooth",
+          block: "center",
+        });
+      }
+    });
+  }
+
+  document.addEventListener("astro:page-load", initialize);
+  document.addEventListener("DOMContentLoaded", initialize);
 </script>
