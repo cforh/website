@@ -62,7 +62,7 @@ const products = i18nProps(collection, {
 });
 ---
 
-<Shell translations={translations} bodyClasses="scroll-snapping-block">
+<Shell translations={translations} bodyClasses="scroll-snapping-block disable-main-margin">
   <Spotlight id="spotlight">
     <h1 slot="title">{messages.spotlightTitle}</h1>
     <p slot="content">{messages.spotlightContent}</p>
@@ -189,6 +189,12 @@ const products = i18nProps(collection, {
 
     .button {
       width: fit-content;
+    }
+  }
+
+  @media (max-width: 1280px) {
+    #spotlight {
+      min-height: calc(100vh - var(--size-header-height));
     }
   }
 </style>

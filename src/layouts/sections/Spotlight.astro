@@ -68,4 +68,10 @@ const { ...attributes } = Astro.props;
     width: 100%;
     container-type: inline-size;
   }
+
+  @media (width < 600px) {
+    .wrapper {
+      grid-template-columns: minmax(15rem, 1.5fr) minmax(7.5rem, 1fr);
+    }
+  }
 </style>

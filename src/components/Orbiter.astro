@@ -3,7 +3,9 @@
 ---
 
 <div class="orbiter">
-  <slot name="host" />
+  <div class="host">
+    <slot name="host" />
+  </div>
   <div class="orbits">
     <slot name="orbits" />
   </div>
@@ -81,6 +83,9 @@
   }
 
   .orbiter {
+    --speed: 30s;
+    --offset-width: 120px;
+
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -89,6 +94,7 @@
     width: 100%;
     overflow: hidden;
     user-select: none;
+    container-type: inline-size;
   }
 
   .orbits {
@@ -108,11 +114,10 @@
   }
 
   :global(.orbit) > :global(*) {
-    --speed: 30s;
     font-size: 3rem;
     max-width: 3rem;
     max-height: 3rem;
-    offset-path: ellipse(calc(120px * var(--orbit)) calc(300px * var(--orbit)) at 0% 50%);
+    offset-path: ellipse(calc(var(--offset-width) * var(--orbit)) calc(300px * var(--orbit)) at 0% 50%);
     offset-distance: 0%;
     offset-rotate: auto 90deg;
     animation:
@@ -167,6 +172,16 @@
 
   @container (width < 23rem) {
     :global(.orbit):nth-child(n + 2) {
+      display: none;
+    }
+  }
+
+  @media (width < 600px) {
+    .orbiter {
+      --offset-width: 30px;
+    }
+
+    .host {
       display: none;
     }
   }

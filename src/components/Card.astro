@@ -133,6 +133,15 @@ const hasActions = Astro.slots.has("actions");
         "actions";
     }
 
+    .card.has-spotlight.has-actions {
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        "title"
+        "spotlight"
+        "description"
+        "actions";
+    }
+
     .card-spotlight {
       height: 10rem;
     }

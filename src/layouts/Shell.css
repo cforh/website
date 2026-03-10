@@ -241,6 +241,10 @@ th {
   margin: 0 var(--size-page-padding-breakout);
 }
 
+.disable-main-margin main {
+  margin: 0;
+}
+
 .scroll-snapping-block :is(main > section, header, footer) {
   scroll-snap-align: start;
 }
@@ -324,15 +328,22 @@ th {
 
 @media (max-width: 1600px) {
   :root {
-    --size-font: 18px;
+    --size-font: 16px;
     --size-page-padding: 10%;
     --size-page-padding-breakout: 0;
   }
 }
 
+@media (max-width: 1200px) {
+  :root {
+    --size-font: 14px;
+    --size-page-padding: 1rem;
+  }
+}
+
 @media (max-width: 800px) {
   :root {
-    --size-font: 16px;
+    --size-font: 12px;
     --size-page-padding: 1rem;
   }
 }
