@@ -340,10 +340,3 @@ th {
     --size-page-padding: 1rem;
   }
 }
-
-@media (max-width: 800px) {
-  :root {
-    --size-font: 12px;
-    --size-page-padding: 1rem;
-  }
-}
