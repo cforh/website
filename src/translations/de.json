@@ -1,6 +1,6 @@
 {
   "layouts/groups/Footer.astro": {
-    "copyright": "© 2025 Code for Humans. Alle Rechte vorbehalten.",
+    "copyright": "© {year} Code for Humans. Alle Rechte vorbehalten.",
     "version": "Version {version}"
   },
   "layouts/groups/Meta.astro": {
