@@ -19,7 +19,7 @@ export const getStaticPaths = async () => {
 
 const {
   translations,
-  data: { title, template },
+  data: { title, template, contentClass },
 } = Astro.props;
 const { Content } = await render(Astro.props);
 ---
@@ -28,7 +28,7 @@ const { Content } = await render(Astro.props);
   <Meta slot="meta" title={title} />
   {
     template === "article" && (
-      <Article title={title}>
+      <Article title={title} class={contentClass}>
         <Content />
       </Article>
     )

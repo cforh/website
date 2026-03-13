@@ -1,12 +1,13 @@
 ---
 type Props = {
   title?: string;
+  class?: string;
 };
 
-const { title } = Astro.props;
+const { title, class: className } = Astro.props;
 ---
 
-<article>
+<article class:list={[className]}>
   <header>
     <slot name="title">
       <h1>{title}</h1>
@@ -36,6 +37,59 @@ const { title } = Astro.props;
     header + p {
       font-weight: bold;
       font-size: 1.1rem;
+    }
+  }
+
+  article.legal {
+    counter-reset: section sub-section;
+
+    :global(h2)::before {
+      counter-increment: section;
+      content: counter(section, upper-alpha) " ";
+    }
+
+    :global(h3) {
+      text-align: start;
+
+      &::before {
+        display: inline-block;
+        width: 55px;
+        counter-increment: sub-section;
+        content: counter(sub-section) ". ";
+      }
+    }
+
+    :global(ol) {
+      counter-reset: list-item;
+      list-style: none;
+      padding-inline-start: 55px;
+
+      :global(li) {
+        position: relative;
+        counter-increment: list-item;
+        margin-block-end: 1rem;
+
+        &::before {
+          position: absolute;
+          left: -55px;
+          content: counter(sub-section) "." counter(list-item) ". ";
+        }
+      }
+
+      :global(ol) {
+        counter-reset: sub-list-item;
+        padding-inline-start: 70px;
+
+        :global(li) {
+          counter-increment: sub-list-item;
+
+          &::before {
+            position: absolute;
+            left: -70px;
+            content: counter(sub-section) "." counter(list-item) "." counter(sub-list-item) ". ";
+          }
+        }
+      }
     }
   }
 

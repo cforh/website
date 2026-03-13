@@ -122,19 +122,6 @@ body > header {
       &.active {
         background-color: var(--color-white);
         border-radius: var(--size-border-radius-large);
-
-        &::before,
-        &::after {
-          color: var(--color-secondary);
-        }
-
-        &::before {
-          content: "{ ";
-        }
-
-        &::after {
-          content: " }";
-        }
       }
     }
   }
@@ -247,6 +234,11 @@ th {
 
 .scroll-snapping-block :is(main > section, header, footer) {
   scroll-snap-align: start;
+}
+
+.centered {
+  display: flex;
+  justify-content: center;
 }
 
 @media (max-width: 1280px) {

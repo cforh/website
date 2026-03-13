@@ -1,6 +1,7 @@
 import { extendI18nLoaderSchema, i18nContentLoader, i18nLoader, localized as localizedSchema } from "astro-loader-i18n";
-import { defineCollection, z } from "astro:content";
+import { defineCollection } from "astro:content";
 import { localeSlugs } from "./site.config";
+import { z } from "astro/zod";
 
 const localized = <T extends z.ZodTypeAny>(schema: T) => localizedSchema(schema, localeSlugs);
 
@@ -13,7 +14,7 @@ const navigationCollection = defineCollection({
           z.array(
             z.object({
               title: z.string(),
-              path: z.string().url().or(z.string()),
+              path: z.url().or(z.string()),
               icon: image().optional(),
             }),
           ),
@@ -28,6 +29,7 @@ const pagesCollection = defineCollection({
       path: z.string(),
       title: z.string(),
       template: z.enum(["article"]).optional().default("article"),
+      contentClass: z.string().optional(),
     }),
   ),
 });
