@@ -2,14 +2,14 @@ items:
   de:
     - path: pages://de/imprint
       title: Impressum
-    - path: pages://de/privacy
-      title: Datenschutz
+    - path: pages://de/legal
+      title: Rechtliches
     - path: pages://de/gtc
       title: AGB
   en:
     - path: pages://en/imprint
       title: Imprint
-    - path: pages://en/privacy
-      title: Privacy Policy
+    - path: pages://en/legal
+      title: Legal
     - path: pages://en/gtc
       title: GTC

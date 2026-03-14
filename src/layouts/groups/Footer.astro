@@ -16,7 +16,7 @@ const messages = useI18n("layouts/groups/Footer.astro", {
   version: params("Version {version}"),
 });
 const locale = currentLocale.get();
-const navigation = await prepareNavigation(`legal/${locale}`);
+const navigation = await prepareNavigation(`footer/${locale}`);
 ---
 
 <footer>

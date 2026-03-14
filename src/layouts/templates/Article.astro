@@ -44,6 +44,8 @@ const { title, class: className } = Astro.props;
     counter-reset: section sub-section;
 
     :global(h2)::before {
+      display: inline-block;
+      width: 55px;
       counter-increment: section;
       content: counter(section, upper-alpha) " ";
     }
