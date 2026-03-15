@@ -22,7 +22,7 @@ importers:
         version: 5.2.7
       '@nanostores/i18n':
         specifier: ^1.2.2
-        version: 1.2.2(nanostores@1.1.1)
+        version: 1.2.2(nanostores@1.2.0)
       astro:
         specifier: ^6.0.4
         version: 6.0.4(@types/node@24.12.0)(jiti@2.6.1)(rollup@4.59.0)(typescript@5.9.3)
@@ -31,13 +31,13 @@ importers:
         version: 0.11.0(astro@6.0.4(@types/node@24.12.0)(jiti@2.6.1)(rollup@4.59.0)(typescript@5.9.3))
       astro-nanostores-i18n:
         specifier: ^0.5.0
-        version: 0.5.0(@nanostores/i18n@1.2.2(nanostores@1.1.1))(astro@6.0.4(@types/node@24.12.0)(jiti@2.6.1)(rollup@4.59.0)(typescript@5.9.3))(nanostores@1.1.1)
+        version: 0.5.0(@nanostores/i18n@1.2.2(nanostores@1.2.0))(astro@6.0.4(@types/node@24.12.0)(jiti@2.6.1)(rollup@4.59.0)(typescript@5.9.3))(nanostores@1.2.0)
       limax:
         specifier: ^4.2.2
         version: 4.2.2
       nanostores:
         specifier: ^1.1.1
-        version: 1.1.1
+        version: 1.2.0
       sharp:
         specifier: ^0.34.5
         version: 0.34.5
@@ -2626,8 +2626,8 @@ packages:
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
 
-  nanostores@1.1.1:
-    resolution: {integrity: sha512-EYJqS25r2iBeTtGQCHidXl1VfZ1jXM7Q04zXJOrMlxVVmD0ptxJaNux92n1mJ7c5lN3zTq12MhH/8x59nP+qmg==}
+  nanostores@1.2.0:
+    resolution: {integrity: sha512-F0wCzbsH80G7XXo0Jd9/AVQC7ouWY6idUCTnMwW5t/Rv9W8qmO6endavDwg7TNp5GbugwSukFMVZqzPSrSMndg==}
     engines: {node: ^20.0.0 || >=22.0.0}
 
   natural-compare@1.4.0:
@@ -4286,9 +4286,9 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@nanostores/i18n@1.2.2(nanostores@1.1.1)':
+  '@nanostores/i18n@1.2.2(nanostores@1.2.0)':
     dependencies:
-      nanostores: 1.1.1
+      nanostores: 1.2.0
 
   '@nodelib/fs.scandir@2.1.5':
     dependencies:
@@ -4726,14 +4726,14 @@ snapshots:
     dependencies:
       astro: 6.0.4(@types/node@24.12.0)(jiti@2.6.1)(rollup@4.59.0)(typescript@5.9.3)
 
-  astro-nanostores-i18n@0.5.0(@nanostores/i18n@1.2.2(nanostores@1.1.1))(astro@6.0.4(@types/node@24.12.0)(jiti@2.6.1)(rollup@4.59.0)(typescript@5.9.3))(nanostores@1.1.1):
+  astro-nanostores-i18n@0.5.0(@nanostores/i18n@1.2.2(nanostores@1.2.0))(astro@6.0.4(@types/node@24.12.0)(jiti@2.6.1)(rollup@4.59.0)(typescript@5.9.3))(nanostores@1.2.0):
     dependencies:
       '@astrojs/compiler': 3.0.0
-      '@nanostores/i18n': 1.2.2(nanostores@1.1.1)
+      '@nanostores/i18n': 1.2.2(nanostores@1.2.0)
       astro: 6.0.4(@types/node@24.12.0)(jiti@2.6.1)(rollup@4.59.0)(typescript@5.9.3)
       astro-integration-kit: 0.20.0(astro@6.0.4(@types/node@24.12.0)(jiti@2.6.1)(rollup@4.59.0)(typescript@5.9.3))
       fast-glob: 3.3.3
-      nanostores: 1.1.1
+      nanostores: 1.2.0
       typescript: 5.9.3
 
   astro@6.0.4(@types/node@24.12.0)(jiti@2.6.1)(rollup@4.59.0)(typescript@5.9.3):
@@ -6527,7 +6527,7 @@ snapshots:
 
   nanoid@3.3.11: {}
 
-  nanostores@1.1.1: {}
+  nanostores@1.2.0: {}
 
   natural-compare@1.4.0: {}
 
