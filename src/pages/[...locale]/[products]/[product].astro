@@ -6,6 +6,7 @@ import { render } from "astro:content";
 import { getCollection } from "astro:content";
 import Shell from "../../../layouts/Shell.astro";
 import Article from "../../../layouts/templates/Article.astro";
+import CTA from "../../../components/CallToAction.astro";
 import slug from "limax";
 
 export const getStaticPaths = async () => {
@@ -25,9 +26,17 @@ const { Content } = await render(page);
 
 <Shell translations={page.translations}>
   <Meta slot="meta" title={page.data.title} />
-  <Article>
+  <Article class="column-article">
     <h1 slot="title">{page.data.title}</h1>
     <Content />
     {page.data.image && <img src={page.data.image} alt={page.data.title} />}
+    <CTA />
   </Article>
 </Shell>
+
+<style>
+  .column-article {
+    display: flex;
+    flex-direction: column;
+  }
+</style>
