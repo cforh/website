@@ -14,7 +14,7 @@ const navigationCollection = defineCollection({
           z.array(
             z.object({
               title: z.string(),
-              path: z.string(),
+              path: z.url().or(z.string()),
               icon: image().optional(),
             }),
           ),
@@ -39,7 +39,6 @@ const productsCollection = defineCollection({
     z.object({
       title: z.string(),
       summary: z.string(),
-      image: z.string(),
     }),
   ),
 });
