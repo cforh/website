@@ -28,5 +28,6 @@ const { Content } = await render(page);
   <Article>
     <h1 slot="title">{page.data.title}</h1>
     <Content />
+    {page.data.image && <img src={page.data.image} alt={page.data.title} />}
   </Article>
 </Shell>
