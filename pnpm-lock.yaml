@@ -10,7 +10,7 @@ importers:
     dependencies:
       '@astrojs/mdx':
         specifier: ^5.0.0
-        version: 5.0.0(astro@6.0.4(@types/node@24.12.0)(jiti@2.6.1)(rollup@4.59.0)(typescript@5.9.3))
+        version: 5.0.1(astro@6.0.5(@types/node@24.12.0)(jiti@2.6.1)(rollup@4.59.0)(typescript@5.9.3))
       '@astrojs/sitemap':
         specifier: ^3.7.1
         version: 3.7.1
@@ -25,13 +25,13 @@ importers:
         version: 1.2.2(nanostores@1.2.0)
       astro:
         specifier: ^6.0.4
-        version: 6.0.4(@types/node@24.12.0)(jiti@2.6.1)(rollup@4.59.0)(typescript@5.9.3)
+        version: 6.0.5(@types/node@24.12.0)(jiti@2.6.1)(rollup@4.59.0)(typescript@5.9.3)
       astro-loader-i18n:
         specifier: ^0.11.0
-        version: 0.11.0(astro@6.0.4(@types/node@24.12.0)(jiti@2.6.1)(rollup@4.59.0)(typescript@5.9.3))
+        version: 0.11.0(astro@6.0.5(@types/node@24.12.0)(jiti@2.6.1)(rollup@4.59.0)(typescript@5.9.3))
       astro-nanostores-i18n:
         specifier: ^0.5.0
-        version: 0.5.0(@nanostores/i18n@1.2.2(nanostores@1.2.0))(astro@6.0.4(@types/node@24.12.0)(jiti@2.6.1)(rollup@4.59.0)(typescript@5.9.3))(nanostores@1.2.0)
+        version: 0.5.0(@nanostores/i18n@1.2.2(nanostores@1.2.0))(astro@6.0.5(@types/node@24.12.0)(jiti@2.6.1)(rollup@4.59.0)(typescript@5.9.3))(nanostores@1.2.0)
       limax:
         specifier: ^4.2.2
         version: 4.2.2
@@ -114,11 +114,11 @@ packages:
   '@astrojs/markdown-remark@7.0.0':
     resolution: {integrity: sha512-jTAXHPy45L7o1ljH4jYV+ShtOHtyQUa1mGp3a5fJp1soX8lInuTJQ6ihmldHzVM4Q7QptU4SzIDIcKbBJO7sXQ==}
 
-  '@astrojs/mdx@5.0.0':
-    resolution: {integrity: sha512-J4rW6eT+qgVw7+RXdBYO4vYyWGeXXQp8wop9dXsOlLzIsVSxyttMCgkGCWvIR2ogBqKqeYgI6YDW93PaDHkCaA==}
+  '@astrojs/mdx@5.0.1':
+    resolution: {integrity: sha512-xfvc9MuV/5Kl6JaiYYEFi7ilbGYyaaOboH+gH8f2jHAZ2pmmHtnSrewS03vNeruBsa8rtS3X8NHJrqeZt+0wLg==}
     engines: {node: ^20.19.1 || >=22.12.0}
     peerDependencies:
-      astro: ^6.0.0-alpha.0
+      astro: ^6.0.0
 
   '@astrojs/prism@4.0.0':
     resolution: {integrity: sha512-NndtNPpxaGinRpRytljGBvYHpTOwHycSZ/c+lQi5cHvkqqrHKWdkPEhImlODBNmbuB+vyQUNUDXyjzt66CihJg==}
@@ -1408,8 +1408,8 @@ packages:
       astro: ^5.5.0 || ^6.0.0
       nanostores: ^1.0.1
 
-  astro@6.0.4:
-    resolution: {integrity: sha512-1piLJCPTL/x7AMO2cjVFSTFyRqKuC3W8sSEySCt1aJio+p/wGs5H3K+Xr/rE9ftKtknLUtjxCqCE7/0NsXfGpQ==}
+  astro@6.0.5:
+    resolution: {integrity: sha512-JnLCwaoCaRXIHuIB8yNztJrd7M3hXrHUMAoQmeXtEBKxRu/738REhaCZ1lapjrS9HlpHsWTu3JUXTERB/0PA7g==}
     engines: {node: ^20.19.1 || >=22.12.0, npm: '>=9.6.5', pnpm: '>=7.1.0'}
     hasBin: true
 
@@ -2689,8 +2689,8 @@ packages:
   oniguruma-parser@0.12.1:
     resolution: {integrity: sha512-8Unqkvk1RYc6yq2WBYRj4hdnsAxVze8i7iPfQr8e4uSP3tRv0rpZcbGUDvxfQQcdwHt/e9PrMvGCsa8OqG9X3w==}
 
-  oniguruma-to-es@4.3.4:
-    resolution: {integrity: sha512-3VhUGN3w2eYxnTzHn+ikMI+fp/96KoRSVK9/kMTcFqj1NRDh2IhQCKvYxDnWePKRXY/AqH+Fuiyb7VHSzBjHfA==}
+  oniguruma-to-es@4.3.5:
+    resolution: {integrity: sha512-Zjygswjpsewa0NLTsiizVuMQZbp0MDyM6lIt66OxsF21npUDlzpHi1Mgb/qhQdkb+dWFTzJmFbEWdvZgRho8eQ==}
 
   optionator@0.9.4:
     resolution: {integrity: sha512-6IpQ7mKUxRcZNLIObR0hz7lxsapSSIYNZJwXPGeF0mTVqGKFIXj1DQcMoT22S3ROcLyY/rz0PWaWZ9ayWmad9g==}
@@ -3179,10 +3179,6 @@ packages:
     resolution: {integrity: sha512-Ae3OVUqifDw0wBriIBS7yVaW44Dp6eSHQcyq4Igc7eN2TJH/2YsicswaW+J/OuMvhpDPOKEgpAZCjkb4hpoyeA==}
     engines: {node: ^16.14.0 || >= 17.3.0}
 
-  tinyexec@1.0.2:
-    resolution: {integrity: sha512-W/KYk+NFhkmsYpuHq5JykngiOCnxeVL8v8dFnqxSD8qEEdRfXk1SDM6JzNqcERbcGYj9tMrDQBYV9cjgnunFIg==}
-    engines: {node: '>=18'}
-
   tinyexec@1.0.4:
     resolution: {integrity: sha512-u9r3uZC0bdpGOXtlxUIdwf9pkmvhqJdrVCH9fapQtgy/OeTTMZ1nqH7agtvEfmGui6e1XxjcdrlxvxJvc3sMqw==}
     engines: {node: '>=18'}
@@ -3545,7 +3541,7 @@ snapshots:
   '@antfu/install-pkg@1.1.0':
     dependencies:
       package-manager-detector: 1.6.0
-      tinyexec: 1.0.2
+      tinyexec: 1.0.4
 
   '@astrojs/compiler@2.13.1': {}
 
@@ -3580,12 +3576,12 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@astrojs/mdx@5.0.0(astro@6.0.4(@types/node@24.12.0)(jiti@2.6.1)(rollup@4.59.0)(typescript@5.9.3))':
+  '@astrojs/mdx@5.0.1(astro@6.0.5(@types/node@24.12.0)(jiti@2.6.1)(rollup@4.59.0)(typescript@5.9.3))':
     dependencies:
       '@astrojs/markdown-remark': 7.0.0
       '@mdx-js/mdx': 3.1.1
       acorn: 8.16.0
-      astro: 6.0.4(@types/node@24.12.0)(jiti@2.6.1)(rollup@4.59.0)(typescript@5.9.3)
+      astro: 6.0.5(@types/node@24.12.0)(jiti@2.6.1)(rollup@4.59.0)(typescript@5.9.3)
       es-module-lexer: 2.0.0
       estree-util-visit: 2.0.0
       hast-util-to-html: 9.0.5
@@ -4428,7 +4424,7 @@ snapshots:
     dependencies:
       '@shikijs/types': 4.0.2
       '@shikijs/vscode-textmate': 10.0.2
-      oniguruma-to-es: 4.3.4
+      oniguruma-to-es: 4.3.5
 
   '@shikijs/engine-oniguruma@4.0.2':
     dependencies:
@@ -4717,26 +4713,26 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  astro-integration-kit@0.20.0(astro@6.0.4(@types/node@24.12.0)(jiti@2.6.1)(rollup@4.59.0)(typescript@5.9.3)):
+  astro-integration-kit@0.20.0(astro@6.0.5(@types/node@24.12.0)(jiti@2.6.1)(rollup@4.59.0)(typescript@5.9.3)):
     dependencies:
-      astro: 6.0.4(@types/node@24.12.0)(jiti@2.6.1)(rollup@4.59.0)(typescript@5.9.3)
+      astro: 6.0.5(@types/node@24.12.0)(jiti@2.6.1)(rollup@4.59.0)(typescript@5.9.3)
       pathe: 2.0.3
 
-  astro-loader-i18n@0.11.0(astro@6.0.4(@types/node@24.12.0)(jiti@2.6.1)(rollup@4.59.0)(typescript@5.9.3)):
+  astro-loader-i18n@0.11.0(astro@6.0.5(@types/node@24.12.0)(jiti@2.6.1)(rollup@4.59.0)(typescript@5.9.3)):
     dependencies:
-      astro: 6.0.4(@types/node@24.12.0)(jiti@2.6.1)(rollup@4.59.0)(typescript@5.9.3)
+      astro: 6.0.5(@types/node@24.12.0)(jiti@2.6.1)(rollup@4.59.0)(typescript@5.9.3)
 
-  astro-nanostores-i18n@0.5.0(@nanostores/i18n@1.2.2(nanostores@1.2.0))(astro@6.0.4(@types/node@24.12.0)(jiti@2.6.1)(rollup@4.59.0)(typescript@5.9.3))(nanostores@1.2.0):
+  astro-nanostores-i18n@0.5.0(@nanostores/i18n@1.2.2(nanostores@1.2.0))(astro@6.0.5(@types/node@24.12.0)(jiti@2.6.1)(rollup@4.59.0)(typescript@5.9.3))(nanostores@1.2.0):
     dependencies:
       '@astrojs/compiler': 3.0.0
       '@nanostores/i18n': 1.2.2(nanostores@1.2.0)
-      astro: 6.0.4(@types/node@24.12.0)(jiti@2.6.1)(rollup@4.59.0)(typescript@5.9.3)
-      astro-integration-kit: 0.20.0(astro@6.0.4(@types/node@24.12.0)(jiti@2.6.1)(rollup@4.59.0)(typescript@5.9.3))
+      astro: 6.0.5(@types/node@24.12.0)(jiti@2.6.1)(rollup@4.59.0)(typescript@5.9.3)
+      astro-integration-kit: 0.20.0(astro@6.0.5(@types/node@24.12.0)(jiti@2.6.1)(rollup@4.59.0)(typescript@5.9.3))
       fast-glob: 3.3.3
       nanostores: 1.2.0
       typescript: 5.9.3
 
-  astro@6.0.4(@types/node@24.12.0)(jiti@2.6.1)(rollup@4.59.0)(typescript@5.9.3):
+  astro@6.0.5(@types/node@24.12.0)(jiti@2.6.1)(rollup@4.59.0)(typescript@5.9.3):
     dependencies:
       '@astrojs/compiler': 3.0.0
       '@astrojs/internal-helpers': 0.8.0
@@ -5769,7 +5765,7 @@ snapshots:
 
   hosted-git-info@9.0.2:
     dependencies:
-      lru-cache: 11.2.6
+      lru-cache: 11.2.7
 
   html-escaper@3.0.3: {}
 
@@ -6592,7 +6588,7 @@ snapshots:
 
   oniguruma-parser@0.12.1: {}
 
-  oniguruma-to-es@4.3.4:
+  oniguruma-to-es@4.3.5:
     dependencies:
       oniguruma-parser: 0.12.1
       regex: 6.1.0
@@ -7275,8 +7271,6 @@ snapshots:
   tiny-inflate@1.0.3: {}
 
   tinyclip@0.1.12: {}
-
-  tinyexec@1.0.2: {}
 
   tinyexec@1.0.4: {}
 
