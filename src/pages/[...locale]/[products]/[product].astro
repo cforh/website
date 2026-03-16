@@ -7,6 +7,8 @@ import { getCollection } from "astro:content";
 import Shell from "../../../layouts/Shell.astro";
 import Article from "../../../layouts/templates/Article.astro";
 import CTA from "../../../components/CallToAction.astro";
+import Showcases from "../../../components/Showcases.astro";
+import features from "../../../content/features/features.json";
 import slug from "limax";
 
 export const getStaticPaths = async () => {
@@ -30,6 +32,7 @@ const { Content } = await render(page);
     <h1 slot="title">{page.data.title}</h1>
     <Content />
     <CTA />
+    <Showcases features={features} />
   </Article>
 </Shell>
 
