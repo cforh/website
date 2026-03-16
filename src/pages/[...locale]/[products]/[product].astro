@@ -29,7 +29,6 @@ const { Content } = await render(page);
   <Article class="column-article">
     <h1 slot="title">{page.data.title}</h1>
     <Content />
-    {page.data.image && <img src={page.data.image} alt={page.data.title} />}
     <CTA />
   </Article>
 </Shell>
