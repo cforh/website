@@ -14,7 +14,7 @@ const navigationCollection = defineCollection({
           z.array(
             z.object({
               title: z.string(),
-              path: z.url().or(z.string()),
+              path: z.string(),
               icon: image().optional(),
             }),
           ),
