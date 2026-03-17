@@ -27,12 +27,12 @@ const { features } = Astro.props;
   .showcases {
     display: flex;
     flex-direction: row;
-    gap: var(--size-gap);
+    flex-wrap: wrap;
+    justify-content: space-between;
   }
 
   .showcases > * {
     display: flex;
     flex-direction: column;
-    flex: 1;
   }
 </style>
