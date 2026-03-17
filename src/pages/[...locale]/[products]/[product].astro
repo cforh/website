@@ -6,7 +6,6 @@ import { render } from "astro:content";
 import { getCollection } from "astro:content";
 import Shell from "../../../layouts/Shell.astro";
 import Article from "../../../layouts/templates/Article.astro";
-import CallToAction from "../../../components/CallToAction.astro";
 import slug from "limax";
 
 export const getStaticPaths = async () => {
@@ -29,7 +28,6 @@ const { Content } = await render(page);
   <Article class="column-article">
     <h1 slot="title">{page.data.title}</h1>
     <Content />
-    <CallToAction />
   </Article>
 </Shell>
 
