@@ -3,7 +3,8 @@ title: Sparkium
 summary: Sparkium is a modern data schema for storing eLearning content.
 ---
 
-import Showcases from "../../../components/Showcases.astro";
+import Card from "../../../components/Card.astro";
+import CardList from "../../../components/CardList.astro";
 
 With Sparkium, you can store eLearning content in a modern data schema. Based on text-based formats like Markdown and using a structured file system, it is accessible, easy to edit, and versionable.
 
@@ -11,22 +12,31 @@ With Sparkium, you can store eLearning content in a modern data schema. Based on
 
 <button class="button"> Explore </button>
 
-<Showcases
-  features={[
-    {
-      title: "Markdown-based",
-      description: "Write content in simple Markdown format.",
-      image: "https://placehold.co/300x200?text=Markdown",
-    },
-    {
-      title: "Version controlled",
-      description: "Track changes easily with Git.",
-      image: "https://placehold.co/300x200?text=Git",
-    },
-    {
-      title: "Structured",
-      description: "Organize content in a clean file system.",
-      image: "https://placehold.co/300x200?text=Structure",
-    },
-  ]}
-/>
+<CardList>
+  <Card
+    title="Markdown-based"
+    titleLevel="h3"
+    hasSpotlight
+    cover={{ alt: "Markdown", image: { src: "https://placehold.co/300x200?text=Markdown" } }}
+  >
+    <p slot="description">Write content in simple Markdown format.</p>
+  </Card>
+
+  <Card
+    title="Version controlled"
+    titleLevel="h3"
+    hasSpotlight
+    cover={{ alt: "Git", image: { src: "https://placehold.co/300x200?text=Git"} }}
+  >
+    <p slot="description">Track changes easily with Git.</p>
+  </Card>
+
+  <Card
+    title="Structured"
+    titleLevel="h3"
+    hasSpotlight
+    cover={{ alt: "Structure", image: { src: "https://placehold.co/300x200?text=Structure" } }}
+  >
+    <p slot="description">Organize content in a clean file system.</p>
+  </Card>
+</CardList>
