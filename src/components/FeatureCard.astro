@@ -1,0 +1,28 @@
+---
+type Props = {
+  feature: string;
+  spotlight: { alt: string; image: string };
+  description: string;
+};
+
+const { feature, spotlight, description } = Astro.props;
+---
+
+<div class="feature-card">
+  <h3>{feature}</h3>
+  <img src={spotlight.image} alt={spotlight.alt} />
+  <p>{description}</p>
+</div>
+
+<style>
+  .feature-card {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .feature-card img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+</style>
