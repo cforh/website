@@ -1,7 +1,9 @@
 ---
+import type { ImageMetadata } from "astro";
+
 type Props = {
   feature: string;
-  spotlight: { alt: string; image: string };
+  spotlight: { alt: string; image: ImageMetadata };
   description: string;
 };
 
@@ -10,7 +12,7 @@ const { feature, spotlight, description } = Astro.props;
 
 <div class="feature-card">
   <h3>{feature}</h3>
-  <img src={spotlight.image} alt={spotlight.alt} />
+  <img src={spotlight.image.src} alt={spotlight.alt} />
   <p>{description}</p>
 </div>
 
