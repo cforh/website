@@ -16,6 +16,7 @@
   },
   "cSpell.language": "en,de-ch",
   "json.schemaDownload.trustedDomains": {
-    "https://docs.renovatebot.com": true
+    "https://docs.renovatebot.com": true,
+    "https://unpkg.com/@changesets": true
   },
 }
