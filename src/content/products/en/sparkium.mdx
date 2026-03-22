@@ -1,0 +1,37 @@
+---
+title: Sparkium
+summary: Sparkium is a modern data schema for storing eLearning content.
+---
+
+import FeatureCard from "../../../components/FeatureCard.astro";
+import CardList from "../../../components/CardList.astro";
+import { Image } from "astro:assets";
+import Placeholder from "../../../../assets/placeholder/placeholder.svg";
+
+With Sparkium, you can store eLearning content in a modern data schema. Based on text-based formats like Markdown and using a structured file system, it is accessible, easy to edit, and versionable.
+
+<a href="https://example.com">
+  <Image src={Placeholder} alt="Sparkium image" />
+</a>
+
+<button class="button"> Explore </button>
+
+<CardList>
+  <FeatureCard
+    feature="Markdown-based"
+    spotlight={{ alt: "Markdown based", image: Placeholder}}
+    description="Write content in simple Markdown format."
+  />
+
+  <FeatureCard
+    feature="Version controlled"
+    spotlight={{ alt: "Version controlled", image: Placeholder}}
+    description="Track changes easily with Git."
+  />
+
+  <FeatureCard
+    feature="Structured"
+    spotlight={{ alt: "Structure", image: Placeholder}}
+    description="Organize content in a clean file system."
+  />
+</CardList>

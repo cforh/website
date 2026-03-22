@@ -25,7 +25,7 @@ const { Content } = await render(page);
 
 <Shell translations={page.translations}>
   <Meta slot="meta" title={page.data.title} />
-  <Article>
+  <Article class="column-article">
     <h1 slot="title">{page.data.title}</h1>
     <Content />
   </Article>

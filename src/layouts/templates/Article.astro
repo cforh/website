@@ -95,6 +95,13 @@ const { title, class: className } = Astro.props;
     }
   }
 
+  article.column-article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--size-gap);
+  }
+
   header :global(h1) {
     margin: 0;
   }
