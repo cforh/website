@@ -8,14 +8,78 @@ import CardList from "../../../components/CardList.astro";
 import { Image } from "astro:assets";
 import Placeholder from "../../../../assets/placeholder/placeholder.svg";
 
-With Sparkium, you can store eLearning content in a modern data schema. Based on text-based formats like Markdown and using a structured file system, it is accessible, easy to edit, and versionable.
+Sparkium is a modern, text-based schema/standard for eLearning content, making it easy for the user to create, edit, manage changes, and ready to integrate into LMS via Sparklink.
 
-<a href="https://example.com">
+## Workflow
+[1] 💡 Read Sparkium Standard
+   ┌─────────────────────────────┐
+   │ Understand the standard and │
+   │  structure to know how to   │
+   │  create content             │
+   └─────────────────────────────┘
+            │
+            ▼
+[2] 📚 Create eLearning Content
+   ┌─────────────────────────────┐
+   │ Organize content according  │
+   │  to the standard            │
+   └─────────────────────────────┘
+            │
+            ▼
+[3] 🚀 Upload via Sparklink
+   ┌─────────────────────────────┐
+   │ Validate and upload to      │
+   │ LMS (Moodle) with one click │
+   └─────────────────────────────┘
+            │
+            ▼
+[4] 💻 Available on LMS
+   ┌─────────────────────────────┐
+   │ Content is accessible on LMS│
+   │  (Moodle) to all relevant   │
+   │ users                       │
+   └─────────────────────────────┘
+
+<p>With Sparkium, your content stays structured and easy to manage: upload, export, and update, whenever you want.</p>
+
+<button class="button"> Go to Sparkium </button>
+
+## Who is Sparkium for?
+Sparkium is for anyone working with eLearning content. Whether you're creating, managing, or maintaining it.
+
+- Educators & Trainers 
+- Content Authors & Publishers
+- LMS Administrators 
+- Instructional Designers & Developers
+
+If you work with eLearning content, Sparkium is built for you.
+
+
+## Features
+
+### Markdown-based
+Content is written in a simple, text-friendly format that's easy to read and edit - think of it as writing in a plain document while keeping structure and formatting.
+### Change-managed
+Every update is tracked, so you can see what changed and easily manage revisions over time. No need to worry about losing previous versions!
+### Structured
+Organize your course in a clear, logical file system, making it simple to find, update, and maintain content efficiently.
+### Portable
+Courses aren't locked to the LMS. With Sparkium, you can export, modify, and update your content locally, then re-upload it to the LMS to keep your courses flexible and easy to maintain.
+
+## Why Sparkium?
+
+| Comparison        | SCORM                     | xAPI                        | Sparkium                       |
+|---------------------------|---------------------------|-----------------------------|--------------------------------|
+| **Ease of Content Creation** | 🟡 Requires LMS setup | 🟡 More flexible but needs technical setup | 🟢 Create in text-based format with clear structure |
+| **Update & Change Management** | 🔴 Hard to update existing courses | 🟡 Can track some changes | 🟢 Content can be updated locally and re-uploaded seamlessly |
+| **Structured Organization**     | 🔴 File structure not standardized       | 🟡 Partially structured | 🟢  Clear, logical file system makes content easy to find, update, and maintain |
+| **Content Portability**     | 🔴 Tied to LMS         | 🟡 Can move between xAPI-enabled platforms | 🟢  Export, modify, and re-upload within supported LMS |
+| **Technical Barrier**       | 🔴 Technical skills required | 🔴 Technical skills required | 🟢 Simple text-based workflow, user-friendly |
+
+
+{/* <a href="https://example.com">
   <Image src={Placeholder} alt="Sparkium image" />
 </a>
-
-<button class="button"> Explore </button>
-
 <CardList>
   <FeatureCard
     feature="Markdown-based"
@@ -34,4 +98,4 @@ With Sparkium, you can store eLearning content in a modern data schema. Based on
     spotlight={{ alt: "Structure", image: Placeholder}}
     description="Organize content in a clean file system."
   />
-</CardList>
+</CardList> */}
