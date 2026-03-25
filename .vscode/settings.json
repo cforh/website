@@ -19,4 +19,8 @@
     "https://docs.renovatebot.com": true,
     "https://unpkg.com/@changesets": true
   },
+  "cSpell.words": [
+    "Sparkium",
+    "Sparklink"
+  ],
 }
