@@ -24,7 +24,7 @@ importers:
         specifier: ^1.2.2
         version: 1.2.2(nanostores@1.2.0)
       astro:
-        specifier: ^6.1.2
+        specifier: ^6.1.5
         version: 6.1.5(@types/node@24.12.0)(jiti@2.6.1)(rollup@4.60.1)(typescript@5.9.3)
       astro-loader-i18n:
         specifier: ^0.11.1
@@ -49,7 +49,7 @@ importers:
         specifier: ^10.0.1
         version: 10.0.1(eslint@10.2.0(jiti@2.6.1))
       '@iconify/json':
-        specifier: ^2.2.458
+        specifier: ^2.2.461
         version: 2.2.461
       '@openscript/unplugin-favicons':
         specifier: ^1.1.8
@@ -79,7 +79,7 @@ importers:
         specifier: ^7.2.0
         version: 7.2.0
       globals:
-        specifier: ^17.4.0
+        specifier: ^17.5.0
         version: 17.5.0
       jiti:
         specifier: ^2.6.1
@@ -91,7 +91,7 @@ importers:
         specifier: 0.14.1
         version: 0.14.1
       typescript-eslint:
-        specifier: ^8.58.0
+        specifier: ^8.58.1
         version: 8.58.1(eslint@10.2.0(jiti@2.6.1))(typescript@5.9.3)
       unplugin-icons:
         specifier: ^23.0.1
@@ -542,16 +542,16 @@ packages:
     resolution: {integrity: sha512-EriSTlt5OC9/7SXkRSCAhfSxxoSUgBm33OH+IkwbdpgoqsSsUg7y3uh+IICI/Qg4BBWr3U2i39RpmycbxMq4ew==}
     engines: {node: ^12.0.0 || ^14.0.0 || >=16.0.0}
 
-  '@eslint/config-array@0.23.4':
-    resolution: {integrity: sha512-lf19F24LSMfF8weXvW5QEtnLqW70u7kgit5e9PSx0MsHAFclGd1T9ynvWEMDT1w5J4Qt54tomGeAhdoAku1Xow==}
+  '@eslint/config-array@0.23.5':
+    resolution: {integrity: sha512-Y3kKLvC1dvTOT+oGlqNQ1XLqK6D1HU2YXPc52NmAlJZbMMWDzGYXMiPRJ8TYD39muD/OTjlZmNJ4ib7dvSrMBA==}
     engines: {node: ^20.19.0 || ^22.13.0 || >=24}
 
-  '@eslint/config-helpers@0.5.4':
-    resolution: {integrity: sha512-jJhqiY3wPMlWWO3370M86CPJ7pt8GmEwSLglMfQhjXal07RCvhmU0as4IuUEW5SJeunfItiEetHmSxCCe9lDBg==}
+  '@eslint/config-helpers@0.5.5':
+    resolution: {integrity: sha512-eIJYKTCECbP/nsKaaruF6LW967mtbQbsw4JTtSVkUQc9MneSkbrgPJAbKl9nWr0ZeowV8BfsarBmPpBzGelA2w==}
     engines: {node: ^20.19.0 || ^22.13.0 || >=24}
 
-  '@eslint/core@1.2.0':
-    resolution: {integrity: sha512-8FTGbNzTvmSlc4cZBaShkC6YvFMG0riksYWRFKXztqVdXaQbcZLXlFbSpC05s70sGEsXAw0qwhx69JiW7hQS7A==}
+  '@eslint/core@1.2.1':
+    resolution: {integrity: sha512-MwcE1P+AZ4C6DWlpin/OmOA54mmIZ/+xZuJiQd4SyB29oAJjN30UW9wkKNptW2ctp4cEsvhlLY/CsQ1uoHDloQ==}
     engines: {node: ^20.19.0 || ^22.13.0 || >=24}
 
   '@eslint/js@10.0.1':
@@ -563,12 +563,12 @@ packages:
       eslint:
         optional: true
 
-  '@eslint/object-schema@3.0.4':
-    resolution: {integrity: sha512-55lO/7+Yp0ISKRP0PsPtNTeNGapXaO085aELZmWCVc5SH3jfrqpuU6YgOdIxMS99ZHkQN1cXKE+cdIqwww9ptw==}
+  '@eslint/object-schema@3.0.5':
+    resolution: {integrity: sha512-vqTaUEgxzm+YDSdElad6PiRoX4t8VGDjCtt05zn4nU810UIx/uNEV7/lZJ6KwFThKZOzOxzXy48da+No7HZaMw==}
     engines: {node: ^20.19.0 || ^22.13.0 || >=24}
 
-  '@eslint/plugin-kit@0.7.0':
-    resolution: {integrity: sha512-ejvBr8MQCbVsWNZnCwDXjUKq40MDmHalq7cJ6e9s/qzTUFIIo/afzt1Vui9T97FM/V/pN4YsFVoed5NIa96RDg==}
+  '@eslint/plugin-kit@0.7.1':
+    resolution: {integrity: sha512-rZAP3aVgB9ds9KOeUSL+zZ21hPmo8dh6fnIFwRQj5EAZl9gzR7wxYbYXYysAM8CTqGmUGyp2S4kUdV17MnGuWQ==}
     engines: {node: ^20.19.0 || ^22.13.0 || >=24}
 
   '@fontsource-variable/montserrat@5.2.8':
@@ -2848,10 +2848,6 @@ packages:
     resolution: {integrity: sha512-orRsuYpJVw8LdAwqqLykBj9ecS5/cRHlI5+nvTo8LcCKmzDmqVORXtOIYEEQuL9D4BxtA1lm5isAqzQZCoQ6Eg==}
     engines: {node: '>=4'}
 
-  postcss@8.5.8:
-    resolution: {integrity: sha512-OW/rX8O/jXnm82Ey1k44pObPtdblfiuWnrd8X7GJ7emImCOstunGbXUpp7HdBrFQX6rJzn3sPT397Wp5aCwCHg==}
-    engines: {node: ^10 || ^12 || >=14}
-
   postcss@8.5.9:
     resolution: {integrity: sha512-7a70Nsot+EMX9fFU3064K/kdHWZqGVY+BADLyXc8Dfv+mTLLVl6JzJpPaCZ2kQL9gIJvKXSLMHhqdRRjwQeFtw==}
     engines: {node: ^10 || ^12 || >=14}
@@ -3981,19 +3977,19 @@ snapshots:
 
   '@eslint-community/regexpp@4.12.2': {}
 
-  '@eslint/config-array@0.23.4':
+  '@eslint/config-array@0.23.5':
     dependencies:
-      '@eslint/object-schema': 3.0.4
+      '@eslint/object-schema': 3.0.5
       debug: 4.4.3
       minimatch: 10.2.5
     transitivePeerDependencies:
       - supports-color
 
-  '@eslint/config-helpers@0.5.4':
+  '@eslint/config-helpers@0.5.5':
     dependencies:
-      '@eslint/core': 1.2.0
+      '@eslint/core': 1.2.1
 
-  '@eslint/core@1.2.0':
+  '@eslint/core@1.2.1':
     dependencies:
       '@types/json-schema': 7.0.15
 
@@ -4001,11 +3997,11 @@ snapshots:
     optionalDependencies:
       eslint: 10.2.0(jiti@2.6.1)
 
-  '@eslint/object-schema@3.0.4': {}
+  '@eslint/object-schema@3.0.5': {}
 
-  '@eslint/plugin-kit@0.7.0':
+  '@eslint/plugin-kit@0.7.1':
     dependencies:
-      '@eslint/core': 1.2.0
+      '@eslint/core': 1.2.1
       levn: 0.4.1
 
   '@fontsource-variable/montserrat@5.2.8': {}
@@ -5311,12 +5307,12 @@ snapshots:
     dependencies:
       '@eslint-community/eslint-utils': 4.9.1(eslint@10.2.0(jiti@2.6.1))
       '@jridgewell/sourcemap-codec': 1.5.5
-      '@typescript-eslint/types': 8.58.0
+      '@typescript-eslint/types': 8.58.1
       astro-eslint-parser: 1.4.0
       eslint: 10.2.0(jiti@2.6.1)
       eslint-compat-utils: 0.6.5(eslint@10.2.0(jiti@2.6.1))
       globals: 16.5.0
-      postcss: 8.5.8
+      postcss: 8.5.9
       postcss-selector-parser: 7.1.1
     transitivePeerDependencies:
       - supports-color
@@ -5371,10 +5367,10 @@ snapshots:
     dependencies:
       '@eslint-community/eslint-utils': 4.9.1(eslint@10.2.0(jiti@2.6.1))
       '@eslint-community/regexpp': 4.12.2
-      '@eslint/config-array': 0.23.4
-      '@eslint/config-helpers': 0.5.4
-      '@eslint/core': 1.2.0
-      '@eslint/plugin-kit': 0.7.0
+      '@eslint/config-array': 0.23.5
+      '@eslint/config-helpers': 0.5.5
+      '@eslint/core': 1.2.1
+      '@eslint/plugin-kit': 0.7.1
       '@humanfs/node': 0.16.7
       '@humanwhocodes/module-importer': 1.0.1
       '@humanwhocodes/retry': 0.4.3
@@ -6775,12 +6771,6 @@ snapshots:
     dependencies:
       cssesc: 3.0.0
       util-deprecate: 1.0.2
-
-  postcss@8.5.8:
-    dependencies:
-      nanoid: 3.3.11
-      picocolors: 1.1.1
-      source-map-js: 1.2.1
 
   postcss@8.5.9:
     dependencies:
