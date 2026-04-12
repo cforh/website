@@ -15,6 +15,7 @@ import PostgresqlLogo from "../../../assets/logos/postgresql.svg";
 import ReactLogo from "../../../assets/logos/react.svg";
 import JavascriptLogo from "../../../assets/logos/javascript.svg";
 import AstroLogo from "../../../assets/logos/astro.svg";
+import SparkiumLogo from "../../../assets/logos/sparkium.svg";
 import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 import { i18nProps } from "astro-loader-i18n";
@@ -96,6 +97,7 @@ const products = i18nProps(collection, {
           <Image alt="Logo of React" src={ReactLogo} />
           <Image alt="Logo of Javascript" src={JavascriptLogo} />
           <Image alt="Logo of Astro" src={AstroLogo} />
+          <Image alt="Logo of Sparkium" src={SparkiumLogo} />
         </div>
       </Fragment>
     </Orbiter>
