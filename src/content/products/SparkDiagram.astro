@@ -1,0 +1,59 @@
+---
+import Card from "../../components/Card.astro";
+---
+
+<div class="spark-diagram padding-breakout">
+  <Card title="Sparkium" titleLevel="h3">
+    <p slot="description">Your eLearning materials.</p>
+  </Card>
+
+  <div class="arrow">SparkLink</div>
+
+  <Card title="Learning Management System" titleLevel="h3">
+    <p slot="description">Your LMS like Moodle, Blackboard, Canvas, ...</p>
+  </Card>
+</div>
+
+<style>
+  .spark-diagram {
+    display: grid;
+    gap: var(--size-gap);
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr) minmax(0, 2fr);
+  }
+
+  .arrow {
+    --arrowhead-size: 2em;
+
+    align-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--color-white-97);
+    padding: var(--size-gap) var(--size-gap-large);
+    clip-path: polygon(0% 50%, 15% 0%, 15% 25%, 85% 25%, 85% 0%, 100% 50%, 85% 100%, 85% 75%, 15% 75%, 15% 100%);
+  }
+
+  @media (max-width: 800px) {
+    .spark-diagram {
+      grid-template-columns: 1fr;
+    }
+
+    .arrow {
+      justify-self: center;
+      width: 40%;
+      padding: var(--arrowhead-size) var(--size-gap);
+      clip-path: polygon(
+        50% 0%,
+        100% var(--arrowhead-size),
+        75% var(--arrowhead-size),
+        75% calc(100% - var(--arrowhead-size)),
+        100% calc(100% - var(--arrowhead-size)),
+        50% 100%,
+        0% calc(100% - var(--arrowhead-size)),
+        25% calc(100% - var(--arrowhead-size)),
+        25% var(--arrowhead-size),
+        0% var(--arrowhead-size)
+      );
+    }
+  }
+</style>
