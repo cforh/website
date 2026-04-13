@@ -5,11 +5,11 @@ summary: Sparkium is a modern standard for storing eLearning materials.
 
 import SparkDiagram from "../SparkDiagram.astro";
 
-Sparkium is a modern standard for storing eLearning materials trying to revolutionize the EdTech industry. The goal is to enable educators, publishers and organizations to create, manage and distribute eLearning materials in an efficient and where possible, automated manner, while still being easy to handle for us, humans!
+Sparkium is a standard schema for structuring eLearning content. When materials follow the schema, they can be managed more consistently and moved across different LMS platforms through Sparklink.
 
 ## How does Sparkium work?
 
-By using Sparkium's approach to store eLearning materials in a structured file system and text-based and human readable formats, you achieve more accessibility, portability, interoperability and prevent vendor or platform lock-in, while also enabling better change management, quality assurance and automation possibilities.
+Sparkium organizes eLearning materials in a structured file system using text-based, human-readable formats. This makes content easier to **access, move,** and **reuse across systems**, while reducing vendor lock-in and supporting better change management, quality assurance, and automation.
 
 <SparkDiagram />
 
@@ -31,7 +31,7 @@ Sparkium is made for anyone working with eLearning materials:
 ### Organizations
 
 - **Publishers** \
-  Do you miss the days when schools bought textbooks directly from you? Sparkium helps you bring that model into the digital era. Create eLearning materials once and deliver them to different LMS platforms like Moodle, making your product easily be sold and launched on customers' LMS.
+  Do you miss the days when schools bought textbooks directly from you? Sparkium helps you bring that model into the digital era! Create eLearning materials once and deliver them to different LMS platforms like Moodle, making your product easily be sold and launched on customers' LMS.
 - **Schools** \
   Did you ever had a broken link in your course materials or lost track of proposed changes? Sparkium allows you to automatically check the quality of your eLearning materials, and helps you to receive and manage proposed changes from your colleagues, making it easier to maintain high-quality course materials.
 - **Universities** \
@@ -97,23 +97,11 @@ Due the nature of Sparkium's file formats, you can easily use AI tools to assist
 
 ## Sparkium, what else?
 
-We are not the first one with this ideas, but we believe that Sparkium's approach is superior and more practical than the existing solutions.
-
-### Comparison of schemas
-
-SCORM and xAPI are the most widely used standards for eLearning materials, but they are complex. Their focus is on packaging and data tracking, which can be limiting and inefficient for content creation and management. Sparkium, on the other hand, focuses on content creation and management, making it more intuitive and user-friendly for educators and content creators.
-
-| Schema comparison  | SCORM               | xAPI                            | Sparkium                                         |
-| ------------------ | ------------------- | ------------------------------- | ------------------------------------------------ |
-| **Adoption**       | Widely adopted      | Growing adoption                | Emerging standard                                |
-| **Meta data**      | Complex XML format  | Complex XML format              | Readable YAML/JSON format                        |
-| **Content format** | Complex HTML format | Complex JSON format             | Human-friendly Markdown format with front matter |
-| **Structure**      | Rigid and complex   | More flexible but still complex | Intuitive by using folders and files             |
-| **Focus**          | Package-centric     | Data-centric                    | Content-centric                                  |
+Sparkium is not the first solution in this space, but we believe its approach is more practical and effective than existing alternatives.
 
 ### Comparison of eLearning material creation approaches
 
-Most eLearning materials are created directly inside LMS platforms, which can be limiting and inefficient. Sometimes also just file-distribution platforms like Google Drive or Dropbox are used to share course materials.
+Most eLearning materials are created directly inside LMS platforms, which can make content hard to manage, reuse, and move across systems. In other cases, teams rely on file-sharing tools like Google Drive or Dropbox, which help with distribution but do not provide a clear standard for organizing course content.
 
 | Approach comparison              | Static files (e.g. Google Drive, Dropbox)                 | Directly inside a LMS (e.g. Moodle, Blackboard) | With a schema                                          |
 | -------------------------------- | --------------------------------------------------------- | ----------------------------------------------- | ------------------------------------------------------ |
@@ -124,3 +112,15 @@ Most eLearning materials are created directly inside LMS platforms, which can be
 | **Portability**                  | Low portability due to proprietary formats                | Low portability within the same LMS             | High portability across different platforms            |
 | **Transparency**                 | Low transparency due to proprietary formats               | Low transparency within the LMS                 | High transparency due to open and readable formats     |
 | **Ownership**                    | Limited ownership due to proprietary formats              | Limited ownership within the LMS                | Full ownership of content and structure                |
+
+### Comparison of schemas
+
+SCORM and xAPI are the most widely used standards for eLearning materials, but they are complex. Their focus is on packaging and data tracking, which can be inefficient for content creation and management. **Sparkium, on the other hand, focuses on content creation and management, making it more intuitive and user-friendly for educators and content creators.**
+
+| Schema comparison  | SCORM               | xAPI                            | Sparkium                                         |
+| ------------------ | ------------------- | ------------------------------- | ------------------------------------------------ |
+| **Adoption**       | Widely adopted      | Growing adoption                | Emerging standard                                |
+| **Meta data**      | Complex XML format  | Complex XML format              | Readable YAML/JSON format                        |
+| **Content format** | Complex HTML format | Complex JSON format             | Human-friendly Markdown format with front matter |
+| **Structure**      | Rigid and complex   | More flexible but still complex | Intuitive by using folders and files             |
+| **Focus**          | Package-centric     | Data-centric                    | Content-centric                                  |
