@@ -1,0 +1,26 @@
+---
+type Props = { title: string };
+
+const { title } = Astro.props;
+---
+
+<div class="call-to-action">
+  <a class="button primary">{title}</a>
+</div>
+
+<style>
+  .call-to-action {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: var(--size-gap-large) var(--size-gap-small);
+  }
+
+  a {
+    cursor: pointer;
+    font-size: var(--size-font-large);
+    padding: var(--size-gap-small) var(--size-gap-huge);
+  }
+</style>
