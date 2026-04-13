@@ -33,7 +33,7 @@
     "@eslint/js": "^10.0.1",
     "@iconify/json": "^2.2.461",
     "@openscript/unplugin-favicons": "^1.1.8",
-    "@typescript-eslint/parser": "8.58.1",
+    "@typescript-eslint/parser": "8.58.2",
     "astro-eslint-parser": "^1.4.0",
     "eslint": "10.2.0",
     "eslint-config-prettier": "^10.1.8",
