@@ -23,6 +23,9 @@ importers:
       '@nanostores/i18n':
         specifier: ^1.2.2
         version: 1.2.2(nanostores@1.2.0)
+      accessible-astro-components:
+        specifier: ^5.2.0
+        version: 5.2.0
       astro:
         specifier: ^6.1.5
         version: 6.1.5(@types/node@24.12.0)(jiti@2.6.1)(rollup@4.60.1)(typescript@5.9.3)
@@ -1321,6 +1324,9 @@ packages:
     resolution: {integrity: sha512-lhtA4woh4KsXWyn3BJ/qYE/HSt+agsHeSGb7j3UeHpRyf3R4ErObR25snvt+Rc4Xlqb1T68U38wjqZ2YpmUGNw==}
     engines: {node: '>=18.0.0 <=23.x'}
     os: [darwin, linux, win32]
+
+  accessible-astro-components@5.2.0:
+    resolution: {integrity: sha512-l40PPeXR9Tc3cQQEKTmVF9hSxhVRgGI2ZsAJapngcEwEmsAr2COHXdW09VhxcINrsqflEuES6phDjsfVihCxBQ==}
 
   acorn-jsx@5.3.2:
     resolution: {integrity: sha512-rq9s+JNhf0IChjtDXxllJ7g41oZk5SlXtp0LHwyA5cejwn7vKmKp4pPri6YEePv2PU65sAsegbXtIinmDFDXgQ==}
@@ -4644,6 +4650,8 @@ snapshots:
       - yaml
 
   '@visulima/path@1.4.0': {}
+
+  accessible-astro-components@5.2.0: {}
 
   acorn-jsx@5.3.2(acorn@8.16.0):
     dependencies:
