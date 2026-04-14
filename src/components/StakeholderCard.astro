@@ -1,0 +1,237 @@
+---
+import type { ImageMetadata } from "astro";
+import { Image } from "astro:assets";
+
+type Item = {
+  image: string;
+  title: string;
+  question: string;
+  description: string;
+};
+
+type Props = {
+  heading: string;
+  imageLeft?: boolean;
+  items: Item[];
+};
+
+const { heading, imageLeft = false, items } = Astro.props;
+
+const imageModules = import.meta.glob<{ default: ImageMetadata }>("/assets/images/*.png");
+
+const IMAGE_PATH = "/assets/images/";
+
+const resolvedItems = await Promise.all(
+  items.map(async (item) => {
+    const path = `${IMAGE_PATH}${item.image}`;
+    const loader = imageModules[path];
+
+    if (!loader) {
+      throw new Error(`"${path}" does not exist in glob: "${IMAGE_PATH}*.png"`);
+    }
+
+    const mod = await loader();
+
+    return {
+      ...item,
+      src: mod.default,
+    };
+  }),
+);
+---
+
+<section class="stakeholder-card">
+  <h3>{heading}</h3>
+
+  <div class="accordion">
+    <ul class="tabs" role="tablist" aria-label={heading}>
+      {
+        resolvedItems.map(({ title }, index) => (
+          <li>
+            <button
+              type="button"
+              class={index === 0 ? "active" : ""}
+              data-index={index}
+              role="tab"
+              aria-selected={index === 0 ? "true" : "false"}
+            >
+              {title}
+            </button>
+          </li>
+        ))
+      }
+    </ul>
+
+    <div class="panels">
+      {
+        resolvedItems.map(({ question, description, title, src }, index) => (
+          <div class:list={["panel", { active: index === 0 }, { imageLeft }]} data-index={index}>
+            <div class="panel-content">
+              <h4>{question}</h4>
+              <p>{description}</p>
+            </div>
+
+            <div class="panel-image">
+              <Image src={src} alt={title} loading="eager" />
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .stakeholder-card {
+    background: var(--color-white-97);
+    border-radius: var(--size-border-radius);
+    padding: var(--size-gap-large);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 24rem;
+  }
+
+  .stakeholder-card h3 {
+    margin: 0 0 var(--size-gap-large);
+    color: var(--color-primary);
+    text-align: center;
+  }
+
+  .accordion {
+    width: 100%;
+  }
+
+  .tabs {
+    display: flex;
+    justify-content: center;
+    margin: 0 0 var(--size-gap-large);
+    width: 100%;
+    padding: 0;
+    list-style: none;
+    border-bottom: 1px solid var(--color-white-92);
+  }
+
+  .tabs li {
+    margin: 0;
+  }
+
+  .tabs button {
+    border: 0;
+    background: transparent;
+    padding: var(--size-gap-small) var(--size-gap-large);
+    font: inherit;
+    font-weight: 700;
+    color: var(--color-default-text);
+    cursor: pointer;
+    position: relative;
+  }
+
+  .tabs button.active {
+    color: var(--color-primary);
+  }
+
+  .tabs button.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: 100%;
+    height: 2px;
+    background: var(--color-primary);
+  }
+
+  .panels {
+    position: relative;
+  }
+
+  .panel {
+    display: none;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--size-gap-large);
+    align-items: center;
+  }
+
+  .panel.active {
+    display: grid;
+  }
+
+  .panel.imageLeft .panel-content {
+    order: 2;
+  }
+
+  .panel.imageLeft .panel-image {
+    order: 1;
+  }
+
+  .panel-content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: var(--size-gap-large);
+  }
+
+  .panel-content h4 {
+    margin: 0 0 var(--size-gap-medium);
+  }
+
+  .panel-content p {
+    margin: 0;
+  }
+
+  .panel-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  .panel-image :global(img) {
+    max-width: 100%;
+    max-height: 16rem;
+    height: auto;
+    object-fit: contain;
+  }
+
+  @media (max-width: 900px) {
+    .tabs {
+      flex-wrap: wrap;
+      justify-content: flex-start;
+    }
+
+    .panel,
+    .panel.active {
+      grid-template-columns: 1fr;
+    }
+
+    .panel.imageLeft .panel-content,
+    .panel.imageLeft .panel-image {
+      order: initial;
+    }
+  }
+</style>
+
+<script>
+  const accordions = document.querySelectorAll(".stakeholder-card .accordion");
+
+  accordions.forEach((accordion) => {
+    const buttons = accordion.querySelectorAll(".tabs button");
+    const panels = accordion.querySelectorAll(".panel");
+
+    function activate(index) {
+      buttons.forEach((button, i) => {
+        const isActive = i === index;
+        button.classList.toggle("active", isActive);
+        button.setAttribute("aria-selected", isActive ? "true" : "false");
+      });
+
+      panels.forEach((panel, i) => {
+        panel.classList.toggle("active", i === index);
+      });
+    }
+
+    buttons.forEach((button, index) => {
+      button.addEventListener("click", () => activate(index));
+    });
+  });
+</script>

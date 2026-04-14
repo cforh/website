@@ -5,6 +5,7 @@ summary: Sparkium is a modern standard for storing eLearning materials.
 
 import SparkDiagram from "../SparkDiagram.astro";
 import CallToAction from "../../../components/CallToAction.astro"; 
+import StakeholderCard from "../../../components/StakeholderCard.astro";
 
 Sparkium is a standard schema for structuring eLearning content. When materials follow the schema, they can be managed more consistently and moved across different LMS platforms through Sparklink.
 
@@ -20,7 +21,36 @@ Sparkium organizes eLearning materials in a structured file system using text-ba
 
 Sparkium is made for anyone working with eLearning materials:
 
-### Individuals
+
+<StakeholderCard
+  heading="For Individuals"
+  items={[
+    {
+      title: "Instructors",
+      image: "instructors.png",
+      question:
+        "Do you want to update your course materials without going through the hassle of editing inside LMS?",
+      description:
+        "Sparkium allows you to edit your eLearning materials locally, and deploy them to your LMS when ready, making it easier to keep your courses up-to-date.",
+    },
+    {
+      title: "Independent educators",
+      image: "independent-educators.png",
+      question:
+        "Have you ever been asked to share your course materials with others, but found it difficult to export or share them from your LMS?",
+      description:
+        "Sparkium allows you to export your eLearning materials, modify them on your local device, and share them with others in a compatible format.",
+    },
+    {
+      title: "Institution administrators",
+      image: "institution-administrators.png",
+      question:
+        "Do you need to manage and set up courses for your institution, but find it difficult to keep track of changes and updates?",
+      description:
+        "Sparkium allows you to track, compare, and manage changes to your eLearning materials using version control tools like Git, making it easier to maintain and update your courses.",
+    },
+  ]}
+/>
 
 - **Instructors** \
   Do you want to update your course materials without going through the hassle of editing inside LMS? Sparkium allows you to edit your eLearning materials locally, and deploy them to your LMS when ready, making it easier to keep your courses up-to-date.
