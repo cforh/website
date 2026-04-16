@@ -22,7 +22,7 @@ import Card from "../../components/Card.astro";
   }
 
   .arrow {
-    --arrowhead-size: 2em;
+    --arrowhead-size: 4em;
 
     align-self: center;
     display: flex;
@@ -40,8 +40,10 @@ import Card from "../../components/Card.astro";
 
     .arrow {
       justify-self: center;
-      width: 40%;
-      padding: var(--arrowhead-size) var(--size-gap);
+      text-align: center;
+      width: 8rem;
+      height: 10rem;
+      padding: var(--arrowhead-size) var(--size-gap-huge);
       clip-path: polygon(
         50% 0%,
         100% var(--arrowhead-size),
