@@ -244,7 +244,12 @@ th {
 
 .tab {
   border-color: var(--color-white-92) !important;
-  white-space: nowrap;
+}
+
+[role="tablist"] {
+  display: flex;
+  flex-wrap: nowrap; 
+  gap: var(--size-gap-tiny);
 }
 
 .tab[aria-selected='true'],
