@@ -244,16 +244,15 @@ th {
 
 .tab {
   border-color: var(--color-white-92) !important;
-
 }
 
 [role="tablist"] {
   display: flex;
-  flex-wrap: nowrap; 
+  flex-wrap: nowrap;
   gap: var(--size-gap-tiny);
 }
 
-.tab[aria-selected='true'],
+.tab[aria-selected="true"],
 .tab:hover,
 .tab:focus-visible {
   box-shadow: none;
@@ -285,7 +284,7 @@ th {
 
 .feature2 {
   grid-column: 1;
-  grid-row: 2 /span 2;
+  grid-row: 2 / span 2;
 }
 
 .feature3 {
