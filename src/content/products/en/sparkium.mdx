@@ -9,6 +9,7 @@ import StakeholderCard from "../../../components/StakeholderCard.astro";
 import { Tabs, TabsList, TabsTab, TabsPanel } from "accessible-astro-components";
 import FeatureList from "../../../components/FeatureList.astro";
 import FlipCard from "../../../components/FlipCard.astro";
+import Table from "../../../components/Table.astro";
 import Tmp from "../../../../assets/square.svg";
 import "../../../layouts/Shell.css";
 
@@ -191,24 +192,30 @@ Sparkium is not the first solution in this space, but we believe its approach is
 
 Most eLearning materials are created directly inside LMS platforms, which can make content hard to manage, reuse, and move across systems. In other cases, teams rely on file-sharing tools like Google Drive or Dropbox, which help with distribution but do not provide a clear standard for organizing course content.
 
-| Approach comparison              | Static files (e.g. Google Drive, Dropbox)                 | Directly inside a LMS (e.g. Moodle, Blackboard) | With a schema                                          |
-| -------------------------------- | --------------------------------------------------------- | ----------------------------------------------- | ------------------------------------------------------ |
-| **Where materials lives**        | Inside proprietary files (e.g. .docx, .pdf)               | Inside LMS database                             | Inside structured file system and text-based formats   |
-| **Editing experience**           | Editing inside proprietary software (e.g. Microsoft Word) | Editing inside LMS content editor               | Editing with any text editor and version control tools |
-| **Updating eLearning materials** | Manual editing and sharing new versions of files          | Manual editing inside LMS content editor        | Edit locally and deploy to LMS when ready              |
-| **eLearning materials reuse**    | Limited reuse due to proprietary formats                  | Limited reuse within the same LMS               | Easy reuse across different platforms and courses      |
-| **Portability**                  | Low portability due to proprietary formats                | Low portability within the same LMS             | High portability across different platforms            |
-| **Transparency**                 | Low transparency due to proprietary formats               | Low transparency within the LMS                 | High transparency due to open and readable formats     |
-| **Ownership**                    | Limited ownership due to proprietary formats              | Limited ownership within the LMS                | Full ownership of content and structure                |
+<Table
+  headers={["Approach comparison", "Static files (e.g. Google Drive, Dropbox) ", "Directly inside a LMS (e.g. Moodle, Blackboard)", "With a schema"]}
+  rows={[
+    ["Where materials lives", "Inside proprietary files (e.g. .docx, .pdf)", "Inside LMS database", "Inside structured file system and text-based formats"],
+    ["Editing experience", "Editing inside proprietary software (e.g. Microsoft Word)", "Editing inside LMS content editor", "Editing with any text editor and version control tools"],
+    ["Updating eLearning materials", "Manual editing and sharing new versions of files", "Manual editing inside LMS content editor", "Edit locally and deploy to LMS when ready"],
+    ["eLearning materials reuse", "Limited reuse due to proprietary formats", "Limited reuse within the same LMS", "Easy reuse across different platforms and courses"],
+    ["Portability", "Low portability due to proprietary formats", "Low portability within the same LMS", "High portability across different platforms"],
+    ["Transparency", "Low transparency due to proprietary formats", "Low transparency within the LMS", "High transparency due to open and readable formats"],
+    ["Ownership", "Limited ownership due to proprietary formats", "Limited ownership within the LMS", "ull ownership of content and structure"]
+  ]}
+/>
 
 ### Comparison of schemas
 
 SCORM and xAPI are the most widely used standards for eLearning materials, but they are complex. Their focus is on packaging and data tracking, which can be inefficient for content creation and management. **Sparkium, on the other hand, focuses on content creation and management, making it more intuitive and user-friendly for educators and content creators.**
 
-| Schema comparison  | SCORM               | xAPI                            | Sparkium                                         |
-| ------------------ | ------------------- | ------------------------------- | ------------------------------------------------ |
-| **Adoption**       | Widely adopted      | Growing adoption                | Emerging standard                                |
-| **Meta data**      | Complex XML format  | Complex XML format              | Readable YAML/JSON format                        |
-| **Content format** | Complex HTML format | Complex JSON format             | Human-friendly Markdown format with front matter |
-| **Structure**      | Rigid and complex   | More flexible but still complex | Intuitive by using folders and files             |
-| **Focus**          | Package-centric     | Data-centric                    | Content-centric                                  |
+<Table
+  headers={["Schema comparison", "SCORM", "xAPI", "Sparkium"]}
+  rows={[
+    ["Adoption", "Widely adopted", "Growing adoption", "Emerging standard"],
+    ["Meta data", "Complex XML format", "Complex XML format", "Readable YAML/JSON format"],
+    ["Content format", "Complex HTML format", "Complex JSON format", "Human-friendly Markdown format with front matter"],
+    ["Structure", "Rigid and complex", "More flexible but still complex", "Intuitive by using folders and files"],
+    ["Focus", "Package-centric", "Data-centric", "Content-centric"]
+  ]}
+/>
