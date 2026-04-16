@@ -244,6 +244,7 @@ th {
 
 .tab {
   border-color: var(--color-white-92) !important;
+  flex-wrap: nowrap; 
 }
 
 [role="tablist"] {

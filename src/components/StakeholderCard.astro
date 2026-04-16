@@ -44,7 +44,7 @@ const resolvedItems = await Promise.all(
   <h3>{heading}</h3>
 
   <div class="accordion">
-    <ul class="tabs" role="tablist" aria-label={heading}>
+    <ul class="stakeholder-tabs" role="tablist" aria-label={heading}>
       {
         resolvedItems.map(({ title }, index) => (
           <li>
@@ -102,7 +102,7 @@ const resolvedItems = await Promise.all(
     width: 100%;
   }
 
-  .tabs {
+  .stakeholder-tabs {
     display: flex;
     justify-content: center;
     margin: 0 0 var(--size-gap-large);
@@ -110,13 +110,17 @@ const resolvedItems = await Promise.all(
     padding: 0;
     list-style: none;
     border-bottom: 1px solid var(--color-white-92);
+    flex-wrap: nowrap;
+    gap: var(--size-gap-tiny);
   }
 
-  .tabs li {
+  .stakeholder-tabs li {
+    display: flex;
+    flex: 1;
     margin: 0;
   }
 
-  .tabs button {
+  .stakeholder-tabs button {
     border: 0;
     background: transparent;
     padding: var(--size-gap-small) var(--size-gap-large);
@@ -124,14 +128,17 @@ const resolvedItems = await Promise.all(
     font-weight: 700;
     color: var(--color-default-text);
     cursor: pointer;
+    white-space: normal;
     position: relative;
+    word-break: normal;
+    width: 100%;
   }
 
-  .tabs button.active {
+  .stakeholder-tabs button.active {
     color: var(--color-primary);
   }
 
-  .tabs button.active::after {
+  .stakeholder-tabs button.active::after {
     content: "";
     position: absolute;
     left: 0;
@@ -194,8 +201,12 @@ const resolvedItems = await Promise.all(
   }
 
   @media (max-width: 900px) {
-    .tabs {
-      flex-wrap: wrap;
+    .stakeholder-card {
+      height: auto;
+    }
+
+    .stakeholder-tabs {
+      flex-wrap: nowrap;
       justify-content: flex-start;
     }
 
@@ -215,7 +226,7 @@ const resolvedItems = await Promise.all(
   const accordions = document.querySelectorAll(".stakeholder-card .accordion");
 
   accordions.forEach((accordion) => {
-    const buttons = accordion.querySelectorAll(".tabs button");
+    const buttons = accordion.querySelectorAll(".stakeholder-tabs button");
     const panels = accordion.querySelectorAll(".panel");
 
     function activate(index) {
