@@ -35,7 +35,7 @@
     "@openscript/unplugin-favicons": "^1.1.8",
     "@typescript-eslint/parser": "8.58.2",
     "astro-eslint-parser": "^1.4.0",
-    "eslint": "10.2.0",
+    "eslint": "10.2.1",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-astro": "1.7.0",
     "eslint-plugin-jsx-a11y": "^6.10.2",
