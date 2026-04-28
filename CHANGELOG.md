@@ -1,5 +1,14 @@
 # website
 
+## 0.2.5
+
+### Patch Changes
+
+- f778b72: Add Sparkium product content
+- 02f9913: Modify team photos
+- 183d6ed: Improve legal pages
+- 8e6cb85: Add terms and conditions
+
 ## 0.2.4
 
 ### Patch Changes
