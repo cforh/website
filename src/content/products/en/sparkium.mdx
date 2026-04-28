@@ -4,6 +4,10 @@ summary: Sparkium is a modern standard for storing eLearning materials.
 ---
 
 import SparkDiagram from "../SparkDiagram.astro";
+import Tabs from "../../../components/Tabs.astro";
+import TabsList from "../../../components/TabsList.astro";
+import TabsTab from "../../../components/TabsTab.astro";
+import TabsPanel from "../../../components/TabsPanel.astro";
 
 Sparkium is a modern standard for storing eLearning materials trying to revolutionize the EdTech industry. The goal is to enable educators, publishers and organizations to create, manage and distribute eLearning materials in an efficient and where possible, automated manner, while still being easy to handle for us, humans!
 
@@ -18,6 +22,39 @@ By using Sparkium's approach to store eLearning materials in a structured file s
 ## Who is Sparkium for?
 
 Sparkium is made for anyone working with eLearning materials:
+<Tabs>
+  <TabsList>
+    <TabsTab
+      id="tab-overview"
+      controls="panel-overview"
+      selected={true}
+    >
+      Overview
+    </TabsTab>
+    <TabsTab id="tab-details" controls="panel-details">
+      Details
+    </TabsTab>
+    <TabsTab id="tab-settings" controls="panel-settings">
+      Settings
+    </TabsTab>
+  </TabsList>
+
+  <TabsPanel
+    id="panel-overview"
+    labelledby="tab-overview"
+    selected={true}
+  >
+    Overview content goes here.
+  </TabsPanel>
+
+  <TabsPanel id="panel-details" labelledby="tab-details">
+    Details content goes here.
+  </TabsPanel>
+
+  <TabsPanel id="panel-settings" labelledby="tab-settings">
+    Settings content goes here.
+  </TabsPanel>
+</Tabs>
 
 ### Individuals
 
