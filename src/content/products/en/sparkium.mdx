@@ -22,48 +22,115 @@ By using Sparkium's approach to store eLearning materials in a structured file s
 ## Who is Sparkium for?
 
 Sparkium is made for anyone working with eLearning materials:
+
 <Tabs>
-  <TabsList>
+  <TabsList title="For Individuals">
     <TabsTab
-      id="tab-overview"
-      controls="panel-overview"
+      id="tab-instructors"
+      controls="panel-instructors"
       selected={true}
     >
-      Overview
+      Instructors
     </TabsTab>
-    <TabsTab id="tab-details" controls="panel-details">
-      Details
+    <TabsTab id="tab-educators" controls="panel-educators">
+      Independent Educators
     </TabsTab>
-    <TabsTab id="tab-settings" controls="panel-settings">
-      Settings
+    <TabsTab id="tab-administrators" controls="panel-administrators">
+      Institution administrators
     </TabsTab>
   </TabsList>
 
-  <TabsPanel
-    id="panel-overview"
-    labelledby="tab-overview"
-    selected={true}
-  >
-    Overview content goes here.
-  </TabsPanel>
+<TabsPanel id="panel-instructors" labelledby="tab-instructors" selected={true}>
+  <p slot="heading">
+    Do you want to update your course materials without going through the hassle of editing inside LMS?
+  </p>
+  <p slot="body">
+    Sparkium allows you to edit your eLearning materials locally, and deploy them to your LMS when ready, making it
+    easier to keep your courses up-to-date.
+  </p>
+  <img slot="image" src="/assets/icon.png" alt="image" />
+</TabsPanel>
 
-  <TabsPanel id="panel-details" labelledby="tab-details">
-    Details content goes here.
-  </TabsPanel>
+<TabsPanel id="panel-educators" labelledby="tab-educators">
+  <p slot="heading">
+    Have you ever been asked to share your course materials with others, but found it difficult to export or share them
+    from your LMS?
+  </p>
+  <p slot="body">
+    Sparkium allows you to export your eLearning materials, modify them on your local device, and share them with others
+    in a compatible format.
+  </p>
+  <img slot="image" src="/assets/icon.png" alt="image" />
+</TabsPanel>
 
-  <TabsPanel id="panel-settings" labelledby="tab-settings">
-    Settings content goes here.
+<TabsPanel id="panel-administrators" labelledby="tab-administrators">
+  <p slot="heading">
+    Do you need to manage and set up courses for your institution, but find it difficult to keep track of changes and updates? 
+  </p>
+  <p slot="body">
+    Sparkium allows you to track, compare, and manage changes to your eLearning materials using version control tools like Git, making it easier to maintain and update your courses.
+  </p>
+  <img slot="image" src="/assets/icon.png" alt="image" />
   </TabsPanel>
 </Tabs>
 
-### Individuals
+<Tabs>
+  <TabsList title="For Organizations">
+    <TabsTab
+      id="tab-publishers"
+      controls="panel-publishers"
+      selected={true}
+    >
+      Instructors
+    </TabsTab>
+    <TabsTab id="tab-schools" controls="panel-schools">
+      Independent Educators
+    </TabsTab>
+    <TabsTab id="tab-administrators" controls="panel-administrators">
+      Institution administrators
+    </TabsTab>
+    <TabsTab id="tab-administrators" controls="panel-administrators">
+      Institution administrators
+    </TabsTab>
+    <TabsTab id="tab-administrators" controls="panel-administrators">
+      Institution administrators
+    </TabsTab>
+  </TabsList>
 
-- **Instructors** \
-  Do you want to update your course materials without going through the hassle of editing inside LMS? Sparkium allows you to edit your eLearning materials locally, and deploy them to your LMS when ready, making it easier to keep your courses up-to-date.
-- **Independent educators** \
-  Have you ever been asked to share your course materials with others, but found it difficult to export or share them from your LMS? Sparkium allows you to export your eLearning materials, modify them on your local device, and share them with others in a compatible format.
-- **Institution administrators** \
-  Do you need to manage and set up courses for your institution, but find it difficult to keep track of changes and updates? Sparkium allows you to track, compare, and manage changes to your eLearning materials using version control tools like Git, making it easier to maintain and update your courses.
+<TabsPanel id="panel-publishers" labelledby="tab-publishers" selected={true}>
+  <p slot="heading">
+    Do you want to update your course materials without going through the hassle of editing inside LMS?
+  </p>
+  <p slot="body">
+    Sparkium allows you to edit your eLearning materials locally, and deploy them to your LMS when ready, making it
+    easier to keep your courses up-to-date.
+  </p>
+  <img slot="image" src="/assets/icon.png" alt="image" />
+</TabsPanel>
+
+<TabsPanel id="panel-schools" labelledby="tab-schools">
+  <p slot="heading">
+    Have you ever been asked to share your course materials with others, but found it difficult to export or share them
+    from your LMS?
+  </p>
+  <p slot="body">
+    Sparkium allows you to export your eLearning materials, modify them on your local device, and share them with others
+    in a compatible format.
+  </p>
+  <img slot="image" src="/assets/icon.png" alt="image" />
+</TabsPanel>
+
+  <TabsPanel id="panel-administrators" labelledby="tab-administrators">
+    <p slot="heading">
+    Do you need to manage and set up courses for your institution, but find it difficult to keep track of changes and updates? 
+  </p>
+  <p slot="body">
+    Sparkium allows you to track, compare, and manage changes to your eLearning materials using version control tools like Git, making it easier to maintain and update your courses.
+  </p>
+  <img slot="image" src="/assets/icon.png" alt="image" />
+  </TabsPanel>
+</Tabs>
+
 
 ### Organizations
 

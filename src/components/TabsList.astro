@@ -14,27 +14,45 @@ interface Props {
    * HTML attributes to spread on the tabs list
    */
   [key: string]: string | number | boolean | undefined;
+  title?: string;
 }
 
-const { class: className, ...rest } = Astro.props;
+const { class: className, title: titleName, ...rest } = Astro.props;
 ---
 
 <div class:list={["tabs-list", className]} role="tablist" {...rest}>
-  <slot />
+  <h3>{titleName}</h3>
+  <div>
+    <slot />
+  </div>
 </div>
 
 <style>
   :where(.tabs-list) {
     display: flex;
-    flex-wrap: wrap;
-    align-items: stretch;
-    gap: 0.5rem;
-    margin-block-end: 0.5rem;
+    background-color: var(--color-white-97);
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: nowrap;
+    align-items: center;
+    /* border-bottom: 2px solid var(--color-white-92); */
+    border-radius: var(--size-border-radius-large) var(--size-border-radius-large) 0 0;
+    overflow: hidden;
   }
 
-  @media (min-width: 31.25rem) {
+  :where(.tabs-list h3) {
+    color: var(--color-primary);
+  }
+
+  :where(.tabs-list > *) {
+    display: flex;
+    flex: 1;
+  }
+
+  @media (max-width: 900px) {
     :where(.tabs-list) {
-      margin-block-end: 0;
+      flex-wrap: nowrap;
+      justify-content: flex-start;
     }
   }
 </style>

@@ -46,42 +46,32 @@ const { class: className, id, controls, selected = false, ...rest } = Astro.prop
 
 <style>
   :where(.tab) {
-    --transition-duration: 0.2s;
-    --transition-easing: cubic-bezier(0.165, 0.84, 0.44, 1);
-
-    flex-grow: 1;
-    cursor: pointer;
-    border: 2px solid;
-    border-color: light-dark(hsl(0 0% 10%), hsl(0 0% 90%));
-    border-radius: 0.5rem;
+    border: 0;
+    border-bottom: 2px solid var(--color-white-92);
     background-color: transparent;
-    padding-inline: 1rem;
-    padding-block: 1.5rem;
-    color: inherit;
+    padding: var(--size-gap-small, 0.75rem) var(--size-gap-large, 1.5rem);
+    font: inherit;
     font-weight: 700;
-    font-size: 1.125rem;
+    color: var(--color-default-text);
+    cursor: pointer;
+    white-space: normal;
+    position: relative;
+    word-break: normal;
+    width: 100%;
     text-align: center;
+    box-shadow: none;
+    margin-bottom: -1px;
   }
 
-  @media (prefers-reduced-motion: no-preference) {
-    :where(.tab) {
-      transition: all var(--transition-duration) var(--transition-easing);
-    }
+  :where(.tab[aria-selected="true"]) {
+    color: var(--color-primary);
+    border-bottom-color: var(--color-primary);
   }
 
-  :where(.tab[aria-selected="true"]),
   :where(.tab:hover),
   :where(.tab:focus-visible) {
-    box-shadow: 0 0 0 0.25rem light-dark(hsl(0 0% 10% / 0.2), hsl(0 0% 90% / 0.2));
-    background-color: light-dark(hsl(0 0% 10%), hsl(0 0% 90%));
-    color: light-dark(hsl(0 0% 100%), hsl(215 25% 27%));
-  }
-
-  @media (min-width: 31.25rem) {
-    :where(.tab) {
-      border-block-end: 0;
-      border-end-start-radius: 0;
-      border-end-end-radius: 0;
-    }
+    color: var(--color-primary);
+    outline: none;
+    box-shadow: none;
   }
 </style>
