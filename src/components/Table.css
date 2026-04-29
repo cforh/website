@@ -1,24 +1,24 @@
 table {
-  background-color: var(--color-white-97);
+  background-color: var(--color-white-92);
   border-radius: var(--size-border-radius-large);
-  border-spacing: 0;
+  border-collapse:collapse; 
   border: var(--border-massive);
   overflow: hidden;
-  text-align: left;
 }
 
 th {
-  background-color: var(--color-white-92);
+  background-color: var(--color-white);
   position: sticky;
   top: 0;
 }
 
 tr:hover {
-  background-color: var(--color-white);
+  background-color: var(--color-white-97);
 }
 
 td,
 th {
   padding: var(--size-gap-small);
-  border-top: 1px solid var(--color-white-97);
+  border-block-start: 1px solid var(--color-white-97);
+  text-align: start;
 }
