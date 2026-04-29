@@ -199,30 +199,7 @@ a {
   color: var(--color-primary);
 }
 
-table {
-  background-color: var(--color-white-97);
-  border-collapse: collapse;
-}
 
-th {
-  background-color: var(--color-white);
-  border: 1px solid var(--color-white-92);
-  position: sticky;
-  top: 0;
-}
-
-tr:hover {
-  background-color: var(--color-white);
-}
-
-td {
-  border: 1px solid var(--color-white-92);
-}
-
-td,
-th {
-  padding: var(--size-gap-small);
-}
 
 .padding-breakout {
   margin: 0 var(--size-page-padding-breakout);

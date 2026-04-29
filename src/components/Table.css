@@ -1,0 +1,24 @@
+table {
+  background-color: var(--color-white-97);
+  border-radius: var(--size-border-radius-large);
+  border-collapse:collapse; 
+  border: var(--border-massive);
+  overflow: hidden;
+}
+
+th {
+  background-color: var(--color-white);
+  position: sticky;
+  top: 0;
+}
+
+tr:hover {
+  background-color: var(--color-white-92);
+}
+
+td,
+th {
+  padding: var(--size-gap-small);
+  border-block-start: 1px solid var(--color-white-97);
+  text-align: start;
+}
