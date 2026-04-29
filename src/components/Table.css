@@ -1,5 +1,5 @@
 table {
-  background-color: var(--color-white-92);
+  background-color: var(--color-white-97);
   border-radius: var(--size-border-radius-large);
   border-collapse:collapse; 
   border: var(--border-massive);
@@ -13,7 +13,7 @@ th {
 }
 
 tr:hover {
-  background-color: var(--color-white-97);
+  background-color: var(--color-white-92);
 }
 
 td,
