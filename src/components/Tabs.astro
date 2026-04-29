@@ -1,18 +1,6 @@
 ---
-/**
- * Tabs Component
- *
- * @description A fully accessible tabs component that follows WAI-ARIA guidelines
- */
-
 interface Props {
-  /**
-   * Additional classes to apply to the tabs container
-   */
   class?: string;
-  /**
-   * HTML attributes to spread on the tabs container
-   */
   [key: string]: string | number | boolean | undefined;
 }
 
@@ -77,10 +65,6 @@ const { class: className, ...rest } = Astro.props;
       changeTabs(tabs[tabsIndex]);
     });
 
-    /**
-     * Switch active tab and show corresponding panel
-     * @param nextTab - The tab element to activate
-     */
     function changeTabs(nextTab: TabElement): void {
       tabsIndex = tabs.indexOf(nextTab);
 
@@ -99,7 +83,6 @@ const { class: className, ...rest } = Astro.props;
     }
   }
 
-  // Handle Astro view transitions
   document.addEventListener("astro:after-swap", () => {
     document.querySelectorAll<HTMLElement>(".tabs").forEach(initializeTabComponent);
   });

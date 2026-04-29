@@ -1,31 +1,9 @@
 ---
-/**
- * TabsPanel Component
- *
- * @description A panel within a Tabs component
- */
-
 interface Props {
-  /**
-   * Additional classes to apply to the panel
-   */
   class?: string;
-  /**
-   * Unique identifier for the panel
-   */
   id: string;
-  /**
-   * ID of the tab that labels this panel
-   */
   labelledby: string;
-  /**
-   * Whether this panel is currently selected
-   * @default false
-   */
   selected?: boolean;
-  /**
-   * HTML attributes to spread on the panel
-   */
   [key: string]: string | number | boolean | undefined;
 }
 
@@ -58,16 +36,17 @@ const { class: className, id, labelledby, selected = false, ...rest } = Astro.pr
     display: none;
     height: 20rem;
     padding: var(--size-gap-large);
-    gap: var(--size-gap-large, 1.5rem);
+    gap: var(--size-gap-large);
     background-color: var(--color-white-97);
     border-radius: 0 0 var(--size-border-radius-large) var(--size-border-radius-large);
     color: inherit;
-    grid-template-columns: minmax(0, 1fr) minmax(120px, 240px);
+    grid-template-columns: minmax(0, 1fr);
     grid-template-rows: auto minmax(0, 1fr);
     grid-template-areas:
       "heading heading"
       "body image";
     overflow: hidden;
+    margin-bottom: var(--size-gap);
   }
 
   :where(.tab-panel[aria-hidden="false"]) {
@@ -88,9 +67,8 @@ const { class: className, id, labelledby, selected = false, ...rest } = Astro.pr
     min-width: 0;
     min-height: 0;
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
-    overflow: hidden;
   }
 
   :where(.tab-panel__image) :global(img) {
@@ -104,25 +82,11 @@ const { class: className, id, labelledby, selected = false, ...rest } = Astro.pr
     :where(.tab-panel) {
       height: auto;
       grid-template-columns: 1fr;
-      grid-template-rows: auto auto minmax(160px, auto);
+      grid-template-rows: auto auto;
       grid-template-areas:
         "heading"
         "body"
         "image";
-    }
-
-    :where(.tab-panel__body) {
-      overflow: visible;
-    }
-
-    :where(.tab-panel__image) {
-      justify-content: center;
-      align-items: flex-start;
-    }
-
-    :where(.tab-panel__image) :global(img) {
-      max-width: 100%;
-      height: auto;
     }
   }
 </style>
