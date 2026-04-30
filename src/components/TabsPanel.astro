@@ -18,78 +18,24 @@ const { class: className, id, labelledby, selected = false, ...rest } = Astro.pr
   aria-hidden={!selected}
   {...rest}
 >
-  <div class="tab-panel__heading">
-    <slot name="heading" />
-  </div>
-
-  <div class="tab-panel__body">
-    <slot name="body" />
-  </div>
-
-  <div class="tab-panel__image">
-    <slot name="image" />
-  </div>
+  <slot />
 </div>
 
 <style>
   :where(.tab-panel) {
     display: none;
-    height: 20rem;
-    padding: var(--size-gap-large);
-    gap: var(--size-gap-large);
+    min-width: 0;
     background-color: var(--color-white-97);
-    border-radius: 0 0 var(--size-border-radius-large) var(--size-border-radius-large);
-    color: inherit;
-    grid-template-columns: minmax(0, 1fr);
-    grid-template-rows: auto minmax(0, 1fr);
-    grid-template-areas:
-      "heading heading"
-      "body image";
-    overflow: hidden;
-    margin-bottom: var(--size-gap);
+    border-right: var(--border-massive);
     border-bottom: var(--border-massive);
     border-left: var(--border-massive);
-    border-right: var(--border-massive);
+    overflow: hidden;
+    margin-bottom: var(--size-gap);
+    padding: var(--size-gap-large);
+    border-radius: 0 0 var(--size-border-radius-large) var(--size-border-radius-large);
   }
 
   :where(.tab-panel[aria-hidden="false"]) {
-    display: grid;
-  }
-
-  :where(.tab-panel__heading) {
-    grid-area: heading;
-    font-weight: 700;
-  }
-
-  :where(.tab-panel__body) {
-    grid-area: body;
-  }
-
-  :where(.tab-panel__image) {
-    grid-area: image;
-    min-width: 0;
-    min-height: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  :where(.tab-panel__image) :global(img) {
     display: block;
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-  }
-
-  @media (max-width: 900px) {
-    :where(.tab-panel) {
-      height: auto;
-      grid-template-columns: 1fr;
-      grid-template-rows: auto auto;
-      grid-template-areas:
-        "heading"
-        "body"
-        "image";
-    }
   }
 </style>
