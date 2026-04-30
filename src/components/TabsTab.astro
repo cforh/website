@@ -25,7 +25,7 @@ const { class: className, id, controls, selected = false, ...rest } = Astro.prop
 <style>
   :where(.tab) {
     border: 0;
-    border-bottom: 2px solid var(--color-white-92);
+    border-block-end: 2px solid var(--color-white-92);
     background-color: transparent;
     padding: var(--size-gap-small);
     font: inherit;
@@ -38,7 +38,7 @@ const { class: className, id, controls, selected = false, ...rest } = Astro.prop
 
   :where(.tab[aria-selected="true"]) {
     color: var(--color-primary);
-    border-bottom-color: var(--color-primary);
+    border-block-end-color: var(--color-primary);
   }
 
   :where(.tab:hover),

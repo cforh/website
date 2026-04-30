@@ -26,11 +26,10 @@ const { class: className, id, labelledby, selected = false, ...rest } = Astro.pr
     display: none;
     min-width: 0;
     background-color: var(--color-white-97);
-    border-right: var(--border-massive);
-    border-bottom: var(--border-massive);
-    border-left: var(--border-massive);
+    border-block-end: var(--border-massive);
+    border-inline: var(--border-massive);
     overflow: hidden;
-    margin-bottom: var(--size-gap);
+    margin-block-end: var(--size-gap);
     padding: var(--size-gap-large);
     border-radius: 0 0 var(--size-border-radius-large) var(--size-border-radius-large);
   }
