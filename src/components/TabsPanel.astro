@@ -47,6 +47,9 @@ const { class: className, id, labelledby, selected = false, ...rest } = Astro.pr
       "body image";
     overflow: hidden;
     margin-bottom: var(--size-gap);
+    border-bottom: var(--border-massive);
+    border-left: var(--border-massive);
+    border-right: var(--border-massive);
   }
 
   :where(.tab-panel[aria-hidden="false"]) {
