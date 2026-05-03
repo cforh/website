@@ -10,7 +10,14 @@ import TabsList from "../../../components/TabsList.astro";
 import TabsTab from "../../../components/TabsTab.astro";
 import TabsPanel from "../../../components/TabsPanel.astro";
 import StakeholderCard from "../../../components/StakeholderCard.astro";
-import Placeholder from "/assets/icon.png";
+import AdministratorsIllustration from "../../../../assets/stakeholders/administrators.png";
+import EducatorsIllustration from "../../../../assets/stakeholders/educators.png";
+import InstructorsIllustration from "../../../../assets/stakeholders/instructors.png";
+import PublishersIllustration from "../../../../assets/stakeholders/publishers.png";
+import SchoolsIllustration from "../../../../assets/stakeholders/schools.png";
+import UniversitiesIllustration from "../../../../assets/stakeholders/universities.png";
+import TrainingCentersIllustration from "../../../../assets/stakeholders/training-centers.png";
+import CorporateTrainingsIllustration from "../../../../assets/stakeholders/corporate-trainings.png";
 
 Sparkium is a modern standard for storing eLearning materials trying to revolutionize the EdTech industry. The goal is to enable educators, publishers and organizations to create, manage and distribute eLearning materials in an efficient and where possible, automated manner, while still being easy to handle for us, humans!
 
@@ -35,7 +42,7 @@ Sparkium is made for anyone working with eLearning materials:
       Independent Educators
     </TabsTab>
     <TabsTab id="tab-administrators" controls="panel-administrators">
-      Institution administrators
+      Learning Administrators
     </TabsTab>
   </TabsList>
   <TabsPanel id="panel-instructors" labelledby="tab-instructors" selected={true}>
@@ -47,7 +54,7 @@ Sparkium is made for anyone working with eLearning materials:
         Sparkium allows you to edit your eLearning materials locally, and deploy them to your LMS when ready, making it
         easier to keep your courses up-to-date.
       </p>
-      <Image slot="image" src={Placeholder} alt="image" />
+      <Image slot="image" src={InstructorsIllustration} alt="Optician instructor teaching students sitting at a desk" />
     </StakeholderCard>
   </TabsPanel>
   <TabsPanel id="panel-educators" labelledby="tab-educators">
@@ -60,7 +67,7 @@ Sparkium is made for anyone working with eLearning materials:
         Sparkium allows you to export your eLearning materials, modify them on your local device, and share them with
         others in a compatible format.
       </p>
-      <Image slot="image" src={Placeholder} alt="image" />
+      <Image slot="image" src={EducatorsIllustration} alt="Independent educator recording a lesson" />
     </StakeholderCard>
   </TabsPanel>
   <TabsPanel id="panel-administrators" labelledby="tab-administrators">
@@ -73,7 +80,11 @@ Sparkium is made for anyone working with eLearning materials:
         Sparkium allows you to track, compare, and manage changes to your eLearning materials using version control
         tools like Git, making it easier to maintain and update your courses.
       </p>
-      <Image slot="image" src={Placeholder} alt="image" />
+      <Image
+        slot="image"
+        src={AdministratorsIllustration}
+        alt="Woman sitting at a desk with a laptop doing quality assurance of eLearning materials"
+      />
     </StakeholderCard>
   </TabsPanel>
 </Tabs>
@@ -90,10 +101,10 @@ Sparkium is made for anyone working with eLearning materials:
       Universities
     </TabsTab>
     <TabsTab id="tab-centers" controls="panel-centers">
-      Training centers
+      Training Centers
     </TabsTab>
     <TabsTab id="tab-teams" controls="panel-teams">
-      Internal Training Teams
+      Corporate Trainings
     </TabsTab>
   </TabsList>
   <TabsPanel id="panel-publishers" labelledby="tab-publishers" selected={true}>
@@ -103,7 +114,11 @@ Sparkium is made for anyone working with eLearning materials:
         Sparkium helps you bring that model into the digital era. Create eLearning materials once and deliver them to
         different LMS platforms like Moodle, making your product easily be sold and launched on customers' LMS.
       </p>
-      <Image slot="image" src={Placeholder} alt="image" />
+      <Image
+        slot="image"
+        src={PublishersIllustration}
+        alt="Learning books being sold digitally and reused across different LMS platforms"
+      />
     </StakeholderCard>
   </TabsPanel>
   <TabsPanel id="panel-schools" labelledby="tab-schools">
@@ -113,7 +128,7 @@ Sparkium is made for anyone working with eLearning materials:
         Sparkium allows you to automatically check the quality of your eLearning materials, and helps you to receive and
         manage proposed changes from your colleagues, making it easier to maintain high-quality course materials.
       </p>
-      <Image slot="image" src={Placeholder} alt="image" />
+      <Image slot="image" src={SchoolsIllustration} alt="Classroom with a smart board and student desks" />
     </StakeholderCard>
   </TabsPanel>
   <TabsPanel id="panel-universities" labelledby="tab-universities">
@@ -127,7 +142,7 @@ Sparkium is made for anyone working with eLearning materials:
         different clients and use cases. So you can focus on creating unique and exciting tasks and activities for your
         students.
       </p>
-      <Image slot="image" src={Placeholder} alt="image" />
+      <Image slot="image" src={UniversitiesIllustration} alt="University lecture hall with digital learning tools" />
     </StakeholderCard>
   </TabsPanel>
   <TabsPanel id="panel-centers" labelledby="tab-centers">
@@ -140,7 +155,7 @@ Sparkium is made for anyone working with eLearning materials:
         Sparkium allows you to track, compare, and manage changes to your eLearning materials using version control
         tools like Git, making it easier to maintain and update your courses.
       </p>
-      <Image slot="image" src={Placeholder} alt="image" />
+      <Image slot="image" src={TrainingCentersIllustration} alt="Pilots training center with digital learning tools" />
     </StakeholderCard>
   </TabsPanel>
   <TabsPanel id="panel-teams" labelledby="tab-teams">
@@ -150,7 +165,11 @@ Sparkium is made for anyone working with eLearning materials:
         Sparkium helps corporate trainers to create, adapt, and reuse eLearning materials, even across teams and roles,
         making internal training easier to scale.
       </p>
-      <Image slot="image" src={Placeholder} alt="image" />
+      <Image
+        slot="image"
+        src={CorporateTrainingsIllustration}
+        alt="Corporate training for train drivers with digital learning tools"
+      />
     </StakeholderCard>
   </TabsPanel>
 </Tabs>
