@@ -1,21 +1,21 @@
-.table-wrapper {
+table {
+  width: 100%;
   border: var(--border-massive);
   border-radius: var(--size-border-radius-large);
-  overflow: hidden;
+  border-collapse: separate;
+  border-spacing: 0;
   background-color: var(--color-white-97);
+  overflow: hidden;
 }
 
-.table-wrapper table {
-  border-collapse: collapse;
-}
-
-.table-wrapper thead th {
+thead th {
   background-color: var(--color-white-92);
   position: sticky;
   top: 0;
+  z-index: 2;
 }
 
-.table-wrapper tbody tr:hover {
+tbody tr:hover {
   background-color: var(--color-white);
 }
 
