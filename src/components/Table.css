@@ -1,24 +1,27 @@
-table {
-  background-color: var(--color-white-97);
-  border-radius: var(--size-border-radius-large);
-  border-collapse:collapse; 
+.table-wrapper {
   border: var(--border-massive);
+  border-radius: var(--size-border-radius-large);
   overflow: hidden;
+  background-color: var(--color-white-97);
 }
 
-th {
-  background-color: var(--color-white);
+.table-wrapper table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.table-wrapper thead th {
+  background-color: var(--color-white-92);
   position: sticky;
   top: 0;
 }
 
-tr:hover {
-  background-color: var(--color-white-92);
+.table-wrapper tbody tr:hover {
+  background-color: var(--color-white);
 }
 
 td,
 th {
   padding: var(--size-gap-small);
-  border-block-start: 1px solid var(--color-white-97);
   text-align: start;
 }
