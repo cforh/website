@@ -3,7 +3,21 @@ title: Sparkium
 summary: Sparkium is a modern standard for storing eLearning materials.
 ---
 
+import { Image } from "astro:assets";
 import SparkDiagram from "../SparkDiagram.astro";
+import Tabs from "../../../components/Tabs.astro";
+import TabsList from "../../../components/TabsList.astro";
+import TabsTab from "../../../components/TabsTab.astro";
+import TabsPanel from "../../../components/TabsPanel.astro";
+import StakeholderCard from "../../../components/StakeholderCard.astro";
+import AdministratorsIllustration from "../../../../assets/stakeholders/administrators.png";
+import EducatorsIllustration from "../../../../assets/stakeholders/educators.png";
+import InstructorsIllustration from "../../../../assets/stakeholders/instructors.png";
+import PublishersIllustration from "../../../../assets/stakeholders/publishers.png";
+import SchoolsIllustration from "../../../../assets/stakeholders/schools.png";
+import UniversitiesIllustration from "../../../../assets/stakeholders/universities.png";
+import TrainingCentersIllustration from "../../../../assets/stakeholders/training-centers.png";
+import CorporateTrainingsIllustration from "../../../../assets/stakeholders/corporate-trainings.png";
 
 Sparkium is a modern standard for storing eLearning materials trying to revolutionize the EdTech industry. The goal is to enable educators, publishers and organizations to create, manage and distribute eLearning materials in an efficient and where possible, automated manner, while still being easy to handle for us, humans!
 
@@ -19,27 +33,150 @@ By using Sparkium's approach to store eLearning materials in a structured file s
 
 Sparkium is made for anyone working with eLearning materials:
 
-### Individuals
+### For individuals
 
-- **Instructors** \
-  Do you want to update your course materials without going through the hassle of editing inside LMS? Sparkium allows you to edit your eLearning materials locally, and deploy them to your LMS when ready, making it easier to keep your courses up-to-date.
-- **Independent educators** \
-  Have you ever been asked to share your course materials with others, but found it difficult to export or share them from your LMS? Sparkium allows you to export your eLearning materials, modify them on your local device, and share them with others in a compatible format.
-- **Institution administrators** \
-  Do you need to manage and set up courses for your institution, but find it difficult to keep track of changes and updates? Sparkium allows you to track, compare, and manage changes to your eLearning materials using version control tools like Git, making it easier to maintain and update your courses.
+<Tabs>
+  <TabsList>
+    <TabsTab id="tab-instructors" controls="panel-instructors" selected={true}>
+      {"Instructors"}
+    </TabsTab>
+    <TabsTab id="tab-educators" controls="panel-educators">
+      {"Independent Educators"}
+    </TabsTab>
+    <TabsTab id="tab-administrators" controls="panel-administrators">
+      {"Learning Administrators"}
+    </TabsTab>
+  </TabsList>
+  <TabsPanel id="panel-instructors" labelledby="tab-instructors" selected={true}>
+    <StakeholderCard>
+      <p slot="heading">
+        Do you want to update your course materials without going through the hassle of editing inside LMS?
+      </p>
+      <p slot="body">
+        Sparkium allows you to edit your eLearning materials locally, and deploy them to your LMS when ready, making it
+        easier to keep your courses up-to-date.
+      </p>
+      <Image slot="image" src={InstructorsIllustration} alt="Optician instructor teaching students sitting at a desk" />
+    </StakeholderCard>
+  </TabsPanel>
+  <TabsPanel id="panel-educators" labelledby="tab-educators">
+    <StakeholderCard>
+      <p slot="heading">
+        Have you ever been asked to share your course materials with others, but found it difficult to export or share
+        them from your LMS?
+      </p>
+      <p slot="body">
+        Sparkium allows you to export your eLearning materials, modify them on your local device, and share them with
+        others in a compatible format.
+      </p>
+      <Image slot="image" src={EducatorsIllustration} alt="Independent educator recording a lesson" />
+    </StakeholderCard>
+  </TabsPanel>
+  <TabsPanel id="panel-administrators" labelledby="tab-administrators">
+    <StakeholderCard>
+      <p slot="heading">
+        Do you need to manage and set up courses for your institution, but find it difficult to keep track of changes
+        and updates?
+      </p>
+      <p slot="body">
+        Sparkium allows you to track, compare, and manage changes to your eLearning materials using version control
+        tools like Git, making it easier to maintain and update your courses.
+      </p>
+      <Image
+        slot="image"
+        src={AdministratorsIllustration}
+        alt="Woman sitting at a desk with a laptop doing quality assurance of eLearning materials"
+      />
+    </StakeholderCard>
+  </TabsPanel>
+</Tabs>
 
-### Organizations
+### For organizations
 
-- **Publishers** \
-  Do you miss the days when schools bought textbooks directly from you? Sparkium helps you bring that model into the digital era. Create eLearning materials once and deliver them to different LMS platforms like Moodle, making your product easily be sold and launched on customers' LMS.
-- **Schools** \
-  Did you ever had a broken link in your course materials or lost track of proposed changes? Sparkium allows you to automatically check the quality of your eLearning materials, and helps you to receive and manage proposed changes from your colleagues, making it easier to maintain high-quality course materials.
-- **Universities** \
-  Ever felt like you need to reinvent the wheel when creating courses and wish you could reuse and adapt existing modules? Sparkium allows you to reuse and customize existing courses quickly to deliver tailored eLearning materials for different clients and use cases. So you can focus on creating unique and exciting tasks and activities for your students.
-- **Training centers** \
-  Do you want to create and maintain a large number of courses, but find it difficult to keep track of changes and updates? Sparkium allows you to track, compare, and manage changes to your eLearning materials using version control tools like Git, making it easier to maintain and update your courses.
-- **Internal Training Teams** \
-  Do you wish to onboard new employees and train teams more efficiently? Sparkium helps corporate trainers to create, adapt, and reuse eLearning materials, even across teams and roles, making internal training easier to scale.
+<Tabs>
+  <TabsList>
+    <TabsTab id="tab-publishers" controls="panel-publishers" selected={true}>
+      {"Publishers"}
+    </TabsTab>
+    <TabsTab id="tab-schools" controls="panel-schools">
+      {"Schools"}
+    </TabsTab>
+    <TabsTab id="tab-universities" controls="panel-universities">
+      {"Universities"}
+    </TabsTab>
+    <TabsTab id="tab-centers" controls="panel-centers">
+      {"Training Centers"}
+    </TabsTab>
+    <TabsTab id="tab-teams" controls="panel-teams">
+      {"Corporate Trainings"}
+    </TabsTab>
+  </TabsList>
+  <TabsPanel id="panel-publishers" labelledby="tab-publishers" selected={true}>
+    <StakeholderCard>
+      <p slot="heading">Do you miss the days when schools bought textbooks directly from you?</p>
+      <p slot="body">
+        Sparkium helps you bring that model into the digital era. Create eLearning materials once and deliver them to
+        different LMS platforms like Moodle, making your product easily be sold and launched on customers' LMS.
+      </p>
+      <Image
+        slot="image"
+        src={PublishersIllustration}
+        alt="Learning books being sold digitally and reused across different LMS platforms"
+      />
+    </StakeholderCard>
+  </TabsPanel>
+  <TabsPanel id="panel-schools" labelledby="tab-schools">
+    <StakeholderCard>
+      <p slot="heading">Did you ever had a broken link in your course materials or lost track of proposed changes?</p>
+      <p slot="body">
+        Sparkium allows you to automatically check the quality of your eLearning materials, and helps you to receive and
+        manage proposed changes from your colleagues, making it easier to maintain high-quality course materials.
+      </p>
+      <Image slot="image" src={SchoolsIllustration} alt="Classroom with a smart board and student desks" />
+    </StakeholderCard>
+  </TabsPanel>
+  <TabsPanel id="panel-universities" labelledby="tab-universities">
+    <StakeholderCard>
+      <p slot="heading">
+        Ever felt like you need to reinvent the wheel when creating courses and wish you could reuse and adapt existing
+        modules?
+      </p>
+      <p slot="body">
+        Sparkium allows you to reuse and customize existing courses quickly to deliver tailored eLearning materials for
+        different clients and use cases. So you can focus on creating unique and exciting tasks and activities for your
+        students.
+      </p>
+      <Image slot="image" src={UniversitiesIllustration} alt="University lecture hall with digital learning tools" />
+    </StakeholderCard>
+  </TabsPanel>
+  <TabsPanel id="panel-centers" labelledby="tab-centers">
+    <StakeholderCard>
+      <p slot="heading">
+        Do you want to create and maintain a large number of courses, but find it difficult to keep track of changes and
+        updates?
+      </p>
+      <p slot="body">
+        Sparkium allows you to track, compare, and manage changes to your eLearning materials using version control
+        tools like Git, making it easier to maintain and update your courses.
+      </p>
+      <Image slot="image" src={TrainingCentersIllustration} alt="Pilots training center with digital learning tools" />
+    </StakeholderCard>
+  </TabsPanel>
+  <TabsPanel id="panel-teams" labelledby="tab-teams">
+    <StakeholderCard>
+      <p slot="heading">Do you wish to onboard new employees and train teams more efficiently?</p>
+      <p slot="body">
+        Sparkium helps corporate trainers to create, adapt, and reuse eLearning materials, even across teams and roles,
+        making internal training easier to scale.
+      </p>
+      <Image
+        slot="image"
+        src={CorporateTrainingsIllustration}
+        alt="Corporate training for train drivers with digital learning tools"
+      />
+    </StakeholderCard>
+  </TabsPanel>
+</Tabs>
 
 Does this sound like you? Have a try and see how Sparkium can help you to create, manage and distribute your eLearning materials more efficiently!
 
