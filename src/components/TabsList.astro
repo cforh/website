@@ -2,14 +2,12 @@
 interface Props {
   class?: string;
   [key: string]: string | number | boolean | undefined;
-  title?: string;
 }
 
-const { class: className, title: titleName, ...rest } = Astro.props;
+const { class: className, ...rest } = Astro.props;
 ---
 
 <div class:list={["tabs-list", className]} role="tablist" {...rest}>
-  <h3>{titleName}</h3>
   <div>
     <slot />
   </div>
@@ -28,15 +26,12 @@ const { class: className, title: titleName, ...rest } = Astro.props;
     padding-inline: var(--size-gap-large);
     border-block-start: var(--border-massive);
     border-inline: var(--border-massive);
-  }
 
-  :where(.tabs-list h3) {
-    color: var(--color-primary);
-  }
-
-  :where(.tabs-list > *) {
-    display: flex;
-    flex: 1;
+    * {
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+    }
   }
 
   @media (max-width: 900px) {
