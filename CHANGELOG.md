@@ -1,5 +1,13 @@
 # website
 
+## 0.2.6
+
+### Patch Changes
+
+- 359b763: Add stakeholder multi-tab cards to the page.
+- 8d8d87e: Add style to comparison tables.
+- 19417dc: Make comparison table work across browsers.
+
 ## 0.2.5
 
 ### Patch Changes
