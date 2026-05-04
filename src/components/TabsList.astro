@@ -1,0 +1,41 @@
+---
+interface Props {
+  class?: string;
+  [key: string]: string | number | boolean | undefined;
+}
+
+const { class: className, ...rest } = Astro.props;
+---
+
+<div class:list={["tabs-list", className]} role="tablist" {...rest}>
+  <slot />
+</div>
+
+<style>
+  :where(.tabs-list) {
+    display: flex;
+    background-color: var(--color-white-97);
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: stretch;
+    border-radius: var(--size-border-radius-large) var(--size-border-radius-large) 0 0;
+    overflow: hidden;
+    padding: var(--size-gap-large);
+    padding-block-end: 0;
+    border-block-start: var(--border-massive);
+    border-inline: var(--border-massive);
+
+    * {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  @media (max-width: 900px) {
+    :where(.tabs-list) {
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+    }
+  }
+</style>
