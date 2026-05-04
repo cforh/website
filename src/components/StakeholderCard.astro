@@ -24,7 +24,7 @@ const { class: className } = Astro.props;
   :where(.stakeholder-card) {
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    grid-template-rows: auto minmax(0, 1fr);
+    grid-template-rows: 2lh minmax(0, 1fr);
     grid-template-areas:
       "heading heading"
       "body image";
@@ -64,13 +64,18 @@ const { class: className } = Astro.props;
 
   @media (max-width: 900px) {
     :where(.stakeholder-card) {
-      height: auto;
+      height: 28rem;
       grid-template-columns: 1fr;
-      grid-template-rows: auto auto auto;
+      grid-template-rows: 3lh 1fr 2fr;
       grid-template-areas:
         "heading"
         "body"
         "image";
+      gap: var(--size-gap);
+    }
+
+    :where(.stakeholder-card__image) {
+      align-items: center;
     }
   }
 </style>
