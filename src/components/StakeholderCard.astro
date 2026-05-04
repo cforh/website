@@ -24,58 +24,46 @@ const { class: className } = Astro.props;
   :where(.stakeholder-card) {
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    grid-template-rows: 2lh minmax(0, 1fr);
     grid-template-areas:
       "heading heading"
       "body image";
     gap: var(--size-gap-large);
-    height: 20rem;
-    min-width: 0;
-    color: inherit;
   }
 
   :where(.stakeholder-card__heading) {
     grid-area: heading;
-    font-weight: 700;
-    min-width: 0;
+    font-weight: bold;
   }
 
   :where(.stakeholder-card__body) {
     grid-area: body;
-    min-width: 0;
-    min-height: 0;
   }
 
   :where(.stakeholder-card__image) {
     grid-area: image;
-    min-width: 0;
-    min-height: 0;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
+
+    img {
+      display: block;
+      object-fit: contain;
+      height: auto;
+      width: 100%;
+      border-radius: var(--size-border-radius-small);
+    }
   }
 
-  :where(.stakeholder-card__image) :global(img) {
-    display: block;
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-  }
-
-  @media (max-width: 900px) {
+  @media (max-width: 640px) {
     :where(.stakeholder-card) {
-      height: 28rem;
-      grid-template-columns: 1fr;
-      grid-template-rows: 3lh 1fr 2fr;
+      grid-template-columns: minmax(0, 1fr);
       grid-template-areas:
         "heading"
         "body"
         "image";
-      gap: var(--size-gap);
     }
 
     :where(.stakeholder-card__image) {
-      align-items: center;
+      justify-content: center;
     }
   }
 </style>
