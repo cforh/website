@@ -147,6 +147,7 @@ body > footer {
   grid-area: footer;
   display: flex;
   flex-direction: column;
+  padding-bottom: calc(var(--size-gap) + env(safe-area-inset-bottom));
 
   > .contact {
     text-align: center;
@@ -198,8 +199,6 @@ a {
   text-decoration: none;
   color: var(--color-primary);
 }
-
-
 
 .padding-breakout {
   margin: 0 var(--size-page-padding-breakout);
@@ -297,7 +296,6 @@ a {
 
 @media (max-width: 1600px) {
   :root {
-    --size-font: 16px;
     --size-page-padding: 10%;
     --size-page-padding-breakout: 0;
   }
@@ -305,7 +303,7 @@ a {
 
 @media (max-width: 1200px) {
   :root {
-    --size-font: 14px;
+    --size-font: 16px;
     --size-page-padding: 1rem;
   }
 }
