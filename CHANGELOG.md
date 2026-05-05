@@ -1,5 +1,11 @@
 # website
 
+## 0.2.7
+
+### Patch Changes
+
+- 9d2a516: Adjust mobile view
+
 ## 0.2.6
 
 ### Patch Changes
