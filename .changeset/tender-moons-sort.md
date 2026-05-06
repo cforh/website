@@ -1,5 +1,0 @@
----
-"website": patch
----
-
-Enhance responsivity

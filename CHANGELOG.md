@@ -1,5 +1,11 @@
 # website
 
+## 0.2.8
+
+### Patch Changes
+
+- e569d5f: Enhance responsivity
+
 ## 0.2.7
 
 ### Patch Changes
