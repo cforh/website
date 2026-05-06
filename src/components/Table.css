@@ -6,6 +6,8 @@ table {
   border-spacing: 0;
   background-color: var(--color-white-97);
   overflow: hidden;
+  display: block;
+  overflow-x: auto;
 }
 
 thead th {
