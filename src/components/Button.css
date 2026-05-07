@@ -19,4 +19,10 @@
       color: var(--color-primary);
     }
   }
+
+  &.cta {
+    display: block;
+    width: fit-content;
+    margin: var(--size-gap-large) auto;
+  }
 }
