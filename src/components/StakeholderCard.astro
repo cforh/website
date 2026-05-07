@@ -1,0 +1,69 @@
+---
+interface Props {
+  class?: string;
+}
+
+const { class: className } = Astro.props;
+---
+
+<article class:list={["stakeholder-card", className]}>
+  <div class="stakeholder-card__heading">
+    <slot name="heading" />
+  </div>
+
+  <div class="stakeholder-card__body">
+    <slot name="body" />
+  </div>
+
+  <div class="stakeholder-card__image">
+    <slot name="image" />
+  </div>
+</article>
+
+<style>
+  :where(.stakeholder-card) {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-areas:
+      "heading heading"
+      "body image";
+    gap: var(--size-gap-large);
+  }
+
+  :where(.stakeholder-card__heading) {
+    grid-area: heading;
+    font-weight: bold;
+  }
+
+  :where(.stakeholder-card__body) {
+    grid-area: body;
+  }
+
+  :where(.stakeholder-card__image) {
+    grid-area: image;
+    display: flex;
+    justify-content: flex-end;
+
+    img {
+      display: block;
+      object-fit: contain;
+      height: auto;
+      width: 100%;
+      border-radius: var(--size-border-radius-small);
+    }
+  }
+
+  @media (max-width: 640px) {
+    :where(.stakeholder-card) {
+      grid-template-columns: minmax(0, 1fr);
+      grid-template-areas:
+        "heading"
+        "body"
+        "image";
+    }
+
+    :where(.stakeholder-card__image) {
+      justify-content: center;
+    }
+  }
+</style>

@@ -36,7 +36,7 @@ jobs:
           # https://github.com/actions/checkout/issues/1471#issuecomment-1755639487
 
       - name: Setup pnpm
-        uses: pnpm/action-setup@v5
+        uses: pnpm/action-setup@v6
 
       - name: Setup Node
         uses: actions/setup-node@v6
