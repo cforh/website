@@ -23,7 +23,6 @@
   &.cta {
     display: block;
     width: fit-content;
-    margin-inline: auto;
-    margin-block: var(--size-gap-large);
+    margin: var(--size-gap-large) auto;
   }
 }
