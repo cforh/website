@@ -11,5 +11,10 @@
     "types": [
       "unplugin-icons/types/astro",
     ],
+    "paths": {
+      "@nanostores/i18n": [
+        "./node_modules/@nanostores/i18n/index.d.ts"
+      ]
+    }
   }
 }

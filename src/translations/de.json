@@ -1,4 +1,24 @@
 {
+  "content/products/SparkiumDemo.astro": {
+    "contentMd": "content.md",
+    "courseJson": "course.json",
+    "dashboard": "Dashboard",
+    "defaultContent": "## Beispiel-Kursmaterial\n\nSie können Ihre Kursmaterialien im Markdown-Format schreiben, das einfach zu lesen und zu bearbeiten ist. Beim Speichern konvertiert Sparkium den Inhalt in HTML und stellt ihn in Ihrem LMS zur Verfügung.\n\n- Einfache Formatierung\n- Listen und Blockzitate\n\n**Probieren Sie es aus!** Bearbeiten Sie den Markdown-Inhalt und klicken Sie auf Speichern, um ihn in der Moodle-Vorschau zu sehen.",
+    "edit": "Bearbeiten",
+    "exampleCourse": "Beispielkurs",
+    "explorer": "EXPLORER",
+    "home": "Startseite",
+    "material1": "Material 1",
+    "materialJson": "material.json",
+    "module1": "Modul 1",
+    "moduleJson": "module.json",
+    "moodleTitle": "Moodle und andere Systeme",
+    "more": "Mehr ▾",
+    "save": "Speichern",
+    "settings": "Einstellungen",
+    "sparkiumProjectTitle": "Ihr Sparkium-Projekt",
+    "textPage": "Textseite"
+  },
   "layouts/groups/Footer.astro": {
     "copyright": "© {year} Code for Humans. Alle Rechte vorbehalten.",
     "version": "Version {version}"

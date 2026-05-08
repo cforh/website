@@ -1,7 +1,12 @@
 ---
 import Card from "../../components/Card.astro";
 import moodleLogo from "../../../assets/logos/moodle.svg";
-import { useI18n } from "astro-nanostores-i18n:runtime";
+import { useI18n, currentLocale } from "astro-nanostores-i18n:runtime";
+import { resolvePath } from "../../utils/paths";
+import { C } from "../../site.config";
+
+const locale = currentLocale.get();
+const sparkLinkHref = resolvePath(locale === C.DEFAULT_LOCALE ? "" : locale, "products", "sparklink");
 
 const messages = useI18n("content/products/SparkiumDemo.astro", {
   explorer: "EXPLORER",
@@ -98,15 +103,17 @@ const messages = useI18n("content/products/SparkiumDemo.astro", {
       <polygon class="sparklink-funnel-shape" points="0,0 400,0 300,70 100,70"></polygon>
       <rect class="sparklink-funnel-shape" x="100" y="70" width="200" height="40"></rect>
       <polygon class="sparklink-funnel-shape" points="100,110 300,110 400,180 0,180"></polygon>
-      <text
-        x="200"
-        y="90"
-        text-anchor="middle"
-        dominant-baseline="middle"
-        font-size="36"
-        font-family="'Nunito Variable', sans-serif"
-        fill="var(--color-black)">SparkLink</text
-      >
+      <a href={sparkLinkHref}>
+        <text
+          x="200"
+          y="90"
+          text-anchor="middle"
+          dominant-baseline="middle"
+          font-size="36"
+          font-family="'Nunito Variable', sans-serif"
+          fill="var(--color-black)">SparkLink</text
+        >
+      </a>
     </svg>
   </div>
   <Card title={messages.moodleTitle} titleLevel="h3">
@@ -507,6 +514,15 @@ const messages = useI18n("content/products/SparkiumDemo.astro", {
     width: auto;
   }
 
+  .sparklink-funnel-svg a {
+    cursor: pointer;
+  }
+
+  .sparklink-funnel-svg a text:hover {
+    text-decoration: underline;
+    fill: var(--color-primary);
+  }
+
   .sparklink-funnel-shape {
     fill: #f2f2f2;
   }
@@ -576,7 +592,7 @@ const messages = useI18n("content/products/SparkiumDemo.astro", {
 </style>
 
 <script>
-  (function () {
+  function register() {
     const editor = document.getElementById("sparkium-editor") as HTMLTextAreaElement | null;
     const output = document.getElementById("moodle-rendered-content");
 
@@ -683,5 +699,8 @@ const messages = useI18n("content/products/SparkiumDemo.astro", {
         );
       });
     }
-  })();
+  }
+
+  register();
+  document.addEventListener("astro:after-swap", register);
 </script>
