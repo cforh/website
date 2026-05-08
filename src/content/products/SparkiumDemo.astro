@@ -1,0 +1,687 @@
+---
+import Card from "../../components/Card.astro";
+import moodleLogo from "../../../assets/logos/moodle.svg";
+import { useI18n } from "astro-nanostores-i18n:runtime";
+
+const messages = useI18n("content/products/SparkiumDemo.astro", {
+  explorer: "EXPLORER",
+  sparkiumProjectTitle: "Your Sparkium project",
+  moodleTitle: "Moodle and other systems",
+  exampleCourse: "Example Course",
+  module1: "Module 1",
+  material1: "Material 1",
+  contentMd: "content.md",
+  materialJson: "material.json",
+  moduleJson: "module.json",
+  courseJson: "course.json",
+  save: "Save",
+  home: "Homepage",
+  dashboard: "Dashboard",
+  more: "More ▾",
+  edit: "Edit",
+  textPage: "Text Page",
+  settings: "Settings",
+  defaultContent:
+    "## Example Course Material\n\nYou can write your course materials in Markdown format, which is easy to read and edit. When you save, Sparkium will convert it to HTML and make it available in your LMS.\n\n- Simple formatting\n- Lists and blockquotes\n\n**Try it out!** Edit the Markdown content and click Save to see it rendered in the Moodle mockup on the right.",
+});
+---
+
+<div class="sparkium-demo padding-breakout">
+  <Card title={messages.sparkiumProjectTitle} titleLevel="h3">
+    <div slot="description">
+      <div class="editor-layout">
+        <div class="editor-sidebar">
+          <div class="editor-sidebar-title">{messages.explorer}</div>
+          <ul class="file-tree">
+            <li class="ft-folder ft-open">
+              <span class="ft-row"
+                ><span class="ft-icon"></span><span class="ft-label">{messages.exampleCourse}</span></span
+              >
+              <ul>
+                <li class="ft-folder ft-open">
+                  <span class="ft-row"
+                    ><span class="ft-icon"></span><span class="ft-label">{messages.module1}</span></span
+                  >
+                  <ul>
+                    <li class="ft-folder ft-open">
+                      <span class="ft-row"
+                        ><span class="ft-icon"></span><span class="ft-label">{messages.material1}</span></span
+                      >
+                      <ul>
+                        <li class="ft-file ft-active" data-ext="md">
+                          <span class="ft-row"
+                            ><span class="ft-icon"></span><span class="ft-label">{messages.contentMd}</span></span
+                          >
+                        </li>
+                        <li class="ft-file" data-ext="json">
+                          <span class="ft-row"
+                            ><span class="ft-icon"></span><span class="ft-label">{messages.materialJson}</span></span
+                          >
+                        </li>
+                      </ul>
+                    </li>
+                    <li class="ft-file" data-ext="json">
+                      <span class="ft-row"
+                        ><span class="ft-icon"></span><span class="ft-label">{messages.moduleJson}</span></span
+                      >
+                    </li>
+                  </ul>
+                </li>
+                <li class="ft-file" data-ext="json">
+                  <span class="ft-row"
+                    ><span class="ft-icon"></span><span class="ft-label">{messages.courseJson}</span></span
+                  >
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <div class="editor-pane">
+          <div class="editor-tabs">
+            <span class="editor-tab editor-tab-active">{messages.contentMd}</span>
+          </div>
+          <textarea
+            id="sparkium-editor"
+            class="editor-textarea"
+            spellcheck="false"
+            data-default-content={messages.defaultContent}></textarea>
+          <div class="editor-footer">
+            <button id="sparkium-save" class="editor-save-btn">{messages.save}</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </Card>
+  <div class="sparklink-connector" id="sparklink-connector">
+    <!-- height:5rem → scale 80/180=0.444; font-size 36 → 16px body text; band 200 SVG units wide -->
+    <svg class="sparklink-funnel-svg" viewBox="0 0 400 180" xmlns="http://www.w3.org/2000/svg">
+      <polygon class="sparklink-funnel-shape" points="0,0 400,0 300,70 100,70"></polygon>
+      <rect class="sparklink-funnel-shape" x="100" y="70" width="200" height="40"></rect>
+      <polygon class="sparklink-funnel-shape" points="100,110 300,110 400,180 0,180"></polygon>
+      <text
+        x="200"
+        y="90"
+        text-anchor="middle"
+        dominant-baseline="middle"
+        font-size="36"
+        font-family="'Nunito Variable', sans-serif"
+        fill="var(--color-black)">SparkLink</text
+      >
+    </svg>
+  </div>
+  <Card title={messages.moodleTitle} titleLevel="h3">
+    <div slot="description">
+      <div class="moodle-ui">
+        <!-- Navbar -->
+        <nav class="moodle-nav">
+          <div class="moodle-nav-left">
+            <img src={moodleLogo.src} alt="Moodle" class="moodle-logo" />
+            <a href="#" class="moodle-nav-link">{messages.home}</a>
+            <a href="#" class="moodle-nav-link">{messages.dashboard}</a>
+            <a href="#" class="moodle-nav-link">{messages.more}</a>
+          </div>
+          <div class="moodle-nav-right">
+            <span class="moodle-icon-btn">🔔<span class="moodle-badge">1</span></span>
+            <span class="moodle-icon-btn">💬</span>
+            <span class="moodle-icon-btn moodle-avatar">👤 ▾</span>
+            <label class="moodle-edit-toggle">
+              <span>{messages.edit}</span>
+              <span class="moodle-toggle">
+                <span class="moodle-toggle-thumb"></span>
+              </span>
+            </label>
+          </div>
+        </nav>
+        <!-- Breadcrumb -->
+        <div class="moodle-breadcrumb">
+          <a href="#">{messages.exampleCourse}</a>
+          <span> / </span>
+          <a href="#">{messages.module1}</a>
+          <span> / </span>
+          <span>{messages.material1}</span>
+        </div>
+        <!-- Content -->
+        <div class="moodle-content">
+          <div class="moodle-page-title">
+            <span class="moodle-page-icon">📄</span>
+            <h1>{messages.material1}</h1>
+          </div>
+          <div class="moodle-tabs">
+            <span class="moodle-tab moodle-tab-active">{messages.textPage}</span>
+            <span class="moodle-tab">{messages.settings}</span>
+            <span class="moodle-tab">{messages.more}</span>
+          </div>
+          <div id="moodle-rendered-content" class="moodle-rendered"></div>
+        </div>
+      </div>
+    </div>
+  </Card>
+</div>
+
+<style>
+  :where(.sparkium-demo) {
+    display: grid;
+    gap: 0;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  /* Moodle UI mockup */
+  .moodle-ui {
+    font-family: sans-serif;
+    font-size: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    overflow: hidden;
+    background: #fff;
+    color: #333;
+  }
+
+  .moodle-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+    padding: 0.4rem 0.75rem;
+    gap: 0.5rem;
+  }
+
+  .moodle-nav-left,
+  .moodle-nav-right {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .moodle-logo {
+    height: 1.5rem;
+    width: auto;
+  }
+
+  .moodle-nav-link {
+    color: #333;
+    text-decoration: none;
+    padding: 0.25rem 0.4rem;
+    white-space: nowrap;
+  }
+
+  .moodle-nav-link:hover {
+    text-decoration: underline;
+  }
+
+  .moodle-icon-btn {
+    position: relative;
+    cursor: pointer;
+    padding: 0.2rem;
+  }
+
+  .moodle-badge {
+    position: absolute;
+    top: -2px;
+    right: -4px;
+    background: #e74c3c;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 0.55rem;
+    padding: 0 3px;
+  }
+
+  .moodle-edit-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.7rem;
+    white-space: nowrap;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .moodle-toggle {
+    position: relative;
+    display: inline-block;
+    width: 1.5rem;
+    height: 0.9rem;
+    background: #ccc;
+    border-radius: 1rem;
+    vertical-align: middle;
+    transition: background 0.2s;
+    flex-shrink: 0;
+  }
+
+  .moodle-toggle-thumb {
+    position: absolute;
+    top: 0.16rem;
+    left: 0.16rem;
+    width: 0.6rem;
+    height: 0.6rem;
+    background: #fff;
+    border-radius: 50%;
+    transition: transform 0.2s;
+  }
+
+  .moodle-breadcrumb {
+    padding: 0.4rem 0.75rem;
+    font-size: 0.7rem;
+    color: #666;
+    border-bottom: 1px solid #eee;
+  }
+
+  .moodle-breadcrumb a {
+    color: #0066cc;
+    text-decoration: none;
+  }
+
+  .moodle-content {
+    padding: 0.75rem;
+  }
+
+  .moodle-page-title {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .moodle-page-icon {
+    font-size: 1.5rem;
+  }
+
+  .moodle-page-title h1 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 0;
+  }
+
+  .moodle-tabs {
+    display: flex;
+    gap: 0;
+    border-bottom: 2px solid #ddd;
+    margin-bottom: 0.75rem;
+  }
+
+  .moodle-tab {
+    padding: 0.3rem 0.75rem;
+    cursor: pointer;
+    color: #0066cc;
+    font-size: 0.75rem;
+  }
+
+  .moodle-tab-active {
+    border-bottom: 3px solid #0066cc;
+    color: #333;
+    font-weight: 600;
+    margin-bottom: -2px;
+  }
+
+  .moodle-body-text {
+    margin: 0 0 0.5rem;
+    font-size: 0.75rem;
+  }
+
+  .moodle-help-btn {
+    position: absolute;
+    bottom: 0.4rem;
+    right: 0.4rem;
+    width: 1.2rem;
+    height: 1.2rem;
+    background: #ccc;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.65rem;
+    cursor: pointer;
+  }
+
+  /* ── Editor layout ── */
+  .editor-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+    height: 14rem;
+    border: 1px solid #d0d0d0;
+    border-radius: 4px;
+    overflow: hidden;
+    font-family: monospace;
+  }
+
+  .editor-sidebar {
+    background: #f5f5f5;
+    color: #444;
+    overflow-y: auto;
+    border-right: 1px solid #e0e0e0;
+  }
+
+  .editor-sidebar-title {
+    font-size: 0.55rem;
+    letter-spacing: 0.08em;
+    color: #888;
+    padding: 0.5rem 0.75rem 0.25rem;
+    font-weight: 600;
+  }
+
+  /* File tree */
+  .file-tree,
+  .file-tree ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .ft-row {
+    display: flex;
+    align-items: center;
+    padding: 0.08rem 0.4rem;
+    gap: 0.2rem;
+    cursor: pointer;
+    font-size: 0.65rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .ft-row:hover {
+    background: #e8e8e8;
+  }
+
+  .ft-active > .ft-row {
+    background: rgba(5, 142, 132, 0.12);
+  }
+
+  .ft-icon {
+    width: 0.8rem;
+    flex-shrink: 0;
+    text-align: center;
+    font-size: 0.6rem;
+    color: #999;
+  }
+
+  .ft-folder > .ft-row > .ft-icon::before {
+    content: "▾";
+  }
+
+  .ft-folder:not(.ft-open) > .ft-row > .ft-icon::before {
+    content: "▸";
+  }
+
+  /* Depth indentation */
+  .file-tree > li > .ft-row {
+    padding-left: 0.4rem;
+  }
+  .file-tree > li > ul > li > .ft-row {
+    padding-left: 1.1rem;
+  }
+  .file-tree > li > ul > li > ul > li > .ft-row {
+    padding-left: 1.8rem;
+  }
+  .file-tree > li > ul > li > ul > li > ul > li > .ft-row {
+    padding-left: 2.5rem;
+  }
+
+  /* Label colors */
+  .ft-label {
+    color: #333;
+  }
+  .ft-folder > .ft-row > .ft-label {
+    color: #7c5a00;
+  }
+  .ft-file[data-ext="md"] > .ft-row > .ft-label {
+    color: var(--color-primary);
+  }
+  .ft-file[data-ext="json"] > .ft-row > .ft-label {
+    color: #0066cc;
+  }
+
+  /* Editor pane */
+  .editor-pane {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+  }
+
+  .editor-tabs {
+    display: flex;
+    background: #ececec;
+    border-bottom: 1px solid #d0d0d0;
+  }
+
+  .editor-tab {
+    padding: 0.25rem 0.75rem;
+    font-size: 0.65rem;
+    color: #777;
+    cursor: pointer;
+  }
+
+  .editor-tab-active {
+    background: #fff;
+    color: #333;
+    border-top: 2px solid var(--color-primary);
+  }
+
+  .editor-textarea {
+    flex: 1;
+    background: #fff;
+    color: #333;
+    border: none;
+    resize: none;
+    padding: 0.5rem 0.75rem;
+    font-family: "Consolas", "Monaco", monospace;
+    font-size: 0.65rem;
+    line-height: 1.6;
+    outline: none;
+  }
+
+  .editor-footer {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0.3rem 0.5rem;
+    border-top: 1px solid #e0e0e0;
+    background: #f9f9f9;
+  }
+
+  .editor-save-btn {
+    background: var(--color-primary);
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    padding: 0.2rem 0.7rem;
+    font-size: 0.65rem;
+    font-family: sans-serif;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+
+  .editor-save-btn:hover {
+    background: color-mix(in srgb, var(--color-primary) 85%, black);
+  }
+
+  /* SparkLink connector */
+  .sparklink-connector {
+    display: flex;
+    justify-content: center;
+  }
+
+  .sparklink-funnel-svg {
+    display: block;
+    height: 5rem;
+    width: auto;
+  }
+
+  .sparklink-funnel-shape {
+    fill: #f2f2f2;
+  }
+
+  @keyframes sparklink-pulse {
+    0%,
+    100% {
+      fill: #f2f2f2;
+    }
+    50% {
+      fill: #c8c8c8;
+    }
+  }
+
+  .sparklink-connector.pulsing .sparklink-funnel-shape {
+    animation: sparklink-pulse 0.55s ease-in-out 2;
+  }
+
+  /* Moodle rendered markdown */
+  .moodle-rendered {
+    font-size: 0.75rem;
+    color: #333;
+  }
+  .moodle-rendered h1 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 0.5rem 0 0.3rem;
+  }
+  .moodle-rendered h2 {
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin: 0.4rem 0 0.25rem;
+  }
+  .moodle-rendered h3 {
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin: 0.3rem 0 0.2rem;
+  }
+  .moodle-rendered p {
+    margin: 0.2rem 0;
+  }
+  .moodle-rendered ul,
+  .moodle-rendered ol {
+    padding-left: 1.1rem;
+    margin: 0.2rem 0;
+  }
+  .moodle-rendered li {
+    margin: 0.1rem 0;
+  }
+  .moodle-rendered blockquote {
+    border-left: 3px solid #0066cc;
+    padding: 0.2rem 0.5rem;
+    margin: 0.25rem 0;
+    color: #555;
+    background: #f0f5ff;
+  }
+  .moodle-rendered code {
+    background: #f5f5f5;
+    padding: 0.1rem 0.3rem;
+    border-radius: 3px;
+    font-family: monospace;
+    font-size: 0.7rem;
+  }
+  .moodle-rendered a {
+    color: #0066cc;
+  }
+</style>
+
+<script>
+  (function () {
+    const editor = document.getElementById("sparkium-editor") as HTMLTextAreaElement | null;
+    const output = document.getElementById("moodle-rendered-content");
+
+    function escapeHtml(t: string): string {
+      return t.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+    }
+
+    function parseInline(text: string): string {
+      return escapeHtml(text)
+        .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
+        .replace(/\*(.+?)\*/g, "<em>$1</em>")
+        .replace(/`(.+?)`/g, "<code>$1</code>")
+        .replace(/\[(.+?)\]\((https?:\/\/[^\s)]+)\)/g, '<a href="$2">$1</a>');
+    }
+
+    function parseMarkdown(md: string): string {
+      const lines = md.split("\n");
+      let html = "";
+      let listType: string | null = null;
+
+      function closeList() {
+        if (listType) {
+          html += listType === "ul" ? "</ul>" : "</ol>";
+          listType = null;
+        }
+      }
+
+      for (const line of lines) {
+        const t = line.trim();
+        if (!t) {
+          closeList();
+          continue;
+        }
+        const h3 = t.match(/^### (.+)/);
+        const h2 = t.match(/^## (.+)/);
+        const h1 = t.match(/^# (.+)/);
+        const bq = t.match(/^> (.+)/);
+        const ul = t.match(/^[-*] (.+)/);
+        const ol = t.match(/^\d+\. (.+)/);
+
+        if (h3) {
+          closeList();
+          html += `<h3>${parseInline(h3[1])}</h3>`;
+        } else if (h2) {
+          closeList();
+          html += `<h2>${parseInline(h2[1])}</h2>`;
+        } else if (h1) {
+          closeList();
+          html += `<h1>${parseInline(h1[1])}</h1>`;
+        } else if (bq) {
+          closeList();
+          html += `<blockquote>${parseInline(bq[1])}</blockquote>`;
+        } else if (ul) {
+          if (listType !== "ul") {
+            closeList();
+            html += "<ul>";
+            listType = "ul";
+          }
+          html += `<li>${parseInline(ul[1])}</li>`;
+        } else if (ol) {
+          if (listType !== "ol") {
+            closeList();
+            html += "<ol>";
+            listType = "ol";
+          }
+          html += `<li>${parseInline(ol[1])}</li>`;
+        } else {
+          closeList();
+          html += `<p>${parseInline(t)}</p>`;
+        }
+      }
+      closeList();
+      return html;
+    }
+
+    function render() {
+      if (output) output.innerHTML = parseMarkdown(editor?.value || "");
+    }
+
+    if (editor && output) {
+      editor.value = editor.dataset.defaultContent ?? "";
+      render();
+    }
+
+    const saveBtn = document.getElementById("sparkium-save");
+    const connector = document.getElementById("sparklink-connector");
+
+    // Prevent Astro's client-side navigation from triggering on mockup links
+    document.querySelectorAll(".moodle-ui a").forEach((el) => {
+      el.addEventListener("click", (e) => e.preventDefault());
+    });
+
+    if (saveBtn && connector) {
+      saveBtn.addEventListener("click", () => {
+        connector.classList.add("pulsing");
+        const firstShape = connector.querySelector(".sparklink-funnel-shape");
+        firstShape?.addEventListener(
+          "animationend",
+          () => {
+            connector.classList.remove("pulsing");
+            render();
+          },
+          { once: true },
+        );
+      });
+    }
+  })();
+</script>
