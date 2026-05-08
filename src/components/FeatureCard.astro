@@ -8,10 +8,10 @@ import Unlock from "~icons/carbon/unlocked";
 import Assistance from "~icons/carbon/ai-enabled-pdlc";
 
 const icons = {
-  "text-base": TextDocument,
-  "multi-language": MultiLanguage,
+  textFormat: TextDocument,
+  languages: MultiLanguage,
   modular: Modular,
-  "change-management": ChangeManagement,
+  changeControl: ChangeManagement,
   interoperable: Interoperable,
   unlock: Unlock,
   assistance: Assistance,
@@ -45,13 +45,15 @@ const Icon = icons[icon];
 <style>
   .feature-card {
     display: grid;
+    grid-template-columns: auto;
     justify-items: center;
     perspective: 1000px;
+    margin-inline: var(--size-gap-large);
   }
 
   .front,
   .back {
-    width: 60%;
+    width: 100%;
     height: 10rem;
     grid-area: 1 / 1;
     backface-visibility: hidden;
@@ -59,20 +61,21 @@ const Icon = icons[icon];
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    padding: var(--size-gap);
+    justify-content: flex-start;
+    padding: var(--size-gap-large);
     border-radius: var(--size-border-radius-large);
     border: var(--border-massive);
-    gap: var(--size-gap);
-    position: absolute;
+    gap: var(--size-gap-small);
   }
 
   .front {
     position: relative;
     background-color: var(--color-white-97);
-    gap: vat(--size-gap);
-    align-items: center;
-    justify-content: center;
+    display: grid;
+    grid-template-rows: auto auto 1fr;
+    align-content: flex-start;
+    justify-items: center;
+    gap: var(--size-gap);
   }
 
   .front :global(p),
@@ -122,6 +125,15 @@ const Icon = icons[icon];
   document.addEventListener("click", (e) => {
     const card = e.target.closest(".feature-card");
     if (!card) return;
-    card.classList.toggle("flipped");
+
+    const isAlreadyFlipped = card.classList.contains("flipped");
+
+    document.querySelectorAll(".feature-card").forEach((c) => {
+      c.classList.remove("flipped");
+    });
+
+    if (!isAlreadyFlipped) {
+      card.classList.add("flipped");
+    }
   });
 </script>

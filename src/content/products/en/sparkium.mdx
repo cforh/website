@@ -19,6 +19,7 @@ import UniversitiesIllustration from "../../../../assets/stakeholders/universiti
 import TrainingCentersIllustration from "../../../../assets/stakeholders/training-centers.png";
 import CorporateTrainingsIllustration from "../../../../assets/stakeholders/corporate-trainings.png";
 import FeatureCard from "../../../components/FeatureCard.astro";
+import CardList from "../../../components/CardList.astro";
 
 Sparkium is a modern standard for storing eLearning materials trying to revolutionize the EdTech industry. The goal is to enable educators, publishers and organizations to create, manage and distribute eLearning materials in an efficient and where possible, automated manner, while still being easy to handle for us, humans!
 
@@ -185,63 +186,63 @@ Does this sound like you? Have a try and see how Sparkium can help you to create
 
 Sparkium is designed to tackle your pain points of building eLearning materials.
 
-<FeatureCard title="Human-friendly text-based file formats" icon="text-base">
-  <p slot="front">Use human-friendly text-based file formats to store your eLearning materials, making it easy to read, edit and maintain.</p>
-  <p slot="back">
-    You can use any text editor to work with your eLearning materials, and you can easily track changes and collaborate with others using version control tools like Git.
-    - Use Markdown to write your course content
-    - Use YAML or JSON to define your course structure and metadata
-    
-    No need to learn complex XML or proprietary formats and waiting for Microsoft Word to load!
-  </p>
-</FeatureCard>
-### Human-friendly text-based file formats
+<CardList class="padding-breakout">
+  <FeatureCard title="Human-friendly text-based file formats" icon="textFormat">
+    <p slot="front">Use human-friendly text-based file formats to store your eLearning materials, making it easy to read, edit and maintain.</p>
+    <p slot="back">
+      You can use any text editor to work with your eLearning materials, and you can easily track changes and collaborate with others using version control tools like Git.
+      - Use Markdown to write your course content
+      - Use YAML or JSON to define your course structure and metadata
+      
+      No need to learn complex XML or proprietary formats and waiting for Microsoft Word to load!
+    </p>
+  </FeatureCard>
+  <FeatureCard title="Support for multiple languages" icon="languages">
+    <p slot="front">Provide your eLearning materials in multiple languages and reach a wider audience.</p>
+    <p slot="back">
+      - Supports as all languages and dialects
+      - Assist translation and localization by being able to use machine translation tools
 
-Use human-friendly text-based file formats to store your eLearning materials, making it easy to read, edit and maintain. You can use any text editor to work with your eLearning materials, and you can easily track changes and collaborate with others using version control tools like Git.
+      No need to fiddle around with complex localization features in your LMS or create separate courses for each language!
+    </p>
+  </FeatureCard>
+  <FeatureCard title="Modular, portable and reusable design" icon="modular">
+    <p slot="front">Design your eLearning materials in a modular and reusable way. Easily reuse and adapt existing courses for various cases.</p>
+    <p slot="back">
+      - Reuse parts of your materials across different courses
+      - Share and collaborate on course modules with others
 
-- Use Markdown to write your course content
-- Use YAML or JSON to define your course structure and metadata
+      No need to copy and paste content across different courses or create separate courses for each use case!
+    </p>
+  </FeatureCard>
+  <FeatureCard title="Change management and quality assurance" icon="changeControl">
+    <p slot="front">Track, compare, and easily manage changes to your eLearning materials using version control tools like Git.</p>
+    <p slot="back">
+      - Track changes to your eLearning materials over time
+      - Collaborate with others to review and improve your materials iteratively
 
-No need to learn complex XML or proprietary formats and waiting for Microsoft Word to load!
-
-### Support for multiple languages
-
-Provide your eLearning materials in multiple languages and reach a wider audience.
-
-- Supports as all languages and dialects
-- Assist translation and localization by being able to use machine translation tools
-
-No need to fiddle around with complex localization features in your LMS or create separate courses for each language!
-
-### Modular, portable and reusable design
-
-Design your eLearning materials in a modular and reusable way, so you can easily reuse and adapt existing courses for different clients and use cases.
-
-- Reuse parts of your materials across different courses
-- Share and collaborate on course modules with others
-
-No need to copy and paste content across different courses or create separate courses for each use case!
-
-### Change management and quality assurance
-
-Track, compare, and manage changes to your eLearning materials using version control tools like Git, making it easier to maintain and update your courses.
-
-- Track changes to your eLearning materials over time
-- Collaborate with others to review and improve your materials iteratively
-
-No need to worry about losing track of changes or having broken links in your course materials!
-
-### Platform agnostic and interoperable
-
-By separating your eLearning materials from the LMS, Sparkium allows you to export, modify and re-upload your eLearning materials to different LMS platforms that support Sparkium, giving you more flexibility and control over your content.
-
-### Vendor and platform lock-in prevention
-
-Having your eLearning materials stored in a structured file system and text-based formats allows you to avoid being locked into a specific LMS or platform, giving you more freedom and control over your content.
-
-### Assistance and automation possibilities
-
-Due the nature of Sparkium's file formats, you can easily use AI tools to assist you in creating and maintaining your eLearning materials, and automate parts of your content workflow.
+      No need to worry about losing track of changes or having broken links in your course materials!
+    </p>
+  </FeatureCard>
+  <FeatureCard title="Platform agnostic and interoperable" icon="interoperable">
+    <p slot="front">Sparkium gives you flexibility and control to your content.</p>
+    <p slot="back">
+      By separating your eLearning materials from the LMS, Sparkium allows you to export, modify and re-upload your eLearning materials to different LMS platforms that support Sparkium, giving you more flexibility and control over your content.
+    </p>
+  </FeatureCard>
+  <FeatureCard title="Vendor and platform lock-in prevention" icon="unlock">
+    <p slot="front">No more lock-in to specific LMS or platforms.</p>
+    <p slot="back">
+      Having your eLearning materials stored in a structured file system and text-based formats allows you to avoid being locked into a specific LMS or platform, giving you more freedom and control over your content.
+    </p>
+  </FeatureCard>
+  <FeatureCard title="Assistance and automation possibilities" icon="assistance">
+    <p slot="front">Free to use AI tools to assist your content creation.</p>
+    <p slot="back">
+      Due the nature of Sparkium's file formats, you can easily use AI tools to assist you in creating and maintaining your eLearning materials, and automate parts of your content workflow.
+    </p>
+  </FeatureCard>
+</CardList>
 
 ## Sparkium, what else?
 
