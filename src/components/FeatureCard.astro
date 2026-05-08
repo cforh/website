@@ -1,0 +1,127 @@
+---
+import TextDocument from "~icons/carbon/document";
+import MultiLanguage from "~icons/carbon/ibm-watson-language-translator";
+import Modular from "~icons/carbon/extensions";
+import ChangeManagement from "~icons/carbon/ibm-data-product-exchange";
+import Interoperable from "~icons/carbon/import-export";
+import Unlock from "~icons/carbon/unlocked";
+import Assistance from "~icons/carbon/ai-enabled-pdlc";
+
+const icons = {
+  "text-base": TextDocument,
+  "multi-language": MultiLanguage,
+  modular: Modular,
+  "change-management": ChangeManagement,
+  interoperable: Interoperable,
+  unlock: Unlock,
+  assistance: Assistance,
+};
+
+type Props = {
+  title: string;
+  icon: keyof typeof icons;
+};
+
+const { title, icon } = Astro.props;
+
+const Icon = icons[icon];
+---
+
+<div class="feature-card">
+  <div class="front">
+    <Icon class="icon" />
+    <h4>{title}</h4>
+    <slot name="front" />
+
+    <div class="turn-page"></div>
+  </div>
+
+  <div class="back">
+    <h4>{title}</h4>
+    <slot name="back" />
+  </div>
+</div>
+
+<style>
+  .feature-card {
+    display: grid;
+    justify-items: center;
+    perspective: 1000px;
+  }
+
+  .front,
+  .back {
+    width: 60%;
+    height: 10rem;
+    grid-area: 1 / 1;
+    backface-visibility: hidden;
+    transition: transform 0.6s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--size-gap);
+    border-radius: var(--size-border-radius-large);
+    border: var(--border-massive);
+    gap: var(--size-gap);
+    position: absolute;
+  }
+
+  .front {
+    position: relative;
+    background-color: var(--color-white-97);
+    gap: vat(--size-gap);
+    align-items: center;
+    justify-content: center;
+  }
+
+  .front :global(p),
+  .front :global(h4) {
+    margin: 0;
+    word-break: normal;
+  }
+
+  .back :global(p) {
+    margin: 0;
+  }
+
+  .icon {
+    width: 2rem;
+    height: auto;
+  }
+
+  .turn-page {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 24px;
+    height: 24px;
+    background: var(--color-primary);
+    clip-path: polygon(100% 0, 100% 100%, 0 100%);
+  }
+
+  .back {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    transform: rotateY(180deg);
+    justify-content: flex-start;
+    gap: vat(--size-gap);
+    overflow-y: auto;
+  }
+
+  .feature-card.flipped .front {
+    transform: rotateY(180deg);
+  }
+
+  .feature-card.flipped .back {
+    transform: rotateY(360deg);
+  }
+</style>
+
+<script>
+  document.addEventListener("click", (e) => {
+    const card = e.target.closest(".feature-card");
+    if (!card) return;
+    card.classList.toggle("flipped");
+  });
+</script>
