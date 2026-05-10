@@ -123,16 +123,13 @@ const Icon = icons[icon];
 
 <script>
   document.addEventListener("click", (e) => {
-    const card = e.target.closest(".feature-card");
-    if (!card) return;
+    const cards = document.querySelectorAll(".feature-card");
+    const card = e.target instanceof Element ? e.target.closest(".feature-card") : null;
+    const isOpen = card?.classList.contains("flipped");
 
-    const isAlreadyFlipped = card.classList.contains("flipped");
+    cards.forEach((c) => c.classList.remove("flipped"));
 
-    document.querySelectorAll(".feature-card").forEach((c) => {
-      c.classList.remove("flipped");
-    });
-
-    if (!isAlreadyFlipped) {
+    if (card && !isOpen) {
       card.classList.add("flipped");
     }
   });
