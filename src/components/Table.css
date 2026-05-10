@@ -1,3 +1,8 @@
+.table-wrapper {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
 table {
   width: 100%;
   border: var(--border-massive);
@@ -6,8 +11,6 @@ table {
   border-spacing: 0;
   background-color: var(--color-white-97);
   overflow: hidden;
-  display: block;
-  overflow-x: auto;
 }
 
 thead th {
