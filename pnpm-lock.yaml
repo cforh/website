@@ -22,7 +22,7 @@ importers:
         version: 5.2.7
       '@nanostores/i18n':
         specifier: ^1.3.2
-        version: 1.3.2(nanostores@1.3.0)
+        version: 1.3.3(nanostores@1.3.0)
       astro:
         specifier: ^6.3.1
         version: 6.3.1(@types/node@24.12.2)(jiti@2.7.0)(rollup@4.60.3)
@@ -31,7 +31,7 @@ importers:
         version: 0.12.0(astro@6.3.1(@types/node@24.12.2)(jiti@2.7.0)(rollup@4.60.3))
       astro-nanostores-i18n:
         specifier: ^0.6.0
-        version: 0.6.0(@nanostores/i18n@1.3.2(nanostores@1.3.0))(astro@6.3.1(@types/node@24.12.2)(jiti@2.7.0)(rollup@4.60.3))(nanostores@1.3.0)
+        version: 0.6.0(@nanostores/i18n@1.3.3(nanostores@1.3.0))(astro@6.3.1(@types/node@24.12.2)(jiti@2.7.0)(rollup@4.60.3))(nanostores@1.3.0)
       limax:
         specifier: ^4.2.3
         version: 4.2.3
@@ -794,8 +794,8 @@ packages:
   '@mdx-js/mdx@3.1.1':
     resolution: {integrity: sha512-f6ZO2ifpwAQIpzGWaBQT2TXxPv6z3RBzQKpVftEWN78Vl/YweF1uwussDx8ECAXVtr3Rs89fKyG9YlzUs9DyGQ==}
 
-  '@nanostores/i18n@1.3.2':
-    resolution: {integrity: sha512-+9bQeBjOkRzGKtBn+mjZx8G9I2TmXQCs+UO5Cf34KYHgHSCbOcS8yTXl0GCe065QLrKAASDdsOUi4JNJfgBKJA==}
+  '@nanostores/i18n@1.3.3':
+    resolution: {integrity: sha512-hwuTKJ+DKCOuszmmOuNfDeA8j86WJWLLzjzE1BYm+mabMcD5JYDnTd0wPMwgGJ+U//ApRaxviRvOtvk50F+RCg==}
     engines: {node: ^20.0.0 || >=22.0.0}
     peerDependencies:
       nanostores: ^0.9.0 || ^0.10.0 || ^0.11.0 || ^1.0.0
@@ -4067,7 +4067,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@nanostores/i18n@1.3.2(nanostores@1.3.0)':
+  '@nanostores/i18n@1.3.3(nanostores@1.3.0)':
     dependencies:
       nanostores: 1.3.0
 
@@ -4503,10 +4503,10 @@ snapshots:
     dependencies:
       astro: 6.3.1(@types/node@24.12.2)(jiti@2.7.0)(rollup@4.60.3)
 
-  astro-nanostores-i18n@0.6.0(@nanostores/i18n@1.3.2(nanostores@1.3.0))(astro@6.3.1(@types/node@24.12.2)(jiti@2.7.0)(rollup@4.60.3))(nanostores@1.3.0):
+  astro-nanostores-i18n@0.6.0(@nanostores/i18n@1.3.3(nanostores@1.3.0))(astro@6.3.1(@types/node@24.12.2)(jiti@2.7.0)(rollup@4.60.3))(nanostores@1.3.0):
     dependencies:
       '@astrojs/compiler': 4.0.0
-      '@nanostores/i18n': 1.3.2(nanostores@1.3.0)
+      '@nanostores/i18n': 1.3.3(nanostores@1.3.0)
       astro: 6.3.1(@types/node@24.12.2)(jiti@2.7.0)(rollup@4.60.3)
       fast-glob: 3.3.3
       nanostores: 1.3.0
