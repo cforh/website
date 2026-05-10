@@ -5,6 +5,7 @@ import unpluginFavicons from "@openscript/unplugin-favicons/vite";
 import de from "./src/translations/de.json";
 import mdx from "@astrojs/mdx";
 import Icons from "unplugin-icons/vite";
+import { rehypeWrapTables } from "./src/plugins/rehype-wrap-tables";
 
 import sitemap from "@astrojs/sitemap";
 
@@ -23,6 +24,9 @@ export default defineConfig({
     mdx(),
     sitemap({ i18n: { defaultLocale: C.DEFAULT_LOCALE, locales: C.LOCALES } }),
   ],
+  markdown: {
+    rehypePlugins: [rehypeWrapTables],
+  },
   vite: {
     plugins: [
       unpluginFavicons({

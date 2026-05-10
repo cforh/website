@@ -17,7 +17,7 @@ base = base.endsWith("/") ? base : `${base}/`;
 <head>
   <meta charset="utf-8" />
   <slot name="meta" />
-  <meta name="viewport" content="width=device-width" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="referrer" content="no-referrer-when-downgrade" />
   <link rel="alternate" hreflang="x-default" href={base} />
   <link rel="alternate" hreflang={getFullLocale(locale)} href={Astro.url.href} />
