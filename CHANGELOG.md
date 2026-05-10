@@ -1,5 +1,13 @@
 # website
 
+## 0.2.9
+
+### Patch Changes
+
+- ecc9e8c: Shorten the introduction paragraphs.
+- 6634233: Add sparkium demo
+- eed06fd: Prepare CTA button
+
 ## 0.2.8
 
 ### Patch Changes
