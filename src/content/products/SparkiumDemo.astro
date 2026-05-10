@@ -1,12 +1,7 @@
 ---
 import Card from "../../components/Card.astro";
 import moodleLogo from "../../../assets/logos/moodle.svg";
-import { useI18n, currentLocale } from "astro-nanostores-i18n:runtime";
-import { resolvePath } from "../../utils/paths";
-import { C } from "../../site.config";
-
-const locale = currentLocale.get();
-const sparkLinkHref = resolvePath(locale === C.DEFAULT_LOCALE ? "" : locale, "products", "sparklink");
+import { useI18n } from "astro-nanostores-i18n:runtime";
 
 const messages = useI18n("content/products/SparkiumDemo.astro", {
   explorer: "EXPLORER",
@@ -103,7 +98,7 @@ const messages = useI18n("content/products/SparkiumDemo.astro", {
       <polygon class="sparklink-funnel-shape" points="0,0 400,0 300,70 100,70"></polygon>
       <rect class="sparklink-funnel-shape" x="100" y="70" width="200" height="40"></rect>
       <polygon class="sparklink-funnel-shape" points="100,110 300,110 400,180 0,180"></polygon>
-      <a href={sparkLinkHref}>
+      <a href="./sparklink">
         <text
           x="200"
           y="90"
