@@ -1,6 +1,6 @@
 {
   "name": "code-for-humans.com",
-  "image": "mcr.microsoft.com/devcontainers/typescript-node:4-24-trixie",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:24-trixie",
   "customizations": {
     "vscode": {
       "extensions": [
