@@ -13,7 +13,7 @@ const { title, titleLevel: TitleTag = "h4" } = Astro.props;
       <slot name="icon" />
     </div>
     <TitleTag>{title}</TitleTag>
-    <slot name="front" />
+    <slot />
 
     <div class="turn-page"></div>
   </div>
