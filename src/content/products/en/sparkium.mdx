@@ -20,6 +20,13 @@ import TrainingCentersIllustration from "../../../../assets/stakeholders/trainin
 import CorporateTrainingsIllustration from "../../../../assets/stakeholders/corporate-trainings.png";
 import FeatureCard from "../../../components/FeatureCard.astro";
 import CardList from "../../../components/CardList.astro";
+import TextDocument from "~icons/carbon/document";
+import MultiLanguage from "~icons/carbon/ibm-watson-language-translator";
+import Modular from "~icons/carbon/extensions";
+import ChangeManagement from "~icons/carbon/ibm-data-product-exchange";
+import Interoperable from "~icons/carbon/import-export";
+import Unlock from "~icons/carbon/unlocked";
+import Assistance from "~icons/carbon/ai-enabled-pdlc";
 
 Sparkium is a modern standard for storing eLearning materials trying to revolutionize the EdTech industry. The goal is to enable educators, publishers and organizations to create, manage and distribute eLearning materials in an efficient and where possible, automated manner, while still being easy to handle for us, humans!
 
@@ -187,7 +194,7 @@ Does this sound like you? Have a try and see how Sparkium can help you to create
 Sparkium is designed to tackle your pain points of building eLearning materials.
 
 <CardList class="padding-breakout">
-  <FeatureCard title="Human-friendly text-based file formats" icon="textFormat">
+  <FeatureCard title="Human-friendly text-based file formats" icon={TextDocument}>
     <p slot="front">Use human-friendly text-based file formats to store your eLearning materials, making it easy to read, edit and maintain.</p>
     <p slot="back">
       You can use any text editor to work with your eLearning materials, and you can easily track changes and collaborate with others using version control tools like Git.
@@ -197,7 +204,7 @@ Sparkium is designed to tackle your pain points of building eLearning materials.
       No need to learn complex XML or proprietary formats and waiting for Microsoft Word to load!
     </p>
   </FeatureCard>
-  <FeatureCard title="Support for multiple languages" icon="languages">
+  <FeatureCard title="Support for multiple languages" icon={MultiLanguage}>
     <p slot="front">Provide your eLearning materials in multiple languages and reach a wider audience.</p>
     <p slot="back">
       - Supports as all languages and dialects
@@ -206,7 +213,7 @@ Sparkium is designed to tackle your pain points of building eLearning materials.
       No need to fiddle around with complex localization features in your LMS or create separate courses for each language!
     </p>
   </FeatureCard>
-  <FeatureCard title="Modular, portable and reusable design" icon="modular">
+  <FeatureCard title="Modular, portable and reusable design" icon={Modular}>
     <p slot="front">Design your eLearning materials in a modular and reusable way. Easily reuse and adapt existing courses for various cases.</p>
     <p slot="back">
       - Reuse parts of your materials across different courses
@@ -215,7 +222,7 @@ Sparkium is designed to tackle your pain points of building eLearning materials.
       No need to copy and paste content across different courses or create separate courses for each use case!
     </p>
   </FeatureCard>
-  <FeatureCard title="Change management and quality assurance" icon="changeControl">
+  <FeatureCard title="Change management and quality assurance" icon={ChangeManagement}>
     <p slot="front">Track, compare, and easily manage changes to your eLearning materials using version control tools like Git.</p>
     <p slot="back">
       - Track changes to your eLearning materials over time
@@ -224,19 +231,19 @@ Sparkium is designed to tackle your pain points of building eLearning materials.
       No need to worry about losing track of changes or having broken links in your course materials!
     </p>
   </FeatureCard>
-  <FeatureCard title="Platform agnostic and interoperable" icon="interoperable">
+  <FeatureCard title="Platform agnostic and interoperable" icon={Interoperable}>
     <p slot="front">Sparkium gives you flexibility and control to your content.</p>
     <p slot="back">
       By separating your eLearning materials from the LMS, Sparkium allows you to export, modify and re-upload your eLearning materials to different LMS platforms that support Sparkium, giving you more flexibility and control over your content.
     </p>
   </FeatureCard>
-  <FeatureCard title="Vendor and platform lock-in prevention" icon="unlock">
+  <FeatureCard title="Vendor and platform lock-in prevention" icon={Unlock}>
     <p slot="front">No more lock-in to specific LMS or platforms.</p>
     <p slot="back">
       Having your eLearning materials stored in a structured file system and text-based formats allows you to avoid being locked into a specific LMS or platform, giving you more freedom and control over your content.
     </p>
   </FeatureCard>
-  <FeatureCard title="Assistance and automation possibilities" icon="assistance">
+  <FeatureCard title="Assistance and automation possibilities" icon={Assistance}>
     <p slot="front">Free to use AI tools to assist your content creation.</p>
     <p slot="back">
       Due the nature of Sparkium's file formats, you can easily use AI tools to assist you in creating and maintaining your eLearning materials, and automate parts of your content workflow.

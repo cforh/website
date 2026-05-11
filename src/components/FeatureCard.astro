@@ -1,35 +1,17 @@
 ---
-import TextDocument from "~icons/carbon/document";
-import MultiLanguage from "~icons/carbon/ibm-watson-language-translator";
-import Modular from "~icons/carbon/extensions";
-import ChangeManagement from "~icons/carbon/ibm-data-product-exchange";
-import Interoperable from "~icons/carbon/import-export";
-import Unlock from "~icons/carbon/unlocked";
-import Assistance from "~icons/carbon/ai-enabled-pdlc";
-
-const icons = {
-  textFormat: TextDocument,
-  languages: MultiLanguage,
-  modular: Modular,
-  changeControl: ChangeManagement,
-  interoperable: Interoperable,
-  unlock: Unlock,
-  assistance: Assistance,
-};
+import type { AstroComponentFactory } from "astro/runtime/server";
 
 type Props = {
   title: string;
-  icon: keyof typeof icons;
+  icon: AstroComponentFactory;
 };
 
-const { title, icon } = Astro.props;
-
-const Icon = icons[icon];
+const { title, icon: Icon } = Astro.props;
 ---
 
 <div class="feature-card">
   <div class="front">
-    <Icon class="icon" />
+    {Icon && <Icon class="icon" />}
     <h4>{title}</h4>
     <slot name="front" />
 
