@@ -1,18 +1,17 @@
 ---
-import type { AstroComponentFactory } from "astro/runtime/server";
-
 type Props = {
   title: string;
-  icon: AstroComponentFactory;
   titleLevel?: "h2" | "h3" | "h4" | "h5" | "h6";
 };
 
-const { title, icon: Icon, titleLevel: TitleTag = "h4" } = Astro.props;
+const { title, titleLevel: TitleTag = "h4" } = Astro.props;
 ---
 
 <div class="feature-card">
   <div class="front">
-    {Icon && <Icon class="icon" />}
+    <div class="icon-wrapper">
+      <slot name="icon" />
+    </div>
     <TitleTag>{title}</TitleTag>
     <slot name="front" />
 
@@ -20,7 +19,7 @@ const { title, icon: Icon, titleLevel: TitleTag = "h4" } = Astro.props;
   </div>
 
   <div class="back">
-    <h4>{title}</h4>
+    <TitleTag>{title}</TitleTag>
     <slot name="back" />
   </div>
 </div>
@@ -74,7 +73,7 @@ const { title, icon: Icon, titleLevel: TitleTag = "h4" } = Astro.props;
     margin: 0;
   }
 
-  .icon {
+  .icon-wrapper :global(svg) {
     width: 2rem;
     height: auto;
   }
