@@ -4,15 +4,16 @@ import type { AstroComponentFactory } from "astro/runtime/server";
 type Props = {
   title: string;
   icon: AstroComponentFactory;
+  titleLevel?: "h2" | "h3" | "h4" | "h5" | "h6";
 };
 
-const { title, icon: Icon } = Astro.props;
+const { title, icon: Icon, titleLevel: TitleTag = "h4" } = Astro.props;
 ---
 
 <div class="feature-card">
   <div class="front">
     {Icon && <Icon class="icon" />}
-    <h4>{title}</h4>
+    <TitleTag>{title}</TitleTag>
     <slot name="front" />
 
     <div class="turn-page"></div>
