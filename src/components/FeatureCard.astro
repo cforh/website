@@ -66,6 +66,7 @@ const Icon = icons[icon];
     border-radius: var(--size-border-radius-large);
     border: var(--border-massive);
     gap: var(--size-gap-small);
+    word-break: normal;
   }
 
   .front {
@@ -79,9 +80,10 @@ const Icon = icons[icon];
   }
 
   .front :global(p),
-  .front :global(h4) {
+  .front :global(h4),
+  .back :global(p),
+  .back :global(h4) {
     margin: 0;
-    word-break: normal;
   }
 
   .back :global(p) {
@@ -108,7 +110,7 @@ const Icon = icons[icon];
     color: var(--color-white);
     transform: rotateY(180deg);
     justify-content: flex-start;
-    gap: vat(--size-gap);
+    gap: r(--size-gap);
     overflow-y: auto;
   }
 
