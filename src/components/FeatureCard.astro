@@ -14,8 +14,6 @@ const { title, titleLevel: TitleTag = "h4" } = Astro.props;
     </div>
     <TitleTag>{title}</TitleTag>
     <slot />
-
-    <div class="turn-page"></div>
   </div>
 
   <div class="back">
@@ -78,7 +76,8 @@ const { title, titleLevel: TitleTag = "h4" } = Astro.props;
     height: auto;
   }
 
-  .turn-page {
+  .front::after {
+    content: "";
     position: absolute;
     right: 0;
     bottom: 0;
