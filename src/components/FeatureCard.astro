@@ -12,12 +12,12 @@ const { title, titleLevel: TitleTag = "h3" } = Astro.props;
     <div class="icon-wrapper">
       <slot name="icon" />
     </div>
-    <TitleTag>{title}</TitleTag>
+    <TitleTag class="card-title">{title}</TitleTag>
     <slot />
   </div>
 
   <div class="back">
-    <TitleTag>{title}</TitleTag>
+    <TitleTag class="card-title">{title}</TitleTag>
     <slot name="back" />
   </div>
 </div>
@@ -26,6 +26,7 @@ const { title, titleLevel: TitleTag = "h3" } = Astro.props;
   .feature-card {
     display: grid;
     grid-template-columns: auto;
+    aspect-ratio: 4 / 3;
     justify-items: center;
     perspective: 1000px;
     margin: var(--size-gap) var(--size-gap-huge);
@@ -34,7 +35,6 @@ const { title, titleLevel: TitleTag = "h3" } = Astro.props;
   .front,
   .back {
     width: 100%;
-    height: 12rem;
     grid-area: 1 / 1;
     backface-visibility: hidden;
     transition: transform 0.6s;
@@ -60,10 +60,7 @@ const { title, titleLevel: TitleTag = "h3" } = Astro.props;
     gap: var(--size-gap);
   }
 
-  .front :global(p),
-  .front :global(h4),
-  .back :global(p),
-  .back :global(h4) {
+  .card-title {
     margin: 0;
   }
 
