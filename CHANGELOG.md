@@ -1,5 +1,12 @@
 # website
 
+## 0.2.10
+
+### Patch Changes
+
+- 3d1cbf1: Add break opportunities
+- 707d869: Add feature section.
+
 ## 0.2.9
 
 ### Patch Changes
