@@ -180,13 +180,6 @@ body > footer {
     padding: 0;
     text-align: center;
   }
-
-  select {
-    background: transparent;
-    border: none;
-    margin: 0;
-    padding: 0;
-  }
 }
 
 nav ul {

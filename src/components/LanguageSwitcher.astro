@@ -18,7 +18,7 @@ const collection = locales.map((locale) => {
 });
 ---
 
-<select autocomplete="off" class="language-switcher">
+<select id="language-switcher" name="language-switcher" autocomplete="off" class="language-switcher">
   {
     collection.map(({ value, label, selected }) => (
       <option value={value} {...(selected ? { selected: "true" } : {})}>
@@ -45,3 +45,13 @@ const collection = locales.map((locale) => {
   register();
   document.addEventListener("astro:after-swap", register);
 </script>
+
+<style>
+  .language-switcher {
+    background: transparent;
+    border: none;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+  }
+</style>
