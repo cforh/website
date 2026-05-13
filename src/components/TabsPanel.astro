@@ -1,0 +1,40 @@
+---
+interface Props {
+  class?: string;
+  id: string;
+  labelledby: string;
+  selected?: boolean;
+  [key: string]: string | number | boolean | undefined;
+}
+
+const { class: className, id, labelledby, selected = false, ...rest } = Astro.props;
+---
+
+<div
+  class:list={["tab-panel", className]}
+  role="tabpanel"
+  id={id}
+  aria-labelledby={labelledby}
+  aria-hidden={!selected}
+  {...rest}
+>
+  <slot />
+</div>
+
+<style>
+  :where(.tab-panel) {
+    display: none;
+    min-width: 0;
+    background-color: var(--color-white-97);
+    border-block-end: var(--border-massive);
+    border-inline: var(--border-massive);
+    overflow: hidden;
+    margin-block-end: var(--size-gap);
+    padding: var(--size-gap-large);
+    border-radius: 0 0 var(--size-border-radius-large) var(--size-border-radius-large);
+  }
+
+  :where(.tab-panel[aria-hidden="false"]) {
+    display: block;
+  }
+</style>

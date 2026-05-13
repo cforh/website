@@ -2,4 +2,4 @@
 "website": patch
 ---
 
-Modify team photos
+Enhance language switcher

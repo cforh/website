@@ -1,0 +1,275 @@
+---
+title: Sparkium
+summary: Sparkium ist ein moderner Standard zur Verwaltung von eLearning-Materialien.
+---
+
+import { Image } from "astro:assets";
+import SparkiumDemo from "../SparkiumDemo.astro";
+import Tabs from "../../../components/Tabs.astro";
+import TabsList from "../../../components/TabsList.astro";
+import TabsTab from "../../../components/TabsTab.astro";
+import TabsPanel from "../../../components/TabsPanel.astro";
+import StakeholderCard from "../../../components/StakeholderCard.astro";
+import AdministratorsIllustration from "../../../../assets/stakeholders/administrators.png";
+import EducatorsIllustration from "../../../../assets/stakeholders/educators.png";
+import InstructorsIllustration from "../../../../assets/stakeholders/instructors.png";
+import PublishersIllustration from "../../../../assets/stakeholders/publishers.png";
+import SchoolsIllustration from "../../../../assets/stakeholders/schools.png";
+import UniversitiesIllustration from "../../../../assets/stakeholders/universities.png";
+import TrainingCentersIllustration from "../../../../assets/stakeholders/training-centers.png";
+import CorporateTrainingsIllustration from "../../../../assets/stakeholders/corporate-trainings.png";
+
+Sparkium ist ein standardisiertes Schema zur Strukturierung von eLearning-Materialien. Es ermöglicht eine einheitliche Verwaltung und die Migration von Inhalten zwischen verschiedenen LMS-Plattformen über Sparklink.
+
+## Wie funktioniert Sparkium?
+
+Sparkium organisiert eLearning-Materialien in einem strukturierten Dateisystem mit textbasierten, menschenlesbaren Formaten. Dadurch lassen sich Inhalte einfacher **abrufen, übertragen** und **plattformübergreifend wiederverwenden**, während die Abhängigkeit von einzelnen Anbietern reduziert und Änderungsmanagement, Qualitätssicherung sowie Automatisierung verbessert werden.
+
+<SparkiumDemo />
+
+<a href="https://www.sparkium.org/" class="button primary cta">
+  Zur Sparkium-Website
+</a>
+
+## Für wen ist Sparkium?
+
+Sparkium richtet sich an alle, die mit eLearning-Materialien arbeiten:
+
+### Für Einzelpersonen
+
+<Tabs>
+  <TabsList>
+    <TabsTab id="tab-instructors" controls="panel-instructors" selected={true}>
+      Lehrpersonen
+    </TabsTab>
+    <TabsTab id="tab-educators" controls="panel-educators">
+      Unabhängige Lehrende
+    </TabsTab>
+    <TabsTab id="tab-administrators" controls="panel-administrators">
+      Lern&shy;verantwort&shy;liche
+    </TabsTab>
+  </TabsList>
+  <TabsPanel id="panel-instructors" labelledby="tab-instructors" selected={true}>
+    <StakeholderCard>
+      <p slot="heading">
+        Möchten Sie Ihre Kursmaterialien aktualisieren, ohne sich durch den Bearbeitungsbereich des LMS durchkämpfen zu
+        müssen?
+      </p>
+      <p slot="body">
+        Sparkium ermöglicht es Ihnen, Ihre eLearning-Materialien lokal zu bearbeiten und bei Bedarf in Ihr LMS zu
+        übertragen – so bleiben Ihre Kurse stets auf dem neuesten Stand.
+      </p>
+      <Image slot="image" src={InstructorsIllustration} alt="Optiker-Lehrperson unterrichtet Lernende an einem Tisch" />
+    </StakeholderCard>
+  </TabsPanel>
+  <TabsPanel id="panel-educators" labelledby="tab-educators">
+    <StakeholderCard>
+      <p slot="heading">
+        Wurden Sie schon einmal gebeten, Ihre Kursmaterialien weiterzugeben, hatten aber Schwierigkeiten, sie aus dem
+        LMS zu exportieren oder zu teilen?
+      </p>
+      <p slot="body">
+        Sparkium ermöglicht es Ihnen, Ihre eLearning-Materialien zu exportieren, lokal zu bearbeiten und in einem
+        kompatiblen Format mit anderen zu teilen.
+      </p>
+      <Image slot="image" src={EducatorsIllustration} alt="Unabhängige Lehrperson nimmt eine Lektion auf" />
+    </StakeholderCard>
+  </TabsPanel>
+  <TabsPanel id="panel-administrators" labelledby="tab-administrators">
+    <StakeholderCard>
+      <p slot="heading">
+        Müssen Sie Kurse für Ihre Institution verwalten und einrichten, verlieren dabei aber den Überblick über
+        Änderungen und Aktualisierungen?
+      </p>
+      <p slot="body">
+        Sparkium ermöglicht es Ihnen, Änderungen an Ihren eLearning-Materialien mit Versionsverwaltungstools wie Git
+        nachzuverfolgen, zu vergleichen und zu verwalten – so behalten Sie jederzeit die Kontrolle über Ihre Kurse.
+      </p>
+      <Image
+        slot="image"
+        src={AdministratorsIllustration}
+        alt="Frau sitzt am Schreibtisch mit einem Laptop und führt Qualitätssicherung von eLearning-Materialien durch"
+      />
+    </StakeholderCard>
+  </TabsPanel>
+</Tabs>
+
+### Für Organisationen
+
+<Tabs>
+  <TabsList>
+    <TabsTab id="tab-publishers" controls="panel-publishers" selected={true}>
+      Verlage
+    </TabsTab>
+    <TabsTab id="tab-schools" controls="panel-schools">
+      Schulen
+    </TabsTab>
+    <TabsTab id="tab-universities" controls="panel-universities">
+      Hoch&shy;schulen
+    </TabsTab>
+    <TabsTab id="tab-centers" controls="panel-centers">
+      Ausbildungs&shy;zentren
+    </TabsTab>
+    <TabsTab id="tab-teams" controls="panel-teams">
+      Unternehmens&shy;training
+    </TabsTab>
+  </TabsList>
+  <TabsPanel id="panel-publishers" labelledby="tab-publishers" selected={true}>
+    <StakeholderCard>
+      <p slot="heading">Vermissen Sie die Zeiten, als Schulen Lehrmittel direkt bei Ihnen kauften?</p>
+      <p slot="body">
+        Sparkium hilft Ihnen, dieses Modell ins digitale Zeitalter zu übertragen. Erstellen Sie eLearning-Materialien
+        einmalig und liefern Sie diese auf verschiedene LMS-Plattformen wie Moodle – so können Ihre Produkte einfach
+        verkauft und beim Kunden gestartet werden.
+      </p>
+      <Image
+        slot="image"
+        src={PublishersIllustration}
+        alt="Lernbücher werden digital verkauft und auf verschiedenen LMS-Plattformen wiederverwendet"
+      />
+    </StakeholderCard>
+  </TabsPanel>
+  <TabsPanel id="panel-schools" labelledby="tab-schools">
+    <StakeholderCard>
+      <p slot="heading">
+        Hatten Sie schon einmal einen defekten Link in Ihren Kursmaterialien oder den Überblick über vorgeschlagene
+        Änderungen verloren?
+      </p>
+      <p slot="body">
+        Sparkium ermöglicht es Ihnen, die Qualität Ihrer eLearning-Materialien automatisch zu prüfen und vorgeschlagene
+        Änderungen von Kolleginnen und Kollegen zu empfangen und zu verwalten – so lassen sich hochwertige
+        Kursmaterialien leichter pflegen.
+      </p>
+      <Image slot="image" src={SchoolsIllustration} alt="Klassenzimmer mit einem Smartboard und Schülertischen" />
+    </StakeholderCard>
+  </TabsPanel>
+  <TabsPanel id="panel-universities" labelledby="tab-universities">
+    <StakeholderCard>
+      <p slot="heading">
+        Hatten Sie jemals das Gefühl, beim Erstellen von Kursen das Rad neu erfinden zu müssen, und wünschten sich,
+        bestehende Module wiederverwenden und anpassen zu können?
+      </p>
+      <p slot="body">
+        Sparkium ermöglicht es Ihnen, bestehende Kurse schnell wiederzuverwenden und anzupassen, um massgeschneiderte
+        eLearning-Materialien für verschiedene Zielgruppen und Anwendungsfälle bereitzustellen – so können Sie sich auf
+        die Entwicklung einzigartiger und ansprechender Aufgaben für Ihre Studierenden konzentrieren.
+      </p>
+      <Image slot="image" src={UniversitiesIllustration} alt="Hochschul-Hörsaal mit digitalen Lernmitteln" />
+    </StakeholderCard>
+  </TabsPanel>
+  <TabsPanel id="panel-centers" labelledby="tab-centers">
+    <StakeholderCard>
+      <p slot="heading">
+        Möchten Sie eine grosse Anzahl von Kursen erstellen und pflegen, verlieren dabei aber den Überblick über
+        Änderungen und Aktualisierungen?
+      </p>
+      <p slot="body">
+        Sparkium ermöglicht es Ihnen, Änderungen an Ihren eLearning-Materialien mit Versionsverwaltungstools wie Git
+        nachzuverfolgen, zu vergleichen und zu verwalten – so behalten Sie jederzeit die Kontrolle über Ihre Kurse.
+      </p>
+      <Image
+        slot="image"
+        src={TrainingCentersIllustration}
+        alt="Piloten-Ausbildungszentrum mit digitalen Lernmitteln"
+      />
+    </StakeholderCard>
+  </TabsPanel>
+  <TabsPanel id="panel-teams" labelledby="tab-teams">
+    <StakeholderCard>
+      <p slot="heading">Möchten Sie neue Mitarbeitende effizienter einarbeiten und Teams gezielter schulen?</p>
+      <p slot="body">
+        Sparkium unterstützt Unternehmensschulungen dabei, eLearning-Materialien zu erstellen, anzupassen und
+        teamübergreifend wiederzuverwenden – so lässt sich internes Training einfacher skalieren.
+      </p>
+      <Image
+        slot="image"
+        src={CorporateTrainingsIllustration}
+        alt="Unternehmensschulung für Lokführende mit digitalen Lernmitteln"
+      />
+    </StakeholderCard>
+  </TabsPanel>
+</Tabs>
+
+Klingt das nach Ihnen? Probieren Sie es aus und entdecken Sie, wie Sparkium Ihnen hilft, Ihre eLearning-Materialien effizienter zu erstellen, zu verwalten und zu verteilen!
+
+## Warum Sparkium nutzen?
+
+Sparkium ist darauf ausgelegt, die typischen Herausforderungen bei der Erstellung von eLearning-Materialien zu lösen.
+
+### Menschenlesbare, textbasierte Dateiformate
+
+Nutzen Sie menschenlesbare, textbasierte Dateiformate für Ihre eLearning-Materialien – einfach zu lesen, zu bearbeiten und zu pflegen. Sie können beliebige Texteditoren verwenden und Änderungen mit Versionsverwaltungstools wie Git verfolgen und gemeinsam bearbeiten.
+
+- Verwenden Sie Markdown für Ihre Kursinhalte
+- Verwenden Sie YAML oder JSON zur Definition von Kursstruktur und Metadaten
+
+Kein Erlernen komplexer XML-Formate oder proprietärer Standards – und kein Warten, bis Microsoft Word geladen hat!
+
+### Mehrsprachigkeitsunterstützung
+
+Stellen Sie Ihre eLearning-Materialien in mehreren Sprachen bereit und erreichen Sie ein breiteres Publikum.
+
+- Unterstützung aller Sprachen und Dialekte
+- Einfachere Übersetzung und Lokalisierung durch Nutzung maschineller Übersetzungstools
+
+Kein mühsames Einrichten komplexer Lokalisierungsfunktionen im LMS oder das Anlegen separater Kurse je Sprache!
+
+### Modulares, portables und wiederverwendbares Design
+
+Gestalten Sie Ihre eLearning-Materialien modular und wiederverwendbar, um bestehende Kurse für verschiedene Zielgruppen und Anwendungsfälle einfach anzupassen.
+
+- Wiederverwendung von Materialteilen in verschiedenen Kursen
+- Gemeinsames Bearbeiten und Teilen von Kursmodulen mit anderen
+
+Kein Kopieren und Einfügen von Inhalten zwischen Kursen oder das Anlegen separater Kurse für jeden Anwendungsfall!
+
+### Änderungsmanagement und Qualitätssicherung
+
+Verfolgen, vergleichen und verwalten Sie Änderungen an Ihren eLearning-Materialien mit Versionsverwaltungstools wie Git – so lassen sich Kurse einfacher pflegen und aktualisieren.
+
+- Nachverfolgung von Änderungen an Ihren eLearning-Materialien über die Zeit
+- Gemeinsame iterative Überprüfung und Verbesserung Ihrer Materialien
+
+Kein Sorgen mehr um verlorene Änderungen oder defekte Links in Ihren Kursmaterialien!
+
+### Plattformunabhängig und interoperabel
+
+Durch die Trennung der eLearning-Materialien vom LMS ermöglicht Sparkium den Export, die Bearbeitung und den Re-Import auf verschiedene LMS-Plattformen, die Sparkium unterstützen – für mehr Flexibilität und Kontrolle über Ihre Inhalte.
+
+### Keine Anbieter- und Plattformabhängigkeit
+
+Die Speicherung Ihrer eLearning-Materialien in einem strukturierten Dateisystem und textbasierten Formaten schützt Sie vor einer Abhängigkeit von einem bestimmten LMS oder einer Plattform – Sie behalten die volle Freiheit und Kontrolle über Ihre Inhalte.
+
+### Unterstützungs- und Automatisierungsmöglichkeiten
+
+Dank der Natur der Sparkium-Dateiformate lassen sich KI-Tools einfach einsetzen, um Sie bei der Erstellung und Pflege Ihrer eLearning-Materialien zu unterstützen und Teile Ihres Inhalts-Workflows zu automatisieren.
+
+## Sparkium – was sonst noch?
+
+Wir sind nicht die Ersten mit diesen Ideen, aber wir sind überzeugt, dass Sparkiums Ansatz überlegen und praxistauglicher ist als bestehende Lösungen.
+
+### Schemavergleich
+
+SCORM und xAPI sind die am weitesten verbreiteten Standards für eLearning-Materialien, jedoch komplex. Ihr Fokus liegt auf Paketierung und Datenverfolgung, was die inhaltliche Erstellung und Verwaltung einschränkt. Sparkium hingegen fokussiert auf Inhaltserstellung und -verwaltung und ist damit intuitiver und benutzerfreundlicher für Lehrende und Content-Ersteller.
+
+| Schemavergleich   | SCORM                 | xAPI                         | Sparkium                                              |
+| ----------------- | --------------------- | ---------------------------- | ----------------------------------------------------- |
+| **Verbreitung**   | Weit verbreitet       | Wachsende Verbreitung        | Aufkommender Standard                                 |
+| **Metadaten**     | Komplexes XML-Format  | Komplexes XML-Format         | Lesbares YAML/JSON-Format                             |
+| **Inhaltsformat** | Komplexes HTML-Format | Komplexes JSON-Format        | Menschenfreundliches Markdown-Format mit Front Matter |
+| **Struktur**      | Starr und komplex     | Flexibler, aber noch komplex | Intuitiv durch Ordner- und Dateistruktur              |
+| **Fokus**         | Paket-zentriert       | Daten-zentriert              | Inhalt-zentriert                                      |
+
+### Vergleich der Erstellungsansätze für eLearning-Materialien
+
+Die meisten eLearning-Materialien werden direkt in LMS-Plattformen erstellt, was einschränkend und ineffizient sein kann. Manchmal werden auch reine Dateiverteilungsplattformen wie Google Drive oder Dropbox zum Teilen von Kursmaterialien genutzt.
+
+| Ansatzvergleich                      | Statische Dateien (z.B. Google Drive, Dropbox)             | Direkt im LMS (z.B. Moodle, Blackboard)   | Mit einem Schema                                          |
+| ------------------------------------ | ---------------------------------------------------------- | ----------------------------------------- | --------------------------------------------------------- |
+| **Speicherort der Materialien**      | In proprietären Dateien (z.B. .docx, .pdf)                 | In der LMS-Datenbank                      | In strukturiertem Dateisystem und textbasierten Formaten  |
+| **Bearbeitungserfahrung**            | Bearbeitung in proprietärer Software (z.B. Microsoft Word) | Bearbeitung im LMS-Inhaltseditor          | Bearbeitung mit beliebigen Texteditoren und Versionierung |
+| **Aktualisierung von Materialien**   | Manuelle Bearbeitung und Weitergabe neuer Dateiversionen   | Manuelle Bearbeitung im LMS-Inhaltseditor | Lokal bearbeiten und bei Bedarf ins LMS übertragen        |
+| **Wiederverwendung von Materialien** | Eingeschränkt durch proprietäre Formate                    | Eingeschränkt innerhalb desselben LMS     | Einfache Wiederverwendung über Plattformen und Kurse      |
+| **Portabilität**                     | Gering durch proprietäre Formate                           | Gering innerhalb desselben LMS            | Hoch über verschiedene Plattformen                        |
+| **Transparenz**                      | Gering durch proprietäre Formate                           | Gering innerhalb des LMS                  | Hoch durch offene und lesbare Formate                     |
+| **Dateneigentümerschaft**            | Eingeschränkt durch proprietäre Formate                    | Eingeschränkt innerhalb des LMS           | Vollständige Kontrolle über Inhalt und Struktur           |

@@ -95,6 +95,7 @@
     overflow: hidden;
     user-select: none;
     container-type: inline-size;
+    contain: layout style;
   }
 
   .orbits {
@@ -125,6 +126,7 @@
       hide var(--speed) linear infinite;
     animation-delay: calc(var(--speed) * -1 * (var(--sibling-index) - 1) / var(--sibling-count));
     position: relative;
+    will-change: transform, opacity;
   }
 
   :global(.orbit):hover > :global(*) {
