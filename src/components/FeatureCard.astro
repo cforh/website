@@ -111,6 +111,10 @@ const { title, titleLevel: TitleTag = "h3" } = Astro.props;
     cards.forEach((c) => c.classList.remove("flipped"));
 
     if (card && !isOpen) {
+      const back = card.querySelector(".back");
+      if (back instanceof HTMLElement) {
+        back.scrollTop = 0;
+      }
       card.classList.add("flipped");
     }
   });
