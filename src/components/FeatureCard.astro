@@ -32,6 +32,10 @@ const { title, titleLevel: TitleTag = "h3" } = Astro.props;
     margin: var(--size-gap) var(--size-gap-huge);
   }
 
+  .feature-card:not(.flipped) .back {
+    pointer-events: none;
+  }
+
   .front,
   .back {
     width: 100%;
