@@ -5,6 +5,7 @@ import unpluginFavicons from "@openscript/unplugin-favicons/vite";
 import de from "./src/translations/de.json";
 import mdx from "@astrojs/mdx";
 import Icons from "unplugin-icons/vite";
+import { unified } from "@astrojs/markdown-remark";
 import { rehypeWrapTables } from "./src/plugins/rehype-wrap-tables";
 import { remarkUnwrapJsxParagraphs } from "./src/plugins/remark-unwrap-jsx-paragraphs";
 
@@ -22,11 +23,14 @@ export default defineConfig({
         de,
       },
     }),
-    mdx({ remarkPlugins: [remarkUnwrapJsxParagraphs] }),
+    mdx(),
     sitemap({ i18n: { defaultLocale: C.DEFAULT_LOCALE, locales: C.LOCALES } }),
   ],
   markdown: {
-    rehypePlugins: [rehypeWrapTables],
+    processor: unified({
+      rehypePlugins: [rehypeWrapTables],
+      remarkPlugins: [remarkUnwrapJsxParagraphs],
+    }),
   },
   vite: {
     plugins: [
