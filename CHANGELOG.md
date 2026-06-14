@@ -1,5 +1,15 @@
 # website
 
+## 0.2.11
+
+### Patch Changes
+
+- 8fb8f6c: Prevent back scrolling when not flipped
+- 2b9e933: Add SparkLink into "How does Sparkium work" section.
+- 2b9e933: Add SparkLink into comparison section.
+- 0af7d11: Enhance language switcher
+- 0504a21: Update product page title and the summary.
+
 ## 0.2.10
 
 ### Patch Changes
