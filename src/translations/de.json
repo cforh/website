@@ -27,11 +27,11 @@
     "description": "Stärken und vernetzen: Begleiten Sie uns auf unserer Mission, die EdTech-Welt zu stärken und mit unseren Produkten zu vernetzen."
   },
   "src/pages/[...locale]/index.astro": {
-    "spotlightTitle": "Stärken und Vernetzen",
-    "spotlightContent": "Begleiten Sie uns auf unserer Mission, die EdTech-Welt zu stärken und mit unseren Produkten zu vernetzen.",
-    "spotlightActionConnect": "Vernetzen",
-    "spotlightActionEmpower": "Stärken",
-    "spotlightActionEmpowerLink": "/de/produkte",
+    "spotlightTitle": "Digitale Lösungen für die Bildungswelt",
+    "spotlightContent": "Unsere Produkte ermöglichen effizientes und kollaboratives Arbeiten in der Bildungswelt.",
+    "spotlightPrimaryAction": "Vernetzen",
+    "spotlightSecondaryAction": "Entdecken",
+    "spotlightSecondaryLink": "/de/produkte",
     "empowerTitle": "Gestärkt durch unsere Produkte",
     "connectTitle": "Vernetzen Sie sich mit uns",
     "connectOldTitle": "Wie in alten Zeiten",

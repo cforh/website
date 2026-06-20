@@ -27,10 +27,10 @@ export const getStaticPaths = generateGetStaticIndexPaths("[...locale]");
 
 const messages = useI18n("src/pages/[...locale]/index.astro", {
   spotlightTitle: "Solutions for your EdTech journey",
-  spotlightContent: "Code for humans enables you to collaborate and iterate efficiently on your eLearning missions.",
-  spotlightActionConnect: "Connect",
-  spotlightActionEmpower: "Explore",
-  spotlightActionEmpowerLink: "/products",
+  spotlightContent: "Our products enable you to collaborate and iterate efficiently on your eLearning missions.",
+  spotlightPrimaryAction: "Connect",
+  spotlightSecondaryAction: "Explore",
+  spotlightSecondaryLink: "/products",
   empowerTitle: "Products that empower",
   connectTitle: "Connect with us",
   connectOldTitle: "Like in the old times",
@@ -68,8 +68,8 @@ const products = i18nProps(collection, {
     <h1 slot="title">{messages.spotlightTitle}</h1>
     <p slot="content">{messages.spotlightContent}</p>
     <Fragment slot="actions">
-      <a href={messages.spotlightActionEmpowerLink} class="button primary">{messages.spotlightActionEmpower}</a>
-      <a href="#connect" class="button">{messages.spotlightActionConnect}</a>
+      <a href={messages.spotlightSecondaryLink} class="button primary">{messages.spotlightSecondaryAction}</a>
+      <a href="#connect" class="button">{messages.spotlightPrimaryAction}</a>
     </Fragment>
     <Orbiter slot="stage">
       <Image slot="host" alt="Our logo as the orbiters host" src={LogoSquare} />
@@ -111,7 +111,7 @@ const products = i18nProps(collection, {
             <h3>{product.data.title}</h3>
             <p>{product.data.summary}</p>
             <a href={product.translatedPath} class="button primary">
-              {messages.spotlightActionEmpower}
+              {messages.spotlightSecondaryAction}
             </a>
           </article>
         ))
