@@ -1,6 +1,6 @@
 ---
-title: Sparkium
-summary: Sparkium ist ein moderner Standard zur Verwaltung von eLearning-Materialien.
+title: Sparkium und SparkLink
+summary: Sparkium ist ein Schema zur Erstellung und Verwaltung von eLearning-Materialien. SparkLink verbindet Sparkium-Inhalte mit LMS-Plattformen.
 ---
 
 import { Image } from "astro:assets";
@@ -18,12 +18,21 @@ import SchoolsIllustration from "../../../../assets/stakeholders/schools.png";
 import UniversitiesIllustration from "../../../../assets/stakeholders/universities.png";
 import TrainingCentersIllustration from "../../../../assets/stakeholders/training-centers.png";
 import CorporateTrainingsIllustration from "../../../../assets/stakeholders/corporate-trainings.png";
+import FeatureCard from "../../../components/FeatureCard.astro";
+import CardList from "../../../components/CardList.astro";
+import TextDocument from "~icons/carbon/document";
+import MultiLanguage from "~icons/carbon/ibm-watson-language-translator";
+import Modular from "~icons/carbon/extensions";
+import ChangeManagement from "~icons/carbon/ibm-data-product-exchange";
+import Interoperable from "~icons/carbon/import-export";
+import Unlock from "~icons/carbon/unlocked";
+import Assistance from "~icons/carbon/ai-enabled-pdlc";
 
-Sparkium ist ein standardisiertes Schema zur Strukturierung von eLearning-Materialien. Es ermöglicht eine einheitliche Verwaltung und die Migration von Inhalten zwischen verschiedenen LMS-Plattformen über Sparklink.
+Sparkium ist ein standardisiertes Schema zur Strukturierung von eLearning-Materialien. Es ermöglicht eine einheitliche Verwaltung und die Migration von Inhalten zwischen verschiedenen LMS-Plattformen über SparkLink.
 
-## Wie funktioniert Sparkium?
+## Wie arbeiten Sparkium und SparkLink zusammen?
 
-Sparkium organisiert eLearning-Materialien in einem strukturierten Dateisystem mit textbasierten, menschenlesbaren Formaten. Dadurch lassen sich Inhalte einfacher **abrufen, übertragen** und **plattformübergreifend wiederverwenden**, während die Abhängigkeit von einzelnen Anbietern reduziert und Änderungsmanagement, Qualitätssicherung sowie Automatisierung verbessert werden.
+Sparkium organisiert eLearning-Materialien in einem strukturierten Dateisystem mit textbasierten, menschenlesbaren Formaten. SparkLink verbindet Sparkium-Inhalte mit LMS-Plattformen. Dadurch lassen sich Inhalte einfacher **abrufen, übertragen** und **plattformübergreifend wiederverwenden**, während die Abhängigkeit von einzelnen Anbietern reduziert und Änderungsmanagement, Qualitätssicherung sowie Automatisierung verbessert werden.
 
 <SparkiumDemo />
 
@@ -196,53 +205,74 @@ Klingt das nach Ihnen? Probieren Sie es aus und entdecken Sie, wie Sparkium Ihne
 
 Sparkium ist darauf ausgelegt, die typischen Herausforderungen bei der Erstellung von eLearning-Materialien zu lösen.
 
-### Menschenlesbare, textbasierte Dateiformate
+<CardList class="padding-breakout">
+  <FeatureCard title="Menschenfreundliche, textbasierte Dateiformate">
+    <TextDocument slot="icon" />
+    <div>Nutzen Sie menschenlesbare, textbasierte Dateiformate für Ihre eLearning-Materialien. Einfach zu lesen, zu bearbeiten und zu pflegen.</div>
+    <div slot="back">
+      Sie können jeden Texteditor nutzen, um mit Ihren eLearning-Materialien zu arbeiten, Änderungen nachzuverfolgen und mit Versionsverwaltungstools wie Git zusammenzuarbeiten.
+      - Verwenden Sie Markdown für Ihre Kursinhalte
+      - Verwenden Sie YAML oder JSON für Kursstruktur und Metadaten
 
-Nutzen Sie menschenlesbare, textbasierte Dateiformate für Ihre eLearning-Materialien – einfach zu lesen, zu bearbeiten und zu pflegen. Sie können beliebige Texteditoren verwenden und Änderungen mit Versionsverwaltungstools wie Git verfolgen und gemeinsam bearbeiten.
+      Kein Erlernen komplexer XML-Formate oder proprietärer Standards - und kein Warten, bis Microsoft Word geladen hat.
+    </div>
 
-- Verwenden Sie Markdown für Ihre Kursinhalte
-- Verwenden Sie YAML oder JSON zur Definition von Kursstruktur und Metadaten
+  </FeatureCard>
+  <FeatureCard title="Unterstützung für mehrere Sprachen">
+    <MultiLanguage slot="icon" />
+    <div>Bieten Sie Ihre eLearning-Materialien in mehreren Sprachen an und erreichen Sie ein breiteres Publikum.</div>
+    <div slot="back">
+      - Unterstützung aller Sprachen und Dialekte
+      - Einfachere Übersetzung und Lokalisierung durch maschinelle Übersetzungstools
 
-Kein Erlernen komplexer XML-Formate oder proprietärer Standards – und kein Warten, bis Microsoft Word geladen hat!
+      Kein mühsames Einrichten komplexer Lokalisierungsfunktionen im LMS oder das Anlegen separater Kurse pro Sprache.
+    </div>
 
-### Mehrsprachigkeitsunterstützung
+  </FeatureCard>
+  <FeatureCard title="Modulares, portables und wiederverwendbares Design">
+    <Modular slot="icon" />
+    <div>Gestalten Sie Ihre eLearning-Materialien modular und wiederverwendbar. Bestehende Kurse lassen sich für verschiedene Fälle leicht anpassen.</div>
+    <div slot="back">
+      - Wiederverwenden von Materialteilen über mehrere Kurse hinweg
+      - Teilen und gemeinsames Bearbeiten von Kursmodulen
 
-Stellen Sie Ihre eLearning-Materialien in mehreren Sprachen bereit und erreichen Sie ein breiteres Publikum.
+      Kein Kopieren und Einfügen zwischen Kursen oder das Anlegen separater Kurse für jeden Anwendungsfall.
+    </div>
 
-- Unterstützung aller Sprachen und Dialekte
-- Einfachere Übersetzung und Lokalisierung durch Nutzung maschineller Übersetzungstools
+  </FeatureCard>
+  <FeatureCard title="Änderungsmanagement und Qualitätssicherung">
+    <ChangeManagement slot="icon" />
+    <div>Verfolgen, vergleichen und verwalten Sie Änderungen an Ihren eLearning-Materialien mit Versionsverwaltungstools wie Git.</div>
+    <div slot="back">
+      - Änderungen über die Zeit nachverfolgen
+      - Iterativ mit anderen prüfen und verbessern
 
-Kein mühsames Einrichten komplexer Lokalisierungsfunktionen im LMS oder das Anlegen separater Kurse je Sprache!
+      Kein Sorgen mehr um verlorene Änderungen oder defekte Links in Ihren Kursmaterialien.
+    </div>
 
-### Modulares, portables und wiederverwendbares Design
-
-Gestalten Sie Ihre eLearning-Materialien modular und wiederverwendbar, um bestehende Kurse für verschiedene Zielgruppen und Anwendungsfälle einfach anzupassen.
-
-- Wiederverwendung von Materialteilen in verschiedenen Kursen
-- Gemeinsames Bearbeiten und Teilen von Kursmodulen mit anderen
-
-Kein Kopieren und Einfügen von Inhalten zwischen Kursen oder das Anlegen separater Kurse für jeden Anwendungsfall!
-
-### Änderungsmanagement und Qualitätssicherung
-
-Verfolgen, vergleichen und verwalten Sie Änderungen an Ihren eLearning-Materialien mit Versionsverwaltungstools wie Git – so lassen sich Kurse einfacher pflegen und aktualisieren.
-
-- Nachverfolgung von Änderungen an Ihren eLearning-Materialien über die Zeit
-- Gemeinsame iterative Überprüfung und Verbesserung Ihrer Materialien
-
-Kein Sorgen mehr um verlorene Änderungen oder defekte Links in Ihren Kursmaterialien!
-
-### Plattformunabhängig und interoperabel
-
-Durch die Trennung der eLearning-Materialien vom LMS ermöglicht Sparkium den Export, die Bearbeitung und den Re-Import auf verschiedene LMS-Plattformen, die Sparkium unterstützen – für mehr Flexibilität und Kontrolle über Ihre Inhalte.
-
-### Keine Anbieter- und Plattformabhängigkeit
-
-Die Speicherung Ihrer eLearning-Materialien in einem strukturierten Dateisystem und textbasierten Formaten schützt Sie vor einer Abhängigkeit von einem bestimmten LMS oder einer Plattform – Sie behalten die volle Freiheit und Kontrolle über Ihre Inhalte.
-
-### Unterstützungs- und Automatisierungsmöglichkeiten
-
-Dank der Natur der Sparkium-Dateiformate lassen sich KI-Tools einfach einsetzen, um Sie bei der Erstellung und Pflege Ihrer eLearning-Materialien zu unterstützen und Teile Ihres Inhalts-Workflows zu automatisieren.
+  </FeatureCard>
+  <FeatureCard title="Plattformunabhängig und interoperabel">
+    <Interoperable slot="icon" />
+    <div>Sparkium gibt Ihnen Flexibilität und Kontrolle über Ihre Inhalte.</div>
+    <div slot="back">
+      Durch die Trennung Ihrer eLearning-Materialien vom LMS können Sie Inhalte exportieren, bearbeiten und in verschiedene LMS-Plattformen mit Sparkium-Unterstützung zurückspielen - für mehr Kontrolle über Ihren Content.
+    </div>
+  </FeatureCard>
+  <FeatureCard title="Vermeidung von Anbieter- und Plattformabhängigkeit">
+    <Unlock slot="icon" />
+    <div>Keine Bindung mehr an ein bestimmtes LMS oder eine bestimmte Plattform.</div>
+    <div slot="back">
+      Die Ablage Ihrer eLearning-Materialien in einem strukturierten Dateisystem mit textbasierten Formaten hilft Ihnen, Lock-in zu vermeiden - für mehr Freiheit und Kontrolle.
+    </div>
+  </FeatureCard>
+  <FeatureCard title="Assistenz- und Automatisierungsmöglichkeiten">
+    <Assistance slot="icon" />
+    <div>Nutzen Sie KI-Tools frei zur Unterstützung Ihrer Content-Erstellung.</div>
+    <div slot="back">
+      Durch die Natur der Sparkium-Dateiformate lassen sich KI-Tools einfach einsetzen, um die Erstellung und Pflege Ihrer eLearning-Materialien zu unterstützen und Teile Ihres Workflows zu automatisieren.
+    </div>
+  </FeatureCard>
+</CardList>
 
 ## Sparkium – was sonst noch?
 
@@ -262,14 +292,18 @@ SCORM und xAPI sind die am weitesten verbreiteten Standards für eLearning-Mater
 
 ### Vergleich der Erstellungsansätze für eLearning-Materialien
 
-Die meisten eLearning-Materialien werden direkt in LMS-Plattformen erstellt, was einschränkend und ineffizient sein kann. Manchmal werden auch reine Dateiverteilungsplattformen wie Google Drive oder Dropbox zum Teilen von Kursmaterialien genutzt.
+Die meisten eLearning-Materialien werden entweder als Dateien auf Speicherplattformen wie Google Drive oder Dropbox verwaltet oder direkt in LMS-Plattformen erstellt. Beide Ansätze erschweren häufig Wiederverwendung, Versionierung und langfristige Pflege.
 
-| Ansatzvergleich                      | Statische Dateien (z.B. Google Drive, Dropbox)             | Direkt im LMS (z.B. Moodle, Blackboard)   | Mit einem Schema                                          |
-| ------------------------------------ | ---------------------------------------------------------- | ----------------------------------------- | --------------------------------------------------------- |
-| **Speicherort der Materialien**      | In proprietären Dateien (z.B. .docx, .pdf)                 | In der LMS-Datenbank                      | In strukturiertem Dateisystem und textbasierten Formaten  |
-| **Bearbeitungserfahrung**            | Bearbeitung in proprietärer Software (z.B. Microsoft Word) | Bearbeitung im LMS-Inhaltseditor          | Bearbeitung mit beliebigen Texteditoren und Versionierung |
-| **Aktualisierung von Materialien**   | Manuelle Bearbeitung und Weitergabe neuer Dateiversionen   | Manuelle Bearbeitung im LMS-Inhaltseditor | Lokal bearbeiten und bei Bedarf ins LMS übertragen        |
-| **Wiederverwendung von Materialien** | Eingeschränkt durch proprietäre Formate                    | Eingeschränkt innerhalb desselben LMS     | Einfache Wiederverwendung über Plattformen und Kurse      |
-| **Portabilität**                     | Gering durch proprietäre Formate                           | Gering innerhalb desselben LMS            | Hoch über verschiedene Plattformen                        |
-| **Transparenz**                      | Gering durch proprietäre Formate                           | Gering innerhalb des LMS                  | Hoch durch offene und lesbare Formate                     |
-| **Dateneigentümerschaft**            | Eingeschränkt durch proprietäre Formate                    | Eingeschränkt innerhalb des LMS           | Vollständige Kontrolle über Inhalt und Struktur           |
+Sparkium und SparkLink bieten einen alternativen Workflow. Sparkium speichert Lernmaterialien in einem strukturierten, menschenlesbaren Format, während SparkLink diese Inhalte mit LMS-Plattformen veröffentlicht und synchronisiert. Gemeinsam ermöglichen sie einen wartbaren und portablen Ansatz für eLearning-Content-Management.
+
+| Ansatzvergleich                      | Statische Dateien (z.B. Google Drive, Dropbox)             | Direkt im LMS (z.B. Moodle, Blackboard)   | Sparkium und SparkLink                                            |
+| ------------------------------------ | ---------------------------------------------------------- | ----------------------------------------- | ----------------------------------------------------------------- |
+| **Speicherort der Materialien**      | In proprietären Dateien (z.B. .docx, .pdf)                 | In der LMS-Datenbank                      | In strukturiertem Dateisystem mit offenen, textbasierten Formaten |
+| **Bearbeitungserfahrung**            | Bearbeitung in proprietärer Software (z.B. Microsoft Word) | Bearbeitung im LMS-Inhaltseditor          | Bearbeitung mit beliebigen Texteditoren und Versionierungstools   |
+| **Publikations-Workflow**            | Manuelles Teilen von Dateien                               | Inhalte sind unmittelbar ans LMS gebunden | Inhalte werden über SparkLink in LMS-Plattformen veröffentlicht   |
+| **Aktualisierung von Materialien**   | Manuelle Bearbeitung und Weitergabe neuer Dateiversionen   | Manuelle Bearbeitung im LMS-Inhaltseditor | Lokal bearbeiten und Änderungen über SparkLink synchronisieren    |
+| **Wiederverwendung von Materialien** | Eingeschränkt durch proprietäre Formate                    | Eingeschränkt innerhalb desselben LMS     | Einfache Wiederverwendung über verschiedene Plattformen und Kurse |
+| **Portabilität**                     | Gering durch proprietäre Formate                           | Gering innerhalb desselben LMS            | Hoch über verschiedene Plattformen                                |
+| **Transparenz**                      | Gering durch proprietäre Formate                           | Gering innerhalb des LMS                  | Hoch durch offene und lesbare Formate                             |
+| **Dateneigentümerschaft**            | Eingeschränkt durch proprietäre Formate                    | Eingeschränkt innerhalb des LMS           | Vollständige Kontrolle über Inhalte und Struktur                  |
+| **Anbieterabhängigkeit**             | Mittel                                                     | Hoch                                      | Gering                                                            |
