@@ -1,0 +1,64 @@
+---
+import Card from "./Card.astro";
+import type { TitleLevels } from "../../types";
+import ChevronRight from "~icons/carbon/chevron-right";
+
+type Props = {
+  titleLevel?: TitleLevels;
+  href: string;
+};
+
+const { titleLevel: TitleTag = "h2", href } = Astro.props;
+---
+
+<a href={href}>
+  <Card className="spotlight-card">
+    <div class="spotlight">
+      <slot name="spotlight" />
+    </div>
+    <TitleTag><slot name="title" /></TitleTag>
+    <p><slot name="description" /></p>
+    <div class="button primary cta">
+      <ChevronRight />
+    </div>
+  </Card>
+</a>
+
+<style>
+  :global(.spotlight-card) {
+    display: grid;
+    gap: var(--size-gap);
+    grid-template-columns: minmax(0, 60%) auto;
+    grid-template-areas:
+      "title spotlight"
+      "description spotlight"
+      "cta spotlight";
+    color: var(--color-black);
+
+    .spotlight {
+      grid-area: spotlight;
+
+      & > :global(*) {
+        width: 100%;
+        height: 100%;
+        border-radius: var(--size-border-radius);
+      }
+    }
+
+    p {
+      font-size: var(--size-font-large);
+    }
+    .cta {
+      grid-area: cta;
+      justify-self: center;
+      margin: 0;
+      display: flex;
+      place-content: center;
+
+      svg {
+        width: 2rem;
+        height: auto;
+      }
+    }
+  }
+</style>

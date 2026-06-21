@@ -4,6 +4,7 @@
   padding: var(--size-gap-small) var(--size-gap);
   border-radius: var(--size-border-radius-large);
   font-weight: bold;
+  user-select: none;
 
   &:hover {
     background: var(--color-secondary);

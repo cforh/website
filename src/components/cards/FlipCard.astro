@@ -1,0 +1,80 @@
+---
+import Card from "./Card.astro";
+
+type Props = {
+  className: string;
+};
+---
+
+<div class:list={["flip-card", Astro.props.className]}>
+  <Card className={["front-flip-card", `front-${Astro.props.className}`]}>
+    <slot name="front" />
+  </Card>
+  <Card className={["back-flip-card", `back-${Astro.props.className}`]}>
+    <slot name="back" />
+  </Card>
+</div>
+
+<style>
+  .flip-card {
+    display: grid;
+    position: relative;
+    justify-items: center;
+    perspective: 1000px;
+
+    :is(.front-flip-card, .back-flip-card) {
+      grid-area: 1 / 1;
+      backface-visibility: hidden;
+      box-sizing: border-box;
+      transition: transform var(--transition-slow);
+    }
+
+    .front-flip-card {
+      width: 100%;
+    }
+
+    .back-flip-card {
+      position: absolute;
+      inset: 0;
+      background: var(--color-primary);
+      color: var(--color-white);
+      transform: rotateY(180deg);
+      overflow-y: auto;
+    }
+  }
+
+  .flip-card.flipped {
+    .front-flip-card {
+      transform: rotateY(180deg);
+    }
+
+    .back-flip-card {
+      transform: rotateY(360deg);
+    }
+  }
+
+  @media (hover: hover) {
+    .flip-card:hover {
+      .front-flip-card {
+        transform: rotateY(180deg);
+      }
+
+      .back-flip-card {
+        transform: rotateY(360deg);
+      }
+    }
+  }
+</style>
+
+<script>
+  function register() {
+    if (window.matchMedia("(hover: none)").matches) {
+      document.querySelectorAll<HTMLElement>(".flip-card").forEach((card) => {
+        card.addEventListener("click", () => card.classList.toggle("flipped"));
+      });
+    }
+  }
+
+  register();
+  document.addEventListener("astro:after-swap", register);
+</script>

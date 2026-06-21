@@ -7,8 +7,8 @@ import { getCollection } from "astro:content";
 import Meta from "../../../layouts/groups/Meta.astro";
 import Article from "../../../layouts/templates/Article.astro";
 import { useI18n } from "astro-nanostores-i18n:runtime";
-import Card from "../../../components/Card.astro";
-import { params } from "@nanostores/i18n";
+import SpotlightCard from "../../../components/cards/SpotlightCard.astro";
+import DerivedCover from "../../../components/DerivedCover.astro";
 
 export const getStaticPaths = generateGetStaticIndexPaths("[...locale]/[products]");
 
@@ -18,7 +18,6 @@ const {
 } = Astro.props;
 const messages = useI18n("pages/[...locale]/[products]/index.astro", {
   title: "Products",
-  action: params("Learn more about {product}"),
   description: "Explore our products designed to empower and connect the EdTech space.",
 });
 const collection = (await getCollection("products")).filter((entry) => entry.data.locale === locale);
@@ -37,18 +36,13 @@ const products = i18nProps(collection, {
     <section class="products-list padding-breakout">
       {
         products.map((product) => (
-          <Card
-            title={product.data.title}
-            hasSpotlight
-            cover={product.data.icon ? { alt: product.data.title, image: product.data.icon } : undefined}
-          >
-            <p slot="description">{product.data.summary}</p>
-            <Fragment slot="actions">
-              <a href={product.translatedPath} class="button primary">
-                {messages.action({ product: product.data.title })}
-              </a>
+          <SpotlightCard href={product.translatedPath}>
+            <Fragment slot="spotlight">
+              <DerivedCover value={product.data.title} />
             </Fragment>
-          </Card>
+            <Fragment slot="title">{product.data.title}</Fragment>
+            <Fragment slot="description">{product.data.summary}</Fragment>
+          </SpotlightCard>
         ))
       }
     </section>

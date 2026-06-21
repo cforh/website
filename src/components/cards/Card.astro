@@ -1,0 +1,25 @@
+---
+type Props = {
+  className: string | string[];
+};
+---
+
+<div class:list={["card", Astro.props.className]}>
+  <slot />
+</div>
+
+<style>
+  :where(.card) {
+    display: grid;
+    grid-template-columns: auto;
+    gap: var(--size-gap);
+    background: var(--color-white-97);
+    padding: var(--size-gap-large);
+    border-radius: var(--size-border-radius-large);
+    border: var(--border-massive);
+
+    :is(h2, h3, h4, h5, h6, p) {
+      margin: 0;
+    }
+  }
+</style>

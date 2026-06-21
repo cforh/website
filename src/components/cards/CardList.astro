@@ -1,0 +1,35 @@
+---
+type Props = {
+  className?: string;
+  columns?: number;
+};
+
+const { className, columns = 3 } = Astro.props;
+---
+
+<div class:list={["card-list", className]}>
+  <slot>
+    <p>Set cards as children!</p>
+  </slot>
+</div>
+
+<style define:vars={{ columns }}>
+  .card-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--size-gap);
+
+    & > :global(*) {
+      flex: 1 1 calc((100% / var(--columns)) - var(--size-gap));
+      max-width: 50%;
+    }
+
+    @media (max-width: 620px) {
+      & > :global(*) {
+        flex: 1 1 100%;
+        max-width: 100%;
+      }
+    }
+  }
+</style>

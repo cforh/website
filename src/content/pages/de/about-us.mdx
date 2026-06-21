@@ -3,10 +3,11 @@ path: ueber-uns
 title: Über uns
 ---
 
+import { Image } from "astro:assets";
 import Quote from "../../../components/Quote.astro";
-import Card from "../../../components/Card.astro";
-import CardList from "../../../components/CardList.astro";
-import FlipCard from "../../../components/FlipCard.astro";
+import CardList from "../../../components/cards/CardList.astro";
+import DefinitionCard from "../../../components/cards/DefinitionCard.astro";
+import ProfileCard from "../../../components/cards/ProfileCard.astro";
 import YixuanPhoto from "../../../../assets/team/yixuan.jpg";
 import RobinPhoto from "../../../../assets/team/robin.jpg";
 
@@ -22,22 +23,21 @@ Bei unserer Arbeit im Bildungsumfeld haben wir immer wieder erlebt, wie wir durc
 
 ## Werte
 
-<CardList class="padding-breakout">
-  <Card title="Immer besser" titleLevel="h3">
-    <p slot="description">
-      Wir verbessern uns kontinuierlich, lernen aus jedem Schritt und machen jeden Zyklus besser.
-    </p>
-  </Card>
-  <Card title="Menschenzentriert" titleLevel="h3">
-    <p slot="description">
-      Wir hören genau zu, entwickeln entlang realer Bedürfnisse und reduzieren repetitive Arbeit.
-    </p>
-  </Card>
-  <Card title="Gut verwurzelt" titleLevel="h3">
-    <p slot="description">
+<CardList className="padding-breakout">
+  <DefinitionCard titleLevel="h3">
+    <Fragment slot="title">Immer besser</Fragment>
+    <p slot="definition">Wir verbessern uns kontinuierlich, lernen aus jedem Schritt und machen jeden Zyklus besser.</p>
+  </DefinitionCard>
+  <DefinitionCard titleLevel="h3">
+    <Fragment slot="title">Menschenzentriert</Fragment>
+    <p slot="definition">Wir hören genau zu, entwickeln entlang realer Bedürfnisse und reduzieren repetitive Arbeit.</p>
+  </DefinitionCard>
+  <DefinitionCard titleLevel="h3">
+    <Fragment slot="title">Gut verwurzelt</Fragment>
+    <p slot="definition">
       Wir entwickeln Lösungen, die mit Ihnen wachsen, beginnen im Kleinen und skalieren nachhaltig.
     </p>
-  </Card>
+  </DefinitionCard>
 </CardList>
 
 ## Ziele
@@ -46,16 +46,19 @@ Wir stellen uns eine Zukunft vor, in der die Verwaltung von Kursinhalten nahtlos
 
 ## Team
 
-<CardList class="centered">
-  <FlipCard title="Robin" spotlight={{ alt: "Robin", image: RobinPhoto }}>
-    Es fällt mir leicht und macht mir Spass, mit Kolleginnen und Kollegen zusammenzuarbeiten, um ein Projekt
-    voranzubringen und gesetzte Ziele zu erreichen. Ich kann die Verantwortung für ein kleines Team übernehmen und es
-    mit klaren Anweisungen sowie agilem Projektmanagement voranführen.
-  </FlipCard>
-  <FlipCard title="Yixuan" spotlight={{ alt: "Yixuan", image: YixuanPhoto }}>
-    Mit einem Hintergrund in Natural Language Processing und einer Leidenschaft für durchdachtes Design bin ich in die
-    Web- und Softwareentwicklung gewechselt, um Werkzeuge und Erlebnisse zu schaffen, die sowohl funktional als auch
-    optisch ansprechend sind. Es bereitet mir Freude, Ideen in funktionierende Produkte umzusetzen - besonders dann,
-    wenn ich sowohl ihr Erscheinungsbild als auch ihre Funktionsweise gestalten kann.
-  </FlipCard>
+<CardList className="centered">
+  <ProfileCard titleLevel="h3">
+    <Image slot="photo" src={RobinPhoto} alt="Robin" />
+    <Fragment slot="name">Robin</Fragment>
+    <Fragment slot="description">
+      Es fällt mir leicht und macht mir Spass, mit Kolleginnen und Kollegen zusammenzuarbeiten, um ein Projekt voranzubringen und gesetzte Ziele zu erreichen. Ich kann die Verantwortung für ein kleines Team übernehmen und es mit klaren Anweisungen sowie agilem Projektmanagement voranführen.
+    </Fragment>
+  </ProfileCard>
+  <ProfileCard titleLevel="h3">
+    <Image slot="photo" src={YixuanPhoto} alt="Yixuan" />
+    <Fragment slot="name">Yixuan</Fragment>
+    <Fragment slot="description">
+      Mit einem Hintergrund in Natural Language Processing und einer Leidenschaft für durchdachtes Design bin ich in die Web- und Softwareentwicklung gewechselt, um Werkzeuge und Erlebnisse zu schaffen, die sowohl funktional als auch optisch ansprechend sind. Es bereitet mir Freude, Ideen in funktionierende Produkte umzusetzen - besonders dann, wenn ich sowohl ihr Erscheinungsbild als auch ihre Funktionsweise gestalten kann.
+    </Fragment>
+  </ProfileCard>
 </CardList>

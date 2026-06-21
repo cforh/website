@@ -1,0 +1,39 @@
+---
+import FlipCard from "./FlipCard.astro";
+import type { TitleLevels } from "../../types";
+
+type Props = {
+  titleLevel?: TitleLevels;
+};
+
+const { titleLevel: TitleTag = "h2" } = Astro.props;
+---
+
+<FlipCard className="feature-card">
+  <Fragment slot="front">
+    <slot name="icon" />
+    <TitleTag><slot name="title" /></TitleTag>
+    <p><slot name="summary" /></p>
+  </Fragment>
+  <Fragment slot="back">
+    <TitleTag><slot name="title" /></TitleTag>
+    <slot name="description" />
+  </Fragment>
+</FlipCard>
+
+<style>
+  :global(.feature-card) {
+    .front-flip-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      min-height: 17rem;
+    }
+
+    svg {
+      width: 2rem;
+      height: auto;
+    }
+  }
+</style>

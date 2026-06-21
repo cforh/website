@@ -1,0 +1,15 @@
+---
+import Card from "./Card.astro";
+import type { TitleLevels } from "../../types";
+
+type Props = {
+  titleLevel?: TitleLevels;
+};
+
+const { titleLevel: TitleTag = "h2" } = Astro.props;
+---
+
+<Card className="definition-card">
+  <TitleTag><slot name="title" /></TitleTag>
+  <p><slot name="definition" /></p>
+</Card>
