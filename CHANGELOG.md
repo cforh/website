@@ -1,5 +1,12 @@
 # website
 
+## 0.2.12
+
+### Patch Changes
+
+- 685bb35: Fix scrolling on pages with little content
+- 60ce9a8: Fix backcard scrolling when not active
+
 ## 0.2.11
 
 ### Patch Changes
