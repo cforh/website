@@ -9,6 +9,7 @@ import Article from "../../../layouts/templates/Article.astro";
 import { useI18n } from "astro-nanostores-i18n:runtime";
 import SpotlightCard from "../../../components/cards/SpotlightCard.astro";
 import DerivedCover from "../../../components/DerivedCover.astro";
+import IconCover from "../../../components/IconCover.astro";
 
 export const getStaticPaths = generateGetStaticIndexPaths("[...locale]/[products]");
 
@@ -38,7 +39,15 @@ const products = i18nProps(collection, {
         products.map((product) => (
           <SpotlightCard href={product.translatedPath}>
             <Fragment slot="spotlight">
-              <DerivedCover value={product.data.title} />
+              {product.data.brand ? (
+                <IconCover
+                  image={{ image: product.data.brand.logo, alt: product.data.title }}
+                  primaryColor={product.data.brand.primaryColor}
+                  secondaryColor={product.data.brand.secondaryColor}
+                />
+              ) : (
+                <DerivedCover value={product.data.title} />
+              )}
             </Fragment>
             <Fragment slot="title">{product.data.title}</Fragment>
             <Fragment slot="description">{product.data.summary}</Fragment>
@@ -50,10 +59,15 @@ const products = i18nProps(collection, {
 </Shell>
 
 <style>
+  p {
+    text-align: center;
+  }
+
   .products-list {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: 1fr;
+    gap: var(--size-gap);
     margin-block-start: var(--size-gap-huge);
-    gap: var(--size-gap-huge);
-    flex-direction: column;
   }
 </style>

@@ -40,6 +40,13 @@ const productsCollection = defineCollection({
       z.object({
         title: z.string(),
         summary: z.string(),
+        brand: z
+          .object({
+            logo: image(),
+            primaryColor: z.string(),
+            secondaryColor: z.string(),
+          })
+          .optional(),
         icon: image().optional(),
       }),
     ),
