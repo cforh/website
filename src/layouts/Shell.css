@@ -35,6 +35,7 @@
 html {
   display: flex;
   flex-direction: column;
+  scrollbar-gutter: stable;
   scroll-snap-type: y proximity;
   scroll-behavior: smooth;
   hyphens: auto;
