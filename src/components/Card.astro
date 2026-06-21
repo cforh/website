@@ -1,6 +1,7 @@
 ---
 import type { ImageMetadata } from "astro";
 import DerivedCover from "../components/DerivedCover.astro";
+import IconCover from "./IconCover.astro";
 
 type Props = {
   title: string;
@@ -34,7 +35,7 @@ const hasActions = Astro.slots.has("actions");
     hasSpotlight && (
       <div class="card-spotlight">
         <div class="card-spotlight-background">
-          {cover && <img src={cover.image.src} alt={cover.alt} width={cover.image.width} height={cover.image.height} />}
+          {cover && <IconCover image={cover.image} primaryColor="#FFFFFF" secondaryColor="#FF00000" />}
           {!cover && <DerivedCover value={title} />}
         </div>
         {icon && <img src={icon.image.src} alt={icon.alt} width={icon.image.width} height={icon.image.height} />}

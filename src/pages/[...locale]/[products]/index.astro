@@ -37,7 +37,11 @@ const products = i18nProps(collection, {
     <section class="products-list padding-breakout">
       {
         products.map((product) => (
-          <Card title={product.data.title} hasSpotlight>
+          <Card
+            title={product.data.title}
+            hasSpotlight
+            cover={product.data.icon ? { alt: product.data.title, image: product.data.icon } : undefined}
+          >
             <p slot="description">{product.data.summary}</p>
             <Fragment slot="actions">
               <a href={product.translatedPath} class="button primary">

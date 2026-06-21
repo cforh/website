@@ -35,12 +35,14 @@ const pagesCollection = defineCollection({
 });
 const productsCollection = defineCollection({
   loader: i18nLoader({ pattern: "**/[^_]*.{md,mdx}", base: "./src/content/products" }),
-  schema: extendI18nLoaderSchema(
-    z.object({
-      title: z.string(),
-      summary: z.string(),
-    }),
-  ),
+  schema: ({ image }) =>
+    extendI18nLoaderSchema(
+      z.object({
+        title: z.string(),
+        summary: z.string(),
+        icon: image().optional(),
+      }),
+    ),
 });
 
 export const collections = {
