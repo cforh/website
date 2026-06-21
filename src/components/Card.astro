@@ -1,13 +1,13 @@
 ---
-import type { ImageMetadata } from "astro";
+import type { ImageAsset } from "../env";
 import DerivedCover from "../components/DerivedCover.astro";
 import IconCover from "./IconCover.astro";
 
 type Props = {
   title: string;
   titleLevel?: "h2" | "h3" | "h4" | "h5" | "h6";
-  cover?: { alt: string; image: ImageMetadata };
-  icon?: { alt: string; image: ImageMetadata };
+  cover?: ImageAsset;
+  icon?: ImageAsset;
   hasSpotlight?: boolean;
 };
 

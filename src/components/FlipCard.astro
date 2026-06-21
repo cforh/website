@@ -1,9 +1,9 @@
 ---
-import type { ImageMetadata } from "astro";
+import type { ImageAsset } from "../env";
 
 type Props = {
   title: string;
-  spotlight: { alt: string; image: ImageMetadata };
+  spotlight: ImageAsset;
   titleLevel?: "h2" | "h3" | "h4" | "h5" | "h6";
 };
 
