@@ -1,5 +1,5 @@
 ---
-import Card from "../../components/Card.astro";
+import Card from "../../components/cards/Card.astro";
 import moodleLogo from "../../../assets/logos/moodle.svg";
 import { useI18n } from "astro-nanostores-i18n:runtime";
 
@@ -28,66 +28,63 @@ const messages = useI18n("content/products/SparkiumDemo.astro", {
 
 <div class="sparkium-demo padding-breakout">
   <Card title={messages.sparkiumProjectTitle} titleLevel="h3">
-    <div slot="description">
-      <div class="editor-layout">
-        <div class="editor-sidebar">
-          <div class="editor-sidebar-title">{messages.explorer}</div>
-          <ul class="file-tree">
-            <li class="ft-folder ft-open">
-              <span class="ft-row"
-                ><span class="ft-icon"></span><span class="ft-label">{messages.exampleCourse}</span></span
-              >
-              <ul>
-                <li class="ft-folder ft-open">
-                  <span class="ft-row"
-                    ><span class="ft-icon"></span><span class="ft-label">{messages.module1}</span></span
-                  >
-                  <ul>
-                    <li class="ft-folder ft-open">
-                      <span class="ft-row"
-                        ><span class="ft-icon"></span><span class="ft-label">{messages.material1}</span></span
-                      >
-                      <ul>
-                        <li class="ft-file ft-active" data-ext="md">
-                          <span class="ft-row"
-                            ><span class="ft-icon"></span><span class="ft-label">{messages.contentMd}</span></span
-                          >
-                        </li>
-                        <li class="ft-file" data-ext="json">
-                          <span class="ft-row"
-                            ><span class="ft-icon"></span><span class="ft-label">{messages.materialJson}</span></span
-                          >
-                        </li>
-                      </ul>
-                    </li>
-                    <li class="ft-file" data-ext="json">
-                      <span class="ft-row"
-                        ><span class="ft-icon"></span><span class="ft-label">{messages.moduleJson}</span></span
-                      >
-                    </li>
-                  </ul>
-                </li>
-                <li class="ft-file" data-ext="json">
-                  <span class="ft-row"
-                    ><span class="ft-icon"></span><span class="ft-label">{messages.courseJson}</span></span
-                  >
-                </li>
-              </ul>
-            </li>
-          </ul>
+    <div class="editor-layout">
+      <div class="editor-sidebar">
+        <div class="editor-sidebar-title">{messages.explorer}</div>
+        <ul class="file-tree">
+          <li class="ft-folder ft-open">
+            <span class="ft-row"
+              ><span class="ft-icon"></span><span class="ft-label">{messages.exampleCourse}</span></span
+            >
+            <ul>
+              <li class="ft-folder ft-open">
+                <span class="ft-row"><span class="ft-icon"></span><span class="ft-label">{messages.module1}</span></span
+                >
+                <ul>
+                  <li class="ft-folder ft-open">
+                    <span class="ft-row"
+                      ><span class="ft-icon"></span><span class="ft-label">{messages.material1}</span></span
+                    >
+                    <ul>
+                      <li class="ft-file ft-active" data-ext="md">
+                        <span class="ft-row"
+                          ><span class="ft-icon"></span><span class="ft-label">{messages.contentMd}</span></span
+                        >
+                      </li>
+                      <li class="ft-file" data-ext="json">
+                        <span class="ft-row"
+                          ><span class="ft-icon"></span><span class="ft-label">{messages.materialJson}</span></span
+                        >
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="ft-file" data-ext="json">
+                    <span class="ft-row"
+                      ><span class="ft-icon"></span><span class="ft-label">{messages.moduleJson}</span></span
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="ft-file" data-ext="json">
+                <span class="ft-row"
+                  ><span class="ft-icon"></span><span class="ft-label">{messages.courseJson}</span></span
+                >
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="editor-pane">
+        <div class="editor-tabs">
+          <span class="editor-tab editor-tab-active">{messages.contentMd}</span>
         </div>
-        <div class="editor-pane">
-          <div class="editor-tabs">
-            <span class="editor-tab editor-tab-active">{messages.contentMd}</span>
-          </div>
-          <textarea
-            id="sparkium-editor"
-            class="editor-textarea"
-            spellcheck="false"
-            data-default-content={messages.defaultContent}></textarea>
-          <div class="editor-footer">
-            <button id="sparkium-save" class="editor-save-btn">{messages.save}</button>
-          </div>
+        <textarea
+          id="sparkium-editor"
+          class="editor-textarea"
+          spellcheck="false"
+          data-default-content={messages.defaultContent}></textarea>
+        <div class="editor-footer">
+          <button id="sparkium-save" class="editor-save-btn">{messages.save}</button>
         </div>
       </div>
     </div>
@@ -112,49 +109,47 @@ const messages = useI18n("content/products/SparkiumDemo.astro", {
     </svg>
   </div>
   <Card title={messages.moodleTitle} titleLevel="h3">
-    <div slot="description">
-      <div class="moodle-ui">
-        <!-- Navbar -->
-        <nav class="moodle-nav">
-          <div class="moodle-nav-left">
-            <img src={moodleLogo.src} alt="Moodle" class="moodle-logo" />
-            <a href="#" class="moodle-nav-link">{messages.home}</a>
-            <a href="#" class="moodle-nav-link">{messages.dashboard}</a>
-            <a href="#" class="moodle-nav-link">{messages.more}</a>
-          </div>
-          <div class="moodle-nav-right">
-            <span class="moodle-icon-btn">🔔<span class="moodle-badge">1</span></span>
-            <span class="moodle-icon-btn">💬</span>
-            <span class="moodle-icon-btn moodle-avatar">👤 ▾</span>
-            <label class="moodle-edit-toggle">
-              <span>{messages.edit}</span>
-              <span class="moodle-toggle">
-                <span class="moodle-toggle-thumb"></span>
-              </span>
-            </label>
-          </div>
-        </nav>
-        <!-- Breadcrumb -->
-        <div class="moodle-breadcrumb">
-          <a href="#">{messages.exampleCourse}</a>
-          <span> / </span>
-          <a href="#">{messages.module1}</a>
-          <span> / </span>
-          <span>{messages.material1}</span>
+    <div class="moodle-ui">
+      <!-- Navbar -->
+      <nav class="moodle-nav">
+        <div class="moodle-nav-left">
+          <img src={moodleLogo.src} alt="Moodle" class="moodle-logo" />
+          <a href="#" class="moodle-nav-link">{messages.home}</a>
+          <a href="#" class="moodle-nav-link">{messages.dashboard}</a>
+          <a href="#" class="moodle-nav-link">{messages.more}</a>
         </div>
-        <!-- Content -->
-        <div class="moodle-content">
-          <div class="moodle-page-title">
-            <span class="moodle-page-icon">📄</span>
-            <h1>{messages.material1}</h1>
-          </div>
-          <div class="moodle-tabs">
-            <span class="moodle-tab moodle-tab-active">{messages.textPage}</span>
-            <span class="moodle-tab">{messages.settings}</span>
-            <span class="moodle-tab">{messages.more}</span>
-          </div>
-          <div id="moodle-rendered-content" class="moodle-rendered"></div>
+        <div class="moodle-nav-right">
+          <span class="moodle-icon-btn">🔔<span class="moodle-badge">1</span></span>
+          <span class="moodle-icon-btn">💬</span>
+          <span class="moodle-icon-btn moodle-avatar">👤 ▾</span>
+          <label class="moodle-edit-toggle">
+            <span>{messages.edit}</span>
+            <span class="moodle-toggle">
+              <span class="moodle-toggle-thumb"></span>
+            </span>
+          </label>
         </div>
+      </nav>
+      <!-- Breadcrumb -->
+      <div class="moodle-breadcrumb">
+        <a href="#">{messages.exampleCourse}</a>
+        <span> / </span>
+        <a href="#">{messages.module1}</a>
+        <span> / </span>
+        <span>{messages.material1}</span>
+      </div>
+      <!-- Content -->
+      <div class="moodle-content">
+        <div class="moodle-page-title">
+          <span class="moodle-page-icon">📄</span>
+          <h1>{messages.material1}</h1>
+        </div>
+        <div class="moodle-tabs">
+          <span class="moodle-tab moodle-tab-active">{messages.textPage}</span>
+          <span class="moodle-tab">{messages.settings}</span>
+          <span class="moodle-tab">{messages.more}</span>
+        </div>
+        <div id="moodle-rendered-content" class="moodle-rendered"></div>
       </div>
     </div>
   </Card>
