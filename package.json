@@ -50,5 +50,5 @@
     "unist-util-visit": "^5.1.0",
     "unplugin-icons": "^23.0.1"
   },
-  "packageManager": "pnpm@11.8.0"
+  "packageManager": "pnpm@11.9.0"
 }
