@@ -108,10 +108,10 @@
   :global(.orbit) {
     display: inline-grid;
     position: absolute;
+  }
 
-    &:nth-child(even) > :global(*) {
-      animation-direction: reverse;
-    }
+  :global(.orbit:nth-child(even)) > :global(*) {
+    animation-direction: reverse;
   }
 
   :global(.orbit) > :global(*) {
@@ -129,7 +129,7 @@
     will-change: transform, opacity;
   }
 
-  :global(.orbit):hover > :global(*) {
+  :global(.orbit:hover) > :global(*) {
     animation-play-state: paused;
   }
 
@@ -150,7 +150,7 @@
     transition: opacity 0.2s ease-in-out;
   }
 
-  :global(.orbit) > :global(*):hover::after {
+  :global(.orbit) > :global(*:hover)::after {
     opacity: 1;
   }
 
@@ -173,7 +173,7 @@
   }
 
   @container (width < 23rem) {
-    :global(.orbit):nth-child(n + 2) {
+    :global(.orbit:nth-child(n + 2)) {
       display: none;
     }
   }
