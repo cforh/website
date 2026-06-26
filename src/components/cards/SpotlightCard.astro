@@ -32,7 +32,7 @@ const { titleLevel: TitleTag = "h2", href } = Astro.props;
   :global(.spotlight-card) {
     display: grid;
     gap: var(--size-gap);
-    grid-template-columns: 60% auto;
+    grid-template-columns: 60% minmax(0, 1fr);
     grid-template-rows: auto auto 3rem;
     grid-template-areas:
       "title spotlight"
