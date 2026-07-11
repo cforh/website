@@ -44,11 +44,11 @@
     "favicons": "^7.3.0",
     "globals": "^17.7.0",
     "jiti": "^2.7.0",
-    "prettier": "3.9.4",
+    "prettier": "3.9.5",
     "prettier-plugin-astro": "0.14.1",
     "typescript-eslint": "^8.62.0",
     "unist-util-visit": "^5.1.0",
     "unplugin-icons": "^23.0.1"
   },
-  "packageManager": "pnpm@11.10.0"
+  "packageManager": "pnpm@11.11.0"
 }
