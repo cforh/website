@@ -35,9 +35,9 @@
     "@iconify/json": "^2.2.491",
     "@openscript/unplugin-favicons": "^1.1.8",
     "@types/hast": "^3.0.4",
-    "@typescript-eslint/parser": "8.67.0",
+    "@typescript-eslint/parser": "8.68.0",
     "astro-eslint-parser": "^2.1.0",
-    "eslint": "10.9.0",
+    "eslint": "10.9.1",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-astro": "2.1.1",
     "eslint-plugin-prettier": "^5.5.6",
@@ -50,5 +50,5 @@
     "unist-util-visit": "^5.1.0",
     "unplugin-icons": "^23.0.1"
   },
-  "packageManager": "pnpm@11.22.0"
+  "packageManager": "pnpm@11.24.0"
 }
