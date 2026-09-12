@@ -48,7 +48,7 @@
     "prettier-plugin-astro": "0.14.1",
     "typescript-eslint": "^8.62.0",
     "unist-util-visit": "^5.1.0",
-    "unplugin-icons": "^23.0.1"
+    "unplugin-icons": "^24.0.0"
   },
   "packageManager": "pnpm@11.26.0"
 }
