@@ -30,7 +30,7 @@
   },
   "devDependencies": {
     "@astrojs/markdown-remark": "^7.2.0",
-    "@changesets/cli": "^2.31.0",
+    "@changesets/cli": "^3.0.0",
     "@eslint/js": "^10.0.1",
     "@iconify/json": "^2.2.491",
     "@openscript/unplugin-favicons": "^1.1.8",
