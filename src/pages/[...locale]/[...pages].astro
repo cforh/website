@@ -26,11 +26,9 @@ const { Content } = await render(Astro.props);
 
 <Shell translations={translations}>
   <Meta slot="meta" title={title} />
-  {
-    template === "article" && (
-      <Article title={title} class={contentClass}>
-        <Content />
-      </Article>
-    )
-  }
+  {template === "article" && (
+    <Article title={title} class={contentClass}>
+      <Content />
+    </Article>
+  )}
 </Shell>

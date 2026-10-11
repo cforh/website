@@ -12,11 +12,17 @@ const { titleLevel: TitleTag = "h2" } = Astro.props;
 <FlipCard className="profile-card">
   <Fragment slot="front">
     <slot name="photo" />
-    <TitleTag><slot name="name" /></TitleTag>
+    <TitleTag>
+      <slot name="name" />
+    </TitleTag>
   </Fragment>
   <Fragment slot="back">
-    <TitleTag><slot name="name" /></TitleTag>
-    <p><slot name="description" /></p>
+    <TitleTag>
+      <slot name="name" />
+    </TitleTag>
+    <p>
+      <slot name="description" />
+    </p>
   </Fragment>
 </FlipCard>
 

@@ -33,42 +33,50 @@ const messages = useI18n("content/products/SparkiumDemo.astro", {
         <div class="editor-sidebar-title">{messages.explorer}</div>
         <ul class="file-tree">
           <li class="ft-folder ft-open">
-            <span class="ft-row"
-              ><span class="ft-icon"></span><span class="ft-label">{messages.exampleCourse}</span></span
-            >
+            <span class="ft-row">
+              <span class="ft-icon"></span>
+              <span class="ft-label">{messages.exampleCourse}</span>
+            </span>
             <ul>
               <li class="ft-folder ft-open">
-                <span class="ft-row"><span class="ft-icon"></span><span class="ft-label">{messages.module1}</span></span
-                >
+                <span class="ft-row">
+                  <span class="ft-icon"></span>
+                  <span class="ft-label">{messages.module1}</span>
+                </span>
                 <ul>
                   <li class="ft-folder ft-open">
-                    <span class="ft-row"
-                      ><span class="ft-icon"></span><span class="ft-label">{messages.material1}</span></span
-                    >
+                    <span class="ft-row">
+                      <span class="ft-icon"></span>
+                      <span class="ft-label">{messages.material1}</span>
+                    </span>
                     <ul>
                       <li class="ft-file ft-active" data-ext="md">
-                        <span class="ft-row"
-                          ><span class="ft-icon"></span><span class="ft-label">{messages.contentMd}</span></span
-                        >
+                        <span class="ft-row">
+                          <span class="ft-icon"></span>
+                          <span class="ft-label">{messages.contentMd}</span>
+                        </span>
                       </li>
                       <li class="ft-file" data-ext="json">
-                        <span class="ft-row"
-                          ><span class="ft-icon"></span><span class="ft-label">{messages.materialJson}</span></span
-                        >
+                        <span class="ft-row">
+                          <span class="ft-icon"></span>
+                          <span class="ft-label">{messages.materialJson}</span>
+                        </span>
                       </li>
                     </ul>
                   </li>
                   <li class="ft-file" data-ext="json">
-                    <span class="ft-row"
-                      ><span class="ft-icon"></span><span class="ft-label">{messages.moduleJson}</span></span
-                    >
+                    <span class="ft-row">
+                      <span class="ft-icon"></span>
+                      <span class="ft-label">{messages.moduleJson}</span>
+                    </span>
                   </li>
                 </ul>
               </li>
               <li class="ft-file" data-ext="json">
-                <span class="ft-row"
-                  ><span class="ft-icon"></span><span class="ft-label">{messages.courseJson}</span></span
-                >
+                <span class="ft-row">
+                  <span class="ft-icon"></span>
+                  <span class="ft-label">{messages.courseJson}</span>
+                </span>
               </li>
             </ul>
           </li>
@@ -82,9 +90,12 @@ const messages = useI18n("content/products/SparkiumDemo.astro", {
           id="sparkium-editor"
           class="editor-textarea"
           spellcheck="false"
-          data-default-content={messages.defaultContent}></textarea>
+          data-default-content={messages.defaultContent}
+        ></textarea>
         <div class="editor-footer">
-          <button id="sparkium-save" class="editor-save-btn">{messages.save}</button>
+          <button id="sparkium-save" class="editor-save-btn">
+            {messages.save}
+          </button>
         </div>
       </div>
     </div>
@@ -103,8 +114,10 @@ const messages = useI18n("content/products/SparkiumDemo.astro", {
           dominant-baseline="middle"
           font-size="36"
           font-family="'Nunito Variable', sans-serif"
-          fill="var(--color-black)">SparkLink</text
+          fill="var(--color-black)"
         >
+          SparkLink
+        </text>
       </a>
     </svg>
   </div>
@@ -114,12 +127,20 @@ const messages = useI18n("content/products/SparkiumDemo.astro", {
       <nav class="moodle-nav">
         <div class="moodle-nav-left">
           <img src={moodleLogo.src} alt="Moodle" class="moodle-logo" />
-          <a href="#" class="moodle-nav-link">{messages.home}</a>
-          <a href="#" class="moodle-nav-link">{messages.dashboard}</a>
-          <a href="#" class="moodle-nav-link">{messages.more}</a>
+          <a href="#" class="moodle-nav-link">
+            {messages.home}
+          </a>
+          <a href="#" class="moodle-nav-link">
+            {messages.dashboard}
+          </a>
+          <a href="#" class="moodle-nav-link">
+            {messages.more}
+          </a>
         </div>
         <div class="moodle-nav-right">
-          <span class="moodle-icon-btn">🔔<span class="moodle-badge">1</span></span>
+          <span class="moodle-icon-btn">
+            🔔<span class="moodle-badge">1</span>
+          </span>
           <span class="moodle-icon-btn">💬</span>
           <span class="moodle-icon-btn moodle-avatar">👤 ▾</span>
           <label class="moodle-edit-toggle">

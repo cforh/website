@@ -35,25 +35,23 @@ const products = i18nProps(collection, {
     <h1 slot="title">{messages.title}</h1>
     <p>{messages.description}</p>
     <section class="products-list padding-breakout">
-      {
-        products.map((product) => (
-          <SpotlightCard href={product.translatedPath}>
-            <Fragment slot="spotlight">
-              {product.data.brand ? (
-                <IconCover
-                  image={{ image: product.data.brand.logo, alt: product.data.title }}
-                  primaryColor={product.data.brand.primaryColor}
-                  secondaryColor={product.data.brand.secondaryColor}
-                />
-              ) : (
-                <DerivedCover value={product.data.title} />
-              )}
-            </Fragment>
-            <Fragment slot="title">{product.data.title}</Fragment>
-            <Fragment slot="description">{product.data.summary}</Fragment>
-          </SpotlightCard>
-        ))
-      }
+      {products.map((product) => (
+        <SpotlightCard href={product.translatedPath}>
+          <Fragment slot="spotlight">
+            {product.data.brand ? (
+              <IconCover
+                image={{ image: product.data.brand.logo, alt: product.data.title }}
+                primaryColor={product.data.brand.primaryColor}
+                secondaryColor={product.data.brand.secondaryColor}
+              />
+            ) : (
+              <DerivedCover value={product.data.title} />
+            )}
+          </Fragment>
+          <Fragment slot="title">{product.data.title}</Fragment>
+          <Fragment slot="description">{product.data.summary}</Fragment>
+        </SpotlightCard>
+      ))}
     </section>
   </Article>
 </Shell>

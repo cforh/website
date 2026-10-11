@@ -19,13 +19,11 @@ const collection = locales.map((locale) => {
 ---
 
 <select id="language-switcher" name="language-switcher" autocomplete="off" class="language-switcher">
-  {
-    collection.map(({ value, label, selected }) => (
-      <option value={value} {...(selected ? { selected: "true" } : {})}>
-        {label}
-      </option>
-    ))
-  }
+  {collection.map(({ value, label, selected }) => (
+    <option value={value} {...(selected ? { selected: "true" } : {})}>
+      {label}
+    </option>
+  ))}
 </select>
 
 <script>

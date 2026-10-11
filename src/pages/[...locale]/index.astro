@@ -68,8 +68,12 @@ const products = i18nProps(collection, {
     <h1 slot="title">{messages.spotlightTitle}</h1>
     <p slot="content">{messages.spotlightContent}</p>
     <Fragment slot="actions">
-      <a href={messages.spotlightSecondaryLink} class="button primary">{messages.spotlightSecondaryAction}</a>
-      <a href="#connect" class="button">{messages.spotlightPrimaryAction}</a>
+      <a href={messages.spotlightSecondaryLink} class="button primary">
+        {messages.spotlightSecondaryAction}
+      </a>
+      <a href="#connect" class="button">
+        {messages.spotlightPrimaryAction}
+      </a>
     </Fragment>
     <Orbiter slot="stage">
       <Image slot="host" alt="Our logo as the orbiters host" src={LogoSquare} />
@@ -105,17 +109,15 @@ const products = i18nProps(collection, {
   <Grid id="empower">
     <h2 slot="title">{messages.empowerTitle}</h2>
     <Fragment slot="content">
-      {
-        products.map((product) => (
-          <article>
-            <h3>{product.data.title}</h3>
-            <p>{product.data.summary}</p>
-            <a href={product.translatedPath} class="button primary">
-              {messages.spotlightSecondaryAction}
-            </a>
-          </article>
-        ))
-      }
+      {products.map((product) => (
+        <article>
+          <h3>{product.data.title}</h3>
+          <p>{product.data.summary}</p>
+          <a href={product.translatedPath} class="button primary">
+            {messages.spotlightSecondaryAction}
+          </a>
+        </article>
+      ))}
     </Fragment>
   </Grid>
   <Grid id="connect">
@@ -131,8 +133,12 @@ const products = i18nProps(collection, {
         <p>{messages.connectModernContent}</p>
         <nav>
           <ul>
-            <li><a href="https://linkedin.com/company/code-4-humans">LinkedIn</a></li>
-            <li><a href="https://github.com/cforh">Github</a></li>
+            <li>
+              <a href="https://linkedin.com/company/code-4-humans">LinkedIn</a>
+            </li>
+            <li>
+              <a href="https://github.com/cforh">Github</a>
+            </li>
           </ul>
         </nav>
       </article>

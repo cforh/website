@@ -16,8 +16,12 @@ const { titleLevel: TitleTag = "h2", href } = Astro.props;
     <div class="spotlight">
       <slot name="spotlight" />
     </div>
-    <TitleTag><slot name="title" /></TitleTag>
-    <p><slot name="description" /></p>
+    <TitleTag>
+      <slot name="title" />
+    </TitleTag>
+    <p>
+      <slot name="description" />
+    </p>
     <div class="button primary cta">
       <ChevronRight />
     </div>
