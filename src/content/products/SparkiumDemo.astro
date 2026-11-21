@@ -27,7 +27,8 @@ const messages = useI18n("content/products/SparkiumDemo.astro", {
 ---
 
 <div class="sparkium-demo padding-breakout">
-  <Card title={messages.sparkiumProjectTitle} titleLevel="h3">
+  <Card className="sparkium-project-card">
+    <h3>{messages.sparkiumProjectTitle}</h3>
     <div class="editor-layout">
       <div class="editor-sidebar">
         <div class="editor-sidebar-title">{messages.explorer}</div>
@@ -121,7 +122,8 @@ const messages = useI18n("content/products/SparkiumDemo.astro", {
       </a>
     </svg>
   </div>
-  <Card title={messages.moodleTitle} titleLevel="h3">
+  <Card className="moodle-card">
+    <h3>{messages.moodleTitle}</h3>
     <div class="moodle-ui">
       <!-- Navbar -->
       <nav class="moodle-nav">
